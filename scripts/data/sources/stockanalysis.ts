@@ -24,6 +24,17 @@ interface StockAnalysisSeries {
   annualEmployees: EmployeePoint[];
 }
 
+interface RouteResolverStats {
+  stockRoutesIndexed: number;
+  quoteRoutesIndexed: number;
+  uniqueSymbolRoutes: number;
+}
+
+export interface StockAnalysisRouteResolver {
+  resolveBasePath: (symbol: string) => string | null;
+  stats: RouteResolverStats;
+}
+
 const exchangeByTickerSuffix: Record<string, string> = {
   HK: "hkg",
   KS: "krx",
@@ -127,6 +138,144 @@ function parseEmployeePoints(html: string): EmployeePoint[] {
   return points;
 }
 
+function parseSitemapUrls(indexXml: string): string[] {
+  const urls: string[] = [];
+  const regex = /<loc>(https:\/\/stockanalysis\.com\/sitemaps\/(?:stocks\/stocks\d+\.xml|quotes\/quotes\d+\.xml))<\/loc>/g;
+  for (const match of indexXml.matchAll(regex)) {
+    urls.push(match[1]);
+  }
+
+  return urls;
+}
+
+function parseRevenueBasePaths(sitemapXml: string): string[] {
+  const basePaths: string[] = [];
+  const regex = /<loc>https:\/\/stockanalysis\.com\/((?:stocks\/[^/]+|quote\/[^/]+\/[^/]+)\/revenue\/)<\/loc>/g;
+  for (const match of sitemapXml.matchAll(regex)) {
+    const routeWithRevenue = match[1].replace(/\/+$/, "");
+    const basePath = `/${routeWithRevenue.replace(/\/revenue$/, "")}`;
+    basePaths.push(basePath);
+  }
+
+  return basePaths;
+}
+
+function normalizeSymbol(symbol: string): string {
+  return symbol.trim().toUpperCase();
+}
+
+export async function createStockAnalysisRouteResolver(): Promise<StockAnalysisRouteResolver> {
+  const stockRouteBySymbol = new Map<string, string>();
+  const quoteRouteByExchangeAndSymbol = new Map<string, string>();
+  const routeCandidatesBySymbol = new Map<string, string[]>();
+
+  const maybeSitemapIndex = await fetchText(`${SOURCE_URLS.stockAnalysisBase}/sitemap.xml`);
+  if (!maybeSitemapIndex) {
+    return {
+      resolveBasePath: () => null,
+      stats: {
+        stockRoutesIndexed: 0,
+        quoteRoutesIndexed: 0,
+        uniqueSymbolRoutes: 0,
+      },
+    };
+  }
+
+  const sitemapUrls = parseSitemapUrls(maybeSitemapIndex);
+
+  for (const sitemapUrl of sitemapUrls) {
+    const maybeSitemapXml = await fetchText(sitemapUrl);
+    await sleep(DATA_CONFIG.requestDelayMs);
+    if (!maybeSitemapXml) {
+      continue;
+    }
+
+    const basePaths = parseRevenueBasePaths(maybeSitemapXml);
+    for (const basePath of basePaths) {
+      if (basePath.startsWith("/stocks/")) {
+        const symbol = normalizeSymbol(basePath.split("/")[2] ?? "");
+        if (!symbol) {
+          continue;
+        }
+
+        stockRouteBySymbol.set(symbol, basePath);
+        const existingRoutes = routeCandidatesBySymbol.get(symbol) ?? [];
+        existingRoutes.push(basePath);
+        routeCandidatesBySymbol.set(symbol, existingRoutes);
+        continue;
+      }
+
+      if (basePath.startsWith("/quote/")) {
+        const [, , exchange, symbol] = basePath.split("/");
+        const normalizedSymbol = normalizeSymbol(symbol ?? "");
+        if (!exchange || !normalizedSymbol) {
+          continue;
+        }
+
+        quoteRouteByExchangeAndSymbol.set(
+          `${exchange}:${normalizedSymbol}`,
+          basePath,
+        );
+        const existingRoutes = routeCandidatesBySymbol.get(normalizedSymbol) ?? [];
+        existingRoutes.push(basePath);
+        routeCandidatesBySymbol.set(normalizedSymbol, existingRoutes);
+      }
+    }
+  }
+
+  const uniqueRouteBySymbol = new Map<string, string>();
+  for (const [symbol, routes] of routeCandidatesBySymbol.entries()) {
+    const uniqueRoutes = [...new Set(routes)];
+    if (uniqueRoutes.length === 1) {
+      uniqueRouteBySymbol.set(symbol, uniqueRoutes[0]);
+    }
+  }
+
+  const resolveBasePath = (rawSymbol: string): string | null => {
+    const symbol = normalizeSymbol(rawSymbol);
+    const [tickerBase, maybeSuffix] = symbol.split(".");
+
+    if (stockRouteBySymbol.has(symbol)) {
+      return stockRouteBySymbol.get(symbol) ?? null;
+    }
+
+    if (tickerBase && stockRouteBySymbol.has(tickerBase)) {
+      return stockRouteBySymbol.get(tickerBase) ?? null;
+    }
+
+    if (maybeSuffix) {
+      const maybeExchange = exchangeByTickerSuffix[maybeSuffix];
+      if (maybeExchange) {
+        const maybeRoute = quoteRouteByExchangeAndSymbol.get(
+          `${maybeExchange}:${tickerBase}`,
+        );
+        if (maybeRoute) {
+          return maybeRoute;
+        }
+      }
+    }
+
+    if (tickerBase && uniqueRouteBySymbol.has(tickerBase)) {
+      return uniqueRouteBySymbol.get(tickerBase) ?? null;
+    }
+
+    if (symbol && uniqueRouteBySymbol.has(symbol)) {
+      return uniqueRouteBySymbol.get(symbol) ?? null;
+    }
+
+    return null;
+  };
+
+  return {
+    resolveBasePath,
+    stats: {
+      stockRoutesIndexed: stockRouteBySymbol.size,
+      quoteRoutesIndexed: quoteRouteByExchangeAndSymbol.size,
+      uniqueSymbolRoutes: uniqueRouteBySymbol.size,
+    },
+  };
+}
+
 function candidateBasePaths(symbol: string): string[] {
   const symbolLower = symbol.toLowerCase();
   const symbolUpper = symbol.toUpperCase();
@@ -161,8 +310,11 @@ async function resolveStockAnalysisBasePath(symbol: string): Promise<string | nu
 
 export async function fetchStockAnalysisSeries(
   symbol: string,
+  routeResolver: StockAnalysisRouteResolver | null,
 ): Promise<StockAnalysisSeries> {
-  const resolvedBasePath = await resolveStockAnalysisBasePath(symbol);
+  const resolvedBasePath =
+    routeResolver?.resolveBasePath(symbol) ??
+    (await resolveStockAnalysisBasePath(symbol));
   if (!resolvedBasePath) {
     return {
       resolvedBasePath: null,
