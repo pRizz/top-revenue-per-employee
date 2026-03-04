@@ -361,3 +361,10 @@ export async function fetchStockAnalysisSeries(
     annualEmployees,
   };
 }
+
+export const __testing = {
+  parseEmployeePoints,
+  parseSitemapUrls,
+  parseRevenueBasePaths,
+  normalizeSymbol,
+};

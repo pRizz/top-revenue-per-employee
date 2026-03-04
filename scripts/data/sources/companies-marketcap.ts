@@ -147,3 +147,8 @@ export async function fetchAnnualRevenueFromCompaniesMarketCap(
 
   return map;
 }
+
+export const __testing = {
+  toSlug,
+  parseSlugMapFromRanking,
+};
