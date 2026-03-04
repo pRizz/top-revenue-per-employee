@@ -2,6 +2,7 @@ import { createMemo, createResource, createSignal, Show } from "solid-js";
 
 import { CompaniesTable } from "@/components/dashboard/companies-table";
 import { HeroInfographic } from "@/components/dashboard/hero-infographic";
+import { RevenuePerEmployeeChart } from "@/components/dashboard/revenue-per-employee-chart";
 import { SourceAttributionPanel } from "@/components/dashboard/source-attribution-panel";
 import { TimeBucketSelector } from "@/components/dashboard/time-bucket-selector";
 import { getDataset } from "@/lib/data-client";
@@ -49,6 +50,21 @@ export function DashboardPage() {
       rows().filter((row) => row.metric?.revenuePerEmployeeUsd !== null).length,
   );
 
+  const topChartItems = createMemo(() =>
+    rows()
+      .filter((row) => row.metric?.revenuePerEmployeeUsd !== null)
+      .sort(
+        (left, right) =>
+          (right.metric?.revenuePerEmployeeUsd ?? 0) -
+          (left.metric?.revenuePerEmployeeUsd ?? 0),
+      )
+      .slice(0, 10)
+      .map((row) => ({
+        label: row.company.symbol,
+        value: row.metric?.revenuePerEmployeeUsd ?? 0,
+      })),
+  );
+
   if (!selectedBucketId() && bucketIds().length > 0) {
     setSelectedBucketId(bucketIds()[0]);
   }
@@ -71,6 +87,7 @@ export function DashboardPage() {
           medianRevenuePerEmployee={medianRevenuePerEmployee()}
           companiesWithMetricCount={companiesWithMetricCount()}
         />
+        <RevenuePerEmployeeChart items={topChartItems()} />
 
         <div class="grid gap-4 lg:grid-cols-[240px_1fr]">
           <div class="space-y-3">
