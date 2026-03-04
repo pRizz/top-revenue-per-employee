@@ -53,6 +53,7 @@ npm run dev
 npm run test
 npm run typecheck
 npm run build
+npm run build:pages
 npm run data:validate
 ```
 
@@ -61,6 +62,8 @@ For GitHub Pages-style local validation (repo subpath base URL):
 ```bash
 VITE_BASE_PATH=/top-revenue-per-employee/ npm run build
 ```
+
+`npm run build:pages` also creates `dist/404.html` for SPA route fallback on GitHub Pages.
 
 ## Data pipeline
 
