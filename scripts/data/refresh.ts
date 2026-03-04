@@ -19,12 +19,33 @@ import { fetchStockAnalysisSeries } from "./sources/stockanalysis";
 import type { UniverseCompany } from "./types";
 import { validatePublicDataset } from "./validate";
 
+interface StockAnalysisSnapshot {
+  symbol: string;
+  resolvedBasePath: string | null;
+  counts: {
+    quarterlyRevenue: number;
+    annualRevenue: number;
+    quarterlyMarketCap: number;
+    annualMarketCap: number;
+    annualEmployees: number;
+  };
+}
+
+interface CompanyProcessingResult {
+  companyRecord: ReturnType<typeof toCompanyRecord>;
+  stockAnalysisSnapshot: StockAnalysisSnapshot;
+}
+
 function todayDirectoryName(): string {
   return new Date().toISOString().slice(0, 10);
 }
 
 async function ensureDirectory(pathLike: string): Promise<void> {
   await fs.mkdir(pathLike, { recursive: true });
+}
+
+function removeFlag(entry: { flags: string[] }, flag: string): void {
+  entry.flags = entry.flags.filter((value) => value !== flag);
 }
 
 function fillFallbackMarketCap(
@@ -69,10 +90,21 @@ async function processCompany(
   company: UniverseCompany,
   employeeBySymbol: Map<string, number>,
   fetchedAt: string,
-): Promise<ReturnType<typeof toCompanyRecord>> {
+): Promise<CompanyProcessingResult> {
   const accumulatorMap = createEmptyAccumulatorMap();
   fillFallbackMarketCap(accumulatorMap, company, fetchedAt);
   fillFallbackEmployees(accumulatorMap, employeeBySymbol.get(company.symbol), fetchedAt);
+  const stockAnalysisSnapshot: StockAnalysisSnapshot = {
+    symbol: company.symbol,
+    resolvedBasePath: null,
+    counts: {
+      quarterlyRevenue: 0,
+      annualRevenue: 0,
+      quarterlyMarketCap: 0,
+      annualMarketCap: 0,
+      annualEmployees: 0,
+    },
+  };
 
   try {
     const annualRevenue = await fetchAnnualRevenueFromCompaniesMarketCap(company.slug);
@@ -100,6 +132,16 @@ async function processCompany(
 
   try {
     const stockAnalysis = await fetchStockAnalysisSeries(company.symbol);
+    stockAnalysisSnapshot.resolvedBasePath = stockAnalysis.resolvedBasePath;
+    stockAnalysisSnapshot.counts.quarterlyRevenue =
+      stockAnalysis.quarterlyRevenue.length;
+    stockAnalysisSnapshot.counts.annualRevenue = stockAnalysis.annualRevenue.length;
+    stockAnalysisSnapshot.counts.quarterlyMarketCap =
+      stockAnalysis.quarterlyMarketCap.length;
+    stockAnalysisSnapshot.counts.annualMarketCap =
+      stockAnalysis.annualMarketCap.length;
+    stockAnalysisSnapshot.counts.annualEmployees =
+      stockAnalysis.annualEmployees.length;
     if (stockAnalysis.resolvedBasePath) {
       const baseUrl = `https://stockanalysis.com${stockAnalysis.resolvedBasePath}`;
 
@@ -170,6 +212,7 @@ async function processCompany(
           url: `${baseUrl}/market-cap/`,
           fetchedAt,
         };
+        removeFlag(maybeEntry, "market_cap_snapshot_fallback");
       }
 
       for (const point of stockAnalysis.annualMarketCap) {
@@ -193,6 +236,31 @@ async function processCompany(
           url: `${baseUrl}/market-cap/`,
           fetchedAt,
         };
+        removeFlag(maybeEntry, "market_cap_snapshot_fallback");
+      }
+
+      for (const point of stockAnalysis.annualEmployees) {
+        const maybeBucketId = annualBucketForDate(point.date);
+        if (!maybeBucketId) {
+          continue;
+        }
+
+        const maybeEntry = accumulatorMap.get(maybeBucketId);
+        if (!maybeEntry) {
+          continue;
+        }
+
+        if (point.count <= 0) {
+          continue;
+        }
+
+        maybeEntry.employeeCount = point.count;
+        maybeEntry.sources.employeeCount = {
+          provider: "StockAnalysis",
+          url: `${baseUrl}/employees/`,
+          fetchedAt,
+        };
+        removeFlag(maybeEntry, "employee_snapshot_fallback");
       }
     }
   } catch {
@@ -200,7 +268,10 @@ async function processCompany(
   }
 
   const metrics = accumulatorMapToMetrics(accumulatorMap);
-  return toCompanyRecord(company, metrics);
+  return {
+    companyRecord: toCompanyRecord(company, metrics),
+    stockAnalysisSnapshot,
+  };
 }
 
 async function mapWithConcurrency<T, R>(
@@ -251,13 +322,16 @@ async function main(): Promise<void> {
     "utf8",
   );
 
-  const companies = await mapWithConcurrency(
+  const processingResults = await mapWithConcurrency(
     universeBundle.companies,
     8,
     async (company) =>
       await processCompany(company, universeBundle.employeeBySymbol, fetchedAt),
   );
-
+  const companies = processingResults.map((result) => result.companyRecord);
+  const stockAnalysisSnapshots = processingResults.map(
+    (result) => result.stockAnalysisSnapshot,
+  );
   companies.sort((left, right) => left.rank - right.rank);
   const dataset = createDataset(companies);
 
@@ -274,10 +348,23 @@ async function main(): Promise<void> {
         generatedAt: fetchedAt,
         topN: DATA_CONFIG.topN,
         sourceSnapshotDirectory: path.relative(path.resolve("."), snapshotDirectory),
+        stockAnalysisCoverage: {
+          resolvedRouteCount: stockAnalysisSnapshots.filter(
+            (snapshot) => snapshot.resolvedBasePath !== null,
+          ).length,
+          annualEmployeeSeriesCount: stockAnalysisSnapshots.filter(
+            (snapshot) => snapshot.counts.annualEmployees > 0,
+          ).length,
+        },
       },
       null,
       2,
     ),
+    "utf8",
+  );
+  await fs.writeFile(
+    path.join(snapshotDirectory, "stockanalysis-enrichment.json"),
+    JSON.stringify(stockAnalysisSnapshots, null, 2),
     "utf8",
   );
 
