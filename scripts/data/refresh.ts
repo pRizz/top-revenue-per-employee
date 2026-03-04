@@ -1,6 +1,11 @@
-import fs from "node:fs/promises";
 import path from "node:path";
 
+import {
+  prepareArchiveDirectories,
+  writeProcessedSnapshot,
+  writeStockAnalysisRawSnapshot,
+  writeUniverseRawSnapshot,
+} from "./archive";
 import { writePublicDataset } from "./build-public-dataset";
 import { DATA_CONFIG } from "./config";
 import {
@@ -38,14 +43,6 @@ interface StockAnalysisSnapshot {
 interface CompanyProcessingResult {
   companyRecord: ReturnType<typeof toCompanyRecord>;
   stockAnalysisSnapshot: StockAnalysisSnapshot;
-}
-
-function todayDirectoryName(): string {
-  return new Date().toISOString().slice(0, 10);
-}
-
-async function ensureDirectory(pathLike: string): Promise<void> {
-  await fs.mkdir(pathLike, { recursive: true });
 }
 
 function removeFlag(entry: { flags: string[] }, flag: string): void {
@@ -307,29 +304,14 @@ async function mapWithConcurrency<T, R>(
 }
 
 async function main(): Promise<void> {
-  const fetchedAt = new Date().toISOString();
-  const snapshotDirectory = path.resolve("data", "raw", todayDirectoryName());
-  await ensureDirectory(snapshotDirectory);
-  await ensureDirectory(path.resolve("data", "processed"));
+  const now = new Date();
+  const fetchedAt = now.toISOString();
+  const { snapshotDirectory } = await prepareArchiveDirectories(now);
 
   const universeBundle = await fetchUniverseWithEmployeeSnapshot();
   const stockAnalysisRouteResolver = await createStockAnalysisRouteResolver();
 
-  await fs.writeFile(
-    path.join(snapshotDirectory, "companies-marketcap-ranking.csv"),
-    universeBundle.raw.rankingCsv,
-    "utf8",
-  );
-  await fs.writeFile(
-    path.join(snapshotDirectory, "companies-marketcap-employees.csv"),
-    universeBundle.raw.employeesCsv,
-    "utf8",
-  );
-  await fs.writeFile(
-    path.join(snapshotDirectory, "companies-marketcap-ranking.html"),
-    universeBundle.raw.rankingHtml,
-    "utf8",
-  );
+  await writeUniverseRawSnapshot(snapshotDirectory, universeBundle.raw);
 
   const processingResults = await mapWithConcurrency(
     universeBundle.companies,
@@ -349,44 +331,24 @@ async function main(): Promise<void> {
   companies.sort((left, right) => left.rank - right.rank);
   const dataset = createDataset(companies);
 
-  await fs.writeFile(
-    path.resolve("data", "processed", "companies-timeseries.json"),
-    JSON.stringify(dataset, null, 2),
-    "utf8",
-  );
-
-  await fs.writeFile(
-    path.resolve("data", "processed", "metadata.json"),
-    JSON.stringify(
-      {
-        generatedAt: fetchedAt,
-        topN: DATA_CONFIG.topN,
-        sourceSnapshotDirectory: path.relative(path.resolve("."), snapshotDirectory),
-        stockAnalysisCoverage: {
-          resolverStats: stockAnalysisRouteResolver.stats,
-          resolvedRouteCount: stockAnalysisSnapshots.filter(
-            (snapshot) => snapshot.resolvedBasePath !== null,
-          ).length,
-          annualEmployeeSeriesCount: stockAnalysisSnapshots.filter(
-            (snapshot) => snapshot.counts.annualEmployees > 0,
-          ).length,
-        },
-      },
-      null,
-      2,
-    ),
-    "utf8",
-  );
-  await fs.writeFile(
-    path.join(snapshotDirectory, "stockanalysis-enrichment.json"),
-    JSON.stringify(stockAnalysisSnapshots, null, 2),
-    "utf8",
-  );
-  await fs.writeFile(
-    path.join(snapshotDirectory, "stockanalysis-route-resolver.json"),
-    JSON.stringify(stockAnalysisRouteResolver.stats, null, 2),
-    "utf8",
-  );
+  await writeProcessedSnapshot(dataset, {
+    generatedAt: fetchedAt,
+    topN: DATA_CONFIG.topN,
+    sourceSnapshotDirectory: path.relative(path.resolve("."), snapshotDirectory),
+    stockAnalysisCoverage: {
+      resolverStats: stockAnalysisRouteResolver.stats,
+      resolvedRouteCount: stockAnalysisSnapshots.filter(
+        (snapshot) => snapshot.resolvedBasePath !== null,
+      ).length,
+      annualEmployeeSeriesCount: stockAnalysisSnapshots.filter(
+        (snapshot) => snapshot.counts.annualEmployees > 0,
+      ).length,
+    },
+  });
+  await writeStockAnalysisRawSnapshot(snapshotDirectory, {
+    enrichment: stockAnalysisSnapshots,
+    routeResolverStats: stockAnalysisRouteResolver.stats,
+  });
 
   await writePublicDataset(dataset);
   await validatePublicDataset();
