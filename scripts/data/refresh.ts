@@ -15,7 +15,11 @@ import {
   fetchAnnualRevenueFromCompaniesMarketCap,
   fetchUniverseWithEmployeeSnapshot,
 } from "./sources/companies-marketcap";
-import { fetchStockAnalysisSeries } from "./sources/stockanalysis";
+import {
+  createStockAnalysisRouteResolver,
+  fetchStockAnalysisSeries,
+  type StockAnalysisRouteResolver,
+} from "./sources/stockanalysis";
 import type { UniverseCompany } from "./types";
 import { validatePublicDataset } from "./validate";
 
@@ -90,6 +94,7 @@ async function processCompany(
   company: UniverseCompany,
   employeeBySymbol: Map<string, number>,
   fetchedAt: string,
+  routeResolver: StockAnalysisRouteResolver,
 ): Promise<CompanyProcessingResult> {
   const accumulatorMap = createEmptyAccumulatorMap();
   fillFallbackMarketCap(accumulatorMap, company, fetchedAt);
@@ -131,7 +136,10 @@ async function processCompany(
   }
 
   try {
-    const stockAnalysis = await fetchStockAnalysisSeries(company.symbol);
+    const stockAnalysis = await fetchStockAnalysisSeries(
+      company.symbol,
+      routeResolver,
+    );
     stockAnalysisSnapshot.resolvedBasePath = stockAnalysis.resolvedBasePath;
     stockAnalysisSnapshot.counts.quarterlyRevenue =
       stockAnalysis.quarterlyRevenue.length;
@@ -305,6 +313,7 @@ async function main(): Promise<void> {
   await ensureDirectory(path.resolve("data", "processed"));
 
   const universeBundle = await fetchUniverseWithEmployeeSnapshot();
+  const stockAnalysisRouteResolver = await createStockAnalysisRouteResolver();
 
   await fs.writeFile(
     path.join(snapshotDirectory, "companies-marketcap-ranking.csv"),
@@ -326,7 +335,12 @@ async function main(): Promise<void> {
     universeBundle.companies,
     8,
     async (company) =>
-      await processCompany(company, universeBundle.employeeBySymbol, fetchedAt),
+      await processCompany(
+        company,
+        universeBundle.employeeBySymbol,
+        fetchedAt,
+        stockAnalysisRouteResolver,
+      ),
   );
   const companies = processingResults.map((result) => result.companyRecord);
   const stockAnalysisSnapshots = processingResults.map(
@@ -349,6 +363,7 @@ async function main(): Promise<void> {
         topN: DATA_CONFIG.topN,
         sourceSnapshotDirectory: path.relative(path.resolve("."), snapshotDirectory),
         stockAnalysisCoverage: {
+          resolverStats: stockAnalysisRouteResolver.stats,
           resolvedRouteCount: stockAnalysisSnapshots.filter(
             (snapshot) => snapshot.resolvedBasePath !== null,
           ).length,
@@ -365,6 +380,11 @@ async function main(): Promise<void> {
   await fs.writeFile(
     path.join(snapshotDirectory, "stockanalysis-enrichment.json"),
     JSON.stringify(stockAnalysisSnapshots, null, 2),
+    "utf8",
+  );
+  await fs.writeFile(
+    path.join(snapshotDirectory, "stockanalysis-route-resolver.json"),
+    JSON.stringify(stockAnalysisRouteResolver.stats, null, 2),
     "utf8",
   );
 
