@@ -56,6 +56,12 @@ npm run build
 npm run data:validate
 ```
 
+For GitHub Pages-style local validation (repo subpath base URL):
+
+```bash
+VITE_BASE_PATH=/top-revenue-per-employee/ npm run build
+```
+
 ## Data pipeline
 
 Refresh dataset and archive snapshots:
