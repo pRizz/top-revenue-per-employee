@@ -1,5 +1,38 @@
 [
   {
+    "symbol": "NVDA",
+    "resolvedBasePath": "/stocks/nvda",
+    "counts": {
+      "quarterlyRevenue": 45,
+      "annualRevenue": 22,
+      "quarterlyMarketCap": 25,
+      "annualMarketCap": 25,
+      "annualEmployees": 30
+    }
+  },
+  {
+    "symbol": "META",
+    "resolvedBasePath": "/stocks/meta",
+    "counts": {
+      "quarterlyRevenue": 44,
+      "annualRevenue": 17,
+      "quarterlyMarketCap": 25,
+      "annualMarketCap": 16,
+      "annualEmployees": 17
+    }
+  },
+  {
+    "symbol": "AMZN",
+    "resolvedBasePath": "/stocks/amzn",
+    "counts": {
+      "quarterlyRevenue": 44,
+      "annualRevenue": 21,
+      "quarterlyMarketCap": 25,
+      "annualMarketCap": 25,
+      "annualEmployees": 31
+    }
+  },
+  {
     "symbol": "2222.SR",
     "resolvedBasePath": "/quote/tadawul/2222",
     "counts": {
@@ -8,6 +41,28 @@
       "quarterlyMarketCap": 26,
       "annualMarketCap": 9,
       "annualEmployees": 0
+    }
+  },
+  {
+    "symbol": "TSM",
+    "resolvedBasePath": "/stocks/tsm",
+    "counts": {
+      "quarterlyRevenue": 44,
+      "annualRevenue": 21,
+      "quarterlyMarketCap": 25,
+      "annualMarketCap": 11,
+      "annualEmployees": 24
+    }
+  },
+  {
+    "symbol": "MSFT",
+    "resolvedBasePath": "/stocks/msft",
+    "counts": {
+      "quarterlyRevenue": 44,
+      "annualRevenue": 21,
+      "quarterlyMarketCap": 25,
+      "annualMarketCap": 25,
+      "annualEmployees": 36
     }
   },
   {
@@ -33,61 +88,6 @@
     }
   },
   {
-    "symbol": "MSFT",
-    "resolvedBasePath": "/stocks/msft",
-    "counts": {
-      "quarterlyRevenue": 44,
-      "annualRevenue": 21,
-      "quarterlyMarketCap": 25,
-      "annualMarketCap": 25,
-      "annualEmployees": 36
-    }
-  },
-  {
-    "symbol": "AMZN",
-    "resolvedBasePath": "/stocks/amzn",
-    "counts": {
-      "quarterlyRevenue": 44,
-      "annualRevenue": 21,
-      "quarterlyMarketCap": 25,
-      "annualMarketCap": 25,
-      "annualEmployees": 31
-    }
-  },
-  {
-    "symbol": "META",
-    "resolvedBasePath": "/stocks/meta",
-    "counts": {
-      "quarterlyRevenue": 44,
-      "annualRevenue": 17,
-      "quarterlyMarketCap": 25,
-      "annualMarketCap": 16,
-      "annualEmployees": 17
-    }
-  },
-  {
-    "symbol": "NVDA",
-    "resolvedBasePath": "/stocks/nvda",
-    "counts": {
-      "quarterlyRevenue": 45,
-      "annualRevenue": 22,
-      "quarterlyMarketCap": 25,
-      "annualMarketCap": 25,
-      "annualEmployees": 30
-    }
-  },
-  {
-    "symbol": "TSM",
-    "resolvedBasePath": "/stocks/tsm",
-    "counts": {
-      "quarterlyRevenue": 44,
-      "annualRevenue": 21,
-      "quarterlyMarketCap": 25,
-      "annualMarketCap": 11,
-      "annualEmployees": 24
-    }
-  },
-  {
     "symbol": "AVGO",
     "resolvedBasePath": "/stocks/avgo",
     "counts": {
@@ -96,17 +96,6 @@
       "quarterlyMarketCap": 25,
       "annualMarketCap": 19,
       "annualEmployees": 20
-    }
-  },
-  {
-    "symbol": "TSLA",
-    "resolvedBasePath": "/stocks/tsla",
-    "counts": {
-      "quarterlyRevenue": 44,
-      "annualRevenue": 20,
-      "quarterlyMarketCap": 25,
-      "annualMarketCap": 18,
-      "annualEmployees": 17
     }
   },
   {
@@ -121,36 +110,14 @@
     }
   },
   {
-    "symbol": "005930.KS",
-    "resolvedBasePath": "/quote/krx/005930",
-    "counts": {
-      "quarterlyRevenue": 40,
-      "annualRevenue": 10,
-      "quarterlyMarketCap": 25,
-      "annualMarketCap": 11,
-      "annualEmployees": 0
-    }
-  },
-  {
-    "symbol": "WMT",
-    "resolvedBasePath": "/stocks/wmt",
-    "counts": {
-      "quarterlyRevenue": 45,
-      "annualRevenue": 22,
-      "quarterlyMarketCap": 25,
-      "annualMarketCap": 25,
-      "annualEmployees": 41
-    }
-  },
-  {
-    "symbol": "XOM",
-    "resolvedBasePath": "/stocks/xom",
+    "symbol": "TSLA",
+    "resolvedBasePath": "/stocks/tsla",
     "counts": {
       "quarterlyRevenue": 44,
-      "annualRevenue": 21,
+      "annualRevenue": 20,
       "quarterlyMarketCap": 25,
-      "annualMarketCap": 25,
-      "annualEmployees": 29
+      "annualMarketCap": 18,
+      "annualEmployees": 17
     }
   },
   {
@@ -165,6 +132,17 @@
     }
   },
   {
+    "symbol": "WMT",
+    "resolvedBasePath": "/stocks/wmt",
+    "counts": {
+      "quarterlyRevenue": 45,
+      "annualRevenue": 22,
+      "quarterlyMarketCap": 25,
+      "annualMarketCap": 25,
+      "annualEmployees": 41
+    }
+  },
+  {
     "symbol": "JPM",
     "resolvedBasePath": "/stocks/jpm",
     "counts": {
@@ -176,25 +154,25 @@
     }
   },
   {
-    "symbol": "V",
-    "resolvedBasePath": "/stocks/v",
-    "counts": {
-      "quarterlyRevenue": 44,
-      "annualRevenue": 21,
-      "quarterlyMarketCap": 25,
-      "annualMarketCap": 20,
-      "annualEmployees": 19
-    }
-  },
-  {
-    "symbol": "TCEHY",
-    "resolvedBasePath": "/quote/otc/TCEHY",
+    "symbol": "005930.KS",
+    "resolvedBasePath": "/quote/krx/005930",
     "counts": {
       "quarterlyRevenue": 40,
       "annualRevenue": 10,
       "quarterlyMarketCap": 25,
       "annualMarketCap": 11,
-      "annualEmployees": 20
+      "annualEmployees": 0
+    }
+  },
+  {
+    "symbol": "XOM",
+    "resolvedBasePath": "/stocks/xom",
+    "counts": {
+      "quarterlyRevenue": 44,
+      "annualRevenue": 21,
+      "quarterlyMarketCap": 25,
+      "annualMarketCap": 25,
+      "annualEmployees": 29
     }
   },
   {
@@ -209,6 +187,17 @@
     }
   },
   {
+    "symbol": "V",
+    "resolvedBasePath": "/stocks/v",
+    "counts": {
+      "quarterlyRevenue": 44,
+      "annualRevenue": 21,
+      "quarterlyMarketCap": 25,
+      "annualMarketCap": 20,
+      "annualEmployees": 19
+    }
+  },
+  {
     "symbol": "ASML",
     "resolvedBasePath": "/stocks/asml",
     "counts": {
@@ -220,14 +209,14 @@
     }
   },
   {
-    "symbol": "COST",
-    "resolvedBasePath": "/stocks/cost",
+    "symbol": "TCEHY",
+    "resolvedBasePath": "/quote/otc/TCEHY",
     "counts": {
-      "quarterlyRevenue": 44,
-      "annualRevenue": 21,
+      "quarterlyRevenue": 40,
+      "annualRevenue": 10,
       "quarterlyMarketCap": 25,
-      "annualMarketCap": 25,
-      "annualEmployees": 32
+      "annualMarketCap": 11,
+      "annualEmployees": 20
     }
   },
   {
@@ -242,8 +231,8 @@
     }
   },
   {
-    "symbol": "ORCL",
-    "resolvedBasePath": "/stocks/orcl",
+    "symbol": "COST",
+    "resolvedBasePath": "/stocks/cost",
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -264,14 +253,14 @@
     }
   },
   {
-    "symbol": "NFLX",
-    "resolvedBasePath": "/stocks/nflx",
+    "symbol": "ORCL",
+    "resolvedBasePath": "/stocks/orcl",
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
       "quarterlyMarketCap": 25,
       "annualMarketCap": 25,
-      "annualEmployees": 25
+      "annualEmployees": 32
     }
   },
   {
@@ -286,6 +275,17 @@
     }
   },
   {
+    "symbol": "NFLX",
+    "resolvedBasePath": "/stocks/nflx",
+    "counts": {
+      "quarterlyRevenue": 44,
+      "annualRevenue": 21,
+      "quarterlyMarketCap": 25,
+      "annualMarketCap": 25,
+      "annualEmployees": 25
+    }
+  },
+  {
     "symbol": "000660.KS",
     "resolvedBasePath": "/quote/krx/000660",
     "counts": {
@@ -297,17 +297,6 @@
     }
   },
   {
-    "symbol": "CVX",
-    "resolvedBasePath": "/stocks/cvx",
-    "counts": {
-      "quarterlyRevenue": 44,
-      "annualRevenue": 21,
-      "quarterlyMarketCap": 25,
-      "annualMarketCap": 25,
-      "annualEmployees": 37
-    }
-  },
-  {
     "symbol": "PG",
     "resolvedBasePath": "/stocks/pg",
     "counts": {
@@ -316,6 +305,17 @@
       "quarterlyMarketCap": 25,
       "annualMarketCap": 25,
       "annualEmployees": 35
+    }
+  },
+  {
+    "symbol": "CVX",
+    "resolvedBasePath": "/stocks/cvx",
+    "counts": {
+      "quarterlyRevenue": 44,
+      "annualRevenue": 21,
+      "quarterlyMarketCap": 25,
+      "annualMarketCap": 25,
+      "annualEmployees": 37
     }
   },
   {
@@ -352,6 +352,17 @@
     }
   },
   {
+    "symbol": "1398.HK",
+    "resolvedBasePath": "/quote/hkg/1398",
+    "counts": {
+      "quarterlyRevenue": 40,
+      "annualRevenue": 10,
+      "quarterlyMarketCap": 25,
+      "annualMarketCap": 11,
+      "annualEmployees": 5
+    }
+  },
+  {
     "symbol": "GE",
     "resolvedBasePath": "/stocks/ge",
     "counts": {
@@ -385,25 +396,14 @@
     }
   },
   {
-    "symbol": "1398.HK",
-    "resolvedBasePath": "/quote/hkg/1398",
+    "symbol": "KO",
+    "resolvedBasePath": "/stocks/ko",
     "counts": {
-      "quarterlyRevenue": 40,
-      "annualRevenue": 10,
+      "quarterlyRevenue": 44,
+      "annualRevenue": 21,
       "quarterlyMarketCap": 25,
-      "annualMarketCap": 11,
-      "annualEmployees": 5
-    }
-  },
-  {
-    "symbol": "601939.SS",
-    "resolvedBasePath": null,
-    "counts": {
-      "quarterlyRevenue": 0,
-      "annualRevenue": 0,
-      "quarterlyMarketCap": 0,
-      "annualMarketCap": 0,
-      "annualEmployees": 0
+      "annualMarketCap": 25,
+      "annualEmployees": 33
     }
   },
   {
@@ -418,14 +418,14 @@
     }
   },
   {
-    "symbol": "KO",
-    "resolvedBasePath": "/stocks/ko",
+    "symbol": "601939.SS",
+    "resolvedBasePath": null,
     "counts": {
-      "quarterlyRevenue": 44,
-      "annualRevenue": 21,
-      "quarterlyMarketCap": 25,
-      "annualMarketCap": 25,
-      "annualEmployees": 33
+      "quarterlyRevenue": 0,
+      "annualRevenue": 0,
+      "quarterlyMarketCap": 0,
+      "annualMarketCap": 0,
+      "annualEmployees": 0
     }
   },
   {
@@ -437,6 +437,17 @@
       "quarterlyMarketCap": 25,
       "annualMarketCap": 14,
       "annualEmployees": 14
+    }
+  },
+  {
+    "symbol": "NVS",
+    "resolvedBasePath": "/stocks/nvs",
+    "counts": {
+      "quarterlyRevenue": 44,
+      "annualRevenue": 21,
+      "quarterlyMarketCap": 25,
+      "annualMarketCap": 25,
+      "annualEmployees": 28
     }
   },
   {
@@ -462,17 +473,6 @@
     }
   },
   {
-    "symbol": "NVS",
-    "resolvedBasePath": "/stocks/nvs",
-    "counts": {
-      "quarterlyRevenue": 44,
-      "annualRevenue": 21,
-      "quarterlyMarketCap": 25,
-      "annualMarketCap": 25,
-      "annualEmployees": 28
-    }
-  },
-  {
     "symbol": "CSCO",
     "resolvedBasePath": "/stocks/csco",
     "counts": {
@@ -495,28 +495,6 @@
     }
   },
   {
-    "symbol": "MRK",
-    "resolvedBasePath": "/stocks/mrk",
-    "counts": {
-      "quarterlyRevenue": 44,
-      "annualRevenue": 21,
-      "quarterlyMarketCap": 25,
-      "annualMarketCap": 25,
-      "annualEmployees": 17
-    }
-  },
-  {
-    "symbol": "HSBC",
-    "resolvedBasePath": "/stocks/hsbc",
-    "counts": {
-      "quarterlyRevenue": 44,
-      "annualRevenue": 21,
-      "quarterlyMarketCap": 25,
-      "annualMarketCap": 25,
-      "annualEmployees": 26
-    }
-  },
-  {
     "symbol": "TM",
     "resolvedBasePath": "/stocks/tm",
     "counts": {
@@ -525,6 +503,17 @@
       "quarterlyMarketCap": 25,
       "annualMarketCap": 25,
       "annualEmployees": 38
+    }
+  },
+  {
+    "symbol": "MRK",
+    "resolvedBasePath": "/stocks/mrk",
+    "counts": {
+      "quarterlyRevenue": 44,
+      "annualRevenue": 21,
+      "quarterlyMarketCap": 25,
+      "annualMarketCap": 25,
+      "annualEmployees": 17
     }
   },
   {
@@ -539,25 +528,14 @@
     }
   },
   {
-    "symbol": "RTX",
-    "resolvedBasePath": "/stocks/rtx",
+    "symbol": "HSBC",
+    "resolvedBasePath": "/stocks/hsbc",
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
       "quarterlyMarketCap": 25,
       "annualMarketCap": 25,
-      "annualEmployees": 37
-    }
-  },
-  {
-    "symbol": "PM",
-    "resolvedBasePath": "/stocks/pm",
-    "counts": {
-      "quarterlyRevenue": 44,
-      "annualRevenue": 20,
-      "quarterlyMarketCap": 25,
-      "annualMarketCap": 20,
-      "annualEmployees": 18
+      "annualEmployees": 26
     }
   },
   {
@@ -572,6 +550,17 @@
     }
   },
   {
+    "symbol": "RTX",
+    "resolvedBasePath": "/stocks/rtx",
+    "counts": {
+      "quarterlyRevenue": 44,
+      "annualRevenue": 21,
+      "quarterlyMarketCap": 25,
+      "annualMarketCap": 25,
+      "annualEmployees": 37
+    }
+  },
+  {
     "symbol": "LRCX",
     "resolvedBasePath": "/stocks/lrcx",
     "counts": {
@@ -580,6 +569,17 @@
       "quarterlyMarketCap": 25,
       "annualMarketCap": 25,
       "annualEmployees": 29
+    }
+  },
+  {
+    "symbol": "PM",
+    "resolvedBasePath": "/stocks/pm",
+    "counts": {
+      "quarterlyRevenue": 44,
+      "annualRevenue": 20,
+      "quarterlyMarketCap": 25,
+      "annualMarketCap": 20,
+      "annualEmployees": 18
     }
   },
   {
@@ -616,17 +616,6 @@
     }
   },
   {
-    "symbol": "601988.SS",
-    "resolvedBasePath": null,
-    "counts": {
-      "quarterlyRevenue": 0,
-      "annualRevenue": 0,
-      "quarterlyMarketCap": 0,
-      "annualMarketCap": 0,
-      "annualEmployees": 0
-    }
-  },
-  {
     "symbol": "GS",
     "resolvedBasePath": "/stocks/gs",
     "counts": {
@@ -635,6 +624,17 @@
       "quarterlyMarketCap": 25,
       "annualMarketCap": 25,
       "annualEmployees": 31
+    }
+  },
+  {
+    "symbol": "IHC.AE",
+    "resolvedBasePath": null,
+    "counts": {
+      "quarterlyRevenue": 0,
+      "annualRevenue": 0,
+      "quarterlyMarketCap": 0,
+      "annualMarketCap": 0,
+      "annualEmployees": 0
     }
   },
   {
@@ -649,7 +649,18 @@
     }
   },
   {
-    "symbol": "IHC.AE",
+    "symbol": "600519.SS",
+    "resolvedBasePath": "/quote/sha/600519",
+    "counts": {
+      "quarterlyRevenue": 40,
+      "annualRevenue": 10,
+      "quarterlyMarketCap": 25,
+      "annualMarketCap": 11,
+      "annualEmployees": 5
+    }
+  },
+  {
+    "symbol": "601988.SS",
     "resolvedBasePath": null,
     "counts": {
       "quarterlyRevenue": 0,
@@ -668,17 +679,6 @@
       "quarterlyMarketCap": 25,
       "annualMarketCap": 21,
       "annualEmployees": 23
-    }
-  },
-  {
-    "symbol": "600519.SS",
-    "resolvedBasePath": "/quote/sha/600519",
-    "counts": {
-      "quarterlyRevenue": 40,
-      "annualRevenue": 10,
-      "quarterlyMarketCap": 25,
-      "annualMarketCap": 11,
-      "annualEmployees": 5
     }
   },
   {
@@ -704,14 +704,14 @@
     }
   },
   {
-    "symbol": "RMS.PA",
-    "resolvedBasePath": "/quote/epa/RMS",
+    "symbol": "RY",
+    "resolvedBasePath": "/stocks/ry",
     "counts": {
-      "quarterlyRevenue": 22,
-      "annualRevenue": 10,
+      "quarterlyRevenue": 45,
+      "annualRevenue": 21,
       "quarterlyMarketCap": 25,
-      "annualMarketCap": 11,
-      "annualEmployees": 5
+      "annualMarketCap": 25,
+      "annualEmployees": 23
     }
   },
   {
@@ -726,14 +726,14 @@
     }
   },
   {
-    "symbol": "RY",
-    "resolvedBasePath": "/stocks/ry",
+    "symbol": "RMS.PA",
+    "resolvedBasePath": "/quote/epa/RMS",
     "counts": {
-      "quarterlyRevenue": 45,
-      "annualRevenue": 21,
+      "quarterlyRevenue": 22,
+      "annualRevenue": 10,
       "quarterlyMarketCap": 25,
-      "annualMarketCap": 25,
-      "annualEmployees": 23
+      "annualMarketCap": 11,
+      "annualEmployees": 5
     }
   },
   {
@@ -781,28 +781,6 @@
     }
   },
   {
-    "symbol": "PEP",
-    "resolvedBasePath": "/stocks/pep",
-    "counts": {
-      "quarterlyRevenue": 44,
-      "annualRevenue": 21,
-      "quarterlyMarketCap": 25,
-      "annualMarketCap": 25,
-      "annualEmployees": 42
-    }
-  },
-  {
-    "symbol": "INTC",
-    "resolvedBasePath": "/stocks/intc",
-    "counts": {
-      "quarterlyRevenue": 44,
-      "annualRevenue": 21,
-      "quarterlyMarketCap": 25,
-      "annualMarketCap": 25,
-      "annualEmployees": 33
-    }
-  },
-  {
     "symbol": "300750.SZ",
     "resolvedBasePath": "/quote/she/300750",
     "counts": {
@@ -825,25 +803,25 @@
     }
   },
   {
-    "symbol": "VZ",
-    "resolvedBasePath": "/stocks/vz",
-    "counts": {
-      "quarterlyRevenue": 44,
-      "annualRevenue": 21,
-      "quarterlyMarketCap": 25,
-      "annualMarketCap": 25,
-      "annualEmployees": 37
-    }
-  },
-  {
-    "symbol": "AXP",
-    "resolvedBasePath": "/stocks/axp",
+    "symbol": "INTC",
+    "resolvedBasePath": "/stocks/intc",
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
       "quarterlyMarketCap": 25,
       "annualMarketCap": 25,
       "annualEmployees": 33
+    }
+  },
+  {
+    "symbol": "PEP",
+    "resolvedBasePath": "/stocks/pep",
+    "counts": {
+      "quarterlyRevenue": 44,
+      "annualRevenue": 21,
+      "quarterlyMarketCap": 25,
+      "annualMarketCap": 25,
+      "annualEmployees": 42
     }
   },
   {
@@ -866,6 +844,28 @@
       "quarterlyMarketCap": 25,
       "annualMarketCap": 11,
       "annualEmployees": 15
+    }
+  },
+  {
+    "symbol": "AXP",
+    "resolvedBasePath": "/stocks/axp",
+    "counts": {
+      "quarterlyRevenue": 44,
+      "annualRevenue": 21,
+      "quarterlyMarketCap": 25,
+      "annualMarketCap": 25,
+      "annualEmployees": 33
+    }
+  },
+  {
+    "symbol": "VZ",
+    "resolvedBasePath": "/stocks/vz",
+    "counts": {
+      "quarterlyRevenue": 44,
+      "annualRevenue": 21,
+      "quarterlyMarketCap": 25,
+      "annualMarketCap": 25,
+      "annualEmployees": 37
     }
   },
   {
@@ -913,6 +913,17 @@
     }
   },
   {
+    "symbol": "RELIANCE.NS",
+    "resolvedBasePath": "/quote/nse/RELIANCE",
+    "counts": {
+      "quarterlyRevenue": 40,
+      "annualRevenue": 10,
+      "quarterlyMarketCap": 25,
+      "annualMarketCap": 11,
+      "annualEmployees": 5
+    }
+  },
+  {
     "symbol": "MUFG",
     "resolvedBasePath": "/stocks/mufg",
     "counts": {
@@ -946,14 +957,14 @@
     }
   },
   {
-    "symbol": "RELIANCE.NS",
-    "resolvedBasePath": "/quote/nse/RELIANCE",
+    "symbol": "NEE",
+    "resolvedBasePath": "/stocks/nee",
     "counts": {
-      "quarterlyRevenue": 40,
-      "annualRevenue": 10,
+      "quarterlyRevenue": 44,
+      "annualRevenue": 21,
       "quarterlyMarketCap": 25,
-      "annualMarketCap": 11,
-      "annualEmployees": 5
+      "annualMarketCap": 25,
+      "annualEmployees": 33
     }
   },
   {
@@ -968,8 +979,19 @@
     }
   },
   {
-    "symbol": "NEE",
-    "resolvedBasePath": "/stocks/nee",
+    "symbol": "DTE.DE",
+    "resolvedBasePath": "/stocks/dte",
+    "counts": {
+      "quarterlyRevenue": 44,
+      "annualRevenue": 21,
+      "quarterlyMarketCap": 25,
+      "annualMarketCap": 25,
+      "annualEmployees": 31
+    }
+  },
+  {
+    "symbol": "TMO",
+    "resolvedBasePath": "/stocks/tmo",
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -987,28 +1009,6 @@
       "quarterlyMarketCap": 25,
       "annualMarketCap": 25,
       "annualEmployees": 5
-    }
-  },
-  {
-    "symbol": "TMO",
-    "resolvedBasePath": "/stocks/tmo",
-    "counts": {
-      "quarterlyRevenue": 44,
-      "annualRevenue": 21,
-      "quarterlyMarketCap": 25,
-      "annualMarketCap": 25,
-      "annualEmployees": 33
-    }
-  },
-  {
-    "symbol": "DTE.DE",
-    "resolvedBasePath": "/stocks/dte",
-    "counts": {
-      "quarterlyRevenue": 44,
-      "annualRevenue": 21,
-      "quarterlyMarketCap": 25,
-      "annualMarketCap": 25,
-      "annualEmployees": 31
     }
   },
   {
@@ -1067,17 +1067,6 @@
     }
   },
   {
-    "symbol": "601628.SS",
-    "resolvedBasePath": null,
-    "counts": {
-      "quarterlyRevenue": 0,
-      "annualRevenue": 0,
-      "quarterlyMarketCap": 0,
-      "annualMarketCap": 0,
-      "annualEmployees": 0
-    }
-  },
-  {
     "symbol": "ISRG",
     "resolvedBasePath": "/stocks/isrg",
     "counts": {
@@ -1086,6 +1075,17 @@
       "quarterlyMarketCap": 25,
       "annualMarketCap": 25,
       "annualEmployees": 26
+    }
+  },
+  {
+    "symbol": "601628.SS",
+    "resolvedBasePath": null,
+    "counts": {
+      "quarterlyRevenue": 0,
+      "annualRevenue": 0,
+      "quarterlyMarketCap": 0,
+      "annualMarketCap": 0,
+      "annualEmployees": 0
     }
   },
   {
