@@ -86,7 +86,7 @@ export function CompaniesTable(props: CompaniesTableProps) {
                 <ArrowDownUp class="h-3 w-3" />
               </button>
             </th>
-            <th class="px-4 py-3">Source</th>
+            <th class="px-4 py-3">Sources</th>
           </tr>
         </thead>
         <tbody>
@@ -105,8 +105,35 @@ export function CompaniesTable(props: CompaniesTableProps) {
                 {formatUsd(row.metric?.revenuePerEmployeeUsd ?? null)}
               </td>
               <td class="px-4 py-3 text-xs text-muted-foreground">
-                {row.metric?.sources.revenue?.provider ?? "—"} /{" "}
-                {row.metric?.sources.employeeCount?.provider ?? "—"}
+                <div class="flex flex-col gap-1">
+                  {row.metric?.sources.revenue ? (
+                    <a
+                      href={row.metric.sources.revenue.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      class="inline-flex w-fit rounded bg-muted px-2 py-1 hover:bg-accent"
+                      title={`Revenue source: ${row.metric.sources.revenue.provider}`}
+                    >
+                      Revenue: {row.metric.sources.revenue.provider}
+                    </a>
+                  ) : (
+                    <span class="inline-flex w-fit rounded bg-muted px-2 py-1">Revenue: —</span>
+                  )}
+
+                  {row.metric?.sources.employeeCount ? (
+                    <a
+                      href={row.metric.sources.employeeCount.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      class="inline-flex w-fit rounded bg-muted px-2 py-1 hover:bg-accent"
+                      title={`Employee source: ${row.metric.sources.employeeCount.provider}`}
+                    >
+                      Employees: {row.metric.sources.employeeCount.provider}
+                    </a>
+                  ) : (
+                    <span class="inline-flex w-fit rounded bg-muted px-2 py-1">Employees: —</span>
+                  )}
+                </div>
               </td>
             </tr>
           ))}
