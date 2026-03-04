@@ -10,12 +10,18 @@ interface MarketCapPoint {
   v: number;
 }
 
+interface EmployeePoint {
+  date: string;
+  count: number;
+}
+
 interface StockAnalysisSeries {
   resolvedBasePath: string | null;
   quarterlyRevenue: RevenuePoint[];
   annualRevenue: RevenuePoint[];
   quarterlyMarketCap: MarketCapPoint[];
   annualMarketCap: MarketCapPoint[];
+  annualEmployees: EmployeePoint[];
 }
 
 const exchangeByTickerSuffix: Record<string, string> = {
@@ -102,6 +108,25 @@ function parseArrayLiteral<T>(maybeArrayLiteral: string | null): T[] {
   }
 }
 
+function parseEmployeePoints(html: string): EmployeePoint[] {
+  const regex = /date:"(\d{4}-\d{2}-\d{2})",count:(\d+)/g;
+  const points: EmployeePoint[] = [];
+  const seenDates = new Set<string>();
+
+  for (const match of html.matchAll(regex)) {
+    const date = match[1];
+    const count = Number(match[2]);
+    if (!Number.isFinite(count) || count <= 0 || seenDates.has(date)) {
+      continue;
+    }
+
+    points.push({ date, count });
+    seenDates.add(date);
+  }
+
+  return points;
+}
+
 function candidateBasePaths(symbol: string): string[] {
   const symbolLower = symbol.toLowerCase();
   const symbolUpper = symbol.toUpperCase();
@@ -145,6 +170,7 @@ export async function fetchStockAnalysisSeries(
       annualRevenue: [],
       quarterlyMarketCap: [],
       annualMarketCap: [],
+      annualEmployees: [],
     };
   }
 
@@ -154,6 +180,10 @@ export async function fetchStockAnalysisSeries(
   await sleep(DATA_CONFIG.requestDelayMs);
   const marketCapHtml = await fetchText(
     `${SOURCE_URLS.stockAnalysisBase}${resolvedBasePath}/market-cap/`,
+  );
+  await sleep(DATA_CONFIG.requestDelayMs);
+  const employeesHtml = await fetchText(
+    `${SOURCE_URLS.stockAnalysisBase}${resolvedBasePath}/employees/`,
   );
 
   const quarterlyRevenue = parseArrayLiteral<RevenuePoint>(
@@ -168,6 +198,7 @@ export async function fetchStockAnalysisSeries(
   const annualMarketCap = parseArrayLiteral<MarketCapPoint>(
     extractArrayLiteralByKey(marketCapHtml ?? "", "annual"),
   );
+  const annualEmployees = parseEmployeePoints(employeesHtml ?? "");
 
   return {
     resolvedBasePath,
@@ -175,5 +206,6 @@ export async function fetchStockAnalysisSeries(
     annualRevenue,
     quarterlyMarketCap,
     annualMarketCap,
+    annualEmployees,
   };
 }
