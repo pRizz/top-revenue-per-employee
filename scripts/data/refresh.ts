@@ -16,6 +16,7 @@ import {
   createEmptyAccumulatorMap,
   toCompanyRecord,
 } from "./normalize";
+import { mapWithConcurrency, sortBySymbol } from "./order-utils";
 import {
   fetchAnnualRevenueFromCompaniesMarketCap,
   fetchUniverseWithEmployeeSnapshot,
@@ -279,30 +280,6 @@ async function processCompany(
   };
 }
 
-async function mapWithConcurrency<T, R>(
-  items: T[],
-  concurrency: number,
-  worker: (item: T) => Promise<R>,
-): Promise<R[]> {
-  const results: R[] = [];
-  const queue = [...items];
-
-  const runners = Array.from({ length: concurrency }, async () => {
-    while (queue.length > 0) {
-      const maybeItem = queue.shift();
-      if (!maybeItem) {
-        return;
-      }
-
-      const result = await worker(maybeItem);
-      results.push(result);
-    }
-  });
-
-  await Promise.all(runners);
-  return results;
-}
-
 async function main(): Promise<void> {
   const now = new Date();
   const fetchedAt = now.toISOString();
@@ -325,8 +302,8 @@ async function main(): Promise<void> {
       ),
   );
   const companies = processingResults.map((result) => result.companyRecord);
-  const stockAnalysisSnapshots = processingResults.map(
-    (result) => result.stockAnalysisSnapshot,
+  const stockAnalysisSnapshots = sortBySymbol(
+    processingResults.map((result) => result.stockAnalysisSnapshot),
   );
   companies.sort((left, right) => left.rank - right.rank);
   const dataset = createDataset(companies);
