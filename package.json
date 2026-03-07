@@ -11,6 +11,8 @@
     "typecheck": "tsc --noEmit -p tsconfig.app.json && tsc --noEmit -p tsconfig.node.json",
     "test": "vitest run",
     "test:watch": "vitest",
+    "screenshots:install": "playwright install --with-deps chromium",
+    "screenshots:demo": "playwright test tests/demo-screenshots.spec.ts",
     "data:refresh": "tsx scripts/data/refresh.ts",
     "data:validate": "tsx scripts/data/validate.ts",
     "lint": "npm run typecheck && npm run test"
@@ -26,6 +28,7 @@
     "zod": "^4.1.12"
   },
   "devDependencies": {
+    "@playwright/test": "^1.58.2",
     "@types/node": "^24.10.1",
     "autoprefixer": "^10.4.21",
     "jsdom": "^27.2.0",
