@@ -23,6 +23,9 @@ export function BubbleChart(props: BubbleChartProps) {
   const width = 720;
   const height = 380;
   const padding = 40;
+  const chartBackgroundFill = "hsl(var(--card))";
+  const chartAxisFill = "hsl(var(--muted-foreground))";
+  const chartLabelFill = "hsl(var(--foreground))";
 
   if (props.points.length === 0) {
     return (
@@ -51,7 +54,7 @@ export function BubbleChart(props: BubbleChartProps) {
   return (
     <div class="overflow-x-auto rounded-xl border bg-card p-4 shadow-soft">
       <svg viewBox={`0 0 ${width} ${height}`} class="w-full min-w-[680px]">
-        <rect x="0" y="0" width={width} height={height} fill="white" />
+        <rect x="0" y="0" width={width} height={height} fill={chartBackgroundFill} />
         {props.points.map((point, index) => {
           const normalizedX = normalize(xValues, point.x);
           const normalizedY = normalize(yValues, point.y);
@@ -71,13 +74,19 @@ export function BubbleChart(props: BubbleChartProps) {
                 stroke={color}
                 stroke-width="1.5"
               />
-              <text x={cx + radius + 4} y={cy} font-size="11" fill="#111827">
+              <text x={cx + radius + 4} y={cy} font-size="11" fill={chartLabelFill}>
                 {point.label}
               </text>
             </>
           );
         })}
-        <text x={width / 2} y={height - 8} text-anchor="middle" font-size="11">
+        <text
+          x={width / 2}
+          y={height - 8}
+          text-anchor="middle"
+          font-size="11"
+          fill={chartAxisFill}
+        >
           Market cap (USD)
         </text>
         <text
@@ -85,6 +94,7 @@ export function BubbleChart(props: BubbleChartProps) {
           y={height / 2}
           text-anchor="middle"
           font-size="11"
+          fill={chartAxisFill}
           transform={`rotate(-90, 16, ${height / 2})`}
         >
           Revenue per employee (USD)
