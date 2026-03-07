@@ -17,6 +17,10 @@ SolidJS + shadcn-style dashboard for exploring the top public companies by marke
   - refreshes source data,
   - archives snapshots in the repo,
   - publishes refreshed static site to GitHub Pages.
+- **Demo screenshot automation**
+  - captures dashboard and playground screenshots with Playwright,
+  - stores images in `docs/demo-screenshots/`,
+  - refreshes screenshots monthly via GitHub Actions.
 
 ## Tech stack
 
@@ -47,6 +51,12 @@ npm run data:refresh
 npm run dev
 ```
 
+To run demo screenshots locally, install the Playwright browser once:
+
+```bash
+npm run screenshots:install
+```
+
 ### Quality checks
 
 ```bash
@@ -55,6 +65,7 @@ npm run typecheck
 npm run build
 npm run build:pages
 npm run data:validate
+npm run screenshots:demo
 ```
 
 For GitHub Pages-style local validation (repo subpath base URL):
@@ -88,3 +99,7 @@ Outputs:
   - runs on schedule + manual trigger,
   - refreshes and commits data changes to `main`,
   - builds and deploys static site to GitHub Pages.
+- `Monthly Demo Screenshots` workflow (`.github/workflows/monthly-demo-screenshots.yml`)
+  - runs on a monthly schedule + manual trigger,
+  - captures demo screenshots with Playwright,
+  - commits `docs/demo-screenshots/*` updates to `main` when screenshots change.

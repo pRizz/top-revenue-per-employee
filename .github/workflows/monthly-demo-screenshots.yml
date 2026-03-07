@@ -1,0 +1,43 @@
+name: Monthly Demo Screenshots
+
+on:
+  schedule:
+    - cron: "20 3 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-demo-screenshots:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browser
+        run: npm run screenshots:install
+
+      - name: Capture demo screenshots
+        run: npm run screenshots:demo
+
+      - name: Commit refreshed screenshots
+        run: |
+          if [ -n "$(git status --porcelain docs/demo-screenshots)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add docs/demo-screenshots
+            git commit -m "chore(screenshots): monthly demo refresh"
+            git push origin main
+          fi
