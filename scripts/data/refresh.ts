@@ -16,6 +16,10 @@ import {
   createEmptyAccumulatorMap,
   toCompanyRecord,
 } from "./normalize";
+import {
+  readPreviousProcessedDataset,
+  reconcileDatasetSourceTimestamps,
+} from "./dataset-stability";
 import { mapWithConcurrency, sortBySymbol } from "./order-utils";
 import {
   fetchAnnualRevenueFromCompaniesMarketCap,
@@ -284,6 +288,7 @@ async function main(): Promise<void> {
   const now = new Date();
   const fetchedAt = now.toISOString();
   const { snapshotDirectory } = await prepareArchiveDirectories(now);
+  const maybePreviousDataset = await readPreviousProcessedDataset();
 
   const universeBundle = await fetchUniverseWithEmployeeSnapshot();
   const stockAnalysisRouteResolver = await createStockAnalysisRouteResolver();
@@ -306,8 +311,14 @@ async function main(): Promise<void> {
     processingResults.map((result) => result.stockAnalysisSnapshot),
   );
   companies.sort((left, right) => left.rank - right.rank);
-  const dataset = createDataset(companies);
+  const dataset = reconcileDatasetSourceTimestamps(
+    createDataset(companies),
+    maybePreviousDataset,
+  );
 
+  // Keep metadata.generatedAt tied to the current refresh run so the UI can
+  // continue showing "Last refreshed" even when nested metric source
+  // timestamps are preserved for unchanged data.
   await writeProcessedSnapshot(dataset, {
     generatedAt: fetchedAt,
     topN: DATA_CONFIG.topN,

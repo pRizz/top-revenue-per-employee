@@ -1,0 +1,153 @@
+import fs from "node:fs/promises";
+import path from "node:path";
+
+import type {
+  CompanyRecord,
+  MetricRecord,
+  SourceAttribution,
+} from "../../src/types/company-data";
+import type { NormalizedDataset } from "./types";
+
+const PROCESSED_DATASET_PATH = path.resolve(
+  "data",
+  "processed",
+  "companies-timeseries.json",
+);
+
+const sourceValueKeyByName = {
+  marketCap: "marketCapUsd",
+  revenue: "revenueUsd",
+  employeeCount: "employeeCount",
+} as const satisfies Record<
+  keyof MetricRecord["sources"],
+  keyof Pick<MetricRecord, "marketCapUsd" | "revenueUsd" | "employeeCount">
+>;
+
+type SourceName = keyof typeof sourceValueKeyByName;
+
+function sourceMetadataMatches(
+  previousSource: SourceAttribution,
+  nextSource: SourceAttribution,
+): boolean {
+  return (
+    previousSource.provider === nextSource.provider &&
+    previousSource.url === nextSource.url &&
+    previousSource.note === nextSource.note
+  );
+}
+
+function shouldPreserveFetchedAt(
+  previousMetric: MetricRecord,
+  nextMetric: MetricRecord,
+  sourceName: SourceName,
+): boolean {
+  const previousSource = previousMetric.sources[sourceName];
+  const nextSource = nextMetric.sources[sourceName];
+
+  if (!previousSource || !nextSource) {
+    return false;
+  }
+
+  const valueKey = sourceValueKeyByName[sourceName];
+  return (
+    previousMetric[valueKey] === nextMetric[valueKey] &&
+    sourceMetadataMatches(previousSource, nextSource)
+  );
+}
+
+export function reconcileMetricSourceTimestamps(
+  nextMetric: MetricRecord,
+  maybePreviousMetric: MetricRecord | undefined,
+): MetricRecord {
+  if (!maybePreviousMetric) {
+    return nextMetric;
+  }
+
+  const nextSources = { ...nextMetric.sources };
+
+  for (const sourceName of Object.keys(sourceValueKeyByName) as SourceName[]) {
+    if (!shouldPreserveFetchedAt(maybePreviousMetric, nextMetric, sourceName)) {
+      continue;
+    }
+
+    const nextSource = nextSources[sourceName];
+    const previousSource = maybePreviousMetric.sources[sourceName];
+    if (!nextSource || !previousSource) {
+      continue;
+    }
+
+    nextSources[sourceName] = {
+      ...nextSource,
+      fetchedAt: previousSource.fetchedAt,
+    };
+  }
+
+  return {
+    ...nextMetric,
+    sources: nextSources,
+  };
+}
+
+function reconcileCompanySourceTimestamps(
+  nextCompany: CompanyRecord,
+  maybePreviousCompany: CompanyRecord | undefined,
+): CompanyRecord {
+  if (!maybePreviousCompany) {
+    return nextCompany;
+  }
+
+  const previousMetricByBucketId = new Map(
+    maybePreviousCompany.metrics.map((metric) => [metric.bucketId, metric]),
+  );
+
+  return {
+    ...nextCompany,
+    metrics: nextCompany.metrics.map((metric) =>
+      reconcileMetricSourceTimestamps(
+        metric,
+        previousMetricByBucketId.get(metric.bucketId),
+      ),
+    ),
+  };
+}
+
+export function reconcileDatasetSourceTimestamps(
+  nextDataset: NormalizedDataset,
+  maybePreviousDataset: NormalizedDataset | null,
+): NormalizedDataset {
+  if (!maybePreviousDataset) {
+    return nextDataset;
+  }
+
+  const previousCompanyBySymbol = new Map(
+    maybePreviousDataset.companies.map((company) => [company.symbol, company]),
+  );
+
+  return {
+    ...nextDataset,
+    companies: nextDataset.companies.map((company) =>
+      reconcileCompanySourceTimestamps(
+        company,
+        previousCompanyBySymbol.get(company.symbol),
+      ),
+    ),
+  };
+}
+
+export async function readPreviousProcessedDataset(): Promise<NormalizedDataset | null> {
+  try {
+    const text = await fs.readFile(PROCESSED_DATASET_PATH, "utf8");
+    return JSON.parse(text) as NormalizedDataset;
+  } catch (error) {
+    if (
+      error &&
+      typeof error === "object" &&
+      "code" in error &&
+      error.code === "ENOENT"
+    ) {
+      return null;
+    }
+
+    throw error;
+  }
+}
