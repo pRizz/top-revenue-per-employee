@@ -1,6 +1,7 @@
 import { A, Route, Router } from "@solidjs/router";
 import { BarChart3, Building2 } from "lucide-solid";
 
+import { appBasePath } from "@/lib/app-base-path";
 import { DashboardPage } from "@/routes/dashboard-page";
 import { PlaygroundPage } from "@/routes/playground-page";
 
@@ -35,7 +36,7 @@ function Navigation() {
 
 export function App() {
   return (
-    <Router root={Navigation}>
+    <Router base={appBasePath} root={Navigation}>
       <Route path="/" component={DashboardPage} />
       <Route path="/playground" component={PlaygroundPage} />
     </Router>

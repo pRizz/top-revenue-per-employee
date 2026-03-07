@@ -1,5 +1,7 @@
 import type { CompaniesDataset } from "@/types/company-data";
 
+import { toAppPath } from "@/lib/app-base-path";
+
 let maybeCachedDataset: CompaniesDataset | null = null;
 
 export async function getDataset(): Promise<CompaniesDataset> {
@@ -7,7 +9,7 @@ export async function getDataset(): Promise<CompaniesDataset> {
     return maybeCachedDataset;
   }
 
-  const response = await fetch(`${import.meta.env.BASE_URL}data/companies-data.json`);
+  const response = await fetch(toAppPath("data/companies-data.json"));
   if (!response.ok) {
     throw new Error(`Failed to load dataset: ${response.status}`);
   }
