@@ -206,4 +206,28 @@ describe("reconcileDatasetSourceTimestamps", () => {
       reconciledDataset.companies[0]?.metrics[0]?.sources.revenue?.fetchedAt,
     ).toBe(OLD_FETCHED_AT);
   });
+
+  it("keeps the incoming generatedAt so refresh time stays current", () => {
+    const company: CompanyRecord = {
+      id: "NVDA-1",
+      rank: 1,
+      name: "NVIDIA",
+      symbol: "NVDA",
+      country: "United States",
+      marketCapUsd: 1_000,
+      metrics: [createMetric()],
+    };
+    const previousDataset = {
+      ...createDataset(company),
+      generatedAt: OLD_FETCHED_AT,
+    };
+    const nextDataset = createDataset(company);
+
+    const reconciledDataset = reconcileDatasetSourceTimestamps(
+      nextDataset,
+      previousDataset,
+    );
+
+    expect(reconciledDataset.generatedAt).toBe(NEW_FETCHED_AT);
+  });
 });

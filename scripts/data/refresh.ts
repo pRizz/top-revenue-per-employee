@@ -316,6 +316,9 @@ async function main(): Promise<void> {
     maybePreviousDataset,
   );
 
+  // Keep metadata.generatedAt tied to the current refresh run so the UI can
+  // continue showing "Last refreshed" even when nested metric source
+  // timestamps are preserved for unchanged data.
   await writeProcessedSnapshot(dataset, {
     generatedAt: fetchedAt,
     topN: DATA_CONFIG.topN,
