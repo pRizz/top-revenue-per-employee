@@ -7,7 +7,11 @@
  */
 export const appBasePath = import.meta.env.BASE_URL;
 
-export function toAppPath(path: string): string {
+export function joinAppPath(basePath: string, path: string): string {
   const normalizedPath = path.startsWith("/") ? path.slice(1) : path;
-  return `${appBasePath}${normalizedPath}`;
+  return `${basePath}${normalizedPath}`;
+}
+
+export function toAppPath(path: string): string {
+  return joinAppPath(appBasePath, path);
 }
