@@ -3,7 +3,7 @@ import path from "node:path";
 import { z } from "zod";
 import type { CompaniesDataset, MetricRecord } from "@/types/company-data";
 
-const bucketIdSchema = z.string().regex(/^\d{4}(Q[1-4])?$/);
+const bucketIdSchema = z.string().regex(/^\d{4}(Q[1-4]|TTM)?$/);
 const normalizationMethodSchema = z.enum([
   "reported_usd",
   "fx_converted",
@@ -44,10 +44,17 @@ const sourceSchema = z.object({
   note: z.string().optional(),
 });
 
+const bucketSchema = z.object({
+  id: bucketIdSchema,
+  bucketType: z.enum(["annual", "quarterly", "ttm"]),
+  label: z.string().min(1),
+});
+
 const datasetSchema = z.object({
   generatedAt: z.string(),
   topN: z.number().int().positive(),
   bucketIds: z.array(bucketIdSchema),
+  buckets: z.array(bucketSchema),
   companies: z.array(
     z.object({
       id: z.string(),
@@ -59,7 +66,10 @@ const datasetSchema = z.object({
       metrics: z.array(
         z.object({
           bucketId: bucketIdSchema,
-          bucketType: z.enum(["annual", "quarterly"]),
+          bucketType: z.enum(["annual", "quarterly", "ttm"]),
+          periodStart: z.string().nullable(),
+          periodEnd: z.string().nullable(),
+          displayLabel: z.string().min(1),
           marketCap: moneySchema.nullable(),
           revenue: moneySchema.nullable(),
           marketCapUsd: z.number().nonnegative().nullable(),
@@ -138,6 +148,16 @@ function validateMoney(
 
   const maybeSource = metric.sources[fieldName];
   if (
+    fieldName === "revenue" &&
+    maybeMoney.normalizationMethod === "fx_converted" &&
+    (!maybeMoney.fx?.rangeStart || !maybeMoney.fx?.rangeEnd)
+  ) {
+    errors.push(
+      `${metric.bucketId}: ${fieldName} fx_converted value is missing period coverage metadata`,
+    );
+  }
+
+  if (
     maybeSource?.provider === "StockAnalysis" &&
     maybeMoney.reportedCurrency !== "USD" &&
     maybeMoney.usdAmount === null &&
@@ -151,9 +171,37 @@ function validateMoney(
 
 export function validateDatasetSemantics(dataset: CompaniesDataset): void {
   const errors: string[] = [];
+  const bucketIds = new Set(dataset.bucketIds);
+  const bucketById = new Map(dataset.buckets.map((bucket) => [bucket.id, bucket]));
+  const latestSupportedYear = Math.max(
+    ...dataset.bucketIds.map((bucketId) => Number(bucketId.slice(0, 4))),
+  );
+
+  if (dataset.bucketIds.length !== dataset.buckets.length) {
+    errors.push("bucketIds and buckets must have matching lengths");
+  }
+
+  for (const bucketId of dataset.bucketIds) {
+    if (!bucketById.has(bucketId)) {
+      errors.push(`Missing bucket metadata for ${bucketId}`);
+    }
+  }
 
   for (const company of dataset.companies) {
     for (const metric of company.metrics) {
+      if (!bucketIds.has(metric.bucketId)) {
+        errors.push(`${company.symbol} ${metric.bucketId}: metric bucket is not declared in dataset.bucketIds`);
+      }
+
+      const maybeBucket = bucketById.get(metric.bucketId);
+      if (maybeBucket && maybeBucket.bucketType !== metric.bucketType) {
+        errors.push(`${company.symbol} ${metric.bucketId}: metric bucketType does not match dataset bucket definition`);
+      }
+
+      if (!metric.periodStart || !metric.periodEnd) {
+        errors.push(`${company.symbol} ${metric.bucketId}: metric is missing period metadata`);
+      }
+
       validateMoney(metric, "marketCap", errors);
       validateMoney(metric, "revenue", errors);
 
@@ -174,6 +222,35 @@ export function validateDatasetSemantics(dataset: CompaniesDataset): void {
       ) {
         errors.push(
           `${company.symbol} ${metric.bucketId}: revenueUsd is set without comparable revenue metadata`,
+        );
+      }
+
+      if (
+        metric.bucketType === "ttm" &&
+        metric.sources.revenue?.provider === "CompaniesMarketCap" &&
+        metric.sources.revenue.note !== "TTM value"
+      ) {
+        errors.push(
+          `${company.symbol} ${metric.bucketId}: CompaniesMarketCap TTM revenue must be explicitly labeled`,
+        );
+      }
+
+      if (
+        metric.bucketType === "annual" &&
+        metric.bucketId === String(latestSupportedYear) &&
+        metric.sources.revenue?.provider === "CompaniesMarketCap"
+      ) {
+        errors.push(
+          `${company.symbol} ${metric.bucketId}: latest-year CompaniesMarketCap revenue must not be stored as annual`,
+        );
+      }
+
+      if (
+        metric.flags.includes("annual_revenue_cross_source_mismatch") &&
+        metric.bucketType !== "annual"
+      ) {
+        errors.push(
+          `${company.symbol} ${metric.bucketId}: annual_revenue_cross_source_mismatch can only appear on annual metrics`,
         );
       }
     }

@@ -35,8 +35,13 @@ export function SourceAttributionPanel(
       </ul>
       <p class="mt-3 text-xs text-muted-foreground">
         Comparable money values are shown in USD. When a source reports in a
-        local currency, the dataset stores the original amount and normalizes
-        it for ranking and charting.
+        local currency, the dataset stores the original amount, tracks the
+        reporting period, and normalizes it for ranking and charting.
+      </p>
+      <p class="mt-3 text-xs text-muted-foreground">
+        TTM buckets are labeled separately from annual buckets. Where historical
+        employee or market-cap coverage is missing, the table flags snapshot
+        fallbacks so the comparison stays explicit about its confidence level.
       </p>
       <p class="mt-3 text-xs text-muted-foreground">
         Last refreshed: {new Date(props.generatedAt).toLocaleString()}

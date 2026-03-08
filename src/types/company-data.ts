@@ -1,4 +1,4 @@
-export type BucketType = "annual" | "quarterly";
+export type BucketType = "annual" | "quarterly" | "ttm";
 
 export type CurrencyCode = string;
 
@@ -41,9 +41,18 @@ export interface SourceAttribution {
   note?: string;
 }
 
+export interface DatasetBucket {
+  id: string;
+  bucketType: BucketType;
+  label: string;
+}
+
 export interface MetricRecord {
   bucketId: string;
   bucketType: BucketType;
+  periodStart: string | null;
+  periodEnd: string | null;
+  displayLabel: string;
   marketCap: MonetaryAmount | null;
   revenue: MonetaryAmount | null;
   marketCapUsd: number | null;
@@ -72,6 +81,7 @@ export interface CompaniesDataset {
   generatedAt: string;
   topN: number;
   bucketIds: string[];
+  buckets: DatasetBucket[];
   companies: CompanyRecord[];
   sources: Array<{
     provider: string;

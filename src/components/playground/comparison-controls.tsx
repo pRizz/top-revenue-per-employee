@@ -1,42 +1,54 @@
-import type { CompanyRecord } from "@/types/company-data";
+import type {
+  CompanyRecord,
+  DatasetBucket,
+} from "@/types/company-data";
 
 import { createEffect, createMemo, createSignal } from "solid-js";
+import { bucketTypeFromId } from "@/lib/time-buckets";
 
 interface ComparisonControlsProps {
   companies: CompanyRecord[];
   selectedCompanyIds: string[];
   selectedBucketId: string;
-  bucketIds: string[];
+  buckets: DatasetBucket[];
   onBucketChange: (bucketId: string) => void;
   onToggleCompany: (companyId: string) => void;
 }
 
 export function ComparisonControls(props: ComparisonControlsProps) {
-  const [selectedBucketType, setSelectedBucketType] = createSignal<"annual" | "quarterly">(
-    props.selectedBucketId.includes("Q") ? "quarterly" : "annual",
+  const [selectedBucketType, setSelectedBucketType] = createSignal<
+    "annual" | "quarterly" | "ttm"
+  >(
+    bucketTypeFromId(props.selectedBucketId),
   );
   const activeBucketTypeClasses = "bg-card text-foreground shadow-sm";
   const inactiveBucketTypeClasses = "text-muted-foreground";
 
-  const filteredBucketIds = createMemo(() =>
-    props.bucketIds.filter((bucketId) =>
-      selectedBucketType() === "annual"
-        ? !bucketId.includes("Q")
-        : bucketId.includes("Q"),
+  const filteredBuckets = createMemo(() =>
+    props.buckets.filter(
+      (bucket) => bucket.bucketType === selectedBucketType(),
     ),
   );
 
   createEffect(() => {
-    const maybeSelectedStillVisible = filteredBucketIds().includes(
-      props.selectedBucketId,
+    if (!props.selectedBucketId) {
+      return;
+    }
+
+    setSelectedBucketType(bucketTypeFromId(props.selectedBucketId));
+  });
+
+  createEffect(() => {
+    const maybeSelectedStillVisible = filteredBuckets().some(
+      (bucket) => bucket.id === props.selectedBucketId,
     );
     if (maybeSelectedStillVisible) {
       return;
     }
 
-    const maybeFallbackBucketId = filteredBucketIds()[0];
-    if (maybeFallbackBucketId) {
-      props.onBucketChange(maybeFallbackBucketId);
+    const maybeFallbackBucket = filteredBuckets()[0];
+    if (maybeFallbackBucket) {
+      props.onBucketChange(maybeFallbackBucket.id);
     }
   });
 
@@ -60,6 +72,17 @@ export function ComparisonControls(props: ComparisonControlsProps) {
           </button>
           <button
             class={`rounded px-2 py-1 ${
+              selectedBucketType() === "ttm"
+                ? activeBucketTypeClasses
+                : inactiveBucketTypeClasses
+            }`}
+            onClick={() => setSelectedBucketType("ttm")}
+            type="button"
+          >
+            TTM
+          </button>
+          <button
+            class={`rounded px-2 py-1 ${
               selectedBucketType() === "quarterly"
                 ? activeBucketTypeClasses
                 : inactiveBucketTypeClasses
@@ -75,8 +98,8 @@ export function ComparisonControls(props: ComparisonControlsProps) {
           value={props.selectedBucketId}
           onChange={(event) => props.onBucketChange(event.currentTarget.value)}
         >
-          {filteredBucketIds().map((bucketId) => (
-            <option value={bucketId}>{bucketId}</option>
+          {filteredBuckets().map((bucket) => (
+            <option value={bucket.id}>{bucket.label}</option>
           ))}
         </select>
       </div>

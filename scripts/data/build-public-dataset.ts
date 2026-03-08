@@ -11,6 +11,7 @@ export async function writePublicDataset(
     generatedAt: dataset.generatedAt,
     topN: dataset.topN,
     bucketIds: dataset.bucketIds,
+    buckets: dataset.buckets,
     companies: dataset.companies,
     sources: [
       {

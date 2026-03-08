@@ -23,6 +23,24 @@ export function formatInteger(maybeValue: number | null): string {
   );
 }
 
+export function formatIsoDate(maybeDateText: string | null): string {
+  if (!maybeDateText) {
+    return "—";
+  }
+
+  const date = new Date(`${maybeDateText}T00:00:00Z`);
+  if (Number.isNaN(date.valueOf())) {
+    return maybeDateText;
+  }
+
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(date);
+}
+
 function formatCurrencyValue(
   amount: number,
   currency: string,

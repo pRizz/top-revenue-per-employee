@@ -6,6 +6,7 @@ import type {
 } from "./types";
 import type {
   CompanyRecord,
+  DatasetBucket,
   MetricRecord,
   MonetaryAmount,
 } from "@/types/company-data";
@@ -26,47 +27,97 @@ function quarterFromMonth(month: number): 1 | 2 | 3 | 4 {
   return 4;
 }
 
-export function bucketForDate(dateText: string): string | null {
+function ttmBucketId(year: number): string {
+  return `${year}TTM`;
+}
+
+function defaultPeriodRangeForBucket(bucketId: string): {
+  startDate: string | null;
+  endDate: string | null;
+} {
+  const maybeRange = bucketDateRange(bucketId);
+  if (!maybeRange) {
+    return {
+      startDate: null,
+      endDate: null,
+    };
+  }
+
+  return {
+    startDate: maybeRange.startDate,
+    endDate: maybeRange.endDate,
+  };
+}
+
+export function bucketForQuarterEndDate(dateText: string): string | null {
+  const date = new Date(dateText);
+  if (Number.isNaN(date.valueOf())) {
+    return null;
+  }
+
+  const representativeDate = new Date(date.valueOf() - 45 * 24 * 60 * 60 * 1000);
+  const year = representativeDate.getUTCFullYear();
+  const quarter = quarterFromMonth(representativeDate.getUTCMonth() + 1);
+  return `${year}Q${quarter}`;
+}
+
+export function annualBucketForPeriodEndDate(dateText: string): string | null {
   const date = new Date(dateText);
   if (Number.isNaN(date.valueOf())) {
     return null;
   }
 
   const year = date.getUTCFullYear();
-  const quarter = quarterFromMonth(date.getUTCMonth() + 1);
-  return `${year}Q${quarter}`;
+  const month = date.getUTCMonth() + 1;
+  return String(month <= 2 ? year - 1 : year);
 }
 
-export function annualBucketForDate(dateText: string): string | null {
-  const date = new Date(dateText);
-  if (Number.isNaN(date.valueOf())) {
-    return null;
+export function buildSupportedBuckets(): DatasetBucket[] {
+  const buckets: DatasetBucket[] = [];
+  const latestAnnualYear = DATA_CONFIG.annualYears[0];
+  if (latestAnnualYear) {
+    buckets.push({
+      id: ttmBucketId(latestAnnualYear),
+      bucketType: "ttm",
+      label: `${latestAnnualYear} TTM`,
+    });
   }
 
-  return String(date.getUTCFullYear());
-}
-
-export function buildSupportedBucketIds(): string[] {
-  const bucketIds: string[] = [];
   for (const year of DATA_CONFIG.annualYears) {
-    bucketIds.push(String(year));
+    buckets.push({
+      id: String(year),
+      bucketType: "annual",
+      label: String(year),
+    });
   }
 
   for (const year of DATA_CONFIG.annualYears) {
     for (let quarter = 4; quarter >= 1; quarter -= 1) {
-      bucketIds.push(`${year}Q${quarter}`);
+      buckets.push({
+        id: `${year}Q${quarter}`,
+        bucketType: "quarterly",
+        label: `${year} Q${quarter}`,
+      });
     }
   }
 
-  return bucketIds;
+  return buckets;
+}
+
+export function buildSupportedBucketIds(): string[] {
+  return buildSupportedBuckets().map((bucket) => bucket.id);
 }
 
 export function createEmptyAccumulatorMap(): Map<string, MetricAccumulator> {
   const map = new Map<string, MetricAccumulator>();
-  for (const bucketId of buildSupportedBucketIds()) {
-    map.set(bucketId, {
-      bucketId,
-      bucketType: bucketId.includes("Q") ? "quarterly" : "annual",
+  for (const bucket of buildSupportedBuckets()) {
+    const defaultPeriodRange = defaultPeriodRangeForBucket(bucket.id);
+    map.set(bucket.id, {
+      bucketId: bucket.id,
+      bucketType: bucket.bucketType,
+      periodStart: defaultPeriodRange.startDate,
+      periodEnd: defaultPeriodRange.endDate,
+      displayLabel: bucket.label,
       marketCap: null,
       revenue: null,
       employeeCount: null,
@@ -98,6 +149,9 @@ export function accumulatorMapToMetrics(map: Map<string, MetricAccumulator>): Me
     return {
       bucketId: entry.bucketId,
       bucketType: entry.bucketType,
+      periodStart: entry.periodStart,
+      periodEnd: entry.periodEnd,
+      displayLabel: entry.displayLabel,
       marketCap: entry.marketCap,
       revenue: entry.revenue,
       marketCapUsd: normalizedUsdAmount(entry.marketCap),
@@ -122,6 +176,18 @@ export function bucketDateRange(bucketId: string): {
   startDate: string;
   endDate: string;
 } | null {
+  if (bucketId.endsWith("TTM")) {
+    const year = Number(bucketId.slice(0, 4));
+    if (!Number.isInteger(year)) {
+      return null;
+    }
+
+    return {
+      startDate: toIsoDate(year, 1, 1),
+      endDate: toIsoDate(year, 12, 31),
+    };
+  }
+
   if (!bucketId.includes("Q")) {
     const year = Number(bucketId);
     if (!Number.isInteger(year)) {
@@ -170,6 +236,7 @@ export function createDataset(companies: CompanyRecord[]): NormalizedDataset {
     generatedAt: new Date().toISOString(),
     topN: DATA_CONFIG.topN,
     bucketIds: buildSupportedBucketIds(),
+    buckets: buildSupportedBuckets(),
     companies,
   };
 }

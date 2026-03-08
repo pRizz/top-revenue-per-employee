@@ -1,6 +1,7 @@
 import type {
   BucketType,
   CompanyRecord,
+  DatasetBucket,
   MetricRecord,
   MonetaryAmount,
 } from "../../src/types/company-data";
@@ -23,6 +24,9 @@ export interface SourceMap {
 export interface MetricAccumulator {
   bucketId: string;
   bucketType: BucketType;
+  periodStart: string | null;
+  periodEnd: string | null;
+  displayLabel: string;
   marketCap: MonetaryAmount | null;
   revenue: MonetaryAmount | null;
   employeeCount: number | null;
@@ -34,5 +38,6 @@ export interface NormalizedDataset {
   generatedAt: string;
   topN: number;
   bucketIds: string[];
+  buckets: DatasetBucket[];
   companies: CompanyRecord[];
 }
