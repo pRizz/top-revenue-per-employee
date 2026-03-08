@@ -125,36 +125,39 @@ export function CompaniesTable(props: CompaniesTableProps) {
   };
 
   return (
-    <div class="overflow-hidden rounded-xl border bg-card shadow-soft">
-      <table class="w-full border-collapse text-sm">
+    <div class="overflow-x-auto rounded-xl border bg-card shadow-soft [-webkit-overflow-scrolling:touch]">
+      <table
+        aria-label="Companies table"
+        class="w-full min-w-[960px] border-collapse text-sm"
+      >
         <thead class="bg-muted">
           <tr class="text-left text-muted-foreground">
-            <th class="px-4 py-3">Company</th>
-            <th class="px-4 py-3">
+            <th class="px-4 py-3 whitespace-nowrap">Company</th>
+            <th class="px-4 py-3 whitespace-nowrap">
               <button class="inline-flex items-center gap-1" onClick={() => toggleSort("marketCapUsd")}>
                 Market cap
                 <ArrowDownUp class="h-3 w-3" />
               </button>
             </th>
-            <th class="px-4 py-3">
+            <th class="px-4 py-3 whitespace-nowrap">
               <button class="inline-flex items-center gap-1" onClick={() => toggleSort("revenueUsd")}>
                 Revenue
                 <ArrowDownUp class="h-3 w-3" />
               </button>
             </th>
-            <th class="px-4 py-3">
+            <th class="px-4 py-3 whitespace-nowrap">
               <button class="inline-flex items-center gap-1" onClick={() => toggleSort("employeeCount")}>
                 Employees
                 <ArrowDownUp class="h-3 w-3" />
               </button>
             </th>
-            <th class="px-4 py-3">
+            <th class="px-4 py-3 whitespace-nowrap">
               <button class="inline-flex items-center gap-1" onClick={() => toggleSort("revenuePerEmployeeUsd")}>
                 Revenue / employee
                 <ArrowDownUp class="h-3 w-3" />
               </button>
             </th>
-            <th class="px-4 py-3">Sources</th>
+            <th class="px-4 py-3 whitespace-nowrap">Sources</th>
           </tr>
         </thead>
         <tbody>
