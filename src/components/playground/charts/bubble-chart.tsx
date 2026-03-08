@@ -23,6 +23,9 @@ export function BubbleChart(props: BubbleChartProps) {
   const width = 720;
   const height = 380;
   const padding = 40;
+  const labelGap = 4;
+  const labelFontSize = "11";
+  const estimatedCharacterWidth = 6;
   const chartBackgroundFill = "hsl(var(--card))";
   const chartAxisFill = "hsl(var(--muted-foreground))";
   const chartLabelFill = "hsl(var(--foreground))";
@@ -63,6 +66,14 @@ export function BubbleChart(props: BubbleChartProps) {
           const cy = height - padding - normalizedY * (height - padding * 2);
           const radius = 8 + normalizedSize * 20;
           const color = palette[index % palette.length];
+          const estimatedLabelWidth = point.label.length * estimatedCharacterWidth;
+          const availableSpaceToRight = width - padding - (cx + radius + labelGap);
+          const availableSpaceToLeft = cx - radius - labelGap - padding;
+          const placeLabelOnLeft =
+            availableSpaceToRight < estimatedLabelWidth &&
+            availableSpaceToLeft > availableSpaceToRight;
+          const labelX = placeLabelOnLeft ? cx - radius - labelGap : cx + radius + labelGap;
+          const labelAnchor = placeLabelOnLeft ? "end" : "start";
 
           return (
             <>
@@ -74,7 +85,14 @@ export function BubbleChart(props: BubbleChartProps) {
                 stroke={color}
                 stroke-width="1.5"
               />
-              <text x={cx + radius + 4} y={cy} font-size="11" fill={chartLabelFill}>
+              <text
+                x={labelX}
+                y={cy}
+                text-anchor={labelAnchor}
+                dominant-baseline="middle"
+                font-size={labelFontSize}
+                fill={chartLabelFill}
+              >
                 {point.label}
               </text>
             </>
