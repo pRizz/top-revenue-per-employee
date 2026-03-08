@@ -2,6 +2,14 @@
 
 SolidJS + shadcn-style dashboard for exploring the top public companies by market cap and comparing how efficiently they generate revenue per employee.
 
+## Demo screenshots
+
+Dark-mode teaser views from the app:
+
+| Dashboard | Comparison playground |
+| --- | --- |
+| ![Dashboard view in dark mode](docs/demo-screenshots/dashboard.png) | ![Comparison playground view in dark mode](docs/demo-screenshots/playground.png) |
+
 ## Features
 
 - **Main dashboard**
