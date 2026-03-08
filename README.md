@@ -2,6 +2,12 @@
 
 SolidJS + shadcn-style dashboard for exploring the top public companies by market cap and comparing how efficiently they generate revenue per employee.
 
+## Project links
+
+- Live site: https://prizz.github.io/top-revenue-per-employee/
+- Source code: https://github.com/pRizz/top-revenue-per-employee
+- License: [MIT](LICENSE)
+
 ## Demo screenshots
 
 Dark-mode teaser views from the app:
@@ -15,11 +21,13 @@ Dark-mode teaser views from the app:
 - **Main dashboard**
   - sleek infographic cards focused on revenue-per-employee leaders,
   - sortable company table (market cap, revenue, employees, revenue / employee),
-  - annual + quarterly time-bucket selector (`2025`, `2024Q3`, etc.),
-  - visible source attribution in the UI.
+  - annual + quarterly + TTM time-bucket selector (`2025`, `2025TTM`, `2024Q3`, etc.),
+  - visible source attribution in the UI,
+  - row-level source, fallback, and normalization badges for data confidence and comparability.
 - **Comparison playground**
   - select multiple companies,
   - bubble chart comparison (market cap vs revenue per employee, sized by employee count),
+  - annual, TTM, and quarterly bucket switching,
   - extensible visualization registry for adding new chart types.
 - **Nightly automation**
   - refreshes source data,
@@ -44,8 +52,10 @@ Dark-mode teaser views from the app:
   - market-cap ranking baseline,
   - fallback employee snapshot.
 - [StockAnalysis](https://stockanalysis.com/)
-  - annual/quarterly revenue enrichment,
+  - annual/quarterly/TTM revenue enrichment,
   - market-cap history enrichment.
+  - employee history enrichment,
+  - original reporting currencies for normalization.
 
 > Notes:
 > - Employee history coverage differs across companies and exchanges.
