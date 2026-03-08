@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-08T03:28:46.428Z",
+  "generatedAt": "2026-03-08T10:02:38.291Z",
   "topN": 100,
   "sourceSnapshotDirectory": "data/raw/2026-03-08",
   "stockAnalysisCoverage": {
@@ -21,10 +21,11 @@
         "INR": 10,
         "KRW": 20,
         "SAR": 10,
-        "USD": 830
+        "USD": 930
       },
       "convertedMetricCount": 170,
       "unavailableMetricCount": 0,
+      "partialFxCoverageMetricCount": 0,
       "convertedCompanies": [
         "000660.KS",
         "005930.KS",
@@ -44,23 +45,25 @@
         "ROG.SW",
         "SIE.DE"
       ],
-      "unavailableCompanies": []
+      "unavailableCompanies": [],
+      "partialFxCoverageCompanies": []
     },
     "revenue": {
       "currencyCounts": {
-        "CAD": 8,
-        "CHF": 9,
-        "CNY": 51,
-        "EUR": 44,
-        "INR": 8,
-        "JPY": 14,
-        "KRW": 17,
-        "SAR": 7,
-        "TWD": 9,
-        "USD": 728
+        "CAD": 10,
+        "CHF": 12,
+        "CNY": 57,
+        "EUR": 58,
+        "INR": 10,
+        "JPY": 19,
+        "KRW": 20,
+        "SAR": 8,
+        "TWD": 10,
+        "USD": 760
       },
-      "convertedMetricCount": 167,
+      "convertedMetricCount": 204,
       "unavailableMetricCount": 0,
+      "partialFxCoverageMetricCount": 8,
       "convertedCompanies": [
         "000660.KS",
         "005930.KS",
@@ -87,11 +90,737 @@
         "TM",
         "TSM"
       ],
-      "unavailableCompanies": []
+      "unavailableCompanies": [],
+      "partialFxCoverageCompanies": [
+        "BABA",
+        "MUFG",
+        "RELIANCE.NS",
+        "RY",
+        "SIE.DE",
+        "TM",
+        "TSM"
+      ]
     },
+    "revenueSourceCountsByBucketType": {
+      "annual": {
+        "StockAnalysis": 177,
+        "—": 16,
+        "CompaniesMarketCap": 7
+      },
+      "quarterly": {
+        "StockAnalysis": 697,
+        "—": 103
+      },
+      "ttm": {
+        "CompaniesMarketCap": 83,
+        "—": 17
+      }
+    },
+    "latestAnnualCompaniesMarketCapCount": 0,
+    "latestAnnualCompaniesMarketCapCompanies": [],
+    "fiscalSpilloverCompanies": [
+      "AMAT",
+      "AVGO",
+      "COST",
+      "CRM",
+      "CSCO",
+      "HD",
+      "NVDA",
+      "RY",
+      "TJX",
+      "WMT"
+    ],
+    "annualQuarterSumMismatches": [
+      {
+        "symbol": "MUFG",
+        "bucketId": "2024",
+        "annualRevenueUsd": 35013773145.08336,
+        "quarterRevenueUsdSum": 41710514658.87983,
+        "ratio": 1.191260207406034
+      },
+      {
+        "symbol": "MU",
+        "bucketId": "2024",
+        "annualRevenueUsd": 25111000000,
+        "quarterRevenueUsdSum": 29094000000,
+        "ratio": 1.158615746087372
+      },
+      {
+        "symbol": "MU",
+        "bucketId": "2025",
+        "annualRevenueUsd": 37378000000,
+        "quarterRevenueUsdSum": 42312000000,
+        "ratio": 1.1320027823853605
+      },
+      {
+        "symbol": "LRCX",
+        "bucketId": "2025",
+        "annualRevenueUsd": 18435591000,
+        "quarterRevenueUsdSum": 20560532000,
+        "ratio": 1.1152629714989881
+      },
+      {
+        "symbol": "KLAC",
+        "bucketId": "2024",
+        "annualRevenueUsd": 9812247000,
+        "quarterRevenueUsdSum": 10846957000,
+        "ratio": 1.1054508717524132
+      },
+      {
+        "symbol": "LRCX",
+        "bucketId": "2024",
+        "annualRevenueUsd": 14905386000,
+        "quarterRevenueUsdSum": 16209088000,
+        "ratio": 1.087465161922006
+      },
+      {
+        "symbol": "MSFT",
+        "bucketId": "2025",
+        "annualRevenueUsd": 281724000000,
+        "quarterRevenueUsdSum": 305453000000,
+        "ratio": 1.084227825815337
+      },
+      {
+        "symbol": "AVGO",
+        "bucketId": "2025",
+        "annualRevenueUsd": 63887000000,
+        "quarterRevenueUsdSum": 68282000000,
+        "ratio": 1.068793338237826
+      },
+      {
+        "symbol": "MSFT",
+        "bucketId": "2024",
+        "annualRevenueUsd": 245122000000,
+        "quarterRevenueUsdSum": 261802000000,
+        "ratio": 1.0680477476521895
+      },
+      {
+        "symbol": "TM",
+        "bucketId": "2025",
+        "annualRevenueUsd": 315639893528.5518,
+        "quarterRevenueUsdSum": 336666298215.284,
+        "ratio": 1.0666151684810088
+      },
+      {
+        "symbol": "ORCL",
+        "bucketId": "2025",
+        "annualRevenueUsd": 57399000000,
+        "quarterRevenueUsdSum": 61017000000,
+        "ratio": 1.0630324570114462
+      },
+      {
+        "symbol": "AVGO",
+        "bucketId": "2024",
+        "annualRevenueUsd": 51574000000,
+        "quarterRevenueUsdSum": 54529000000,
+        "ratio": 1.0572963120952419
+      }
+    ],
+    "sequentialRevenueOutliers": [],
+    "fallbackHeavyCompanies": [
+      {
+        "symbol": "601288.SS",
+        "marketCapSnapshotFallbackCount": 11,
+        "employeeSnapshotFallbackCount": 11,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "601628.SS",
+        "marketCapSnapshotFallbackCount": 11,
+        "employeeSnapshotFallbackCount": 11,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "601939.SS",
+        "marketCapSnapshotFallbackCount": 11,
+        "employeeSnapshotFallbackCount": 11,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "601988.SS",
+        "marketCapSnapshotFallbackCount": 11,
+        "employeeSnapshotFallbackCount": 11,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "BRK-B",
+        "marketCapSnapshotFallbackCount": 11,
+        "employeeSnapshotFallbackCount": 11,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "CBA.AX",
+        "marketCapSnapshotFallbackCount": 11,
+        "employeeSnapshotFallbackCount": 11,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "ITX.MC",
+        "marketCapSnapshotFallbackCount": 11,
+        "employeeSnapshotFallbackCount": 11,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "IHC.AE",
+        "marketCapSnapshotFallbackCount": 11,
+        "employeeSnapshotFallbackCount": 0,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "2222.SR",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 11,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "LRCX",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 11,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "RY",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 11,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "1398.HK",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 10,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "600519.SS",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 10,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "HD",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 10,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "IBM",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 10,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "ROG.SW",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 10,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "SHEL",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 10,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "TJX",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 10,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "TSM",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 10,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "WMT",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 10,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "0857.HK",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "0941.HK",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "300750.SZ",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "AAPL",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "ABBV",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "ABT",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "AMAT",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "AMD",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "AMGN",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "AMZN",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "ASML",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "AVGO",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "AXP",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "AZN",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "BA",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "BABA",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "BAC",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "BHP",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "C",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "CAT",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "COST",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "CRM",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "CSCO",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "CVX",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "DIS",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "DTE.DE",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "GE",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "GEV",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "GILD",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "GOOG",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "GS",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "HSBC",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "INTC",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "ISRG",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "JNJ",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "JPM",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "KLAC",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "KO",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "LIN",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "LLY",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "MA",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "MC.PA",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "MCD",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "META",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "MRK",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "MS",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "MSFT",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "MU",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "MUFG",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "NEE",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "NESN.SW",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "NFLX",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "NVDA",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "NVS",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "OR.PA",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "ORCL",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "PEP",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "PG",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "PLTR",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "PM",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "PRX.AS",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "RELIANCE.NS",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "RMS.PA",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "RTX",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "SAP",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "SIE.DE",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "T",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "TCEHY",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "TM",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "TMO",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "TMUS",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "TSLA",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "TXN",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "UNH",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "V",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "VZ",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "WFC",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "XOM",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "000660.KS",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 0,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "005930.KS",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 0,
+        "revenueConversionUnavailableCount": 0
+      }
+    ],
     "annualCrossSourceAlignedCompanies": [
       "000660.KS",
-      "005930.KS",
       "0857.HK",
       "1398.HK",
       "2222.SR",
@@ -103,11 +832,8 @@
       "AMAT",
       "AMD",
       "AMGN",
-      "AMZN",
       "ASML",
       "AVGO",
-      "AXP",
-      "AZN",
       "BA",
       "BABA",
       "BAC",
@@ -123,21 +849,17 @@
       "GE",
       "GEV",
       "GILD",
-      "GOOG",
       "GS",
       "HD",
       "HSBC",
       "IBM",
       "INTC",
       "ISRG",
-      "JNJ",
       "JPM",
       "KLAC",
       "KO",
       "LIN",
-      "LLY",
       "LRCX",
-      "MA",
       "MC.PA",
       "MCD",
       "META",
@@ -145,34 +867,27 @@
       "MS",
       "MSFT",
       "MU",
-      "MUFG",
       "NEE",
-      "NESN.SW",
       "NFLX",
+      "NVDA",
       "NVS",
       "OR.PA",
       "ORCL",
       "PEP",
       "PG",
       "PLTR",
-      "PM",
       "PRX.AS",
       "RELIANCE.NS",
       "RMS.PA",
       "ROG.SW",
-      "RTX",
       "RY",
       "SAP",
       "SHEL",
       "SIE.DE",
-      "T",
       "TJX",
       "TM",
       "TMO",
-      "TMUS",
       "TSLA",
-      "TSM",
-      "TXN",
       "UNH",
       "V",
       "VZ",
@@ -181,8 +896,7 @@
       "XOM"
     ],
     "annualCrossSourceMismatchCompanies": [
-      "MUFG",
-      "NVDA"
+      "MUFG"
     ]
   }
 }

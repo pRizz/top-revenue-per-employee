@@ -86,7 +86,11 @@ function parseIsoDateFromHumanDate(maybeText: string | undefined): string | null
 }
 
 function parseCurrentRevenueYear(html: string): number | null {
-  const maybeMatch = html.match(/Revenue in (\d{4}) \(TTM\)/i);
+  const maybeMatch =
+    html.match(/Revenue in (\d{4}) \(TTM\)/i) ??
+    (html.includes("current revenue (TTM")
+      ? html.match(/Revenue in (\d{4})(?: \(TTM\))?/i)
+      : null);
   if (!maybeMatch) {
     return null;
   }

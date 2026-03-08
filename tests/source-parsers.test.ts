@@ -43,6 +43,16 @@ describe("CompaniesMarketCap source parser helpers", () => {
     expect(annualRevenueByYear.get(2025)).toBe(187142000000);
     expect(annualRevenueByYear.get(2024)).toBe(130497000000);
   });
+
+  it("still detects TTM semantics when the heading omits the literal TTM marker", () => {
+    const html = `
+      <h2><strong>Revenue in 2025: <span class="background-ya">$18.85 Billion USD</span></strong></h2>
+      <p>According to the company's latest financial reports the company's current revenue (TTM
+      <img class="in-text-tooltip ttm-dates-info-icon info-icon tooltip-title responsive-hidden" tooltip-title="1 Jan 2025 - 31 Dec 2025"></p>
+    `;
+
+    expect(companiesTesting.parseCurrentRevenueYear(html)).toBe(2025);
+  });
 });
 
 describe("StockAnalysis source parser helpers", () => {
