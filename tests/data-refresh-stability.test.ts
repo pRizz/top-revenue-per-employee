@@ -29,9 +29,24 @@ function createMetric(
   overrides: Partial<MetricRecord> = {},
   sourceOverrides: Partial<MetricRecord["sources"]> = {},
 ): MetricRecord {
+  const marketCap = {
+    reportedAmount: 200,
+    reportedCurrency: "USD",
+    usdAmount: 200,
+    normalizationMethod: "reported_usd" as const,
+  };
+  const revenue = {
+    reportedAmount: 100,
+    reportedCurrency: "USD",
+    usdAmount: 100,
+    normalizationMethod: "reported_usd" as const,
+  };
+
   return {
     bucketId: "2025",
     bucketType: "annual",
+    marketCap,
+    revenue,
     marketCapUsd: 200,
     revenueUsd: 100,
     employeeCount: 10,
@@ -95,6 +110,12 @@ describe("reconcileMetricSourceTimestamps", () => {
   it("keeps the new fetchedAt when the linked metric value changes", () => {
     const previousMetric = createMetric(
       {
+        revenue: {
+          reportedAmount: 100,
+          reportedCurrency: "USD",
+          usdAmount: 100,
+          normalizationMethod: "reported_usd",
+        },
         revenueUsd: 100,
         revenuePerEmployeeUsd: 10,
       },
@@ -105,6 +126,12 @@ describe("reconcileMetricSourceTimestamps", () => {
       },
     );
     const nextMetric = createMetric({
+      revenue: {
+        reportedAmount: 120,
+        reportedCurrency: "USD",
+        usdAmount: 120,
+        normalizationMethod: "reported_usd",
+      },
       revenueUsd: 120,
       revenuePerEmployeeUsd: 12,
     });

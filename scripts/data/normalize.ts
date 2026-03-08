@@ -4,7 +4,11 @@ import type {
   NormalizedDataset,
   UniverseCompany,
 } from "./types";
-import type { CompanyRecord, MetricRecord } from "@/types/company-data";
+import type {
+  CompanyRecord,
+  MetricRecord,
+  MonetaryAmount,
+} from "@/types/company-data";
 
 function quarterFromMonth(month: number): 1 | 2 | 3 | 4 {
   if (month <= 3) {
@@ -63,8 +67,8 @@ export function createEmptyAccumulatorMap(): Map<string, MetricAccumulator> {
     map.set(bucketId, {
       bucketId,
       bucketType: bucketId.includes("Q") ? "quarterly" : "annual",
-      marketCapUsd: null,
-      revenueUsd: null,
+      marketCap: null,
+      revenue: null,
       employeeCount: null,
       sources: {},
       flags: [],
@@ -74,24 +78,76 @@ export function createEmptyAccumulatorMap(): Map<string, MetricAccumulator> {
   return map;
 }
 
+function normalizedUsdAmount(maybeMoney: MonetaryAmount | null): number | null {
+  if (!maybeMoney) {
+    return null;
+  }
+
+  return maybeMoney.usdAmount;
+}
+
 export function accumulatorMapToMetrics(map: Map<string, MetricAccumulator>): MetricRecord[] {
   return [...map.values()].map((entry) => {
     const revenuePerEmployeeUsd =
-      entry.revenueUsd !== null && entry.employeeCount && entry.employeeCount > 0
-        ? entry.revenueUsd / entry.employeeCount
+      normalizedUsdAmount(entry.revenue) !== null &&
+      entry.employeeCount &&
+      entry.employeeCount > 0
+        ? (normalizedUsdAmount(entry.revenue) ?? 0) / entry.employeeCount
         : null;
 
     return {
       bucketId: entry.bucketId,
       bucketType: entry.bucketType,
-      marketCapUsd: entry.marketCapUsd,
-      revenueUsd: entry.revenueUsd,
+      marketCap: entry.marketCap,
+      revenue: entry.revenue,
+      marketCapUsd: normalizedUsdAmount(entry.marketCap),
+      revenueUsd: normalizedUsdAmount(entry.revenue),
       employeeCount: entry.employeeCount,
       revenuePerEmployeeUsd,
       sources: entry.sources,
       flags: entry.flags,
     };
   });
+}
+
+function toIsoDate(year: number, month: number, day: number): string {
+  return new Date(Date.UTC(year, month - 1, day)).toISOString().slice(0, 10);
+}
+
+function lastDayOfMonth(year: number, month: number): number {
+  return new Date(Date.UTC(year, month, 0)).getUTCDate();
+}
+
+export function bucketDateRange(bucketId: string): {
+  startDate: string;
+  endDate: string;
+} | null {
+  if (!bucketId.includes("Q")) {
+    const year = Number(bucketId);
+    if (!Number.isInteger(year)) {
+      return null;
+    }
+
+    return {
+      startDate: toIsoDate(year, 1, 1),
+      endDate: toIsoDate(year, 12, 31),
+    };
+  }
+
+  const [yearText, quarterText] = bucketId.split("Q");
+  const year = Number(yearText);
+  const quarter = Number(quarterText);
+  if (!Number.isInteger(year) || !Number.isInteger(quarter) || quarter < 1 || quarter > 4) {
+    return null;
+  }
+
+  const startMonth = (quarter - 1) * 3 + 1;
+  const endMonth = startMonth + 2;
+
+  return {
+    startDate: toIsoDate(year, startMonth, 1),
+    endDate: toIsoDate(year, endMonth, lastDayOfMonth(year, endMonth)),
+  };
 }
 
 export function toCompanyRecord(

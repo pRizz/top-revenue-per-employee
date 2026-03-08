@@ -1,5 +1,6 @@
 import path from "node:path";
 
+import { buildDatasetCurrencyAuditSummary } from "./audit";
 import {
   prepareArchiveDirectories,
   writeProcessedSnapshot,
@@ -8,9 +9,11 @@ import {
 } from "./archive";
 import { writePublicDataset } from "./build-public-dataset";
 import { DATA_CONFIG } from "./config";
+import { FxRateService } from "./fx";
 import {
   accumulatorMapToMetrics,
   annualBucketForDate,
+  bucketDateRange,
   bucketForDate,
   createDataset,
   createEmptyAccumulatorMap,
@@ -32,10 +35,15 @@ import {
 } from "./sources/stockanalysis";
 import type { UniverseCompany } from "./types";
 import { validatePublicDataset } from "./validate";
+import type { MonetaryAmount } from "@/types/company-data";
 
 interface StockAnalysisSnapshot {
   symbol: string;
   resolvedBasePath: string | null;
+  currencies: {
+    main: string | null;
+    financial: string | null;
+  };
   counts: {
     quarterlyRevenue: number;
     annualRevenue: number;
@@ -50,8 +58,31 @@ interface CompanyProcessingResult {
   stockAnalysisSnapshot: StockAnalysisSnapshot;
 }
 
+function addFlag(entry: { flags: string[] }, flag: string): void {
+  if (!entry.flags.includes(flag)) {
+    entry.flags.push(flag);
+  }
+}
+
 function removeFlag(entry: { flags: string[] }, flag: string): void {
   entry.flags = entry.flags.filter((value) => value !== flag);
+}
+
+function createUsdMoney(
+  amount: number,
+  normalizationMethod: MonetaryAmount["normalizationMethod"],
+): MonetaryAmount {
+  return {
+    reportedAmount: amount,
+    reportedCurrency: "USD",
+    usdAmount: amount,
+    normalizationMethod,
+  };
+}
+
+function relativeDifference(left: number, right: number): number {
+  const denominator = Math.max(Math.abs(left), Math.abs(right), 1);
+  return Math.abs(left - right) / denominator;
 }
 
 function fillFallbackMarketCap(
@@ -60,14 +91,14 @@ function fillFallbackMarketCap(
   fetchedAt: string,
 ): void {
   for (const entry of map.values()) {
-    entry.marketCapUsd = company.marketCapUsd;
+    entry.marketCap = createUsdMoney(company.marketCapUsd, "snapshot_fallback");
     entry.sources.marketCap = {
       provider: "CompaniesMarketCap",
       url: "https://companiesmarketcap.com/?download=csv",
       fetchedAt,
       note: "current snapshot fallback",
     };
-    entry.flags.push("market_cap_snapshot_fallback");
+    addFlag(entry, "market_cap_snapshot_fallback");
   }
 }
 
@@ -88,8 +119,22 @@ function fillFallbackEmployees(
       fetchedAt,
       note: "current snapshot fallback",
     };
-    entry.flags.push("employee_snapshot_fallback");
+    addFlag(entry, "employee_snapshot_fallback");
   }
+}
+
+function recordUnavailableRevenue(
+  entry: { revenue: MonetaryAmount | null; flags: string[] },
+  reportedAmount: number,
+  reportedCurrency: string | null,
+): void {
+  entry.revenue = {
+    reportedAmount,
+    reportedCurrency: reportedCurrency ?? "UNKNOWN",
+    usdAmount: null,
+    normalizationMethod: "unavailable",
+  };
+  addFlag(entry, "revenue_currency_conversion_unavailable");
 }
 
 async function processCompany(
@@ -97,6 +142,7 @@ async function processCompany(
   employeeBySymbol: Map<string, number>,
   fetchedAt: string,
   routeResolver: StockAnalysisRouteResolver,
+  fxRateService: FxRateService,
 ): Promise<CompanyProcessingResult> {
   const accumulatorMap = createEmptyAccumulatorMap();
   fillFallbackMarketCap(accumulatorMap, company, fetchedAt);
@@ -104,6 +150,10 @@ async function processCompany(
   const stockAnalysisSnapshot: StockAnalysisSnapshot = {
     symbol: company.symbol,
     resolvedBasePath: null,
+    currencies: {
+      main: null,
+      financial: null,
+    },
     counts: {
       quarterlyRevenue: 0,
       annualRevenue: 0,
@@ -126,7 +176,7 @@ async function processCompany(
         continue;
       }
 
-      maybeEntry.revenueUsd = revenue;
+      maybeEntry.revenue = createUsdMoney(revenue, "reported_usd");
       maybeEntry.sources.revenue = {
         provider: "CompaniesMarketCap",
         url: `https://companiesmarketcap.com/${company.slug}/revenue/`,
@@ -143,6 +193,7 @@ async function processCompany(
       routeResolver,
     );
     stockAnalysisSnapshot.resolvedBasePath = stockAnalysis.resolvedBasePath;
+    stockAnalysisSnapshot.currencies = stockAnalysis.currencies;
     stockAnalysisSnapshot.counts.quarterlyRevenue =
       stockAnalysis.quarterlyRevenue.length;
     stockAnalysisSnapshot.counts.annualRevenue = stockAnalysis.annualRevenue.length;
@@ -170,12 +221,43 @@ async function processCompany(
           continue;
         }
 
-        maybeEntry.revenueUsd = point.revenue;
+        const maybeRange = bucketDateRange(maybeBucketId);
+        if (!maybeRange) {
+          continue;
+        }
+
+        const revenue = await fxRateService.toComparableMoney(
+          point.revenue,
+          stockAnalysis.currencies.financial ?? "UNKNOWN",
+          "month_end_average",
+          {
+            rangeStart: maybeRange.startDate,
+            rangeEnd: maybeRange.endDate,
+          },
+        );
+
+        if (revenue.usdAmount === null) {
+          recordUnavailableRevenue(
+            maybeEntry,
+            point.revenue,
+            stockAnalysis.currencies.financial,
+          );
+          continue;
+        }
+
+        maybeEntry.revenue = revenue;
         maybeEntry.sources.revenue = {
           provider: "StockAnalysis",
           url: `${baseUrl}/revenue/`,
           fetchedAt,
+          note:
+            revenue.reportedCurrency === "USD"
+              ? undefined
+              : `normalized from ${revenue.reportedCurrency}`,
         };
+        if (revenue.normalizationMethod === "fx_converted") {
+          addFlag(maybeEntry, "revenue_fx_converted");
+        }
       }
 
       for (const point of stockAnalysis.annualRevenue) {
@@ -193,12 +275,70 @@ async function processCompany(
           continue;
         }
 
-        maybeEntry.revenueUsd = point.revenue;
+        const maybeRange = bucketDateRange(maybeBucketId);
+        if (!maybeRange) {
+          continue;
+        }
+
+        const revenue = await fxRateService.toComparableMoney(
+          point.revenue,
+          stockAnalysis.currencies.financial ?? "UNKNOWN",
+          "month_end_average",
+          {
+            rangeStart: maybeRange.startDate,
+            rangeEnd: maybeRange.endDate,
+          },
+        );
+
+        const hasCompaniesMarketCapRevenue =
+          maybeEntry.sources.revenue?.provider === "CompaniesMarketCap" &&
+          maybeEntry.revenue?.usdAmount !== null;
+
+        if (hasCompaniesMarketCapRevenue) {
+          if (revenue.usdAmount === null) {
+            addFlag(maybeEntry, "annual_revenue_stockanalysis_unavailable");
+            continue;
+          }
+
+          const maybeCurrentUsdAmount = maybeEntry.revenue?.usdAmount;
+          if (maybeCurrentUsdAmount === null || maybeCurrentUsdAmount === undefined) {
+            continue;
+          }
+
+          if (
+            relativeDifference(maybeCurrentUsdAmount, revenue.usdAmount) <=
+            DATA_CONFIG.annualRevenueCrossSourceTolerance
+          ) {
+            addFlag(maybeEntry, "annual_revenue_cross_source_aligned");
+          } else {
+            addFlag(maybeEntry, "annual_revenue_cross_source_mismatch");
+          }
+
+          continue;
+        }
+
+        if (revenue.usdAmount === null) {
+          recordUnavailableRevenue(
+            maybeEntry,
+            point.revenue,
+            stockAnalysis.currencies.financial,
+          );
+          continue;
+        }
+
+        maybeEntry.revenue = revenue;
         maybeEntry.sources.revenue = {
           provider: "StockAnalysis",
           url: `${baseUrl}/revenue/`,
           fetchedAt,
+          note:
+            revenue.reportedCurrency === "USD"
+              ? undefined
+              : `normalized from ${revenue.reportedCurrency}`,
         };
+        if (revenue.normalizationMethod === "fx_converted") {
+          addFlag(maybeEntry, "revenue_fx_converted");
+        }
       }
 
       for (const point of stockAnalysis.quarterlyMarketCap) {
@@ -216,13 +356,34 @@ async function processCompany(
           continue;
         }
 
-        maybeEntry.marketCapUsd = point.v;
+        const marketCap = await fxRateService.toComparableMoney(
+          point.v,
+          stockAnalysis.currencies.main ?? "UNKNOWN",
+          "point_in_time",
+          {
+            date: point.d,
+          },
+        );
+
+        if (marketCap.usdAmount === null) {
+          addFlag(maybeEntry, "market_cap_currency_conversion_unavailable");
+          continue;
+        }
+
+        maybeEntry.marketCap = marketCap;
         maybeEntry.sources.marketCap = {
           provider: "StockAnalysis",
           url: `${baseUrl}/market-cap/`,
           fetchedAt,
+          note:
+            marketCap.reportedCurrency === "USD"
+              ? undefined
+              : `normalized from ${marketCap.reportedCurrency}`,
         };
         removeFlag(maybeEntry, "market_cap_snapshot_fallback");
+        if (marketCap.normalizationMethod === "fx_converted") {
+          addFlag(maybeEntry, "market_cap_fx_converted");
+        }
       }
 
       for (const point of stockAnalysis.annualMarketCap) {
@@ -240,13 +401,34 @@ async function processCompany(
           continue;
         }
 
-        maybeEntry.marketCapUsd = point.v;
+        const marketCap = await fxRateService.toComparableMoney(
+          point.v,
+          stockAnalysis.currencies.main ?? "UNKNOWN",
+          "point_in_time",
+          {
+            date: point.d,
+          },
+        );
+
+        if (marketCap.usdAmount === null) {
+          addFlag(maybeEntry, "market_cap_currency_conversion_unavailable");
+          continue;
+        }
+
+        maybeEntry.marketCap = marketCap;
         maybeEntry.sources.marketCap = {
           provider: "StockAnalysis",
           url: `${baseUrl}/market-cap/`,
           fetchedAt,
+          note:
+            marketCap.reportedCurrency === "USD"
+              ? undefined
+              : `normalized from ${marketCap.reportedCurrency}`,
         };
         removeFlag(maybeEntry, "market_cap_snapshot_fallback");
+        if (marketCap.normalizationMethod === "fx_converted") {
+          addFlag(maybeEntry, "market_cap_fx_converted");
+        }
       }
 
       for (const point of stockAnalysis.annualEmployees) {
@@ -292,6 +474,7 @@ async function main(): Promise<void> {
 
   const universeBundle = await fetchUniverseWithEmployeeSnapshot();
   const stockAnalysisRouteResolver = await createStockAnalysisRouteResolver();
+  const fxRateService = new FxRateService();
 
   await writeUniverseRawSnapshot(snapshotDirectory, universeBundle.raw);
 
@@ -304,6 +487,7 @@ async function main(): Promise<void> {
         universeBundle.employeeBySymbol,
         fetchedAt,
         stockAnalysisRouteResolver,
+        fxRateService,
       ),
   );
   const companies = processingResults.map((result) => result.companyRecord);
@@ -314,6 +498,9 @@ async function main(): Promise<void> {
   const dataset = reconcileDatasetSourceTimestamps(
     createDataset(companies),
     maybePreviousDataset,
+  );
+  const currencyAudit = buildDatasetCurrencyAuditSummary(
+    await writePublicDataset(dataset),
   );
 
   // Keep metadata.generatedAt tied to the current refresh run so the UI can
@@ -332,13 +519,14 @@ async function main(): Promise<void> {
         (snapshot) => snapshot.counts.annualEmployees > 0,
       ).length,
     },
+    currencyAudit,
   });
   await writeStockAnalysisRawSnapshot(snapshotDirectory, {
     enrichment: stockAnalysisSnapshots,
     routeResolverStats: stockAnalysisRouteResolver.stats,
+    fxUsage: fxRateService.getUsageSnapshot(),
   });
 
-  await writePublicDataset(dataset);
   await validatePublicDataset();
 }
 

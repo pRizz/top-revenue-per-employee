@@ -6,7 +6,13 @@ import {
   visualizationRegistry,
 } from "@/components/playground/charts/visualization-registry";
 import { getDataset } from "@/lib/data-client";
-import { formatInteger, formatUsd } from "@/lib/formatters";
+import {
+  describeMoneyNormalization,
+  formatComparableMoney,
+  formatInteger,
+  formatReportedMoney,
+  formatUsd,
+} from "@/lib/formatters";
 import { selectMetricForBucket } from "@/lib/time-buckets";
 
 export function PlaygroundPage() {
@@ -32,6 +38,8 @@ export function PlaygroundPage() {
         const maybeMetric = selectMetricForBucket(company.metrics, selectedBucketId());
         if (
           !maybeMetric ||
+          maybeMetric.marketCap === null ||
+          maybeMetric.revenue === null ||
           maybeMetric.marketCapUsd === null ||
           maybeMetric.revenuePerEmployeeUsd === null ||
           maybeMetric.employeeCount === null
@@ -45,6 +53,8 @@ export function PlaygroundPage() {
             marketCapUsd: maybeMetric.marketCapUsd,
             revenuePerEmployeeUsd: maybeMetric.revenuePerEmployeeUsd,
             employeeCount: maybeMetric.employeeCount,
+            marketCap: maybeMetric.marketCap,
+            revenue: maybeMetric.revenue,
           },
         ];
       });
@@ -95,8 +105,26 @@ export function PlaygroundPage() {
               {comparisonPoints().map((point) => (
                 <tr class="border-t">
                   <td class="px-3 py-2 font-medium">{point.label}</td>
-                  <td class="px-3 py-2">{formatUsd(point.marketCapUsd)}</td>
-                  <td class="px-3 py-2">{formatUsd(point.revenuePerEmployeeUsd)}</td>
+                  <td class="px-3 py-2">
+                    <div class="flex flex-col gap-1">
+                      <span>{formatComparableMoney(point.marketCap)}</span>
+                      {point.marketCap.reportedCurrency !== "USD" ? (
+                        <span class="text-xs text-muted-foreground">
+                          Reported: {formatReportedMoney(point.marketCap)}
+                        </span>
+                      ) : null}
+                    </div>
+                  </td>
+                  <td class="px-3 py-2">
+                    <div class="flex flex-col gap-1">
+                      <span>{formatUsd(point.revenuePerEmployeeUsd)}</span>
+                      {describeMoneyNormalization(point.revenue) ? (
+                        <span class="text-xs text-muted-foreground">
+                          Revenue {describeMoneyNormalization(point.revenue)}
+                        </span>
+                      ) : null}
+                    </div>
+                  </td>
                   <td class="px-3 py-2">{formatInteger(point.employeeCount)}</td>
                 </tr>
               ))}

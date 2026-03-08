@@ -2,6 +2,10 @@
   {
     "symbol": "000660.KS",
     "resolvedBasePath": "/quote/krx/000660",
+    "currencies": {
+      "main": "KRW",
+      "financial": "KRW"
+    },
     "counts": {
       "quarterlyRevenue": 40,
       "annualRevenue": 10,
@@ -13,6 +17,10 @@
   {
     "symbol": "005930.KS",
     "resolvedBasePath": "/quote/krx/005930",
+    "currencies": {
+      "main": "KRW",
+      "financial": "KRW"
+    },
     "counts": {
       "quarterlyRevenue": 40,
       "annualRevenue": 10,
@@ -24,6 +32,10 @@
   {
     "symbol": "0857.HK",
     "resolvedBasePath": "/quote/hkg/0857",
+    "currencies": {
+      "main": "HKD",
+      "financial": "CNY"
+    },
     "counts": {
       "quarterlyRevenue": 40,
       "annualRevenue": 10,
@@ -35,6 +47,10 @@
   {
     "symbol": "0941.HK",
     "resolvedBasePath": "/quote/hkg/0941",
+    "currencies": {
+      "main": "HKD",
+      "financial": "CNY"
+    },
     "counts": {
       "quarterlyRevenue": 40,
       "annualRevenue": 10,
@@ -46,6 +62,10 @@
   {
     "symbol": "1398.HK",
     "resolvedBasePath": "/quote/hkg/1398",
+    "currencies": {
+      "main": "HKD",
+      "financial": "CNY"
+    },
     "counts": {
       "quarterlyRevenue": 40,
       "annualRevenue": 10,
@@ -57,6 +77,10 @@
   {
     "symbol": "2222.SR",
     "resolvedBasePath": "/quote/tadawul/2222",
+    "currencies": {
+      "main": "SAR",
+      "financial": "SAR"
+    },
     "counts": {
       "quarterlyRevenue": 31,
       "annualRevenue": 9,
@@ -68,6 +92,10 @@
   {
     "symbol": "300750.SZ",
     "resolvedBasePath": "/quote/she/300750",
+    "currencies": {
+      "main": "CNY",
+      "financial": "CNY"
+    },
     "counts": {
       "quarterlyRevenue": 35,
       "annualRevenue": 10,
@@ -79,6 +107,10 @@
   {
     "symbol": "600519.SS",
     "resolvedBasePath": "/quote/sha/600519",
+    "currencies": {
+      "main": "CNY",
+      "financial": "CNY"
+    },
     "counts": {
       "quarterlyRevenue": 40,
       "annualRevenue": 10,
@@ -90,6 +122,10 @@
   {
     "symbol": "601288.SS",
     "resolvedBasePath": null,
+    "currencies": {
+      "main": null,
+      "financial": null
+    },
     "counts": {
       "quarterlyRevenue": 0,
       "annualRevenue": 0,
@@ -101,6 +137,10 @@
   {
     "symbol": "601628.SS",
     "resolvedBasePath": null,
+    "currencies": {
+      "main": null,
+      "financial": null
+    },
     "counts": {
       "quarterlyRevenue": 0,
       "annualRevenue": 0,
@@ -112,6 +152,10 @@
   {
     "symbol": "601939.SS",
     "resolvedBasePath": null,
+    "currencies": {
+      "main": null,
+      "financial": null
+    },
     "counts": {
       "quarterlyRevenue": 0,
       "annualRevenue": 0,
@@ -123,6 +167,10 @@
   {
     "symbol": "601988.SS",
     "resolvedBasePath": null,
+    "currencies": {
+      "main": null,
+      "financial": null
+    },
     "counts": {
       "quarterlyRevenue": 0,
       "annualRevenue": 0,
@@ -134,6 +182,10 @@
   {
     "symbol": "AAPL",
     "resolvedBasePath": "/stocks/aapl",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -145,6 +197,10 @@
   {
     "symbol": "ABBV",
     "resolvedBasePath": "/stocks/abbv",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 17,
@@ -156,6 +212,10 @@
   {
     "symbol": "ABT",
     "resolvedBasePath": "/stocks/abt",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -167,6 +227,10 @@
   {
     "symbol": "AMAT",
     "resolvedBasePath": "/stocks/amat",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 45,
       "annualRevenue": 21,
@@ -178,6 +242,10 @@
   {
     "symbol": "AMD",
     "resolvedBasePath": "/stocks/amd",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -189,6 +257,10 @@
   {
     "symbol": "AMGN",
     "resolvedBasePath": "/stocks/amgn",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -200,6 +272,10 @@
   {
     "symbol": "AMZN",
     "resolvedBasePath": "/stocks/amzn",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -211,6 +287,10 @@
   {
     "symbol": "ASML",
     "resolvedBasePath": "/stocks/asml",
+    "currencies": {
+      "main": "USD",
+      "financial": "EUR"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -222,6 +302,10 @@
   {
     "symbol": "AVGO",
     "resolvedBasePath": "/stocks/avgo",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 45,
       "annualRevenue": 20,
@@ -233,6 +317,10 @@
   {
     "symbol": "AXP",
     "resolvedBasePath": "/stocks/axp",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -244,6 +332,10 @@
   {
     "symbol": "AZN",
     "resolvedBasePath": "/stocks/azn",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -255,6 +347,10 @@
   {
     "symbol": "BA",
     "resolvedBasePath": "/stocks/ba",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -266,6 +362,10 @@
   {
     "symbol": "BABA",
     "resolvedBasePath": "/stocks/baba",
+    "currencies": {
+      "main": "USD",
+      "financial": "CNY"
+    },
     "counts": {
       "quarterlyRevenue": 40,
       "annualRevenue": 13,
@@ -277,6 +377,10 @@
   {
     "symbol": "BAC",
     "resolvedBasePath": "/stocks/bac",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -288,6 +392,10 @@
   {
     "symbol": "BHP",
     "resolvedBasePath": "/stocks/bhp",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 42,
       "annualRevenue": 21,
@@ -299,6 +407,10 @@
   {
     "symbol": "BRK-B",
     "resolvedBasePath": null,
+    "currencies": {
+      "main": null,
+      "financial": null
+    },
     "counts": {
       "quarterlyRevenue": 0,
       "annualRevenue": 0,
@@ -310,6 +422,10 @@
   {
     "symbol": "C",
     "resolvedBasePath": "/stocks/c",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -321,6 +437,10 @@
   {
     "symbol": "CAT",
     "resolvedBasePath": "/stocks/cat",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -332,6 +452,10 @@
   {
     "symbol": "CBA.AX",
     "resolvedBasePath": null,
+    "currencies": {
+      "main": null,
+      "financial": null
+    },
     "counts": {
       "quarterlyRevenue": 0,
       "annualRevenue": 0,
@@ -343,6 +467,10 @@
   {
     "symbol": "COST",
     "resolvedBasePath": "/stocks/cost",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 45,
       "annualRevenue": 21,
@@ -354,6 +482,10 @@
   {
     "symbol": "CRM",
     "resolvedBasePath": "/stocks/crm",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 45,
       "annualRevenue": 22,
@@ -365,6 +497,10 @@
   {
     "symbol": "CSCO",
     "resolvedBasePath": "/stocks/csco",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 45,
       "annualRevenue": 21,
@@ -376,6 +512,10 @@
   {
     "symbol": "CVX",
     "resolvedBasePath": "/stocks/cvx",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -387,6 +527,10 @@
   {
     "symbol": "DIS",
     "resolvedBasePath": "/stocks/dis",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -397,18 +541,26 @@
   },
   {
     "symbol": "DTE.DE",
-    "resolvedBasePath": "/stocks/dte",
+    "resolvedBasePath": "/quote/etr/DTE",
+    "currencies": {
+      "main": "EUR",
+      "financial": "EUR"
+    },
     "counts": {
-      "quarterlyRevenue": 44,
-      "annualRevenue": 21,
+      "quarterlyRevenue": 40,
+      "annualRevenue": 10,
       "quarterlyMarketCap": 25,
-      "annualMarketCap": 25,
-      "annualEmployees": 31
+      "annualMarketCap": 11,
+      "annualEmployees": 16
     }
   },
   {
     "symbol": "GE",
     "resolvedBasePath": "/stocks/ge",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 43,
       "annualRevenue": 21,
@@ -420,6 +572,10 @@
   {
     "symbol": "GEV",
     "resolvedBasePath": "/stocks/gev",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 12,
       "annualRevenue": 5,
@@ -431,6 +587,10 @@
   {
     "symbol": "GILD",
     "resolvedBasePath": "/stocks/gild",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -442,6 +602,10 @@
   {
     "symbol": "GOOG",
     "resolvedBasePath": "/stocks/goog",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 42,
       "annualRevenue": 21,
@@ -453,6 +617,10 @@
   {
     "symbol": "GS",
     "resolvedBasePath": "/stocks/gs",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -464,6 +632,10 @@
   {
     "symbol": "HD",
     "resolvedBasePath": "/stocks/hd",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 45,
       "annualRevenue": 22,
@@ -475,6 +647,10 @@
   {
     "symbol": "HSBC",
     "resolvedBasePath": "/stocks/hsbc",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -486,6 +662,10 @@
   {
     "symbol": "IBM",
     "resolvedBasePath": "/stocks/ibm",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -497,6 +677,10 @@
   {
     "symbol": "IHC.AE",
     "resolvedBasePath": null,
+    "currencies": {
+      "main": null,
+      "financial": null
+    },
     "counts": {
       "quarterlyRevenue": 0,
       "annualRevenue": 0,
@@ -508,6 +692,10 @@
   {
     "symbol": "INTC",
     "resolvedBasePath": "/stocks/intc",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -519,6 +707,10 @@
   {
     "symbol": "ISRG",
     "resolvedBasePath": "/stocks/isrg",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -530,6 +722,10 @@
   {
     "symbol": "ITX.MC",
     "resolvedBasePath": null,
+    "currencies": {
+      "main": null,
+      "financial": null
+    },
     "counts": {
       "quarterlyRevenue": 0,
       "annualRevenue": 0,
@@ -541,6 +737,10 @@
   {
     "symbol": "JNJ",
     "resolvedBasePath": "/stocks/jnj",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 45,
       "annualRevenue": 22,
@@ -552,6 +752,10 @@
   {
     "symbol": "JPM",
     "resolvedBasePath": "/stocks/jpm",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -563,6 +767,10 @@
   {
     "symbol": "KLAC",
     "resolvedBasePath": "/stocks/klac",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -574,6 +782,10 @@
   {
     "symbol": "KO",
     "resolvedBasePath": "/stocks/ko",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -585,6 +797,10 @@
   {
     "symbol": "LIN",
     "resolvedBasePath": "/stocks/lin",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -596,6 +812,10 @@
   {
     "symbol": "LLY",
     "resolvedBasePath": "/stocks/lly",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 42,
       "annualRevenue": 21,
@@ -607,6 +827,10 @@
   {
     "symbol": "LRCX",
     "resolvedBasePath": "/stocks/lrcx",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -618,6 +842,10 @@
   {
     "symbol": "MA",
     "resolvedBasePath": "/stocks/ma",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 42,
       "annualRevenue": 21,
@@ -628,18 +856,26 @@
   },
   {
     "symbol": "MC.PA",
-    "resolvedBasePath": "/stocks/mc",
+    "resolvedBasePath": "/quote/epa/MC",
+    "currencies": {
+      "main": "EUR",
+      "financial": "EUR"
+    },
     "counts": {
-      "quarterlyRevenue": 44,
-      "annualRevenue": 15,
+      "quarterlyRevenue": 22,
+      "annualRevenue": 10,
       "quarterlyMarketCap": 25,
-      "annualMarketCap": 14,
+      "annualMarketCap": 11,
       "annualEmployees": 5
     }
   },
   {
     "symbol": "MCD",
     "resolvedBasePath": "/stocks/mcd",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 42,
       "annualRevenue": 21,
@@ -651,6 +887,10 @@
   {
     "symbol": "META",
     "resolvedBasePath": "/stocks/meta",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 17,
@@ -662,6 +902,10 @@
   {
     "symbol": "MRK",
     "resolvedBasePath": "/stocks/mrk",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -673,6 +917,10 @@
   {
     "symbol": "MS",
     "resolvedBasePath": "/stocks/ms",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 42,
       "annualRevenue": 21,
@@ -684,6 +932,10 @@
   {
     "symbol": "MSFT",
     "resolvedBasePath": "/stocks/msft",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -695,6 +947,10 @@
   {
     "symbol": "MU",
     "resolvedBasePath": "/stocks/mu",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -706,6 +962,10 @@
   {
     "symbol": "MUFG",
     "resolvedBasePath": "/stocks/mufg",
+    "currencies": {
+      "main": "USD",
+      "financial": "JPY"
+    },
     "counts": {
       "quarterlyRevenue": 43,
       "annualRevenue": 21,
@@ -717,6 +977,10 @@
   {
     "symbol": "NEE",
     "resolvedBasePath": "/stocks/nee",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -728,6 +992,10 @@
   {
     "symbol": "NESN.SW",
     "resolvedBasePath": "/quote/swx/NESN",
+    "currencies": {
+      "main": "CHF",
+      "financial": "CHF"
+    },
     "counts": {
       "quarterlyRevenue": 22,
       "annualRevenue": 10,
@@ -739,6 +1007,10 @@
   {
     "symbol": "NFLX",
     "resolvedBasePath": "/stocks/nflx",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -750,6 +1022,10 @@
   {
     "symbol": "NVDA",
     "resolvedBasePath": "/stocks/nvda",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 45,
       "annualRevenue": 22,
@@ -761,6 +1037,10 @@
   {
     "symbol": "NVS",
     "resolvedBasePath": "/stocks/nvs",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -771,18 +1051,26 @@
   },
   {
     "symbol": "OR.PA",
-    "resolvedBasePath": "/stocks/or",
+    "resolvedBasePath": "/quote/epa/OR",
+    "currencies": {
+      "main": "EUR",
+      "financial": "EUR"
+    },
     "counts": {
-      "quarterlyRevenue": 40,
+      "quarterlyRevenue": 22,
       "annualRevenue": 10,
       "quarterlyMarketCap": 25,
-      "annualMarketCap": 12,
-      "annualEmployees": 4
+      "annualMarketCap": 11,
+      "annualEmployees": 5
     }
   },
   {
     "symbol": "ORCL",
     "resolvedBasePath": "/stocks/orcl",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -794,6 +1082,10 @@
   {
     "symbol": "PEP",
     "resolvedBasePath": "/stocks/pep",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -805,6 +1097,10 @@
   {
     "symbol": "PG",
     "resolvedBasePath": "/stocks/pg",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -816,6 +1112,10 @@
   {
     "symbol": "PLTR",
     "resolvedBasePath": "/stocks/pltr",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 29,
       "annualRevenue": 8,
@@ -827,6 +1127,10 @@
   {
     "symbol": "PM",
     "resolvedBasePath": "/stocks/pm",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 20,
@@ -838,6 +1142,10 @@
   {
     "symbol": "PRX.AS",
     "resolvedBasePath": "/quote/ams/PRX",
+    "currencies": {
+      "main": "EUR",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 15,
       "annualRevenue": 10,
@@ -849,6 +1157,10 @@
   {
     "symbol": "RELIANCE.NS",
     "resolvedBasePath": "/quote/nse/RELIANCE",
+    "currencies": {
+      "main": "INR",
+      "financial": "INR"
+    },
     "counts": {
       "quarterlyRevenue": 40,
       "annualRevenue": 10,
@@ -860,6 +1172,10 @@
   {
     "symbol": "RMS.PA",
     "resolvedBasePath": "/quote/epa/RMS",
+    "currencies": {
+      "main": "EUR",
+      "financial": "EUR"
+    },
     "counts": {
       "quarterlyRevenue": 22,
       "annualRevenue": 10,
@@ -870,18 +1186,26 @@
   },
   {
     "symbol": "ROG.SW",
-    "resolvedBasePath": "/stocks/rog",
+    "resolvedBasePath": "/quote/swx/ROG",
+    "currencies": {
+      "main": "CHF",
+      "financial": "CHF"
+    },
     "counts": {
-      "quarterlyRevenue": 44,
-      "annualRevenue": 22,
+      "quarterlyRevenue": 22,
+      "annualRevenue": 10,
       "quarterlyMarketCap": 25,
-      "annualMarketCap": 25,
+      "annualMarketCap": 11,
       "annualEmployees": 5
     }
   },
   {
     "symbol": "RTX",
     "resolvedBasePath": "/stocks/rtx",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -893,6 +1217,10 @@
   {
     "symbol": "RY",
     "resolvedBasePath": "/stocks/ry",
+    "currencies": {
+      "main": "USD",
+      "financial": "CAD"
+    },
     "counts": {
       "quarterlyRevenue": 45,
       "annualRevenue": 21,
@@ -904,6 +1232,10 @@
   {
     "symbol": "SAP",
     "resolvedBasePath": "/stocks/sap",
+    "currencies": {
+      "main": "USD",
+      "financial": "EUR"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -915,6 +1247,10 @@
   {
     "symbol": "SHEL",
     "resolvedBasePath": "/stocks/shel",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -926,6 +1262,10 @@
   {
     "symbol": "SIE.DE",
     "resolvedBasePath": "/quote/etr/SIE",
+    "currencies": {
+      "main": "EUR",
+      "financial": "EUR"
+    },
     "counts": {
       "quarterlyRevenue": 40,
       "annualRevenue": 10,
@@ -937,6 +1277,10 @@
   {
     "symbol": "T",
     "resolvedBasePath": "/stocks/t",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -948,6 +1292,10 @@
   {
     "symbol": "TCEHY",
     "resolvedBasePath": "/quote/otc/TCEHY",
+    "currencies": {
+      "main": "USD",
+      "financial": "CNY"
+    },
     "counts": {
       "quarterlyRevenue": 40,
       "annualRevenue": 10,
@@ -959,6 +1307,10 @@
   {
     "symbol": "TJX",
     "resolvedBasePath": "/stocks/tjx",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 45,
       "annualRevenue": 22,
@@ -970,6 +1322,10 @@
   {
     "symbol": "TM",
     "resolvedBasePath": "/stocks/tm",
+    "currencies": {
+      "main": "USD",
+      "financial": "JPY"
+    },
     "counts": {
       "quarterlyRevenue": 43,
       "annualRevenue": 21,
@@ -981,6 +1337,10 @@
   {
     "symbol": "TMO",
     "resolvedBasePath": "/stocks/tmo",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -992,6 +1352,10 @@
   {
     "symbol": "TMUS",
     "resolvedBasePath": "/stocks/tmus",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -1003,6 +1367,10 @@
   {
     "symbol": "TSLA",
     "resolvedBasePath": "/stocks/tsla",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 20,
@@ -1014,6 +1382,10 @@
   {
     "symbol": "TSM",
     "resolvedBasePath": "/stocks/tsm",
+    "currencies": {
+      "main": "USD",
+      "financial": "TWD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -1025,6 +1397,10 @@
   {
     "symbol": "TXN",
     "resolvedBasePath": "/stocks/txn",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -1036,6 +1412,10 @@
   {
     "symbol": "UNH",
     "resolvedBasePath": "/stocks/unh",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -1047,6 +1427,10 @@
   {
     "symbol": "V",
     "resolvedBasePath": "/stocks/v",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -1058,6 +1442,10 @@
   {
     "symbol": "VZ",
     "resolvedBasePath": "/stocks/vz",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -1069,6 +1457,10 @@
   {
     "symbol": "WFC",
     "resolvedBasePath": "/stocks/wfc",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,
@@ -1080,6 +1472,10 @@
   {
     "symbol": "WMT",
     "resolvedBasePath": "/stocks/wmt",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 45,
       "annualRevenue": 22,
@@ -1091,6 +1487,10 @@
   {
     "symbol": "XOM",
     "resolvedBasePath": "/stocks/xom",
+    "currencies": {
+      "main": "USD",
+      "financial": "USD"
+    },
     "counts": {
       "quarterlyRevenue": 44,
       "annualRevenue": 21,

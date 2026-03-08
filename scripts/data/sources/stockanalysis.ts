@@ -1,4 +1,5 @@
 import { DATA_CONFIG, SOURCE_URLS } from "../config";
+import type { CurrencyCode } from "@/types/company-data";
 
 interface RevenuePoint {
   date: string;
@@ -17,6 +18,10 @@ interface EmployeePoint {
 
 interface StockAnalysisSeries {
   resolvedBasePath: string | null;
+  currencies: {
+    main: CurrencyCode | null;
+    financial: CurrencyCode | null;
+  };
   quarterlyRevenue: RevenuePoint[];
   annualRevenue: RevenuePoint[];
   quarterlyMarketCap: MarketCapPoint[];
@@ -44,7 +49,7 @@ const exchangeByTickerSuffix: Record<string, string> = {
   SR: "tadawul",
   SW: "swx",
   PA: "epa",
-  DE: "xetra",
+  DE: "etr",
   AS: "ams",
   L: "lse",
   NS: "nse",
@@ -138,6 +143,26 @@ function parseEmployeePoints(html: string): EmployeePoint[] {
   return points;
 }
 
+function parsePageCurrencies(html: string): {
+  main: CurrencyCode | null;
+  financial: CurrencyCode | null;
+} {
+  const match = html.match(
+    /curr:\{main:"([^"]+)",price:"[^"]+",dividend:"[^"]+",financial:"([^"]+)"\}/,
+  );
+  if (!match) {
+    return {
+      main: null,
+      financial: null,
+    };
+  }
+
+  return {
+    main: match[1]?.trim().toUpperCase() ?? null,
+    financial: match[2]?.trim().toUpperCase() ?? null,
+  };
+}
+
 function parseSitemapUrls(indexXml: string): string[] {
   const urls: string[] = [];
   const regex = /<loc>(https:\/\/stockanalysis\.com\/sitemaps\/(?:stocks\/stocks\d+\.xml|quotes\/quotes\d+\.xml))<\/loc>/g;
@@ -162,6 +187,46 @@ function parseRevenueBasePaths(sitemapXml: string): string[] {
 
 function normalizeSymbol(symbol: string): string {
   return symbol.trim().toUpperCase();
+}
+
+function resolveBasePathForSymbol(
+  rawSymbol: string,
+  stockRouteBySymbol: Map<string, string>,
+  quoteRouteByExchangeAndSymbol: Map<string, string>,
+  uniqueRouteBySymbol: Map<string, string>,
+): string | null {
+  const symbol = normalizeSymbol(rawSymbol);
+  const [tickerBase, maybeSuffix] = symbol.split(".");
+
+  if (stockRouteBySymbol.has(symbol)) {
+    return stockRouteBySymbol.get(symbol) ?? null;
+  }
+
+  if (maybeSuffix) {
+    const maybeExchange = exchangeByTickerSuffix[maybeSuffix];
+    if (maybeExchange) {
+      const maybeQuoteRoute = quoteRouteByExchangeAndSymbol.get(
+        `${maybeExchange}:${tickerBase}`,
+      );
+      if (maybeQuoteRoute) {
+        return maybeQuoteRoute;
+      }
+    }
+  }
+
+  if (tickerBase && stockRouteBySymbol.has(tickerBase)) {
+    return stockRouteBySymbol.get(tickerBase) ?? null;
+  }
+
+  if (tickerBase && uniqueRouteBySymbol.has(tickerBase)) {
+    return uniqueRouteBySymbol.get(tickerBase) ?? null;
+  }
+
+  if (symbol && uniqueRouteBySymbol.has(symbol)) {
+    return uniqueRouteBySymbol.get(symbol) ?? null;
+  }
+
+  return null;
 }
 
 export async function createStockAnalysisRouteResolver(): Promise<StockAnalysisRouteResolver> {
@@ -231,43 +296,14 @@ export async function createStockAnalysisRouteResolver(): Promise<StockAnalysisR
     }
   }
 
-  const resolveBasePath = (rawSymbol: string): string | null => {
-    const symbol = normalizeSymbol(rawSymbol);
-    const [tickerBase, maybeSuffix] = symbol.split(".");
-
-    if (stockRouteBySymbol.has(symbol)) {
-      return stockRouteBySymbol.get(symbol) ?? null;
-    }
-
-    if (tickerBase && stockRouteBySymbol.has(tickerBase)) {
-      return stockRouteBySymbol.get(tickerBase) ?? null;
-    }
-
-    if (maybeSuffix) {
-      const maybeExchange = exchangeByTickerSuffix[maybeSuffix];
-      if (maybeExchange) {
-        const maybeRoute = quoteRouteByExchangeAndSymbol.get(
-          `${maybeExchange}:${tickerBase}`,
-        );
-        if (maybeRoute) {
-          return maybeRoute;
-        }
-      }
-    }
-
-    if (tickerBase && uniqueRouteBySymbol.has(tickerBase)) {
-      return uniqueRouteBySymbol.get(tickerBase) ?? null;
-    }
-
-    if (symbol && uniqueRouteBySymbol.has(symbol)) {
-      return uniqueRouteBySymbol.get(symbol) ?? null;
-    }
-
-    return null;
-  };
-
   return {
-    resolveBasePath,
+    resolveBasePath: (rawSymbol) =>
+      resolveBasePathForSymbol(
+        rawSymbol,
+        stockRouteBySymbol,
+        quoteRouteByExchangeAndSymbol,
+        uniqueRouteBySymbol,
+      ),
     stats: {
       stockRoutesIndexed: stockRouteBySymbol.size,
       quoteRoutesIndexed: quoteRouteByExchangeAndSymbol.size,
@@ -318,6 +354,10 @@ export async function fetchStockAnalysisSeries(
   if (!resolvedBasePath) {
     return {
       resolvedBasePath: null,
+      currencies: {
+        main: null,
+        financial: null,
+      },
       quarterlyRevenue: [],
       annualRevenue: [],
       quarterlyMarketCap: [],
@@ -351,9 +391,13 @@ export async function fetchStockAnalysisSeries(
     extractArrayLiteralByKey(marketCapHtml ?? "", "annual"),
   );
   const annualEmployees = parseEmployeePoints(employeesHtml ?? "");
+  const currencies = parsePageCurrencies(
+    revenueHtml ?? marketCapHtml ?? employeesHtml ?? "",
+  );
 
   return {
     resolvedBasePath,
+    currencies,
     quarterlyRevenue,
     annualRevenue,
     quarterlyMarketCap,
@@ -364,7 +408,9 @@ export async function fetchStockAnalysisSeries(
 
 export const __testing = {
   parseEmployeePoints,
+  parsePageCurrencies,
   parseSitemapUrls,
   parseRevenueBasePaths,
   normalizeSymbol,
+  resolveBasePathForSymbol,
 };

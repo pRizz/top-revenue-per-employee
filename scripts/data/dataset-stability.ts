@@ -4,6 +4,7 @@ import path from "node:path";
 import type {
   CompanyRecord,
   MetricRecord,
+  MonetaryAmount,
   SourceAttribution,
 } from "../../src/types/company-data";
 import type { NormalizedDataset } from "./types";
@@ -14,16 +15,7 @@ const PROCESSED_DATASET_PATH = path.resolve(
   "companies-timeseries.json",
 );
 
-const sourceValueKeyByName = {
-  marketCap: "marketCapUsd",
-  revenue: "revenueUsd",
-  employeeCount: "employeeCount",
-} as const satisfies Record<
-  keyof MetricRecord["sources"],
-  keyof Pick<MetricRecord, "marketCapUsd" | "revenueUsd" | "employeeCount">
->;
-
-type SourceName = keyof typeof sourceValueKeyByName;
+type SourceName = keyof MetricRecord["sources"];
 
 function sourceMetadataMatches(
   previousSource: SourceAttribution,
@@ -34,6 +26,37 @@ function sourceMetadataMatches(
     previousSource.url === nextSource.url &&
     previousSource.note === nextSource.note
   );
+}
+
+function monetaryAmountMatches(
+  previousAmount: MonetaryAmount | null,
+  nextAmount: MonetaryAmount | null,
+): boolean {
+  if (previousAmount === nextAmount) {
+    return true;
+  }
+
+  if (!previousAmount || !nextAmount) {
+    return false;
+  }
+
+  return JSON.stringify(previousAmount) === JSON.stringify(nextAmount);
+}
+
+function sourceValueMatches(
+  previousMetric: MetricRecord,
+  nextMetric: MetricRecord,
+  sourceName: SourceName,
+): boolean {
+  if (sourceName === "marketCap") {
+    return monetaryAmountMatches(previousMetric.marketCap, nextMetric.marketCap);
+  }
+
+  if (sourceName === "revenue") {
+    return monetaryAmountMatches(previousMetric.revenue, nextMetric.revenue);
+  }
+
+  return previousMetric.employeeCount === nextMetric.employeeCount;
 }
 
 function shouldPreserveFetchedAt(
@@ -48,9 +71,8 @@ function shouldPreserveFetchedAt(
     return false;
   }
 
-  const valueKey = sourceValueKeyByName[sourceName];
   return (
-    previousMetric[valueKey] === nextMetric[valueKey] &&
+    sourceValueMatches(previousMetric, nextMetric, sourceName) &&
     sourceMetadataMatches(previousSource, nextSource)
   );
 }
@@ -65,7 +87,7 @@ export function reconcileMetricSourceTimestamps(
 
   const nextSources = { ...nextMetric.sources };
 
-  for (const sourceName of Object.keys(sourceValueKeyByName) as SourceName[]) {
+  for (const sourceName of Object.keys(nextMetric.sources) as SourceName[]) {
     if (!shouldPreserveFetchedAt(maybePreviousMetric, nextMetric, sourceName)) {
       continue;
     }

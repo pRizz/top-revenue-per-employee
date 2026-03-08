@@ -1,5 +1,39 @@
 export type BucketType = "annual" | "quarterly";
 
+export type CurrencyCode = string;
+
+export type MoneyNormalizationMethod =
+  | "reported_usd"
+  | "fx_converted"
+  | "snapshot_fallback"
+  | "unavailable";
+
+export type FxAggregationMethod =
+  | "point_in_time"
+  | "month_end_average"
+  | "fixed_peg";
+
+export interface FxConversionMetadata {
+  provider: string;
+  quoteCurrency: "USD";
+  rate: number;
+  asOf: string;
+  aggregation: FxAggregationMethod;
+  rangeStart?: string;
+  rangeEnd?: string;
+  sampleCount?: number;
+  expectedSampleCount?: number;
+  coverageStatus?: "complete" | "partial";
+}
+
+export interface MonetaryAmount {
+  reportedAmount: number;
+  reportedCurrency: CurrencyCode;
+  usdAmount: number | null;
+  normalizationMethod: MoneyNormalizationMethod;
+  fx?: FxConversionMetadata;
+}
+
 export interface SourceAttribution {
   provider: string;
   url: string;
@@ -10,6 +44,8 @@ export interface SourceAttribution {
 export interface MetricRecord {
   bucketId: string;
   bucketType: BucketType;
+  marketCap: MonetaryAmount | null;
+  revenue: MonetaryAmount | null;
   marketCapUsd: number | null;
   revenueUsd: number | null;
   employeeCount: number | null;

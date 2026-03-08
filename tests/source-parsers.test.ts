@@ -65,4 +65,52 @@ describe("StockAnalysis source parser helpers", () => {
     expect(stockAnalysisTesting.normalizeSymbol(" aapl ")).toBe("AAPL");
     expect(stockAnalysisTesting.normalizeSymbol("1398.hk")).toBe("1398.HK");
   });
+
+  it("extracts page main and financial currencies", () => {
+    const html =
+      'symbol:"TM",curr:{main:"USD",price:"USD",dividend:"USD",financial:"JPY"},stream:true';
+
+    expect(stockAnalysisTesting.parsePageCurrencies(html)).toEqual({
+      main: "USD",
+      financial: "JPY",
+    });
+  });
+
+  it("prefers quote routes for suffix tickers before falling back to stock routes", () => {
+    const stockRoutes = new Map([
+      ["MC", "/stocks/mc"],
+      ["TM", "/stocks/tm"],
+      ["DTE", "/stocks/dte"],
+    ]);
+    const quoteRoutes = new Map([
+      ["epa:MC", "/quote/epa/mc"],
+      ["etr:DTE", "/quote/etr/dte"],
+    ]);
+    const uniqueRoutes = new Map<string, string>();
+
+    expect(
+      stockAnalysisTesting.resolveBasePathForSymbol(
+        "MC.PA",
+        stockRoutes,
+        quoteRoutes,
+        uniqueRoutes,
+      ),
+    ).toBe("/quote/epa/mc");
+    expect(
+      stockAnalysisTesting.resolveBasePathForSymbol(
+        "DTE.DE",
+        stockRoutes,
+        quoteRoutes,
+        uniqueRoutes,
+      ),
+    ).toBe("/quote/etr/dte");
+    expect(
+      stockAnalysisTesting.resolveBasePathForSymbol(
+        "TM",
+        stockRoutes,
+        quoteRoutes,
+        uniqueRoutes,
+      ),
+    ).toBe("/stocks/tm");
+  });
 });

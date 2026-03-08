@@ -2,6 +2,7 @@ import type {
   BucketType,
   CompanyRecord,
   MetricRecord,
+  MonetaryAmount,
 } from "../../src/types/company-data";
 
 export interface UniverseCompany {
@@ -22,8 +23,8 @@ export interface SourceMap {
 export interface MetricAccumulator {
   bucketId: string;
   bucketType: BucketType;
-  marketCapUsd: number | null;
-  revenueUsd: number | null;
+  marketCap: MonetaryAmount | null;
+  revenue: MonetaryAmount | null;
   employeeCount: number | null;
   sources: SourceMap;
   flags: string[];
