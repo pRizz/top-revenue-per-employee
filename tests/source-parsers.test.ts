@@ -25,6 +25,24 @@ describe("CompaniesMarketCap source parser helpers", () => {
     expect(slugBySymbol.get("NVDA")).toBe("nvidia");
     expect(slugBySymbol.get("GOOG")).toBe("alphabet-google");
   });
+
+  it("detects current-year TTM semantics and parses the tooltip period", () => {
+    const html = `
+      <h2><strong>Revenue in 2025 (TTM): <span class="background-ya">$187.14 Billion USD</span></strong></h2>
+      <img class="in-text-tooltip ttm-dates-info-icon info-icon tooltip-title responsive-hidden" tooltip-title="1 Nov 2024 - 31 Oct 2025" src="/img/info-icon-grey.svg">
+      <script>var data = {"2025":187142000000,"2024":130497000000};</script>
+    `;
+
+    expect(companiesTesting.parseCurrentRevenueYear(html)).toBe(2025);
+    expect(companiesTesting.parseTtmPeriodRange(html)).toEqual({
+      periodStart: "2024-11-01",
+      periodEnd: "2025-10-31",
+    });
+
+    const annualRevenueByYear = companiesTesting.parseRevenueByYear(html);
+    expect(annualRevenueByYear.get(2025)).toBe(187142000000);
+    expect(annualRevenueByYear.get(2024)).toBe(130497000000);
+  });
 });
 
 describe("StockAnalysis source parser helpers", () => {

@@ -8,6 +8,13 @@ function createDataset(overrides?: Partial<CompaniesDataset>): CompaniesDataset 
     generatedAt: "2026-03-08T00:00:00.000Z",
     topN: 1,
     bucketIds: ["2025"],
+    buckets: [
+      {
+        id: "2025",
+        bucketType: "annual",
+        label: "2025",
+      },
+    ],
     companies: [
       {
         id: "TM-1",
@@ -20,6 +27,9 @@ function createDataset(overrides?: Partial<CompaniesDataset>): CompaniesDataset 
           {
             bucketId: "2025",
             bucketType: "annual",
+            periodStart: "2024-04-01",
+            periodEnd: "2025-03-31",
+            displayLabel: "2025",
             marketCap: {
               reportedAmount: 278_000_000_000,
               reportedCurrency: "USD",
@@ -35,10 +45,10 @@ function createDataset(overrides?: Partial<CompaniesDataset>): CompaniesDataset 
                 provider: "ECB EXR",
                 quoteCurrency: "USD",
                 rate: 0.006874,
-                asOf: "2025-12-31",
+                asOf: "2025-03-31",
                 aggregation: "month_end_average",
-                rangeStart: "2025-01-01",
-                rangeEnd: "2025-12-31",
+                rangeStart: "2024-04-01",
+                rangeEnd: "2025-03-31",
                 sampleCount: 12,
                 expectedSampleCount: 12,
                 coverageStatus: "complete",
@@ -96,6 +106,28 @@ describe("validateDatasetSemantics", () => {
 
     expect(() => validateDatasetSemantics(dataset)).toThrow(
       /non-USD StockAnalysis data without conversion or explicit failure flag/i,
+    );
+  });
+
+  it("rejects latest-year CompaniesMarketCap revenue stored as annual", () => {
+    const dataset = createDataset();
+    const metric = dataset.companies[0]!.metrics[0]!;
+    metric.revenue = {
+      reportedAmount: 330_239_433_537,
+      reportedCurrency: "USD",
+      usdAmount: 330_239_433_537,
+      normalizationMethod: "reported_usd",
+    };
+    metric.sources.revenue = {
+      provider: "CompaniesMarketCap",
+      url: "https://companiesmarketcap.com/toyota/revenue/",
+      fetchedAt: "2026-03-08T00:00:00.000Z",
+      note: "historical annual value",
+    };
+    metric.flags = [];
+
+    expect(() => validateDatasetSemantics(dataset)).toThrow(
+      /latest-year CompaniesMarketCap revenue must not be stored as annual/i,
     );
   });
 });

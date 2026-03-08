@@ -5,6 +5,7 @@ import {
   describeMoneyNormalization,
   formatComparableMoney,
   formatInteger,
+  formatIsoDate,
   formatReportedMoney,
 } from "@/lib/formatters";
 import type {
@@ -76,6 +77,20 @@ function revenuePerEmployeeMoney(
     usdAmount: maybeRevenuePerEmployeeUsd,
     normalizationMethod: "reported_usd",
   };
+}
+
+function periodSummary(maybeMetric: MetricRecord | undefined): string | null {
+  if (!maybeMetric) {
+    return null;
+  }
+
+  const maybePeriodEnd = maybeMetric.periodEnd
+    ? `ended ${formatIsoDate(maybeMetric.periodEnd)}`
+    : null;
+
+  return maybePeriodEnd
+    ? `${maybeMetric.displayLabel} · ${maybePeriodEnd}`
+    : maybeMetric.displayLabel;
 }
 
 export function CompaniesTable(props: CompaniesTableProps) {
@@ -150,6 +165,11 @@ export function CompaniesTable(props: CompaniesTableProps) {
                 <p class="text-xs text-muted-foreground">
                   #{row.company.rank} · {row.company.symbol} · {row.company.country}
                 </p>
+                {periodSummary(row.metric) ? (
+                  <p class="text-xs text-muted-foreground">
+                    {periodSummary(row.metric)}
+                  </p>
+                ) : null}
               </td>
               <td class="px-4 py-3">
                 <MoneyCell maybeMoney={row.metric?.marketCap} />
@@ -196,14 +216,34 @@ export function CompaniesTable(props: CompaniesTableProps) {
                       Market cap: snapshot fallback
                     </span>
                   ) : null}
+                  {row.metric?.flags.includes("employee_snapshot_fallback") ? (
+                    <span class="inline-flex w-fit rounded bg-muted px-2 py-1">
+                      Employees: snapshot fallback
+                    </span>
+                  ) : null}
+                  {row.metric?.bucketType === "ttm" ? (
+                    <span class="inline-flex w-fit rounded bg-muted px-2 py-1">
+                      Revenue period: TTM
+                    </span>
+                  ) : null}
                   {row.metric?.flags.includes("revenue_fx_converted") ? (
                     <span class="inline-flex w-fit rounded bg-muted px-2 py-1">
                       Revenue: FX converted
                     </span>
                   ) : null}
+                  {row.metric?.revenue?.fx?.coverageStatus === "partial" ? (
+                    <span class="inline-flex w-fit rounded bg-muted px-2 py-1">
+                      Revenue: partial FX coverage
+                    </span>
+                  ) : null}
                   {row.metric?.flags.includes("market_cap_fx_converted") ? (
                     <span class="inline-flex w-fit rounded bg-muted px-2 py-1">
                       Market cap: FX converted
+                    </span>
+                  ) : null}
+                  {row.metric?.flags.includes("annual_revenue_cross_source_mismatch") ? (
+                    <span class="inline-flex w-fit rounded bg-muted px-2 py-1">
+                      Revenue: source mismatch
                     </span>
                   ) : null}
                   {row.metric?.flags.includes("revenue_currency_conversion_unavailable") ? (
