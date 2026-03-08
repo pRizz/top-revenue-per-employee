@@ -91,14 +91,17 @@ export function PlaygroundPage() {
 
         {visualizationRegistry[0].render(comparisonPoints())}
 
-        <div class="overflow-hidden rounded-xl border bg-card shadow-soft">
-          <table class="w-full border-collapse text-sm">
+        <div class="overflow-x-auto rounded-xl border bg-card shadow-soft [-webkit-overflow-scrolling:touch]">
+          <table
+            aria-label="Comparison table"
+            class="w-full min-w-[720px] border-collapse text-sm"
+          >
             <thead class="bg-muted">
               <tr>
-                <th class="px-3 py-2 text-left">Company</th>
-                <th class="px-3 py-2 text-left">Market cap</th>
-                <th class="px-3 py-2 text-left">Revenue / employee</th>
-                <th class="px-3 py-2 text-left">Employees</th>
+                <th class="px-3 py-2 text-left whitespace-nowrap">Company</th>
+                <th class="px-3 py-2 text-left whitespace-nowrap">Market cap</th>
+                <th class="px-3 py-2 text-left whitespace-nowrap">Revenue / employee</th>
+                <th class="px-3 py-2 text-left whitespace-nowrap">Employees</th>
               </tr>
             </thead>
             <tbody>
