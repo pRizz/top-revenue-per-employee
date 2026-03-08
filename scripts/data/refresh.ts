@@ -1,5 +1,6 @@
 import path from "node:path";
 
+import { buildDatasetCurrencyAuditSummary } from "./audit";
 import {
   prepareArchiveDirectories,
   writeProcessedSnapshot,
@@ -498,6 +499,9 @@ async function main(): Promise<void> {
     createDataset(companies),
     maybePreviousDataset,
   );
+  const currencyAudit = buildDatasetCurrencyAuditSummary(
+    await writePublicDataset(dataset),
+  );
 
   // Keep metadata.generatedAt tied to the current refresh run so the UI can
   // continue showing "Last refreshed" even when nested metric source
@@ -515,6 +519,7 @@ async function main(): Promise<void> {
         (snapshot) => snapshot.counts.annualEmployees > 0,
       ).length,
     },
+    currencyAudit,
   });
   await writeStockAnalysisRawSnapshot(snapshotDirectory, {
     enrichment: stockAnalysisSnapshots,
@@ -522,7 +527,6 @@ async function main(): Promise<void> {
     fxUsage: fxRateService.getUsageSnapshot(),
   });
 
-  await writePublicDataset(dataset);
   await validatePublicDataset();
 }
 
