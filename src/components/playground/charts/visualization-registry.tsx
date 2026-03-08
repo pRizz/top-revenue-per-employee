@@ -1,3 +1,4 @@
+import type { MonetaryAmount } from "@/types/company-data";
 import type { JSX } from "solid-js";
 
 import { BubbleChart } from "@/components/playground/charts/bubble-chart";
@@ -7,6 +8,8 @@ export interface ComparisonPoint {
   marketCapUsd: number;
   revenuePerEmployeeUsd: number;
   employeeCount: number;
+  marketCap: MonetaryAmount;
+  revenue: MonetaryAmount;
 }
 
 interface VisualizationDefinition {

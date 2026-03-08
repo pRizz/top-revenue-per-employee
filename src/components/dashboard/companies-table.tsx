@@ -1,8 +1,17 @@
 import { createMemo, createSignal } from "solid-js";
 import { ArrowDownUp } from "lucide-solid";
 
-import { formatInteger, formatUsd } from "@/lib/formatters";
-import type { CompanyRecord, MetricRecord } from "@/types/company-data";
+import {
+  describeMoneyNormalization,
+  formatComparableMoney,
+  formatInteger,
+  formatReportedMoney,
+} from "@/lib/formatters";
+import type {
+  CompanyRecord,
+  MetricRecord,
+  MonetaryAmount,
+} from "@/types/company-data";
 
 type SortKey = "rank" | "marketCapUsd" | "revenueUsd" | "employeeCount" | "revenuePerEmployeeUsd";
 type SortDirection = "asc" | "desc";
@@ -23,6 +32,50 @@ function numericValue(row: TableRow, key: SortKey): number {
 
   const maybeValue = row.metric?.[key] ?? null;
   return maybeValue === null ? Number.NEGATIVE_INFINITY : maybeValue;
+}
+
+function MoneyCell(props: {
+  maybeMoney: MonetaryAmount | null | undefined;
+  emphasize?: boolean;
+}) {
+  const money = () => props.maybeMoney ?? null;
+  const normalizationLabel = () => describeMoneyNormalization(money());
+  const showReportedAmount = () =>
+    money() !== null &&
+    (money()!.reportedCurrency !== "USD" ||
+      money()!.normalizationMethod === "unavailable");
+
+  return (
+    <div class={`flex flex-col gap-1 ${props.emphasize ? "font-semibold text-primary" : ""}`}>
+      <span>{formatComparableMoney(money())}</span>
+      {showReportedAmount() ? (
+        <span class="text-xs font-normal text-muted-foreground">
+          Reported: {formatReportedMoney(money())}
+        </span>
+      ) : null}
+      {normalizationLabel() ? (
+        <span class="text-xs font-normal text-muted-foreground">
+          {normalizationLabel()}
+        </span>
+      ) : null}
+    </div>
+  );
+}
+
+function revenuePerEmployeeMoney(
+  maybeMetric: MetricRecord | undefined,
+): MonetaryAmount | null {
+  const maybeRevenuePerEmployeeUsd = maybeMetric?.revenuePerEmployeeUsd;
+  if (maybeRevenuePerEmployeeUsd === null || maybeRevenuePerEmployeeUsd === undefined) {
+    return null;
+  }
+
+  return {
+    reportedAmount: maybeRevenuePerEmployeeUsd,
+    reportedCurrency: "USD",
+    usdAmount: maybeRevenuePerEmployeeUsd,
+    normalizationMethod: "reported_usd",
+  };
 }
 
 export function CompaniesTable(props: CompaniesTableProps) {
@@ -98,11 +151,15 @@ export function CompaniesTable(props: CompaniesTableProps) {
                   #{row.company.rank} · {row.company.symbol} · {row.company.country}
                 </p>
               </td>
-              <td class="px-4 py-3">{formatUsd(row.metric?.marketCapUsd ?? null)}</td>
-              <td class="px-4 py-3">{formatUsd(row.metric?.revenueUsd ?? null)}</td>
+              <td class="px-4 py-3">
+                <MoneyCell maybeMoney={row.metric?.marketCap} />
+              </td>
+              <td class="px-4 py-3">
+                <MoneyCell maybeMoney={row.metric?.revenue} />
+              </td>
               <td class="px-4 py-3">{formatInteger(row.metric?.employeeCount ?? null)}</td>
-              <td class="px-4 py-3 font-semibold text-primary">
-                {formatUsd(row.metric?.revenuePerEmployeeUsd ?? null)}
+              <td class="px-4 py-3">
+                <MoneyCell maybeMoney={revenuePerEmployeeMoney(row.metric)} emphasize />
               </td>
               <td class="px-4 py-3 text-xs text-muted-foreground">
                 <div class="flex flex-col gap-1">
@@ -133,6 +190,27 @@ export function CompaniesTable(props: CompaniesTableProps) {
                   ) : (
                     <span class="inline-flex w-fit rounded bg-muted px-2 py-1">Employees: —</span>
                   )}
+
+                  {row.metric?.flags.includes("market_cap_snapshot_fallback") ? (
+                    <span class="inline-flex w-fit rounded bg-muted px-2 py-1">
+                      Market cap: snapshot fallback
+                    </span>
+                  ) : null}
+                  {row.metric?.flags.includes("revenue_fx_converted") ? (
+                    <span class="inline-flex w-fit rounded bg-muted px-2 py-1">
+                      Revenue: FX converted
+                    </span>
+                  ) : null}
+                  {row.metric?.flags.includes("market_cap_fx_converted") ? (
+                    <span class="inline-flex w-fit rounded bg-muted px-2 py-1">
+                      Market cap: FX converted
+                    </span>
+                  ) : null}
+                  {row.metric?.flags.includes("revenue_currency_conversion_unavailable") ? (
+                    <span class="inline-flex w-fit rounded bg-muted px-2 py-1">
+                      Revenue: conversion unavailable
+                    </span>
+                  ) : null}
                 </div>
               </td>
             </tr>

@@ -49,7 +49,7 @@ const exchangeByTickerSuffix: Record<string, string> = {
   SR: "tadawul",
   SW: "swx",
   PA: "epa",
-  DE: "xetra",
+  DE: "etr",
   AS: "ams",
   L: "lse",
   NS: "nse",
@@ -189,6 +189,46 @@ function normalizeSymbol(symbol: string): string {
   return symbol.trim().toUpperCase();
 }
 
+function resolveBasePathForSymbol(
+  rawSymbol: string,
+  stockRouteBySymbol: Map<string, string>,
+  quoteRouteByExchangeAndSymbol: Map<string, string>,
+  uniqueRouteBySymbol: Map<string, string>,
+): string | null {
+  const symbol = normalizeSymbol(rawSymbol);
+  const [tickerBase, maybeSuffix] = symbol.split(".");
+
+  if (stockRouteBySymbol.has(symbol)) {
+    return stockRouteBySymbol.get(symbol) ?? null;
+  }
+
+  if (maybeSuffix) {
+    const maybeExchange = exchangeByTickerSuffix[maybeSuffix];
+    if (maybeExchange) {
+      const maybeQuoteRoute = quoteRouteByExchangeAndSymbol.get(
+        `${maybeExchange}:${tickerBase}`,
+      );
+      if (maybeQuoteRoute) {
+        return maybeQuoteRoute;
+      }
+    }
+  }
+
+  if (tickerBase && stockRouteBySymbol.has(tickerBase)) {
+    return stockRouteBySymbol.get(tickerBase) ?? null;
+  }
+
+  if (tickerBase && uniqueRouteBySymbol.has(tickerBase)) {
+    return uniqueRouteBySymbol.get(tickerBase) ?? null;
+  }
+
+  if (symbol && uniqueRouteBySymbol.has(symbol)) {
+    return uniqueRouteBySymbol.get(symbol) ?? null;
+  }
+
+  return null;
+}
+
 export async function createStockAnalysisRouteResolver(): Promise<StockAnalysisRouteResolver> {
   const stockRouteBySymbol = new Map<string, string>();
   const quoteRouteByExchangeAndSymbol = new Map<string, string>();
@@ -256,43 +296,14 @@ export async function createStockAnalysisRouteResolver(): Promise<StockAnalysisR
     }
   }
 
-  const resolveBasePath = (rawSymbol: string): string | null => {
-    const symbol = normalizeSymbol(rawSymbol);
-    const [tickerBase, maybeSuffix] = symbol.split(".");
-
-    if (stockRouteBySymbol.has(symbol)) {
-      return stockRouteBySymbol.get(symbol) ?? null;
-    }
-
-    if (tickerBase && stockRouteBySymbol.has(tickerBase)) {
-      return stockRouteBySymbol.get(tickerBase) ?? null;
-    }
-
-    if (maybeSuffix) {
-      const maybeExchange = exchangeByTickerSuffix[maybeSuffix];
-      if (maybeExchange) {
-        const maybeRoute = quoteRouteByExchangeAndSymbol.get(
-          `${maybeExchange}:${tickerBase}`,
-        );
-        if (maybeRoute) {
-          return maybeRoute;
-        }
-      }
-    }
-
-    if (tickerBase && uniqueRouteBySymbol.has(tickerBase)) {
-      return uniqueRouteBySymbol.get(tickerBase) ?? null;
-    }
-
-    if (symbol && uniqueRouteBySymbol.has(symbol)) {
-      return uniqueRouteBySymbol.get(symbol) ?? null;
-    }
-
-    return null;
-  };
-
   return {
-    resolveBasePath,
+    resolveBasePath: (rawSymbol) =>
+      resolveBasePathForSymbol(
+        rawSymbol,
+        stockRouteBySymbol,
+        quoteRouteByExchangeAndSymbol,
+        uniqueRouteBySymbol,
+      ),
     stats: {
       stockRoutesIndexed: stockRouteBySymbol.size,
       quoteRoutesIndexed: quoteRouteByExchangeAndSymbol.size,
@@ -401,4 +412,5 @@ export const __testing = {
   parseSitemapUrls,
   parseRevenueBasePaths,
   normalizeSymbol,
+  resolveBasePathForSymbol,
 };

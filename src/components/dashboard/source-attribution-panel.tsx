@@ -29,9 +29,15 @@ export function SourceAttributionPanel(
           >
             StockAnalysis
           </a>{" "}
-          — annual/quarterly revenue, market-cap history, employee history.
+          — annual/quarterly revenue, market-cap history, employee history,
+          plus original reporting currencies.
         </li>
       </ul>
+      <p class="mt-3 text-xs text-muted-foreground">
+        Comparable money values are shown in USD. When a source reports in a
+        local currency, the dataset stores the original amount and normalizes
+        it for ranking and charting.
+      </p>
       <p class="mt-3 text-xs text-muted-foreground">
         Last refreshed: {new Date(props.generatedAt).toLocaleString()}
       </p>
