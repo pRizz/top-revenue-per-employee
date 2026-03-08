@@ -156,6 +156,27 @@ export function reconcileDatasetSourceTimestamps(
   };
 }
 
+function comparableDataset(
+  dataset: NormalizedDataset,
+): Omit<NormalizedDataset, "generatedAt"> {
+  const { generatedAt: _generatedAt, ...comparable } = dataset;
+  return comparable;
+}
+
+export function hasMaterialDatasetChanges(
+  nextDataset: NormalizedDataset,
+  maybePreviousDataset: NormalizedDataset | null,
+): boolean {
+  if (!maybePreviousDataset) {
+    return true;
+  }
+
+  return (
+    JSON.stringify(comparableDataset(nextDataset)) !==
+    JSON.stringify(comparableDataset(maybePreviousDataset))
+  );
+}
+
 export async function readPreviousProcessedDataset(): Promise<NormalizedDataset | null> {
   try {
     const text = await fs.readFile(PROCESSED_DATASET_PATH, "utf8");

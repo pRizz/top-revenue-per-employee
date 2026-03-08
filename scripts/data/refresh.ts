@@ -7,7 +7,7 @@ import {
   writeStockAnalysisRawSnapshot,
   writeUniverseRawSnapshot,
 } from "./archive";
-import { writePublicDataset } from "./build-public-dataset";
+import { buildPublicDataset, writePublicDataset } from "./build-public-dataset";
 import { DATA_CONFIG } from "./config";
 import { FxRateService } from "./fx";
 import {
@@ -19,6 +19,7 @@ import {
   toCompanyRecord,
 } from "./normalize";
 import {
+  hasMaterialDatasetChanges,
   readPreviousProcessedDataset,
   reconcileDatasetSourceTimestamps,
 } from "./dataset-stability";
@@ -33,7 +34,7 @@ import {
   type StockAnalysisRouteResolver,
 } from "./sources/stockanalysis";
 import type { UniverseCompany } from "./types";
-import { validatePublicDataset } from "./validate";
+import { validateDatasetSemantics } from "./validate";
 import type { MonetaryAmount } from "@/types/company-data";
 
 interface StockAnalysisSnapshot {
@@ -639,14 +640,11 @@ async function processCompany(
 async function main(): Promise<void> {
   const now = new Date();
   const fetchedAt = now.toISOString();
-  const { snapshotDirectory } = await prepareArchiveDirectories(now);
   const maybePreviousDataset = await readPreviousProcessedDataset();
 
   const universeBundle = await fetchUniverseWithEmployeeSnapshot();
   const stockAnalysisRouteResolver = await createStockAnalysisRouteResolver();
   const fxRateService = new FxRateService();
-
-  await writeUniverseRawSnapshot(snapshotDirectory, universeBundle.raw);
 
   const processingResults = await mapWithConcurrency(
     universeBundle.companies,
@@ -669,13 +667,23 @@ async function main(): Promise<void> {
     createDataset(companies),
     maybePreviousDataset,
   );
-  const currencyAudit = buildDatasetCurrencyAuditSummary(
-    await writePublicDataset(dataset),
-  );
+  const publicDataset = buildPublicDataset(dataset);
+  validateDatasetSemantics(publicDataset);
 
-  // Keep metadata.generatedAt tied to the current refresh run so the UI can
-  // continue showing "Last refreshed" even when nested metric source
-  // timestamps are preserved for unchanged data.
+  if (!hasMaterialDatasetChanges(dataset, maybePreviousDataset)) {
+    console.log(
+      "No material dataset changes detected; skipping tracked writes and deploy inputs.",
+    );
+    return;
+  }
+
+  const { snapshotDirectory } = await prepareArchiveDirectories(now);
+  await writeUniverseRawSnapshot(snapshotDirectory, universeBundle.raw);
+  await writePublicDataset(publicDataset);
+  const currencyAudit = buildDatasetCurrencyAuditSummary(publicDataset);
+
+  // When the dataset materially changes, keep metadata.generatedAt tied to this
+  // refresh run so the deployed UI reflects the latest published update time.
   await writeProcessedSnapshot(dataset, {
     generatedAt: fetchedAt,
     topN: DATA_CONFIG.topN,
@@ -696,8 +704,6 @@ async function main(): Promise<void> {
     routeResolverStats: stockAnalysisRouteResolver.stats,
     fxUsage: fxRateService.getUsageSnapshot(),
   });
-
-  await validatePublicDataset();
 }
 
 main().catch((error) => {

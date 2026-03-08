@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import {
+  hasMaterialDatasetChanges,
   reconcileDatasetSourceTimestamps,
   reconcileMetricSourceTimestamps,
 } from "../scripts/data/dataset-stability";
@@ -256,5 +257,146 @@ describe("reconcileDatasetSourceTimestamps", () => {
     );
 
     expect(reconciledDataset.generatedAt).toBe(NEW_FETCHED_AT);
+  });
+});
+
+describe("hasMaterialDatasetChanges", () => {
+  it("treats generatedAt-only changes as non-material", () => {
+    const company: CompanyRecord = {
+      id: "NVDA-1",
+      rank: 1,
+      name: "NVIDIA",
+      symbol: "NVDA",
+      country: "United States",
+      marketCapUsd: 1_000,
+      metrics: [createMetric()],
+    };
+    const previousDataset = {
+      ...createDataset(company),
+      generatedAt: OLD_FETCHED_AT,
+    };
+    const nextDataset = {
+      ...createDataset(company),
+      generatedAt: NEW_FETCHED_AT,
+    };
+
+    expect(hasMaterialDatasetChanges(nextDataset, previousDataset)).toBe(false);
+  });
+
+  it("treats reconciled source fetchedAt preservation as non-material", () => {
+    const previousCompany: CompanyRecord = {
+      id: "NVDA-1",
+      rank: 1,
+      name: "NVIDIA",
+      symbol: "NVDA",
+      country: "United States",
+      marketCapUsd: 1_000,
+      metrics: [
+        createMetric(
+          {},
+          {
+            revenue: createSource({
+              fetchedAt: OLD_FETCHED_AT,
+            }),
+          },
+        ),
+      ],
+    };
+    const nextCompany: CompanyRecord = {
+      ...previousCompany,
+      metrics: [createMetric()],
+    };
+    const previousDataset = {
+      ...createDataset(previousCompany),
+      generatedAt: OLD_FETCHED_AT,
+    };
+    const nextDataset = reconcileDatasetSourceTimestamps(
+      {
+        ...createDataset(nextCompany),
+        generatedAt: NEW_FETCHED_AT,
+      },
+      previousDataset,
+    );
+
+    expect(hasMaterialDatasetChanges(nextDataset, previousDataset)).toBe(false);
+  });
+
+  it("treats source metadata changes as material", () => {
+    const previousCompany: CompanyRecord = {
+      id: "NVDA-1",
+      rank: 1,
+      name: "NVIDIA",
+      symbol: "NVDA",
+      country: "United States",
+      marketCapUsd: 1_000,
+      metrics: [createMetric()],
+    };
+    const nextCompany: CompanyRecord = {
+      ...previousCompany,
+      metrics: [
+        createMetric(
+          {},
+          {
+            revenue: createSource({
+              url: "https://companiesmarketcap.com/nvidia/revenue/",
+              provider: "CompaniesMarketCap",
+            }),
+          },
+        ),
+      ],
+    };
+
+    expect(
+      hasMaterialDatasetChanges(
+        {
+          ...createDataset(nextCompany),
+          generatedAt: NEW_FETCHED_AT,
+        },
+        {
+          ...createDataset(previousCompany),
+          generatedAt: OLD_FETCHED_AT,
+        },
+      ),
+    ).toBe(true);
+  });
+
+  it("treats metric value changes as material", () => {
+    const previousCompany: CompanyRecord = {
+      id: "NVDA-1",
+      rank: 1,
+      name: "NVIDIA",
+      symbol: "NVDA",
+      country: "United States",
+      marketCapUsd: 1_000,
+      metrics: [createMetric()],
+    };
+    const nextCompany: CompanyRecord = {
+      ...previousCompany,
+      metrics: [
+        createMetric({
+          revenue: {
+            reportedAmount: 120,
+            reportedCurrency: "USD",
+            usdAmount: 120,
+            normalizationMethod: "reported_usd",
+          },
+          revenueUsd: 120,
+          revenuePerEmployeeUsd: 12,
+        }),
+      ],
+    };
+
+    expect(
+      hasMaterialDatasetChanges(
+        {
+          ...createDataset(nextCompany),
+          generatedAt: NEW_FETCHED_AT,
+        },
+        {
+          ...createDataset(previousCompany),
+          generatedAt: OLD_FETCHED_AT,
+        },
+      ),
+    ).toBe(true);
   });
 });

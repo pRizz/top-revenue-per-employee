@@ -4,10 +4,10 @@ import path from "node:path";
 import type { NormalizedDataset } from "./types";
 import type { CompaniesDataset } from "../../src/types/company-data";
 
-export async function writePublicDataset(
+export function buildPublicDataset(
   dataset: NormalizedDataset,
-): Promise<CompaniesDataset> {
-  const withMetadata: CompaniesDataset = {
+): CompaniesDataset {
+  return {
     generatedAt: dataset.generatedAt,
     topN: dataset.topN,
     bucketIds: dataset.bucketIds,
@@ -27,14 +27,14 @@ export async function writePublicDataset(
       },
     ],
   };
+}
 
+export async function writePublicDataset(dataset: CompaniesDataset): Promise<void> {
   const outputDirectory = path.resolve("public", "data");
   await fs.mkdir(outputDirectory, { recursive: true });
   await fs.writeFile(
     path.join(outputDirectory, "companies-data.json"),
-    JSON.stringify(withMetadata, null, 2),
+    JSON.stringify(dataset, null, 2),
     "utf8",
   );
-
-  return withMetadata;
 }
