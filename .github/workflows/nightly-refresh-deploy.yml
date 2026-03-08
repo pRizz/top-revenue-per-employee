@@ -1,4 +1,4 @@
-name: Nightly Refresh and Deploy
+name: Nightly Refresh
 
 on:
   schedule:
@@ -7,15 +7,13 @@ on:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 concurrency:
-  group: "pages-nightly"
+  group: "nightly-refresh"
   cancel-in-progress: false
 
 jobs:
-  refresh-build-deploy:
+  refresh-data:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -53,26 +51,6 @@ jobs:
           git commit -m "chore(data): nightly refresh"
           git push origin main
 
-      - name: Build site
-        if: steps.tracked_changes.outputs.has_changes == 'true'
-        run: npm run build:pages
-        env:
-          VITE_BASE_PATH: /${{ github.event.repository.name }}/
-
-      - name: Configure Pages
-        if: steps.tracked_changes.outputs.has_changes == 'true'
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        if: steps.tracked_changes.outputs.has_changes == 'true'
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist
-
-      - name: Deploy to GitHub Pages
-        if: steps.tracked_changes.outputs.has_changes == 'true'
-        uses: actions/deploy-pages@v4
-
-      - name: Skip deploy when data is unchanged
+      - name: Skip push when data is unchanged
         if: steps.tracked_changes.outputs.has_changes != 'true'
-        run: echo "Nightly refresh produced no material tracked changes; skipping build and deploy."
+        run: echo "Nightly refresh produced no material tracked changes; skipping commit and push."
