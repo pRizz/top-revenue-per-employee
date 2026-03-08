@@ -12,9 +12,8 @@ import { DATA_CONFIG } from "./config";
 import { FxRateService } from "./fx";
 import {
   accumulatorMapToMetrics,
-  annualBucketForDate,
-  bucketDateRange,
-  bucketForDate,
+  annualBucketForPeriodEndDate,
+  bucketForQuarterEndDate,
   createDataset,
   createEmptyAccumulatorMap,
   toCompanyRecord,
@@ -25,7 +24,7 @@ import {
 } from "./dataset-stability";
 import { mapWithConcurrency, sortBySymbol } from "./order-utils";
 import {
-  fetchAnnualRevenueFromCompaniesMarketCap,
+  fetchRevenueSnapshotFromCompaniesMarketCap,
   fetchUniverseWithEmployeeSnapshot,
 } from "./sources/companies-marketcap";
 import {
@@ -40,6 +39,15 @@ import type { MonetaryAmount } from "@/types/company-data";
 interface StockAnalysisSnapshot {
   symbol: string;
   resolvedBasePath: string | null;
+  companiesMarketCapRevenue: {
+    annualRevenueByYear: Record<string, number>;
+    ttmRevenue: {
+      year: number;
+      amount: number;
+      periodStart: string | null;
+      periodEnd: string | null;
+    } | null;
+  } | null;
   currencies: {
     main: string | null;
     financial: string | null;
@@ -50,6 +58,28 @@ interface StockAnalysisSnapshot {
     quarterlyMarketCap: number;
     annualMarketCap: number;
     annualEmployees: number;
+  };
+  series: {
+    quarterlyRevenue: Array<{
+      date: string;
+      revenue: number;
+    }>;
+    annualRevenue: Array<{
+      date: string;
+      revenue: number;
+    }>;
+    quarterlyMarketCap: Array<{
+      date: string;
+      value: number;
+    }>;
+    annualMarketCap: Array<{
+      date: string;
+      value: number;
+    }>;
+    annualEmployees: Array<{
+      date: string;
+      count: number;
+    }>;
   };
 }
 
@@ -83,6 +113,57 @@ function createUsdMoney(
 function relativeDifference(left: number, right: number): number {
   const denominator = Math.max(Math.abs(left), Math.abs(right), 1);
   return Math.abs(left - right) / denominator;
+}
+
+function toIsoDate(date: Date): string {
+  return date.toISOString().slice(0, 10);
+}
+
+function shiftIsoDate(dateText: string, days: number): string | null {
+  const date = new Date(`${dateText}T00:00:00Z`);
+  if (Number.isNaN(date.valueOf())) {
+    return null;
+  }
+
+  date.setUTCDate(date.getUTCDate() + days);
+  return toIsoDate(date);
+}
+
+function derivePeriodRange(
+  endDate: string,
+  maybePreviousEndDate: string | undefined,
+  fallbackLengthDays: number,
+): {
+  startDate: string | null;
+  endDate: string;
+} {
+  const startDate =
+    maybePreviousEndDate !== undefined
+      ? shiftIsoDate(maybePreviousEndDate, 1)
+      : shiftIsoDate(endDate, -(fallbackLengthDays - 1));
+
+  return {
+    startDate,
+    endDate,
+  };
+}
+
+function setPeriodMetadata(
+  entry: ReturnType<typeof createEmptyAccumulatorMap> extends Map<string, infer Value>
+    ? Value
+    : never,
+  periodRange: {
+    startDate: string | null;
+    endDate: string | null;
+  },
+): void {
+  if (periodRange.startDate !== null) {
+    entry.periodStart = periodRange.startDate;
+  }
+
+  if (periodRange.endDate !== null) {
+    entry.periodEnd = periodRange.endDate;
+  }
 }
 
 function fillFallbackMarketCap(
@@ -124,9 +205,15 @@ function fillFallbackEmployees(
 }
 
 function recordUnavailableRevenue(
-  entry: { revenue: MonetaryAmount | null; flags: string[] },
+  entry: ReturnType<typeof createEmptyAccumulatorMap> extends Map<string, infer Value>
+    ? Value
+    : never,
   reportedAmount: number,
   reportedCurrency: string | null,
+  periodRange?: {
+    startDate: string | null;
+    endDate: string | null;
+  },
 ): void {
   entry.revenue = {
     reportedAmount,
@@ -134,7 +221,18 @@ function recordUnavailableRevenue(
     usdAmount: null,
     normalizationMethod: "unavailable",
   };
+  if (periodRange) {
+    setPeriodMetadata(entry, periodRange);
+  }
   addFlag(entry, "revenue_currency_conversion_unavailable");
+}
+
+function sortPointsAscending<T extends { date: string }>(points: T[]): T[] {
+  return [...points].sort((left, right) => left.date.localeCompare(right.date));
+}
+
+function sortMarketCapPointsAscending<T extends { d: string }>(points: T[]): T[] {
+  return [...points].sort((left, right) => left.d.localeCompare(right.d));
 }
 
 async function processCompany(
@@ -150,6 +248,7 @@ async function processCompany(
   const stockAnalysisSnapshot: StockAnalysisSnapshot = {
     symbol: company.symbol,
     resolvedBasePath: null,
+    companiesMarketCapRevenue: null,
     currencies: {
       main: null,
       financial: null,
@@ -161,11 +260,29 @@ async function processCompany(
       annualMarketCap: 0,
       annualEmployees: 0,
     },
+    series: {
+      quarterlyRevenue: [],
+      annualRevenue: [],
+      quarterlyMarketCap: [],
+      annualMarketCap: [],
+      annualEmployees: [],
+    },
   };
 
   try {
-    const annualRevenue = await fetchAnnualRevenueFromCompaniesMarketCap(company.slug);
-    for (const [year, revenue] of annualRevenue.entries()) {
+    const revenueSnapshot = await fetchRevenueSnapshotFromCompaniesMarketCap(
+      company.slug,
+    );
+    stockAnalysisSnapshot.companiesMarketCapRevenue = {
+      annualRevenueByYear: Object.fromEntries(
+        [...revenueSnapshot.annualRevenueByYear.entries()].sort(
+          ([left], [right]) => left - right,
+        ),
+      ),
+      ttmRevenue: revenueSnapshot.ttmRevenue,
+    };
+
+    for (const [year, revenue] of revenueSnapshot.annualRevenueByYear.entries()) {
       const bucketId = String(year);
       const maybeEntry = accumulatorMap.get(bucketId);
       if (!maybeEntry) {
@@ -177,11 +294,37 @@ async function processCompany(
       }
 
       maybeEntry.revenue = createUsdMoney(revenue, "reported_usd");
+      setPeriodMetadata(maybeEntry, {
+        startDate: `${year}-01-01`,
+        endDate: `${year}-12-31`,
+      });
       maybeEntry.sources.revenue = {
         provider: "CompaniesMarketCap",
         url: `https://companiesmarketcap.com/${company.slug}/revenue/`,
         fetchedAt,
+        note: "historical annual value",
       };
+    }
+
+    if (revenueSnapshot.ttmRevenue !== null) {
+      const ttmBucketId = `${revenueSnapshot.ttmRevenue.year}TTM`;
+      const maybeEntry = accumulatorMap.get(ttmBucketId);
+      if (maybeEntry) {
+        maybeEntry.revenue = createUsdMoney(
+          revenueSnapshot.ttmRevenue.amount,
+          "reported_usd",
+        );
+        setPeriodMetadata(maybeEntry, {
+          startDate: revenueSnapshot.ttmRevenue.periodStart,
+          endDate: revenueSnapshot.ttmRevenue.periodEnd,
+        });
+        maybeEntry.sources.revenue = {
+          provider: "CompaniesMarketCap",
+          url: `https://companiesmarketcap.com/${company.slug}/revenue/`,
+          fetchedAt,
+          note: "TTM value",
+        };
+      }
     }
   } catch {
     // Keep fallback state when this source fails.
@@ -203,11 +346,27 @@ async function processCompany(
       stockAnalysis.annualMarketCap.length;
     stockAnalysisSnapshot.counts.annualEmployees =
       stockAnalysis.annualEmployees.length;
+    stockAnalysisSnapshot.series = {
+      quarterlyRevenue: stockAnalysis.quarterlyRevenue,
+      annualRevenue: stockAnalysis.annualRevenue,
+      quarterlyMarketCap: stockAnalysis.quarterlyMarketCap.map((point) => ({
+        date: point.d,
+        value: point.v,
+      })),
+      annualMarketCap: stockAnalysis.annualMarketCap.map((point) => ({
+        date: point.d,
+        value: point.v,
+      })),
+      annualEmployees: stockAnalysis.annualEmployees,
+    };
     if (stockAnalysis.resolvedBasePath) {
       const baseUrl = `https://stockanalysis.com${stockAnalysis.resolvedBasePath}`;
 
-      for (const point of stockAnalysis.quarterlyRevenue) {
-        const maybeBucketId = bucketForDate(point.date);
+      const quarterlyRevenuePoints = sortPointsAscending(
+        stockAnalysis.quarterlyRevenue,
+      );
+      for (const [index, point] of quarterlyRevenuePoints.entries()) {
+        const maybeBucketId = bucketForQuarterEndDate(point.date);
         if (!maybeBucketId) {
           continue;
         }
@@ -221,18 +380,20 @@ async function processCompany(
           continue;
         }
 
-        const maybeRange = bucketDateRange(maybeBucketId);
-        if (!maybeRange) {
-          continue;
-        }
+        const maybePreviousPoint = quarterlyRevenuePoints[index - 1];
+        const periodRange = derivePeriodRange(
+          point.date,
+          maybePreviousPoint?.date,
+          91,
+        );
 
         const revenue = await fxRateService.toComparableMoney(
           point.revenue,
           stockAnalysis.currencies.financial ?? "UNKNOWN",
           "month_end_average",
           {
-            rangeStart: maybeRange.startDate,
-            rangeEnd: maybeRange.endDate,
+            rangeStart: periodRange.startDate ?? point.date,
+            rangeEnd: periodRange.endDate,
           },
         );
 
@@ -241,11 +402,13 @@ async function processCompany(
             maybeEntry,
             point.revenue,
             stockAnalysis.currencies.financial,
+            periodRange,
           );
           continue;
         }
 
         maybeEntry.revenue = revenue;
+        setPeriodMetadata(maybeEntry, periodRange);
         maybeEntry.sources.revenue = {
           provider: "StockAnalysis",
           url: `${baseUrl}/revenue/`,
@@ -260,8 +423,9 @@ async function processCompany(
         }
       }
 
-      for (const point of stockAnalysis.annualRevenue) {
-        const maybeBucketId = annualBucketForDate(point.date);
+      const annualRevenuePoints = sortPointsAscending(stockAnalysis.annualRevenue);
+      for (const [index, point] of annualRevenuePoints.entries()) {
+        const maybeBucketId = annualBucketForPeriodEndDate(point.date);
         if (!maybeBucketId) {
           continue;
         }
@@ -275,18 +439,20 @@ async function processCompany(
           continue;
         }
 
-        const maybeRange = bucketDateRange(maybeBucketId);
-        if (!maybeRange) {
-          continue;
-        }
+        const maybePreviousPoint = annualRevenuePoints[index - 1];
+        const periodRange = derivePeriodRange(
+          point.date,
+          maybePreviousPoint?.date,
+          365,
+        );
 
         const revenue = await fxRateService.toComparableMoney(
           point.revenue,
           stockAnalysis.currencies.financial ?? "UNKNOWN",
           "month_end_average",
           {
-            rangeStart: maybeRange.startDate,
-            rangeEnd: maybeRange.endDate,
+            rangeStart: periodRange.startDate ?? point.date,
+            rangeEnd: periodRange.endDate,
           },
         );
 
@@ -313,8 +479,6 @@ async function processCompany(
           } else {
             addFlag(maybeEntry, "annual_revenue_cross_source_mismatch");
           }
-
-          continue;
         }
 
         if (revenue.usdAmount === null) {
@@ -322,11 +486,13 @@ async function processCompany(
             maybeEntry,
             point.revenue,
             stockAnalysis.currencies.financial,
+            periodRange,
           );
           continue;
         }
 
         maybeEntry.revenue = revenue;
+        setPeriodMetadata(maybeEntry, periodRange);
         maybeEntry.sources.revenue = {
           provider: "StockAnalysis",
           url: `${baseUrl}/revenue/`,
@@ -341,8 +507,8 @@ async function processCompany(
         }
       }
 
-      for (const point of stockAnalysis.quarterlyMarketCap) {
-        const maybeBucketId = bucketForDate(point.d);
+      for (const point of sortMarketCapPointsAscending(stockAnalysis.quarterlyMarketCap)) {
+        const maybeBucketId = bucketForQuarterEndDate(point.d);
         if (!maybeBucketId) {
           continue;
         }
@@ -386,8 +552,8 @@ async function processCompany(
         }
       }
 
-      for (const point of stockAnalysis.annualMarketCap) {
-        const maybeBucketId = annualBucketForDate(point.d);
+      for (const point of sortMarketCapPointsAscending(stockAnalysis.annualMarketCap)) {
+        const maybeBucketId = annualBucketForPeriodEndDate(point.d);
         if (!maybeBucketId) {
           continue;
         }
@@ -431,8 +597,8 @@ async function processCompany(
         }
       }
 
-      for (const point of stockAnalysis.annualEmployees) {
-        const maybeBucketId = annualBucketForDate(point.date);
+      for (const point of sortPointsAscending(stockAnalysis.annualEmployees)) {
+        const maybeBucketId = annualBucketForPeriodEndDate(point.date);
         if (!maybeBucketId) {
           continue;
         }
@@ -447,6 +613,10 @@ async function processCompany(
         }
 
         maybeEntry.employeeCount = point.count;
+        setPeriodMetadata(maybeEntry, {
+          startDate: maybeEntry.periodStart,
+          endDate: point.date,
+        });
         maybeEntry.sources.employeeCount = {
           provider: "StockAnalysis",
           url: `${baseUrl}/employees/`,

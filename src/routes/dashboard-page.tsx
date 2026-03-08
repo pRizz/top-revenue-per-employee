@@ -13,7 +13,7 @@ export function DashboardPage() {
   const [dataset] = createResource(getDataset);
   const [selectedBucketId, setSelectedBucketId] = createSignal<string>("");
 
-  const bucketIds = createMemo(() => dataset()?.bucketIds ?? []);
+  const buckets = createMemo(() => dataset()?.buckets ?? []);
 
   const rows = createMemo(() => {
     const maybeDataset = dataset();
@@ -65,8 +65,8 @@ export function DashboardPage() {
       })),
   );
 
-  if (!selectedBucketId() && bucketIds().length > 0) {
-    setSelectedBucketId(bucketIds()[0]);
+  if (!selectedBucketId() && buckets().length > 0) {
+    setSelectedBucketId(buckets()[0]!.id);
   }
 
   return (
@@ -92,7 +92,7 @@ export function DashboardPage() {
         <div class="grid gap-4 lg:grid-cols-[240px_1fr]">
           <div class="space-y-3">
             <TimeBucketSelector
-              bucketIds={bucketIds()}
+              buckets={buckets()}
               selectedBucketId={selectedBucketId()}
               onChange={setSelectedBucketId}
             />

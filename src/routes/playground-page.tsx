@@ -21,10 +21,10 @@ export function PlaygroundPage() {
   const [selectedCompanyIds, setSelectedCompanyIds] = createSignal<string[]>([]);
 
   const companies = createMemo(() => dataset()?.companies ?? []);
-  const bucketIds = createMemo(() => dataset()?.bucketIds ?? []);
+  const buckets = createMemo(() => dataset()?.buckets ?? []);
 
-  if (!selectedBucketId() && bucketIds().length > 0) {
-    setSelectedBucketId(bucketIds()[0]);
+  if (!selectedBucketId() && buckets().length > 0) {
+    setSelectedBucketId(buckets()[0]!.id);
   }
 
   if (selectedCompanyIds().length === 0 && companies().length > 0) {
@@ -84,7 +84,7 @@ export function PlaygroundPage() {
           companies={companies()}
           selectedCompanyIds={selectedCompanyIds()}
           selectedBucketId={selectedBucketId()}
-          bucketIds={bucketIds()}
+          buckets={buckets()}
           onBucketChange={setSelectedBucketId}
           onToggleCompany={toggleCompany}
         />

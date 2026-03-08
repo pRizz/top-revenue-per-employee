@@ -21,6 +21,18 @@ interface EmployeesCsvRow {
   country: string;
 }
 
+interface CompaniesMarketCapTtmRevenue {
+  year: number;
+  amount: number;
+  periodStart: string | null;
+  periodEnd: string | null;
+}
+
+export interface CompaniesMarketCapRevenueSnapshot {
+  annualRevenueByYear: Map<number, number>;
+  ttmRevenue: CompaniesMarketCapTtmRevenue | null;
+}
+
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -54,6 +66,67 @@ function parseSlugMapFromRanking(html: string): Map<string, string> {
     const [, slug, symbol] = match;
     if (!map.has(symbol)) {
       map.set(symbol, slug);
+    }
+  }
+
+  return map;
+}
+
+function parseIsoDateFromHumanDate(maybeText: string | undefined): string | null {
+  if (!maybeText) {
+    return null;
+  }
+
+  const parsedDate = new Date(`${maybeText.trim()} UTC`);
+  if (Number.isNaN(parsedDate.valueOf())) {
+    return null;
+  }
+
+  return parsedDate.toISOString().slice(0, 10);
+}
+
+function parseCurrentRevenueYear(html: string): number | null {
+  const maybeMatch = html.match(/Revenue in (\d{4}) \(TTM\)/i);
+  if (!maybeMatch) {
+    return null;
+  }
+
+  const year = Number(maybeMatch[1]);
+  return Number.isInteger(year) ? year : null;
+}
+
+function parseTtmPeriodRange(html: string): {
+  periodStart: string | null;
+  periodEnd: string | null;
+} {
+  const maybeMatch = html.match(
+    /tooltip-title="(\d{1,2} [A-Z][a-z]{2} \d{4}) - (\d{1,2} [A-Z][a-z]{2} \d{4})"/,
+  );
+  if (!maybeMatch) {
+    return {
+      periodStart: null,
+      periodEnd: null,
+    };
+  }
+
+  return {
+    periodStart: parseIsoDateFromHumanDate(maybeMatch[1]),
+    periodEnd: parseIsoDateFromHumanDate(maybeMatch[2]),
+  };
+}
+
+function parseRevenueByYear(html: string): Map<number, number> {
+  const match = html.match(/data = (\{[^;]+\});/);
+  if (!match) {
+    return new Map<number, number>();
+  }
+
+  const revenueByYear = JSON.parse(match[1]) as Record<string, number>;
+  const map = new Map<number, number>();
+  for (const [yearText, revenue] of Object.entries(revenueByYear)) {
+    const year = Number(yearText);
+    if (Number.isFinite(year) && Number.isFinite(revenue)) {
+      map.set(year, revenue);
     }
   }
 
@@ -126,29 +199,40 @@ export async function fetchUniverseWithEmployeeSnapshot(): Promise<{
   };
 }
 
-export async function fetchAnnualRevenueFromCompaniesMarketCap(
+export async function fetchRevenueSnapshotFromCompaniesMarketCap(
   slug: string,
-): Promise<Map<number, number>> {
+): Promise<CompaniesMarketCapRevenueSnapshot> {
   const url = `https://companiesmarketcap.com/${slug}/revenue/`;
   const html = await fetchText(url);
-  const match = html.match(/data = (\{[^;]+\});/);
-  if (!match) {
-    return new Map<number, number>();
+  const annualRevenueByYear = parseRevenueByYear(html);
+  const currentTtmYear = parseCurrentRevenueYear(html);
+  const maybeTtmAmount =
+    currentTtmYear === null ? null : annualRevenueByYear.get(currentTtmYear) ?? null;
+
+  if (currentTtmYear !== null) {
+    annualRevenueByYear.delete(currentTtmYear);
   }
 
-  const revenueByYear = JSON.parse(match[1]) as Record<string, number>;
-  const map = new Map<number, number>();
-  for (const [yearText, revenue] of Object.entries(revenueByYear)) {
-    const year = Number(yearText);
-    if (Number.isFinite(year) && Number.isFinite(revenue)) {
-      map.set(year, revenue);
-    }
-  }
-
-  return map;
+  return {
+    annualRevenueByYear,
+    ttmRevenue:
+      currentTtmYear !== null &&
+      maybeTtmAmount !== null &&
+      Number.isFinite(maybeTtmAmount)
+        ? {
+            year: currentTtmYear,
+            amount: maybeTtmAmount,
+            ...parseTtmPeriodRange(html),
+          }
+        : null,
+  };
 }
 
 export const __testing = {
   toSlug,
   parseSlugMapFromRanking,
+  parseCurrentRevenueYear,
+  parseIsoDateFromHumanDate,
+  parseRevenueByYear,
+  parseTtmPeriodRange,
 };
