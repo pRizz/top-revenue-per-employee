@@ -65,4 +65,14 @@ describe("StockAnalysis source parser helpers", () => {
     expect(stockAnalysisTesting.normalizeSymbol(" aapl ")).toBe("AAPL");
     expect(stockAnalysisTesting.normalizeSymbol("1398.hk")).toBe("1398.HK");
   });
+
+  it("extracts page main and financial currencies", () => {
+    const html =
+      'symbol:"TM",curr:{main:"USD",price:"USD",dividend:"USD",financial:"JPY"},stream:true';
+
+    expect(stockAnalysisTesting.parsePageCurrencies(html)).toEqual({
+      main: "USD",
+      financial: "JPY",
+    });
+  });
 });

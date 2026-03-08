@@ -1,4 +1,5 @@
 import { DATA_CONFIG, SOURCE_URLS } from "../config";
+import type { CurrencyCode } from "@/types/company-data";
 
 interface RevenuePoint {
   date: string;
@@ -17,6 +18,10 @@ interface EmployeePoint {
 
 interface StockAnalysisSeries {
   resolvedBasePath: string | null;
+  currencies: {
+    main: CurrencyCode | null;
+    financial: CurrencyCode | null;
+  };
   quarterlyRevenue: RevenuePoint[];
   annualRevenue: RevenuePoint[];
   quarterlyMarketCap: MarketCapPoint[];
@@ -136,6 +141,26 @@ function parseEmployeePoints(html: string): EmployeePoint[] {
   }
 
   return points;
+}
+
+function parsePageCurrencies(html: string): {
+  main: CurrencyCode | null;
+  financial: CurrencyCode | null;
+} {
+  const match = html.match(
+    /curr:\{main:"([^"]+)",price:"[^"]+",dividend:"[^"]+",financial:"([^"]+)"\}/,
+  );
+  if (!match) {
+    return {
+      main: null,
+      financial: null,
+    };
+  }
+
+  return {
+    main: match[1]?.trim().toUpperCase() ?? null,
+    financial: match[2]?.trim().toUpperCase() ?? null,
+  };
 }
 
 function parseSitemapUrls(indexXml: string): string[] {
@@ -318,6 +343,10 @@ export async function fetchStockAnalysisSeries(
   if (!resolvedBasePath) {
     return {
       resolvedBasePath: null,
+      currencies: {
+        main: null,
+        financial: null,
+      },
       quarterlyRevenue: [],
       annualRevenue: [],
       quarterlyMarketCap: [],
@@ -351,9 +380,13 @@ export async function fetchStockAnalysisSeries(
     extractArrayLiteralByKey(marketCapHtml ?? "", "annual"),
   );
   const annualEmployees = parseEmployeePoints(employeesHtml ?? "");
+  const currencies = parsePageCurrencies(
+    revenueHtml ?? marketCapHtml ?? employeesHtml ?? "",
+  );
 
   return {
     resolvedBasePath,
+    currencies,
     quarterlyRevenue,
     annualRevenue,
     quarterlyMarketCap,
@@ -364,6 +397,7 @@ export async function fetchStockAnalysisSeries(
 
 export const __testing = {
   parseEmployeePoints,
+  parsePageCurrencies,
   parseSitemapUrls,
   parseRevenueBasePaths,
   normalizeSymbol,

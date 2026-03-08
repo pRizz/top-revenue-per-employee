@@ -3,6 +3,7 @@ export const DATA_CONFIG = {
   annualYears: [2025, 2024],
   userAgent: "top-revenue-per-employee-bot/0.1 (github-actions)",
   requestDelayMs: 120,
+  annualRevenueCrossSourceTolerance: 0.2,
 } as const;
 
 export const SOURCE_URLS = {

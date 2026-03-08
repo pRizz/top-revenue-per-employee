@@ -51,6 +51,7 @@ export async function writeStockAnalysisRawSnapshot(
   payload: {
     enrichment: unknown;
     routeResolverStats: unknown;
+    fxUsage: unknown;
   },
 ): Promise<void> {
   await fs.writeFile(
@@ -61,6 +62,11 @@ export async function writeStockAnalysisRawSnapshot(
   await fs.writeFile(
     path.join(snapshotDirectory, "stockanalysis-route-resolver.json"),
     JSON.stringify(payload.routeResolverStats, null, 2),
+    "utf8",
+  );
+  await fs.writeFile(
+    path.join(snapshotDirectory, "fx-usage.json"),
+    JSON.stringify(payload.fxUsage, null, 2),
     "utf8",
   );
 }
