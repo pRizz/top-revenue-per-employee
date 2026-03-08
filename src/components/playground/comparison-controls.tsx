@@ -15,6 +15,8 @@ export function ComparisonControls(props: ComparisonControlsProps) {
   const [selectedBucketType, setSelectedBucketType] = createSignal<"annual" | "quarterly">(
     props.selectedBucketId.includes("Q") ? "quarterly" : "annual",
   );
+  const activeBucketTypeClasses = "bg-card text-foreground shadow-sm";
+  const inactiveBucketTypeClasses = "text-muted-foreground";
 
   const filteredBucketIds = createMemo(() =>
     props.bucketIds.filter((bucketId) =>
@@ -48,8 +50,8 @@ export function ComparisonControls(props: ComparisonControlsProps) {
           <button
             class={`rounded px-2 py-1 ${
               selectedBucketType() === "annual"
-                ? "bg-white text-foreground shadow-sm"
-                : "text-muted-foreground"
+                ? activeBucketTypeClasses
+                : inactiveBucketTypeClasses
             }`}
             onClick={() => setSelectedBucketType("annual")}
             type="button"
@@ -59,8 +61,8 @@ export function ComparisonControls(props: ComparisonControlsProps) {
           <button
             class={`rounded px-2 py-1 ${
               selectedBucketType() === "quarterly"
-                ? "bg-white text-foreground shadow-sm"
-                : "text-muted-foreground"
+                ? activeBucketTypeClasses
+                : inactiveBucketTypeClasses
             }`}
             onClick={() => setSelectedBucketType("quarterly")}
             type="button"
@@ -69,7 +71,7 @@ export function ComparisonControls(props: ComparisonControlsProps) {
           </button>
         </div>
         <select
-          class="w-full rounded-md border bg-white px-3 py-2 text-sm"
+          class="w-full rounded-md border bg-background px-3 py-2 text-sm"
           value={props.selectedBucketId}
           onChange={(event) => props.onBucketChange(event.currentTarget.value)}
         >

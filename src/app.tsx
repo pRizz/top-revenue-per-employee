@@ -9,7 +9,7 @@ import { PlaygroundPage } from "@/routes/playground-page";
 function Navigation(props: RouteSectionProps) {
   return (
     <>
-      <header class="sticky top-0 z-50 border-b bg-white/90 backdrop-blur">
+      <header class="sticky top-0 z-50 border-b bg-background/90 backdrop-blur">
         <div class="container flex h-14 items-center justify-between">
           <A href="/" class="flex items-center gap-2 font-semibold">
             <Building2 class="h-4 w-4 text-primary" />

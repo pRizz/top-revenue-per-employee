@@ -26,7 +26,6 @@ const capturePageScreenshot = async (
   await page.addStyleTag({ content: disableMotionCss });
   await page.screenshot({
     path: path.join(screenshotDirectory, filename),
-    fullPage: true,
   });
 };
 

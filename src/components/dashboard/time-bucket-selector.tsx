@@ -10,6 +10,8 @@ export function TimeBucketSelector(props: TimeBucketSelectorProps) {
   const [selectedBucketType, setSelectedBucketType] = createSignal<"annual" | "quarterly">(
     props.selectedBucketId.includes("Q") ? "quarterly" : "annual",
   );
+  const activeBucketTypeClasses = "bg-card text-foreground shadow-sm";
+  const inactiveBucketTypeClasses = "text-muted-foreground";
 
   const filteredBucketIds = createMemo(() =>
     props.bucketIds.filter((bucketId) =>
@@ -41,7 +43,9 @@ export function TimeBucketSelector(props: TimeBucketSelectorProps) {
       <div class="mb-2 inline-flex rounded-md border bg-muted p-1 text-xs">
         <button
           class={`rounded px-2 py-1 ${
-            selectedBucketType() === "annual" ? "bg-white text-foreground shadow-sm" : "text-muted-foreground"
+            selectedBucketType() === "annual"
+              ? activeBucketTypeClasses
+              : inactiveBucketTypeClasses
           }`}
           onClick={() => setSelectedBucketType("annual")}
           type="button"
@@ -51,8 +55,8 @@ export function TimeBucketSelector(props: TimeBucketSelectorProps) {
         <button
           class={`rounded px-2 py-1 ${
             selectedBucketType() === "quarterly"
-              ? "bg-white text-foreground shadow-sm"
-              : "text-muted-foreground"
+              ? activeBucketTypeClasses
+              : inactiveBucketTypeClasses
           }`}
           onClick={() => setSelectedBucketType("quarterly")}
           type="button"
@@ -61,7 +65,7 @@ export function TimeBucketSelector(props: TimeBucketSelectorProps) {
         </button>
       </div>
       <select
-        class="w-full rounded-md border bg-white px-3 py-2 text-sm"
+        class="w-full rounded-md border bg-background px-3 py-2 text-sm"
         value={props.selectedBucketId}
         onChange={(event) => props.onChange(event.currentTarget.value)}
       >
