@@ -103,10 +103,10 @@ Outputs:
 
 - `CI` workflow (`.github/workflows/ci.yml`)
   - validates dataset, runs tests, typechecks, builds, and deploys the static site on pushes to `main`.
-- `Nightly Refresh` workflow (`.github/workflows/nightly-refresh-deploy.yml`)
+- `Nightly Refresh and Deploy` workflow (`.github/workflows/nightly-refresh-deploy.yml`)
   - runs on schedule + manual trigger,
   - refreshes and commits data changes to `main`,
-  - relies on the `CI` workflow to deploy after the `main` branch update lands.
+  - builds and deploys the static site directly when the refresh produces material tracked changes.
 - `Monthly Demo Screenshots` workflow (`.github/workflows/monthly-demo-screenshots.yml`)
   - runs on a monthly schedule + manual trigger,
   - captures demo screenshots with Playwright,
