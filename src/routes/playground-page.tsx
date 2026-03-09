@@ -86,6 +86,7 @@ export function PlaygroundPage() {
           selectedBucketId={selectedBucketId()}
           buckets={buckets()}
           onBucketChange={setSelectedBucketId}
+          onSelectCompanyIds={setSelectedCompanyIds}
           onToggleCompany={toggleCompany}
         />
 

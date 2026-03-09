@@ -4,7 +4,12 @@ import type {
 } from "@/types/company-data";
 
 import { createEffect, createMemo, createSignal } from "solid-js";
+import {
+  buildCompanyComparisonGroups,
+  companyComparisonGroupCategories,
+} from "@/lib/company-comparison-groups";
 import { bucketTypeFromId } from "@/lib/time-buckets";
+import { cn } from "@/lib/utils";
 
 interface ComparisonControlsProps {
   companies: CompanyRecord[];
@@ -12,7 +17,17 @@ interface ComparisonControlsProps {
   selectedBucketId: string;
   buckets: DatasetBucket[];
   onBucketChange: (bucketId: string) => void;
+  onSelectCompanyIds: (companyIds: string[]) => void;
   onToggleCompany: (companyId: string) => void;
+}
+
+function hasSameCompanies(leftCompanyIds: string[], rightCompanyIds: string[]): boolean {
+  if (leftCompanyIds.length !== rightCompanyIds.length) {
+    return false;
+  }
+
+  const rightCompanyIdSet = new Set(rightCompanyIds);
+  return leftCompanyIds.every((companyId) => rightCompanyIdSet.has(companyId));
 }
 
 export function ComparisonControls(props: ComparisonControlsProps) {
@@ -28,6 +43,17 @@ export function ComparisonControls(props: ComparisonControlsProps) {
     props.buckets.filter(
       (bucket) => bucket.bucketType === selectedBucketType(),
     ),
+  );
+  const companyGroups = createMemo(() =>
+    buildCompanyComparisonGroups(props.companies),
+  );
+  const groupedCompanyPresets = createMemo(() =>
+    companyComparisonGroupCategories
+      .map((category) => ({
+        ...category,
+        groups: companyGroups().filter((group) => group.category === category.id),
+      }))
+      .filter((category) => category.groups.length > 0),
   );
 
   createEffect(() => {
@@ -105,12 +131,68 @@ export function ComparisonControls(props: ComparisonControlsProps) {
       </div>
 
       <div>
-        <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-          Compare companies
-        </p>
+        <div class="mb-2 flex items-center justify-between gap-3">
+          <p class="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Compare companies
+          </p>
+          <p class="text-xs text-muted-foreground">
+            {props.selectedCompanyIds.length} selected
+          </p>
+        </div>
+        <div class="mb-4 space-y-3">
+          <p class="text-xs text-muted-foreground">
+            Quick-select a preset, then fine-tune with the checkboxes below.
+          </p>
+          {groupedCompanyPresets().map((category) => (
+            <div class="space-y-2">
+              <p class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
+                {category.label}
+              </p>
+              <div class="flex flex-wrap gap-2">
+                {category.groups.map((group) => {
+                  const isSelected = hasSameCompanies(
+                    group.companyIds,
+                    props.selectedCompanyIds,
+                  );
+
+                  return (
+                    <button
+                      type="button"
+                      aria-pressed={isSelected}
+                      class={cn(
+                        "inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs transition-colors",
+                        isSelected
+                          ? "border-primary bg-primary text-primary-foreground"
+                          : "bg-background text-foreground hover:bg-muted",
+                      )}
+                      onClick={() => props.onSelectCompanyIds(group.companyIds)}
+                      title={`${group.description} (${group.companySymbols.join(", ")})`}
+                    >
+                      <span>{group.label}</span>
+                      <span
+                        class={cn(
+                          "rounded-full px-1.5 py-0.5 text-[11px]",
+                          isSelected
+                            ? "bg-primary-foreground/15 text-primary-foreground"
+                            : "bg-muted text-muted-foreground",
+                        )}
+                      >
+                        {group.companyIds.length}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+          <p class="text-xs text-muted-foreground">
+            S&amp;P presets use the highest-ranked United States companies
+            currently available in this dataset.
+          </p>
+        </div>
         <div class="grid max-h-48 grid-cols-2 gap-2 overflow-y-auto pr-2 md:grid-cols-3 lg:grid-cols-4">
           {props.companies.map((company) => (
-            <label class="flex items-center gap-2 text-xs">
+            <label class="flex items-center gap-2 text-xs" title={company.name}>
               <input
                 type="checkbox"
                 checked={props.selectedCompanyIds.includes(company.id)}
