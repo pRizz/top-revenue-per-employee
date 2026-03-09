@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-03-08T12:31:53.692Z",
+  "generatedAt": "2026-03-09T03:18:19.202Z",
   "topN": 100,
-  "sourceSnapshotDirectory": "data/raw/2026-03-08",
+  "sourceSnapshotDirectory": "data/raw/2026-03-09",
   "stockAnalysisCoverage": {
     "resolverStats": {
       "stockRoutesIndexed": 5605,
       "quoteRoutesIndexed": 45372,
       "uniqueSymbolRoutes": 39011
     },
-    "resolvedRouteCount": 92,
-    "annualEmployeeSeriesCount": 89
+    "resolvedRouteCount": 93,
+    "annualEmployeeSeriesCount": 90
   },
   "currencyAudit": {
     "marketCap": {
@@ -17,19 +17,20 @@
         "CHF": 20,
         "CNY": 20,
         "EUR": 60,
-        "HKD": 30,
+        "HKD": 40,
         "INR": 10,
         "KRW": 20,
         "SAR": 10,
-        "USD": 930
+        "USD": 920
       },
-      "convertedMetricCount": 170,
+      "convertedMetricCount": 180,
       "unavailableMetricCount": 0,
       "partialFxCoverageMetricCount": 0,
       "convertedCompanies": [
         "000660.KS",
         "005930.KS",
         "0857.HK",
+        "0883.HK",
         "0941.HK",
         "1398.HK",
         "2222.SR",
@@ -52,22 +53,23 @@
       "currencyCounts": {
         "CAD": 10,
         "CHF": 12,
-        "CNY": 57,
+        "CNY": 65,
         "EUR": 58,
         "INR": 10,
         "JPY": 19,
         "KRW": 20,
         "SAR": 8,
         "TWD": 10,
-        "USD": 760
+        "USD": 758
       },
-      "convertedMetricCount": 204,
+      "convertedMetricCount": 212,
       "unavailableMetricCount": 0,
       "partialFxCoverageMetricCount": 8,
       "convertedCompanies": [
         "000660.KS",
         "005930.KS",
         "0857.HK",
+        "0883.HK",
         "0941.HK",
         "1398.HK",
         "2222.SR",
@@ -103,17 +105,17 @@
     },
     "revenueSourceCountsByBucketType": {
       "annual": {
-        "StockAnalysis": 177,
+        "StockAnalysis": 178,
         "—": 16,
-        "CompaniesMarketCap": 7
+        "CompaniesMarketCap": 6
       },
       "quarterly": {
-        "StockAnalysis": 697,
-        "—": 103
+        "StockAnalysis": 704,
+        "—": 96
       },
       "ttm": {
-        "CompaniesMarketCap": 83,
-        "—": 17
+        "CompaniesMarketCap": 82,
+        "—": 18
       }
     },
     "latestAnnualCompaniesMarketCapCount": 0,
@@ -225,12 +227,6 @@
         "revenueConversionUnavailableCount": 0
       },
       {
-        "symbol": "601628.SS",
-        "marketCapSnapshotFallbackCount": 11,
-        "employeeSnapshotFallbackCount": 11,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
         "symbol": "601939.SS",
         "marketCapSnapshotFallbackCount": 11,
         "employeeSnapshotFallbackCount": 11,
@@ -282,6 +278,12 @@
         "symbol": "RY",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 11,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "0883.HK",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 10,
         "revenueConversionUnavailableCount": 0
       },
       {
