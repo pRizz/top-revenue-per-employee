@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-03-09T03:18:19.202Z",
+  "generatedAt": "2026-03-10T03:13:23.388Z",
   "topN": 100,
-  "sourceSnapshotDirectory": "data/raw/2026-03-09",
+  "sourceSnapshotDirectory": "data/raw/2026-03-10",
   "stockAnalysisCoverage": {
     "resolverStats": {
-      "stockRoutesIndexed": 5605,
-      "quoteRoutesIndexed": 45372,
-      "uniqueSymbolRoutes": 39011
+      "stockRoutesIndexed": 5604,
+      "quoteRoutesIndexed": 45375,
+      "uniqueSymbolRoutes": 39010
     },
     "resolvedRouteCount": 93,
     "annualEmployeeSeriesCount": 90
@@ -17,20 +17,19 @@
         "CHF": 20,
         "CNY": 20,
         "EUR": 60,
-        "HKD": 40,
+        "HKD": 30,
         "INR": 10,
         "KRW": 20,
         "SAR": 10,
-        "USD": 920
+        "USD": 930
       },
-      "convertedMetricCount": 180,
+      "convertedMetricCount": 170,
       "unavailableMetricCount": 0,
       "partialFxCoverageMetricCount": 0,
       "convertedCompanies": [
         "000660.KS",
         "005930.KS",
         "0857.HK",
-        "0883.HK",
         "0941.HK",
         "1398.HK",
         "2222.SR",
@@ -53,23 +52,23 @@
       "currencyCounts": {
         "CAD": 10,
         "CHF": 12,
-        "CNY": 65,
+        "CNY": 59,
+        "DKK": 10,
         "EUR": 58,
         "INR": 10,
         "JPY": 19,
         "KRW": 20,
         "SAR": 8,
         "TWD": 10,
-        "USD": 758
+        "USD": 759
       },
-      "convertedMetricCount": 212,
+      "convertedMetricCount": 216,
       "unavailableMetricCount": 0,
       "partialFxCoverageMetricCount": 8,
       "convertedCompanies": [
         "000660.KS",
         "005930.KS",
         "0857.HK",
-        "0883.HK",
         "0941.HK",
         "1398.HK",
         "2222.SR",
@@ -81,6 +80,7 @@
         "MC.PA",
         "MUFG",
         "NESN.SW",
+        "NVO",
         "OR.PA",
         "RELIANCE.NS",
         "RMS.PA",
@@ -105,17 +105,17 @@
     },
     "revenueSourceCountsByBucketType": {
       "annual": {
-        "StockAnalysis": 178,
-        "—": 16,
+        "StockAnalysis": 180,
+        "—": 14,
         "CompaniesMarketCap": 6
       },
       "quarterly": {
-        "StockAnalysis": 704,
-        "—": 96
+        "StockAnalysis": 706,
+        "—": 94
       },
       "ttm": {
-        "CompaniesMarketCap": 82,
-        "—": 18
+        "CompaniesMarketCap": 83,
+        "—": 17
       }
     },
     "latestAnnualCompaniesMarketCapCount": 0,
@@ -278,12 +278,6 @@
         "symbol": "RY",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 11,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
-        "symbol": "0883.HK",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 10,
         "revenueConversionUnavailableCount": 0
       },
       {
@@ -659,6 +653,12 @@
         "revenueConversionUnavailableCount": 0
       },
       {
+        "symbol": "NVO",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
         "symbol": "NVS",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
@@ -872,6 +872,7 @@
       "NEE",
       "NFLX",
       "NVDA",
+      "NVO",
       "NVS",
       "OR.PA",
       "ORCL",
