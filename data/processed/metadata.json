@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-03-11T03:12:49.377Z",
+  "generatedAt": "2026-03-12T03:16:25.034Z",
   "topN": 100,
-  "sourceSnapshotDirectory": "data/raw/2026-03-11",
+  "sourceSnapshotDirectory": "data/raw/2026-03-12",
   "stockAnalysisCoverage": {
     "resolverStats": {
-      "stockRoutesIndexed": 5604,
-      "quoteRoutesIndexed": 45382,
+      "stockRoutesIndexed": 5606,
+      "quoteRoutesIndexed": 45385,
       "uniqueSymbolRoutes": 39009
     },
-    "resolvedRouteCount": 92,
-    "annualEmployeeSeriesCount": 89
+    "resolvedRouteCount": 93,
+    "annualEmployeeSeriesCount": 90
   },
   "currencyAudit": {
     "marketCap": {
@@ -60,7 +60,7 @@
         "KRW": 20,
         "SAR": 10,
         "TWD": 10,
-        "USD": 749
+        "USD": 758
       },
       "convertedMetricCount": 216,
       "unavailableMetricCount": 0,
@@ -105,13 +105,13 @@
     },
     "revenueSourceCountsByBucketType": {
       "annual": {
-        "StockAnalysis": 178,
-        "—": 15,
-        "CompaniesMarketCap": 7
+        "StockAnalysis": 180,
+        "—": 14,
+        "CompaniesMarketCap": 6
       },
       "quarterly": {
-        "StockAnalysis": 698,
-        "—": 102
+        "StockAnalysis": 706,
+        "—": 94
       },
       "ttm": {
         "CompaniesMarketCap": 82,
@@ -222,12 +222,6 @@
     "fallbackHeavyCompanies": [
       {
         "symbol": "601288.SS",
-        "marketCapSnapshotFallbackCount": 11,
-        "employeeSnapshotFallbackCount": 11,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
-        "symbol": "601628.SS",
         "marketCapSnapshotFallbackCount": 11,
         "employeeSnapshotFallbackCount": 11,
         "revenueConversionUnavailableCount": 0
@@ -545,6 +539,12 @@
         "revenueConversionUnavailableCount": 0
       },
       {
+        "symbol": "ISRG",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
         "symbol": "JNJ",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
@@ -856,6 +856,7 @@
       "HSBC",
       "IBM",
       "INTC",
+      "ISRG",
       "JPM",
       "KLAC",
       "KO",
