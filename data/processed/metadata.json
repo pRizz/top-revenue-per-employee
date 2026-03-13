@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-03-12T03:16:25.034Z",
+  "generatedAt": "2026-03-13T03:14:40.129Z",
   "topN": 100,
-  "sourceSnapshotDirectory": "data/raw/2026-03-12",
+  "sourceSnapshotDirectory": "data/raw/2026-03-13",
   "stockAnalysisCoverage": {
     "resolverStats": {
-      "stockRoutesIndexed": 5606,
-      "quoteRoutesIndexed": 45385,
-      "uniqueSymbolRoutes": 39009
+      "stockRoutesIndexed": 5609,
+      "quoteRoutesIndexed": 45388,
+      "uniqueSymbolRoutes": 39012
     },
-    "resolvedRouteCount": 93,
-    "annualEmployeeSeriesCount": 90
+    "resolvedRouteCount": 92,
+    "annualEmployeeSeriesCount": 89
   },
   "currencyAudit": {
     "marketCap": {
@@ -60,7 +60,7 @@
         "KRW": 20,
         "SAR": 10,
         "TWD": 10,
-        "USD": 758
+        "USD": 746
       },
       "convertedMetricCount": 216,
       "unavailableMetricCount": 0,
@@ -105,13 +105,13 @@
     },
     "revenueSourceCountsByBucketType": {
       "annual": {
-        "StockAnalysis": 180,
-        "—": 14,
-        "CompaniesMarketCap": 6
+        "StockAnalysis": 177,
+        "—": 16,
+        "CompaniesMarketCap": 7
       },
       "quarterly": {
-        "StockAnalysis": 706,
-        "—": 94
+        "StockAnalysis": 696,
+        "—": 104
       },
       "ttm": {
         "CompaniesMarketCap": 82,
@@ -227,6 +227,12 @@
         "revenueConversionUnavailableCount": 0
       },
       {
+        "symbol": "601628.SS",
+        "marketCapSnapshotFallbackCount": 11,
+        "employeeSnapshotFallbackCount": 11,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
         "symbol": "601939.SS",
         "marketCapSnapshotFallbackCount": 11,
         "employeeSnapshotFallbackCount": 11,
@@ -305,12 +311,6 @@
         "revenueConversionUnavailableCount": 0
       },
       {
-        "symbol": "IBM",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 10,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
         "symbol": "ROG.SW",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 10,
@@ -330,6 +330,12 @@
       },
       {
         "symbol": "TSM",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 10,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "TTE",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 10,
         "revenueConversionUnavailableCount": 0
@@ -396,12 +402,6 @@
       },
       {
         "symbol": "AMZN",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 9,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
-        "symbol": "ANET",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
@@ -533,13 +533,13 @@
         "revenueConversionUnavailableCount": 0
       },
       {
-        "symbol": "INTC",
+        "symbol": "IBM",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
       },
       {
-        "symbol": "ISRG",
+        "symbol": "INTC",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
@@ -834,7 +834,6 @@
       "AMAT",
       "AMD",
       "AMGN",
-      "ANET",
       "ASML",
       "AVGO",
       "BABA",
@@ -856,7 +855,6 @@
       "HSBC",
       "IBM",
       "INTC",
-      "ISRG",
       "JPM",
       "KLAC",
       "KO",
@@ -890,6 +888,7 @@
       "TM",
       "TMO",
       "TSLA",
+      "TTE",
       "UNH",
       "V",
       "VZ",
