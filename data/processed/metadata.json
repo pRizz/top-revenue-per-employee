@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-03-13T03:14:40.129Z",
+  "generatedAt": "2026-03-14T03:13:38.428Z",
   "topN": 100,
-  "sourceSnapshotDirectory": "data/raw/2026-03-13",
+  "sourceSnapshotDirectory": "data/raw/2026-03-14",
   "stockAnalysisCoverage": {
     "resolverStats": {
-      "stockRoutesIndexed": 5609,
-      "quoteRoutesIndexed": 45388,
-      "uniqueSymbolRoutes": 39012
+      "stockRoutesIndexed": 5608,
+      "quoteRoutesIndexed": 45393,
+      "uniqueSymbolRoutes": 39014
     },
     "resolvedRouteCount": 92,
     "annualEmployeeSeriesCount": 89
@@ -312,12 +312,6 @@
       },
       {
         "symbol": "ROG.SW",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 10,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
-        "symbol": "SHEL",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 10,
         "revenueConversionUnavailableCount": 0
@@ -726,6 +720,12 @@
       },
       {
         "symbol": "SAP",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "SHEL",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
