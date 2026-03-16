@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-03-14T03:13:38.428Z",
+  "generatedAt": "2026-03-16T03:28:36.650Z",
   "topN": 100,
-  "sourceSnapshotDirectory": "data/raw/2026-03-14",
+  "sourceSnapshotDirectory": "data/raw/2026-03-16",
   "stockAnalysisCoverage": {
     "resolverStats": {
       "stockRoutesIndexed": 5608,
-      "quoteRoutesIndexed": 45393,
-      "uniqueSymbolRoutes": 39014
+      "quoteRoutesIndexed": 45397,
+      "uniqueSymbolRoutes": 39017
     },
     "resolvedRouteCount": 92,
     "annualEmployeeSeriesCount": 89
@@ -64,7 +64,7 @@
       },
       "convertedMetricCount": 216,
       "unavailableMetricCount": 0,
-      "partialFxCoverageMetricCount": 8,
+      "partialFxCoverageMetricCount": 48,
       "convertedCompanies": [
         "000660.KS",
         "005930.KS",
@@ -94,11 +94,28 @@
       ],
       "unavailableCompanies": [],
       "partialFxCoverageCompanies": [
+        "000660.KS",
+        "005930.KS",
+        "0857.HK",
+        "0883.HK",
+        "0941.HK",
+        "1398.HK",
+        "300750.SZ",
+        "600519.SS",
+        "ASML",
         "BABA",
+        "DTE.DE",
+        "MC.PA",
         "MUFG",
+        "NESN.SW",
+        "OR.PA",
         "RELIANCE.NS",
+        "RMS.PA",
+        "ROG.SW",
         "RY",
+        "SAP",
         "SIE.DE",
+        "TCEHY",
         "TM",
         "TSM"
       ]
@@ -136,9 +153,9 @@
       {
         "symbol": "MUFG",
         "bucketId": "2024",
-        "annualRevenueUsd": 35013773145.08336,
-        "quarterRevenueUsdSum": 41710514658.87983,
-        "ratio": 1.191260207406034
+        "annualRevenueUsd": 34621714325.67834,
+        "quarterRevenueUsdSum": 41546573009.91598,
+        "ratio": 1.2000148987163697
       },
       {
         "symbol": "MU",
@@ -190,18 +207,18 @@
         "ratio": 1.068793338237826
       },
       {
+        "symbol": "TM",
+        "bucketId": "2025",
+        "annualRevenueUsd": 315694050306.7133,
+        "quarterRevenueUsdSum": 337410090727.25916,
+        "ratio": 1.0687882473535613
+      },
+      {
         "symbol": "MSFT",
         "bucketId": "2024",
         "annualRevenueUsd": 245122000000,
         "quarterRevenueUsdSum": 261802000000,
         "ratio": 1.0680477476521895
-      },
-      {
-        "symbol": "TM",
-        "bucketId": "2025",
-        "annualRevenueUsd": 315639893528.5518,
-        "quarterRevenueUsdSum": 336666298215.284,
-        "ratio": 1.0666151684810088
       },
       {
         "symbol": "ORCL",
