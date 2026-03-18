@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-03-17T03:17:11.182Z",
+  "generatedAt": "2026-03-18T03:21:53.668Z",
   "topN": 100,
-  "sourceSnapshotDirectory": "data/raw/2026-03-17",
+  "sourceSnapshotDirectory": "data/raw/2026-03-18",
   "stockAnalysisCoverage": {
     "resolverStats": {
-      "stockRoutesIndexed": 5607,
-      "quoteRoutesIndexed": 45412,
-      "uniqueSymbolRoutes": 39026
+      "stockRoutesIndexed": 5608,
+      "quoteRoutesIndexed": 45414,
+      "uniqueSymbolRoutes": 39028
     },
     "resolvedRouteCount": 92,
     "annualEmployeeSeriesCount": 89
