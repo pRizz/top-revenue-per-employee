@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-03-20T03:15:29.201Z",
+  "generatedAt": "2026-03-21T03:10:13.740Z",
   "topN": 100,
-  "sourceSnapshotDirectory": "data/raw/2026-03-20",
+  "sourceSnapshotDirectory": "data/raw/2026-03-21",
   "stockAnalysisCoverage": {
     "resolverStats": {
-      "stockRoutesIndexed": 5606,
-      "quoteRoutesIndexed": 45425,
-      "uniqueSymbolRoutes": 39033
+      "stockRoutesIndexed": 5605,
+      "quoteRoutesIndexed": 45462,
+      "uniqueSymbolRoutes": 39054
     },
     "resolvedRouteCount": 92,
     "annualEmployeeSeriesCount": 89
@@ -60,7 +60,7 @@
         "KRW": 20,
         "SAR": 10,
         "TWD": 10,
-        "USD": 747
+        "USD": 749
       },
       "convertedMetricCount": 219,
       "unavailableMetricCount": 0,
@@ -110,12 +110,12 @@
         "CompaniesMarketCap": 7
       },
       "quarterly": {
-        "StockAnalysis": 697,
-        "—": 103
+        "StockAnalysis": 700,
+        "—": 100
       },
       "ttm": {
-        "CompaniesMarketCap": 83,
-        "—": 17
+        "CompaniesMarketCap": 82,
+        "—": 18
       }
     },
     "latestAnnualCompaniesMarketCapCount": 0,
@@ -401,12 +401,6 @@
         "revenueConversionUnavailableCount": 0
       },
       {
-        "symbol": "ANET",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 9,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
         "symbol": "ASML",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
@@ -438,12 +432,6 @@
       },
       {
         "symbol": "BAC",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 9,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
-        "symbol": "BHP",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
@@ -540,6 +528,12 @@
       },
       {
         "symbol": "INTC",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "ISRG",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
@@ -779,6 +773,12 @@
         "revenueConversionUnavailableCount": 0
       },
       {
+        "symbol": "TXN",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
         "symbol": "UNH",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
@@ -834,12 +834,10 @@
       "AMAT",
       "AMD",
       "AMGN",
-      "ANET",
       "ASML",
       "AVGO",
       "BABA",
       "BAC",
-      "BHP",
       "C",
       "CAT",
       "COST",
@@ -856,6 +854,7 @@
       "HSBC",
       "IBM",
       "INTC",
+      "ISRG",
       "JPM",
       "KLAC",
       "KO",
