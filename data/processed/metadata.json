@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-03-22T03:21:53.117Z",
+  "generatedAt": "2026-03-23T03:23:43.529Z",
   "topN": 100,
-  "sourceSnapshotDirectory": "data/raw/2026-03-22",
+  "sourceSnapshotDirectory": "data/raw/2026-03-23",
   "stockAnalysisCoverage": {
     "resolverStats": {
-      "stockRoutesIndexed": 5605,
-      "quoteRoutesIndexed": 45473,
-      "uniqueSymbolRoutes": 39063
+      "stockRoutesIndexed": 5607,
+      "quoteRoutesIndexed": 45476,
+      "uniqueSymbolRoutes": 39067
     },
-    "resolvedRouteCount": 92,
-    "annualEmployeeSeriesCount": 89
+    "resolvedRouteCount": 93,
+    "annualEmployeeSeriesCount": 90
   },
   "currencyAudit": {
     "marketCap": {
@@ -60,7 +60,7 @@
         "KRW": 20,
         "SAR": 10,
         "TWD": 10,
-        "USD": 749
+        "USD": 760
       },
       "convertedMetricCount": 219,
       "unavailableMetricCount": 0,
@@ -105,13 +105,13 @@
     },
     "revenueSourceCountsByBucketType": {
       "annual": {
-        "StockAnalysis": 179,
-        "—": 14,
-        "CompaniesMarketCap": 7
+        "StockAnalysis": 181,
+        "—": 13,
+        "CompaniesMarketCap": 6
       },
       "quarterly": {
-        "StockAnalysis": 700,
-        "—": 100
+        "StockAnalysis": 710,
+        "—": 90
       },
       "ttm": {
         "CompaniesMarketCap": 82,
@@ -222,12 +222,6 @@
     "fallbackHeavyCompanies": [
       {
         "symbol": "601288.SS",
-        "marketCapSnapshotFallbackCount": 11,
-        "employeeSnapshotFallbackCount": 11,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
-        "symbol": "601628.SS",
         "marketCapSnapshotFallbackCount": 11,
         "employeeSnapshotFallbackCount": 11,
         "revenueConversionUnavailableCount": 0
@@ -725,6 +719,12 @@
         "revenueConversionUnavailableCount": 0
       },
       {
+        "symbol": "SCHW",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
         "symbol": "SHEL",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
@@ -882,6 +882,7 @@
       "ROG.SW",
       "RY",
       "SAP",
+      "SCHW",
       "SHEL",
       "SIE.DE",
       "TJX",
