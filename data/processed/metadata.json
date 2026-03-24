@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-03-23T03:23:43.529Z",
+  "generatedAt": "2026-03-24T03:17:28.073Z",
   "topN": 100,
-  "sourceSnapshotDirectory": "data/raw/2026-03-23",
+  "sourceSnapshotDirectory": "data/raw/2026-03-24",
   "stockAnalysisCoverage": {
     "resolverStats": {
       "stockRoutesIndexed": 5607,
-      "quoteRoutesIndexed": 45476,
-      "uniqueSymbolRoutes": 39067
+      "quoteRoutesIndexed": 45488,
+      "uniqueSymbolRoutes": 39085
     },
     "resolvedRouteCount": 93,
     "annualEmployeeSeriesCount": 90
@@ -56,13 +56,13 @@
         "CNY": 70,
         "EUR": 58,
         "INR": 10,
-        "JPY": 19,
+        "JPY": 17,
         "KRW": 20,
         "SAR": 10,
         "TWD": 10,
-        "USD": 760
+        "USD": 756
       },
-      "convertedMetricCount": 219,
+      "convertedMetricCount": 217,
       "unavailableMetricCount": 0,
       "partialFxCoverageMetricCount": 8,
       "convertedCompanies": [
@@ -110,8 +110,8 @@
         "CompaniesMarketCap": 6
       },
       "quarterly": {
-        "StockAnalysis": 710,
-        "—": 90
+        "StockAnalysis": 704,
+        "—": 96
       },
       "ttm": {
         "CompaniesMarketCap": 82,
@@ -133,13 +133,6 @@
       "WMT"
     ],
     "annualQuarterSumMismatches": [
-      {
-        "symbol": "MUFG",
-        "bucketId": "2024",
-        "annualRevenueUsd": 35013773145.08336,
-        "quarterRevenueUsdSum": 41710514658.87983,
-        "ratio": 1.191260207406034
-      },
       {
         "symbol": "MU",
         "bucketId": "2024",
@@ -395,6 +388,12 @@
         "revenueConversionUnavailableCount": 0
       },
       {
+        "symbol": "ANET",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
         "symbol": "ASML",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
@@ -426,6 +425,12 @@
       },
       {
         "symbol": "BAC",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "BHP",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
@@ -522,12 +527,6 @@
       },
       {
         "symbol": "INTC",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 9,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
-        "symbol": "ISRG",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
@@ -719,12 +718,6 @@
         "revenueConversionUnavailableCount": 0
       },
       {
-        "symbol": "SCHW",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 9,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
         "symbol": "SHEL",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
@@ -834,10 +827,12 @@
       "AMAT",
       "AMD",
       "AMGN",
+      "ANET",
       "ASML",
       "AVGO",
       "BABA",
       "BAC",
+      "BHP",
       "C",
       "CAT",
       "COST",
@@ -854,7 +849,6 @@
       "HSBC",
       "IBM",
       "INTC",
-      "ISRG",
       "JPM",
       "KLAC",
       "KO",
@@ -882,7 +876,6 @@
       "ROG.SW",
       "RY",
       "SAP",
-      "SCHW",
       "SHEL",
       "SIE.DE",
       "TJX",
