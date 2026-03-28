@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-03-27T03:26:58.974Z",
+  "generatedAt": "2026-03-28T03:19:08.496Z",
   "topN": 100,
-  "sourceSnapshotDirectory": "data/raw/2026-03-27",
+  "sourceSnapshotDirectory": "data/raw/2026-03-28",
   "stockAnalysisCoverage": {
     "resolverStats": {
-      "stockRoutesIndexed": 5593,
-      "quoteRoutesIndexed": 43696,
-      "uniqueSymbolRoutes": 37559
+      "stockRoutesIndexed": 5577,
+      "quoteRoutesIndexed": 42333,
+      "uniqueSymbolRoutes": 36771
     },
     "resolvedRouteCount": 93,
     "annualEmployeeSeriesCount": 90
@@ -14,16 +14,18 @@
   "currencyAudit": {
     "marketCap": {
       "currencyCounts": {
-        "CHF": 20,
+        "AUD": 10,
+        "CHF": 10,
         "CNY": 20,
-        "EUR": 60,
+        "EUR": 20,
         "HKD": 40,
         "INR": 10,
         "KRW": 20,
         "SAR": 10,
-        "USD": 920
+        "SEK": 10,
+        "USD": 950
       },
-      "convertedMetricCount": 180,
+      "convertedMetricCount": 150,
       "unavailableMetricCount": 0,
       "partialFxCoverageMetricCount": 0,
       "convertedCompanies": [
@@ -36,14 +38,11 @@
         "2222.SR",
         "300750.SZ",
         "600519.SS",
-        "DTE.DE",
-        "MC.PA",
         "NESN.SW",
-        "OR.PA",
         "PRX.AS",
         "RELIANCE.NS",
         "RMS.PA",
-        "ROG.SW",
+        "RO.SW",
         "SIE.DE"
       ],
       "unavailableCompanies": [],
@@ -51,20 +50,22 @@
     },
     "revenue": {
       "currencyCounts": {
+        "AUD": 6,
         "CAD": 10,
-        "CHF": 12,
-        "CNY": 74,
-        "EUR": 58,
+        "CHF": 6,
+        "CNY": 76,
+        "EUR": 30,
         "INR": 10,
         "JPY": 17,
         "KRW": 20,
         "SAR": 10,
+        "SEK": 10,
         "TWD": 10,
-        "USD": 759
+        "USD": 789
       },
-      "convertedMetricCount": 221,
+      "convertedMetricCount": 205,
       "unavailableMetricCount": 0,
-      "partialFxCoverageMetricCount": 8,
+      "partialFxCoverageMetricCount": 9,
       "convertedCompanies": [
         "000660.KS",
         "005930.KS",
@@ -77,14 +78,11 @@
         "600519.SS",
         "ASML",
         "BABA",
-        "DTE.DE",
-        "MC.PA",
         "MUFG",
         "NESN.SW",
-        "OR.PA",
         "RELIANCE.NS",
         "RMS.PA",
-        "ROG.SW",
+        "RO.SW",
         "RY",
         "SAP",
         "SIE.DE",
@@ -97,6 +95,7 @@
         "BABA",
         "MUFG",
         "RELIANCE.NS",
+        "RMS.PA",
         "RY",
         "SIE.DE",
         "TM",
@@ -105,13 +104,13 @@
     },
     "revenueSourceCountsByBucketType": {
       "annual": {
-        "StockAnalysis": 183,
-        "—": 12,
+        "StockAnalysis": 184,
+        "—": 11,
         "CompaniesMarketCap": 5
       },
       "quarterly": {
-        "StockAnalysis": 706,
-        "—": 94
+        "StockAnalysis": 719,
+        "—": 81
       },
       "ttm": {
         "—": 14,
@@ -268,6 +267,12 @@
         "revenueConversionUnavailableCount": 0
       },
       {
+        "symbol": "OR.PA",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 11,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
         "symbol": "RY",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 11,
@@ -293,12 +298,6 @@
       },
       {
         "symbol": "HD",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 10,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
-        "symbol": "ROG.SW",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 10,
         "revenueConversionUnavailableCount": 0
@@ -646,12 +645,6 @@
         "revenueConversionUnavailableCount": 0
       },
       {
-        "symbol": "OR.PA",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 9,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
         "symbol": "ORCL",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
@@ -695,6 +688,12 @@
       },
       {
         "symbol": "RMS.PA",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "RO.SW",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
@@ -843,7 +842,6 @@
       "CSCO",
       "CVX",
       "DIS",
-      "DTE.DE",
       "GE",
       "GEV",
       "GILD",
@@ -861,7 +859,6 @@
       "LLY",
       "LRCX",
       "MA",
-      "MC.PA",
       "MCD",
       "META",
       "MRK",
@@ -873,7 +870,6 @@
       "NFLX",
       "NVDA",
       "NVS",
-      "OR.PA",
       "ORCL",
       "PEP",
       "PG",
@@ -881,8 +877,6 @@
       "PM",
       "PRX.AS",
       "RELIANCE.NS",
-      "RMS.PA",
-      "ROG.SW",
       "RTX",
       "RY",
       "SAP",
@@ -906,7 +900,12 @@
       "XOM"
     ],
     "annualCrossSourceMismatchCompanies": [
-      "MUFG"
+      "DTE.DE",
+      "MC.PA",
+      "MUFG",
+      "OR.PA",
+      "RMS.PA",
+      "RO.SW"
     ]
   }
 }
