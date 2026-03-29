@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-28T03:19:50.806Z",
+  "generatedAt": "2026-03-29T03:29:33.836Z",
   "topN": 100,
   "bucketIds": [
     "2025TTM",
@@ -14408,8 +14408,8 @@
           },
           "marketCapUsd": 375781860945.1506,
           "revenueUsd": 93228189071.48766,
-          "employeeCount": 419252,
-          "revenuePerEmployeeUsd": 222367.9053921929,
+          "employeeCount": 409758,
+          "revenuePerEmployeeUsd": 227520.11936676686,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
@@ -14418,10 +14418,9 @@
               "note": "normalized from HKD"
             },
             "employeeCount": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
-              "fetchedAt": "2026-03-07T20:15:17.105Z",
-              "note": "current snapshot fallback"
+              "provider": "StockAnalysis",
+              "url": "https://stockanalysis.com/quote/hkg/1398/employees/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z"
             },
             "revenue": {
               "provider": "StockAnalysis",
@@ -14431,7 +14430,6 @@
             }
           },
           "flags": [
-            "employee_snapshot_fallback",
             "revenue_fx_converted",
             "market_cap_fx_converted"
           ]
@@ -27345,39 +27343,66 @@
           "periodEnd": "2025-12-31",
           "displayLabel": "2025",
           "marketCap": {
-            "reportedAmount": 5383800000,
-            "reportedCurrency": "USD",
-            "usdAmount": 5383800000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 319356115845,
+            "reportedCurrency": "EUR",
+            "usdAmount": 375243436117.875,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.175,
+              "asOf": "2025-12-31",
+              "aggregation": "point_in_time",
+              "sampleCount": 1,
+              "expectedSampleCount": 1,
+              "coverageStatus": "complete"
+            }
           },
           "revenue": {
-            "reportedAmount": 1516796000,
-            "reportedCurrency": "USD",
-            "usdAmount": 1516796000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 80807000000,
+            "reportedCurrency": "EUR",
+            "usdAmount": 91423693016.66666,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.1313833333333332,
+              "asOf": "2025-12-31",
+              "aggregation": "month_end_average",
+              "rangeStart": "2025-01-01",
+              "rangeEnd": "2025-12-31",
+              "sampleCount": 12,
+              "expectedSampleCount": 12,
+              "coverageStatus": "complete"
+            }
           },
-          "marketCapUsd": 5383800000,
-          "revenueUsd": 1516796000,
-          "employeeCount": 1416,
-          "revenuePerEmployeeUsd": 1071183.615819209,
+          "marketCapUsd": 375243436117.875,
+          "revenueUsd": 91423693016.66666,
+          "employeeCount": 196647,
+          "revenuePerEmployeeUsd": 464912.7269506611,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/mc/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/MC/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/mc/employees/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/MC/employees/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z"
             },
             "revenue": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/mc/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/MC/revenue/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             }
           },
-          "flags": []
+          "flags": [
+            "revenue_fx_converted",
+            "market_cap_fx_converted"
+          ]
         },
         {
           "bucketId": "2024",
@@ -27386,69 +27411,118 @@
           "periodEnd": "2024-12-31",
           "displayLabel": "2024",
           "marketCap": {
-            "reportedAmount": 5535000000,
-            "reportedCurrency": "USD",
-            "usdAmount": 5535000000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 317587628479,
+            "reportedCurrency": "EUR",
+            "usdAmount": 329941787226.83307,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.0389,
+              "asOf": "2024-12-31",
+              "aggregation": "point_in_time",
+              "sampleCount": 1,
+              "expectedSampleCount": 1,
+              "coverageStatus": "complete"
+            }
           },
           "revenue": {
-            "reportedAmount": 1194545000,
-            "reportedCurrency": "USD",
-            "usdAmount": 1194545000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 84683000000,
+            "reportedCurrency": "EUR",
+            "usdAmount": 91523269325.00002,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.0807750000000003,
+              "asOf": "2024-12-31",
+              "aggregation": "month_end_average",
+              "rangeStart": "2024-01-01",
+              "rangeEnd": "2024-12-31",
+              "sampleCount": 12,
+              "expectedSampleCount": 12,
+              "coverageStatus": "complete"
+            }
           },
-          "marketCapUsd": 5535000000,
-          "revenueUsd": 1194545000,
-          "employeeCount": 1308,
-          "revenuePerEmployeeUsd": 913260.7033639144,
+          "marketCapUsd": 329941787226.83307,
+          "revenueUsd": 91523269325.00002,
+          "employeeCount": 200518,
+          "revenuePerEmployeeUsd": 456434.1820933782,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/mc/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/MC/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/mc/employees/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/MC/employees/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z"
             },
             "revenue": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/mc/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/MC/revenue/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             }
           },
           "flags": [
-            "annual_revenue_cross_source_mismatch"
+            "annual_revenue_cross_source_aligned",
+            "revenue_fx_converted",
+            "market_cap_fx_converted"
           ]
         },
         {
           "bucketId": "2025Q4",
           "bucketType": "quarterly",
-          "periodStart": "2025-10-01",
+          "periodStart": "2025-07-01",
           "periodEnd": "2025-12-31",
           "displayLabel": "2025 Q4",
           "marketCap": {
-            "reportedAmount": 5383800000,
-            "reportedCurrency": "USD",
-            "usdAmount": 5383800000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 319356115845,
+            "reportedCurrency": "EUR",
+            "usdAmount": 375243436117.875,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.175,
+              "asOf": "2025-12-31",
+              "aggregation": "point_in_time",
+              "sampleCount": 1,
+              "expectedSampleCount": 1,
+              "coverageStatus": "complete"
+            }
           },
           "revenue": {
-            "reportedAmount": 487935000,
-            "reportedCurrency": "USD",
-            "usdAmount": 487935000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 40997000000,
+            "reportedCurrency": "EUR",
+            "usdAmount": 47635097583.333336,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.1619166666666667,
+              "asOf": "2025-12-31",
+              "aggregation": "month_end_average",
+              "rangeStart": "2025-07-01",
+              "rangeEnd": "2025-12-31",
+              "sampleCount": 6,
+              "expectedSampleCount": 6,
+              "coverageStatus": "complete"
+            }
           },
-          "marketCapUsd": 5383800000,
-          "revenueUsd": 487935000,
+          "marketCapUsd": 375243436117.875,
+          "revenueUsd": 47635097583.333336,
           "employeeCount": 200518,
-          "revenuePerEmployeeUsd": 2433.372565056504,
+          "revenuePerEmployeeUsd": 237560.20698058695,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/mc/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/MC/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
@@ -27458,12 +27532,15 @@
             },
             "revenue": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/mc/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/MC/revenue/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             }
           },
           "flags": [
-            "employee_snapshot_fallback"
+            "employee_snapshot_fallback",
+            "revenue_fx_converted",
+            "market_cap_fx_converted"
           ]
         },
         {
@@ -27473,70 +27550,95 @@
           "periodEnd": "2025-09-30",
           "displayLabel": "2025 Q3",
           "marketCap": {
-            "reportedAmount": 5598800000,
-            "reportedCurrency": "USD",
-            "usdAmount": 5598800000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 258701594739,
+            "reportedCurrency": "EUR",
+            "usdAmount": 303741542383.0599,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.1741,
+              "asOf": "2025-09-30",
+              "aggregation": "point_in_time",
+              "sampleCount": 1,
+              "expectedSampleCount": 1,
+              "coverageStatus": "complete"
+            }
           },
-          "revenue": {
-            "reportedAmount": 356892000,
-            "reportedCurrency": "USD",
-            "usdAmount": 356892000,
-            "normalizationMethod": "reported_usd"
-          },
-          "marketCapUsd": 5598800000,
-          "revenueUsd": 356892000,
+          "revenue": null,
+          "marketCapUsd": 303741542383.0599,
+          "revenueUsd": null,
           "employeeCount": 200518,
-          "revenuePerEmployeeUsd": 1779.8501880130461,
+          "revenuePerEmployeeUsd": null,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/mc/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/MC/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
               "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
               "fetchedAt": "2026-03-07T20:15:17.105Z",
               "note": "current snapshot fallback"
-            },
-            "revenue": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/mc/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
             }
           },
           "flags": [
-            "employee_snapshot_fallback"
+            "employee_snapshot_fallback",
+            "market_cap_fx_converted"
           ]
         },
         {
           "bucketId": "2025Q2",
           "bucketType": "quarterly",
-          "periodStart": "2025-04-01",
+          "periodStart": "2025-01-01",
           "periodEnd": "2025-06-30",
           "displayLabel": "2025 Q2",
           "marketCap": {
-            "reportedAmount": 4892600000,
-            "reportedCurrency": "USD",
-            "usdAmount": 4892600000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 222021154883,
+            "reportedCurrency": "EUR",
+            "usdAmount": 260208793522.87598,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.172,
+              "asOf": "2025-06-30",
+              "aggregation": "point_in_time",
+              "sampleCount": 1,
+              "expectedSampleCount": 1,
+              "coverageStatus": "complete"
+            }
           },
           "revenue": {
-            "reportedAmount": 365376000,
-            "reportedCurrency": "USD",
-            "usdAmount": 365376000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 39810000000,
+            "reportedCurrency": "EUR",
+            "usdAmount": 43824838499.99999,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.1008499999999999,
+              "asOf": "2025-06-30",
+              "aggregation": "month_end_average",
+              "rangeStart": "2025-01-01",
+              "rangeEnd": "2025-06-30",
+              "sampleCount": 6,
+              "expectedSampleCount": 6,
+              "coverageStatus": "complete"
+            }
           },
-          "marketCapUsd": 4892600000,
-          "revenueUsd": 365376000,
+          "marketCapUsd": 260208793522.87598,
+          "revenueUsd": 43824838499.99999,
           "employeeCount": 200518,
-          "revenuePerEmployeeUsd": 1822.160604035548,
+          "revenuePerEmployeeUsd": 218558.12695119638,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/mc/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/MC/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
@@ -27546,12 +27648,15 @@
             },
             "revenue": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/mc/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/MC/revenue/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             }
           },
           "flags": [
-            "employee_snapshot_fallback"
+            "employee_snapshot_fallback",
+            "revenue_fx_converted",
+            "market_cap_fx_converted"
           ]
         },
         {
@@ -27561,70 +27666,95 @@
           "periodEnd": "2025-03-31",
           "displayLabel": "2025 Q1",
           "marketCap": {
-            "reportedAmount": 4373600000,
-            "reportedCurrency": "USD",
-            "usdAmount": 4373600000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 285491440051,
+            "reportedCurrency": "EUR",
+            "usdAmount": 308758992415.1565,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.0815,
+              "asOf": "2025-03-31",
+              "aggregation": "point_in_time",
+              "sampleCount": 1,
+              "expectedSampleCount": 1,
+              "coverageStatus": "complete"
+            }
           },
-          "revenue": {
-            "reportedAmount": 306593000,
-            "reportedCurrency": "USD",
-            "usdAmount": 306593000,
-            "normalizationMethod": "reported_usd"
-          },
-          "marketCapUsd": 4373600000,
-          "revenueUsd": 306593000,
+          "revenue": null,
+          "marketCapUsd": 308758992415.1565,
+          "revenueUsd": null,
           "employeeCount": 200518,
-          "revenuePerEmployeeUsd": 1529.0048773676178,
+          "revenuePerEmployeeUsd": null,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/mc/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/MC/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
               "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
               "fetchedAt": "2026-03-07T20:15:17.105Z",
               "note": "current snapshot fallback"
-            },
-            "revenue": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/mc/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
             }
           },
           "flags": [
-            "employee_snapshot_fallback"
+            "employee_snapshot_fallback",
+            "market_cap_fx_converted"
           ]
         },
         {
           "bucketId": "2024Q4",
           "bucketType": "quarterly",
-          "periodStart": "2024-10-01",
+          "periodStart": "2024-07-01",
           "periodEnd": "2024-12-31",
           "displayLabel": "2024 Q4",
           "marketCap": {
-            "reportedAmount": 5535000000,
-            "reportedCurrency": "USD",
-            "usdAmount": 5535000000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 317587628479,
+            "reportedCurrency": "EUR",
+            "usdAmount": 329941787226.83307,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.0389,
+              "asOf": "2024-12-31",
+              "aggregation": "point_in_time",
+              "sampleCount": 1,
+              "expectedSampleCount": 1,
+              "coverageStatus": "complete"
+            }
           },
           "revenue": {
-            "reportedAmount": 438719000,
-            "reportedCurrency": "USD",
-            "usdAmount": 438719000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 43006000000,
+            "reportedCurrency": "EUR",
+            "usdAmount": 46549694400,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.0824,
+              "asOf": "2024-12-31",
+              "aggregation": "month_end_average",
+              "rangeStart": "2024-07-01",
+              "rangeEnd": "2024-12-31",
+              "sampleCount": 6,
+              "expectedSampleCount": 6,
+              "coverageStatus": "complete"
+            }
           },
-          "marketCapUsd": 5535000000,
-          "revenueUsd": 438719000,
+          "marketCapUsd": 329941787226.83307,
+          "revenueUsd": 46549694400,
           "employeeCount": 200518,
-          "revenuePerEmployeeUsd": 2187.9282657915996,
+          "revenuePerEmployeeUsd": 232147.21072422425,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/mc/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/MC/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
@@ -27634,12 +27764,15 @@
             },
             "revenue": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/mc/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/MC/revenue/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             }
           },
           "flags": [
-            "employee_snapshot_fallback"
+            "employee_snapshot_fallback",
+            "revenue_fx_converted",
+            "market_cap_fx_converted"
           ]
         },
         {
@@ -27649,70 +27782,95 @@
           "periodEnd": "2024-09-30",
           "displayLabel": "2024 Q3",
           "marketCap": {
-            "reportedAmount": 5124200000,
-            "reportedCurrency": "USD",
-            "usdAmount": 5124200000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 343936386873,
+            "reportedCurrency": "EUR",
+            "usdAmount": 385071178743.0108,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.1196,
+              "asOf": "2024-09-30",
+              "aggregation": "point_in_time",
+              "sampleCount": 1,
+              "expectedSampleCount": 1,
+              "coverageStatus": "complete"
+            }
           },
-          "revenue": {
-            "reportedAmount": 273755000,
-            "reportedCurrency": "USD",
-            "usdAmount": 273755000,
-            "normalizationMethod": "reported_usd"
-          },
-          "marketCapUsd": 5124200000,
-          "revenueUsd": 273755000,
+          "revenue": null,
+          "marketCapUsd": 385071178743.0108,
+          "revenueUsd": null,
           "employeeCount": 200518,
-          "revenuePerEmployeeUsd": 1365.2390309099433,
+          "revenuePerEmployeeUsd": null,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/mc/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/MC/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
               "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
               "fetchedAt": "2026-03-07T20:15:17.105Z",
               "note": "current snapshot fallback"
-            },
-            "revenue": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/mc/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
             }
           },
           "flags": [
-            "employee_snapshot_fallback"
+            "employee_snapshot_fallback",
+            "market_cap_fx_converted"
           ]
         },
         {
           "bucketId": "2024Q2",
           "bucketType": "quarterly",
-          "periodStart": "2024-04-01",
+          "periodStart": "2024-01-01",
           "periodEnd": "2024-06-30",
           "displayLabel": "2024 Q2",
           "marketCap": {
-            "reportedAmount": 4252399999,
-            "reportedCurrency": "USD",
-            "usdAmount": 4252399999,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 355092074042,
+            "reportedCurrency": "EUR",
+            "usdAmount": 380126065261.961,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.0705,
+              "asOf": "2024-06-28",
+              "aggregation": "point_in_time",
+              "sampleCount": 1,
+              "expectedSampleCount": 1,
+              "coverageStatus": "complete"
+            }
           },
           "revenue": {
-            "reportedAmount": 264586000,
-            "reportedCurrency": "USD",
-            "usdAmount": 264586000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 41677000000,
+            "reportedCurrency": "EUR",
+            "usdAmount": 44975734550,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.07915,
+              "asOf": "2024-06-30",
+              "aggregation": "month_end_average",
+              "rangeStart": "2024-01-01",
+              "rangeEnd": "2024-06-30",
+              "sampleCount": 6,
+              "expectedSampleCount": 6,
+              "coverageStatus": "complete"
+            }
           },
-          "marketCapUsd": 4252399999,
-          "revenueUsd": 264586000,
+          "marketCapUsd": 380126065261.961,
+          "revenueUsd": 44975734550,
           "employeeCount": 200518,
-          "revenuePerEmployeeUsd": 1319.5124627215512,
+          "revenuePerEmployeeUsd": 224297.74159925792,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/mc/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/MC/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
@@ -27722,12 +27880,15 @@
             },
             "revenue": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/mc/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/MC/revenue/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             }
           },
           "flags": [
-            "employee_snapshot_fallback"
+            "employee_snapshot_fallback",
+            "revenue_fx_converted",
+            "market_cap_fx_converted"
           ]
         },
         {
@@ -27737,41 +27898,43 @@
           "periodEnd": "2024-03-31",
           "displayLabel": "2024 Q1",
           "marketCap": {
-            "reportedAmount": 4040000000,
-            "reportedCurrency": "USD",
-            "usdAmount": 4040000000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 416444243212,
+            "reportedCurrency": "EUR",
+            "usdAmount": 450217871336.49316,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.0811,
+              "asOf": "2024-03-28",
+              "aggregation": "point_in_time",
+              "sampleCount": 1,
+              "expectedSampleCount": 1,
+              "coverageStatus": "complete"
+            }
           },
-          "revenue": {
-            "reportedAmount": 217485000,
-            "reportedCurrency": "USD",
-            "usdAmount": 217485000,
-            "normalizationMethod": "reported_usd"
-          },
-          "marketCapUsd": 4040000000,
-          "revenueUsd": 217485000,
+          "revenue": null,
+          "marketCapUsd": 450217871336.49316,
+          "revenueUsd": null,
           "employeeCount": 200518,
-          "revenuePerEmployeeUsd": 1084.6158449615496,
+          "revenuePerEmployeeUsd": null,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/mc/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/MC/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
               "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
               "fetchedAt": "2026-03-07T20:15:17.105Z",
               "note": "current snapshot fallback"
-            },
-            "revenue": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/mc/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
             }
           },
           "flags": [
-            "employee_snapshot_fallback"
+            "employee_snapshot_fallback",
+            "market_cap_fx_converted"
           ]
         }
       ]
@@ -36471,7 +36634,7 @@
           "bucketId": "2025",
           "bucketType": "annual",
           "periodStart": "2025-01-01",
-          "periodEnd": "2025-06-30",
+          "periodEnd": "2025-12-31",
           "displayLabel": "2025",
           "marketCap": {
             "reportedAmount": 1796123976040,
@@ -36509,8 +36672,8 @@
           },
           "marketCapUsd": 230740583382.20502,
           "revenueUsd": 146474879935.75677,
-          "employeeCount": 450000,
-          "revenuePerEmployeeUsd": 325499.7331905706,
+          "employeeCount": 461345,
+          "revenuePerEmployeeUsd": 317495.32331716345,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
@@ -36521,7 +36684,7 @@
             "employeeCount": {
               "provider": "StockAnalysis",
               "url": "https://stockanalysis.com/quote/hkg/0941/employees/",
-              "fetchedAt": "2026-03-27T03:26:58.974Z"
+              "fetchedAt": "2026-03-29T03:28:59.068Z"
             },
             "revenue": {
               "provider": "StockAnalysis",
@@ -37720,41 +37883,65 @@
           "periodEnd": "2025-12-31",
           "displayLabel": "2025",
           "marketCap": {
-            "reportedAmount": 6658600000,
-            "reportedCurrency": "USD",
-            "usdAmount": 6658600000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 195472921106,
+            "reportedCurrency": "EUR",
+            "usdAmount": 229680682299.55002,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.175,
+              "asOf": "2025-12-31",
+              "aggregation": "point_in_time",
+              "sampleCount": 1,
+              "expectedSampleCount": 1,
+              "coverageStatus": "complete"
+            }
           },
           "revenue": {
-            "reportedAmount": 277370000,
-            "reportedCurrency": "USD",
-            "usdAmount": 277370000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 44052000000,
+            "reportedCurrency": "EUR",
+            "usdAmount": 49839698599.99999,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.1313833333333332,
+              "asOf": "2025-12-31",
+              "aggregation": "month_end_average",
+              "rangeStart": "2025-01-01",
+              "rangeEnd": "2025-12-31",
+              "sampleCount": 12,
+              "expectedSampleCount": 12,
+              "coverageStatus": "complete"
+            }
           },
-          "marketCapUsd": 6658600000,
-          "revenueUsd": 277370000,
-          "employeeCount": 94397,
-          "revenuePerEmployeeUsd": 2938.334904710955,
+          "marketCapUsd": 229680682299.55002,
+          "revenueUsd": 49839698599.99999,
+          "employeeCount": 79033,
+          "revenuePerEmployeeUsd": 630618.8377007073,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/or/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/OR/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z",
-              "note": "current snapshot fallback"
+              "provider": "StockAnalysis",
+              "url": "https://stockanalysis.com/quote/epa/OR/employees/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z"
             },
             "revenue": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/or/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/OR/revenue/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             }
           },
           "flags": [
-            "employee_snapshot_fallback"
+            "revenue_fx_converted",
+            "market_cap_fx_converted"
           ]
         },
         {
@@ -37764,71 +37951,118 @@
           "periodEnd": "2024-12-31",
           "displayLabel": "2024",
           "marketCap": {
-            "reportedAmount": 3371500000,
-            "reportedCurrency": "USD",
-            "usdAmount": 3371500000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 182876663298,
+            "reportedCurrency": "EUR",
+            "usdAmount": 189990565500.29218,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.0389,
+              "asOf": "2024-12-31",
+              "aggregation": "point_in_time",
+              "sampleCount": 1,
+              "expectedSampleCount": 1,
+              "coverageStatus": "complete"
+            }
           },
           "revenue": {
-            "reportedAmount": 191157000,
-            "reportedCurrency": "USD",
-            "usdAmount": 191157000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 43486800000,
+            "reportedCurrency": "EUR",
+            "usdAmount": 46999446270.000015,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.0807750000000003,
+              "asOf": "2024-12-31",
+              "aggregation": "month_end_average",
+              "rangeStart": "2024-01-01",
+              "rangeEnd": "2024-12-31",
+              "sampleCount": 12,
+              "expectedSampleCount": 12,
+              "coverageStatus": "complete"
+            }
           },
-          "marketCapUsd": 3371500000,
-          "revenueUsd": 191157000,
-          "employeeCount": 94397,
-          "revenuePerEmployeeUsd": 2025.0325751877708,
+          "marketCapUsd": 189990565500.29218,
+          "revenueUsd": 46999446270.000015,
+          "employeeCount": 76265,
+          "revenuePerEmployeeUsd": 616264.9481413495,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/or/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/OR/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z",
-              "note": "current snapshot fallback"
+              "provider": "StockAnalysis",
+              "url": "https://stockanalysis.com/quote/epa/OR/employees/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z"
             },
             "revenue": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/or/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/OR/revenue/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             }
           },
           "flags": [
-            "employee_snapshot_fallback",
-            "annual_revenue_cross_source_mismatch"
+            "annual_revenue_cross_source_aligned",
+            "revenue_fx_converted",
+            "market_cap_fx_converted"
           ]
         },
         {
           "bucketId": "2025Q4",
           "bucketType": "quarterly",
-          "periodStart": "2025-10-01",
+          "periodStart": "2025-07-01",
           "periodEnd": "2025-12-31",
           "displayLabel": "2025 Q4",
           "marketCap": {
-            "reportedAmount": 6658600000,
-            "reportedCurrency": "USD",
-            "usdAmount": 6658600000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 195472921106,
+            "reportedCurrency": "EUR",
+            "usdAmount": 229680682299.55002,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.175,
+              "asOf": "2025-12-31",
+              "aggregation": "point_in_time",
+              "sampleCount": 1,
+              "expectedSampleCount": 1,
+              "coverageStatus": "complete"
+            }
           },
           "revenue": {
-            "reportedAmount": 90465000,
-            "reportedCurrency": "USD",
-            "usdAmount": 90465000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 21578700000,
+            "reportedCurrency": "EUR",
+            "usdAmount": 25072651175,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.1619166666666667,
+              "asOf": "2025-12-31",
+              "aggregation": "month_end_average",
+              "rangeStart": "2025-07-01",
+              "rangeEnd": "2025-12-31",
+              "sampleCount": 6,
+              "expectedSampleCount": 6,
+              "coverageStatus": "complete"
+            }
           },
-          "marketCapUsd": 6658600000,
-          "revenueUsd": 90465000,
+          "marketCapUsd": 229680682299.55002,
+          "revenueUsd": 25072651175,
           "employeeCount": 94397,
-          "revenuePerEmployeeUsd": 958.3461338813734,
+          "revenuePerEmployeeUsd": 265608.55932921596,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/or/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/OR/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
@@ -37838,12 +38072,15 @@
             },
             "revenue": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/or/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/OR/revenue/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             }
           },
           "flags": [
-            "employee_snapshot_fallback"
+            "employee_snapshot_fallback",
+            "revenue_fx_converted",
+            "market_cap_fx_converted"
           ]
         },
         {
@@ -37853,70 +38090,95 @@
           "periodEnd": "2025-09-30",
           "displayLabel": "2025 Q3",
           "marketCap": {
-            "reportedAmount": 7541100000,
-            "reportedCurrency": "USD",
-            "usdAmount": 7541100000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 196486010441,
+            "reportedCurrency": "EUR",
+            "usdAmount": 230694224858.77808,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.1741,
+              "asOf": "2025-09-30",
+              "aggregation": "point_in_time",
+              "sampleCount": 1,
+              "expectedSampleCount": 1,
+              "coverageStatus": "complete"
+            }
           },
-          "revenue": {
-            "reportedAmount": 71625000,
-            "reportedCurrency": "USD",
-            "usdAmount": 71625000,
-            "normalizationMethod": "reported_usd"
-          },
-          "marketCapUsd": 7541100000,
-          "revenueUsd": 71625000,
+          "revenue": null,
+          "marketCapUsd": 230694224858.77808,
+          "revenueUsd": null,
           "employeeCount": 94397,
-          "revenuePerEmployeeUsd": 758.7635200271195,
+          "revenuePerEmployeeUsd": null,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/or/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/OR/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
               "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
               "fetchedAt": "2026-03-07T20:15:17.105Z",
               "note": "current snapshot fallback"
-            },
-            "revenue": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/or/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
             }
           },
           "flags": [
-            "employee_snapshot_fallback"
+            "employee_snapshot_fallback",
+            "market_cap_fx_converted"
           ]
         },
         {
           "bucketId": "2025Q2",
           "bucketType": "quarterly",
-          "periodStart": "2025-04-01",
+          "periodStart": "2025-01-01",
           "periodEnd": "2025-06-30",
           "displayLabel": "2025 Q2",
           "marketCap": {
-            "reportedAmount": 4808600000,
-            "reportedCurrency": "USD",
-            "usdAmount": 4808600000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 185927301942,
+            "reportedCurrency": "EUR",
+            "usdAmount": 217906797876.024,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.172,
+              "asOf": "2025-06-30",
+              "aggregation": "point_in_time",
+              "sampleCount": 1,
+              "expectedSampleCount": 1,
+              "coverageStatus": "complete"
+            }
           },
           "revenue": {
-            "reportedAmount": 60364000,
-            "reportedCurrency": "USD",
-            "usdAmount": 60364000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 22473300000,
+            "reportedCurrency": "EUR",
+            "usdAmount": 24739732304.999996,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.1008499999999999,
+              "asOf": "2025-06-30",
+              "aggregation": "month_end_average",
+              "rangeStart": "2025-01-01",
+              "rangeEnd": "2025-06-30",
+              "sampleCount": 6,
+              "expectedSampleCount": 6,
+              "coverageStatus": "complete"
+            }
           },
-          "marketCapUsd": 4808600000,
-          "revenueUsd": 60364000,
+          "marketCapUsd": 217906797876.024,
+          "revenueUsd": 24739732304.999996,
           "employeeCount": 94397,
-          "revenuePerEmployeeUsd": 639.4694746655084,
+          "revenuePerEmployeeUsd": 262081.7643039503,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/or/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/OR/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
@@ -37926,12 +38188,15 @@
             },
             "revenue": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/or/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/OR/revenue/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             }
           },
           "flags": [
-            "employee_snapshot_fallback"
+            "employee_snapshot_fallback",
+            "revenue_fx_converted",
+            "market_cap_fx_converted"
           ]
         },
         {
@@ -37941,70 +38206,95 @@
           "periodEnd": "2025-03-31",
           "displayLabel": "2025 Q1",
           "marketCap": {
-            "reportedAmount": 3942700000,
-            "reportedCurrency": "USD",
-            "usdAmount": 3942700000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 183188876400,
+            "reportedCurrency": "EUR",
+            "usdAmount": 198118769826.59998,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.0815,
+              "asOf": "2025-03-31",
+              "aggregation": "point_in_time",
+              "sampleCount": 1,
+              "expectedSampleCount": 1,
+              "coverageStatus": "complete"
+            }
           },
-          "revenue": {
-            "reportedAmount": 54916000,
-            "reportedCurrency": "USD",
-            "usdAmount": 54916000,
-            "normalizationMethod": "reported_usd"
-          },
-          "marketCapUsd": 3942700000,
-          "revenueUsd": 54916000,
+          "revenue": null,
+          "marketCapUsd": 198118769826.59998,
+          "revenueUsd": null,
           "employeeCount": 94397,
-          "revenuePerEmployeeUsd": 581.7557761369535,
+          "revenuePerEmployeeUsd": null,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/or/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/OR/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
               "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
               "fetchedAt": "2026-03-07T20:15:17.105Z",
               "note": "current snapshot fallback"
-            },
-            "revenue": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/or/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
             }
           },
           "flags": [
-            "employee_snapshot_fallback"
+            "employee_snapshot_fallback",
+            "market_cap_fx_converted"
           ]
         },
         {
           "bucketId": "2024Q4",
           "bucketType": "quarterly",
-          "periodStart": "2024-10-01",
+          "periodStart": "2024-07-01",
           "periodEnd": "2024-12-31",
           "displayLabel": "2024 Q4",
           "marketCap": {
-            "reportedAmount": 3371500000,
-            "reportedCurrency": "USD",
-            "usdAmount": 3371500000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 182876663298,
+            "reportedCurrency": "EUR",
+            "usdAmount": 189990565500.29218,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.0389,
+              "asOf": "2024-12-31",
+              "aggregation": "point_in_time",
+              "sampleCount": 1,
+              "expectedSampleCount": 1,
+              "coverageStatus": "complete"
+            }
           },
           "revenue": {
-            "reportedAmount": 56742000,
-            "reportedCurrency": "USD",
-            "usdAmount": 56742000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 21366000000,
+            "reportedCurrency": "EUR",
+            "usdAmount": 23126558400,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.0824,
+              "asOf": "2024-12-31",
+              "aggregation": "month_end_average",
+              "rangeStart": "2024-07-01",
+              "rangeEnd": "2024-12-31",
+              "sampleCount": 6,
+              "expectedSampleCount": 6,
+              "coverageStatus": "complete"
+            }
           },
-          "marketCapUsd": 3371500000,
-          "revenueUsd": 56742000,
+          "marketCapUsd": 189990565500.29218,
+          "revenueUsd": 23126558400,
           "employeeCount": 94397,
-          "revenuePerEmployeeUsd": 601.0996112164581,
+          "revenuePerEmployeeUsd": 244992.51459262476,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/or/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/OR/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
@@ -38014,12 +38304,15 @@
             },
             "revenue": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/or/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/OR/revenue/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             }
           },
           "flags": [
-            "employee_snapshot_fallback"
+            "employee_snapshot_fallback",
+            "revenue_fx_converted",
+            "market_cap_fx_converted"
           ]
         },
         {
@@ -38029,70 +38322,95 @@
           "periodEnd": "2024-09-30",
           "displayLabel": "2024 Q3",
           "marketCap": {
-            "reportedAmount": 3445900000,
-            "reportedCurrency": "USD",
-            "usdAmount": 3445900000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 215079018791,
+            "reportedCurrency": "EUR",
+            "usdAmount": 240802469438.4036,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.1196,
+              "asOf": "2024-09-30",
+              "aggregation": "point_in_time",
+              "sampleCount": 1,
+              "expectedSampleCount": 1,
+              "coverageStatus": "complete"
+            }
           },
-          "revenue": {
-            "reportedAmount": 41977000,
-            "reportedCurrency": "USD",
-            "usdAmount": 41977000,
-            "normalizationMethod": "reported_usd"
-          },
-          "marketCapUsd": 3445900000,
-          "revenueUsd": 41977000,
+          "revenue": null,
+          "marketCapUsd": 240802469438.4036,
+          "revenueUsd": null,
           "employeeCount": 94397,
-          "revenuePerEmployeeUsd": 444.68574213163555,
+          "revenuePerEmployeeUsd": null,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/or/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/OR/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
               "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
               "fetchedAt": "2026-03-07T20:15:17.105Z",
               "note": "current snapshot fallback"
-            },
-            "revenue": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/or/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
             }
           },
           "flags": [
-            "employee_snapshot_fallback"
+            "employee_snapshot_fallback",
+            "market_cap_fx_converted"
           ]
         },
         {
           "bucketId": "2024Q2",
           "bucketType": "quarterly",
-          "periodStart": "2024-04-01",
+          "periodStart": "2024-01-01",
           "periodEnd": "2024-06-30",
           "displayLabel": "2024 Q2",
           "marketCap": {
-            "reportedAmount": 2894200000,
-            "reportedCurrency": "USD",
-            "usdAmount": 2894200000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 219264181024,
+            "reportedCurrency": "EUR",
+            "usdAmount": 234722305786.19202,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.0705,
+              "asOf": "2024-06-28",
+              "aggregation": "point_in_time",
+              "sampleCount": 1,
+              "expectedSampleCount": 1,
+              "coverageStatus": "complete"
+            }
           },
           "revenue": {
-            "reportedAmount": 47391000,
-            "reportedCurrency": "USD",
-            "usdAmount": 47391000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 22120800000,
+            "reportedCurrency": "EUR",
+            "usdAmount": 23871661320,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.07915,
+              "asOf": "2024-06-30",
+              "aggregation": "month_end_average",
+              "rangeStart": "2024-01-01",
+              "rangeEnd": "2024-06-30",
+              "sampleCount": 6,
+              "expectedSampleCount": 6,
+              "coverageStatus": "complete"
+            }
           },
-          "marketCapUsd": 2894200000,
-          "revenueUsd": 47391000,
+          "marketCapUsd": 234722305786.19202,
+          "revenueUsd": 23871661320,
           "employeeCount": 94397,
-          "revenuePerEmployeeUsd": 502.0392597222369,
+          "revenuePerEmployeeUsd": 252885.80484549297,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/or/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/OR/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
@@ -38102,12 +38420,15 @@
             },
             "revenue": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/or/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/OR/revenue/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             }
           },
           "flags": [
-            "employee_snapshot_fallback"
+            "employee_snapshot_fallback",
+            "revenue_fx_converted",
+            "market_cap_fx_converted"
           ]
         },
         {
@@ -38117,41 +38438,43 @@
           "periodEnd": "2024-03-31",
           "displayLabel": "2024 Q1",
           "marketCap": {
-            "reportedAmount": 3043400000,
-            "reportedCurrency": "USD",
-            "usdAmount": 3043400000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 234557329609,
+            "reportedCurrency": "EUR",
+            "usdAmount": 253579929040.2899,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.0811,
+              "asOf": "2024-03-28",
+              "aggregation": "point_in_time",
+              "sampleCount": 1,
+              "expectedSampleCount": 1,
+              "coverageStatus": "complete"
+            }
           },
-          "revenue": {
-            "reportedAmount": 45047000,
-            "reportedCurrency": "USD",
-            "usdAmount": 45047000,
-            "normalizationMethod": "reported_usd"
-          },
-          "marketCapUsd": 3043400000,
-          "revenueUsd": 45047000,
+          "revenue": null,
+          "marketCapUsd": 253579929040.2899,
+          "revenueUsd": null,
           "employeeCount": 94397,
-          "revenuePerEmployeeUsd": 477.20796211744016,
+          "revenuePerEmployeeUsd": null,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/or/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/OR/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
               "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
               "fetchedAt": "2026-03-07T20:15:17.105Z",
               "note": "current snapshot fallback"
-            },
-            "revenue": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/or/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
             }
           },
           "flags": [
-            "employee_snapshot_fallback"
+            "employee_snapshot_fallback",
+            "market_cap_fx_converted"
           ]
         }
       ]
@@ -40614,18 +40937,18 @@
         {
           "bucketId": "2025",
           "bucketType": "annual",
-          "periodStart": "2024-07-01",
-          "periodEnd": "2025-06-30",
+          "periodStart": "2025-01-01",
+          "periodEnd": "2025-12-31",
           "displayLabel": "2025",
           "marketCap": {
-            "reportedAmount": 8007076946,
-            "reportedCurrency": "AUD",
-            "usdAmount": 5351410847.818668,
+            "reportedAmount": 222464956434,
+            "reportedCurrency": "EUR",
+            "usdAmount": 261396323809.95,
             "normalizationMethod": "fx_converted",
             "fx": {
               "provider": "ECB EXR",
               "quoteCurrency": "USD",
-              "rate": 0.6683351345202208,
+              "rate": 1.175,
               "asOf": "2025-12-31",
               "aggregation": "point_in_time",
               "sampleCount": 1,
@@ -40634,44 +40957,44 @@
             }
           },
           "revenue": {
-            "reportedAmount": 1203369000,
-            "reportedCurrency": "AUD",
-            "usdAmount": 777534101.0437975,
+            "reportedAmount": 16002000000,
+            "reportedCurrency": "EUR",
+            "usdAmount": 18104396099.999996,
             "normalizationMethod": "fx_converted",
             "fx": {
               "provider": "ECB EXR",
               "quoteCurrency": "USD",
-              "rate": 0.6461310712207124,
-              "asOf": "2025-06-30",
+              "rate": 1.1313833333333332,
+              "asOf": "2025-12-31",
               "aggregation": "month_end_average",
-              "rangeStart": "2024-07-01",
-              "rangeEnd": "2025-06-30",
+              "rangeStart": "2025-01-01",
+              "rangeEnd": "2025-12-31",
               "sampleCount": 12,
               "expectedSampleCount": 12,
               "coverageStatus": "complete"
             }
           },
-          "marketCapUsd": 5351410847.818668,
-          "revenueUsd": 777534101.0437975,
-          "employeeCount": 250,
-          "revenuePerEmployeeUsd": 3110136.40417519,
+          "marketCapUsd": 261396323809.95,
+          "revenueUsd": 18104396099.999996,
+          "employeeCount": 26494,
+          "revenuePerEmployeeUsd": 683339.4768626858,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/quote/asx/RMS/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z",
-              "note": "normalized from AUD"
+              "url": "https://stockanalysis.com/quote/epa/RMS/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/quote/asx/RMS/employees/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/RMS/employees/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z"
             },
             "revenue": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/quote/asx/RMS/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z",
-              "note": "normalized from AUD"
+              "url": "https://stockanalysis.com/quote/epa/RMS/revenue/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             }
           },
           "flags": [
@@ -40682,18 +41005,18 @@
         {
           "bucketId": "2024",
           "bucketType": "annual",
-          "periodStart": "2023-07-01",
-          "periodEnd": "2024-06-30",
+          "periodStart": "2024-01-01",
+          "periodEnd": "2024-12-31",
           "displayLabel": "2024",
           "marketCap": {
-            "reportedAmount": 2390897714,
-            "reportedCurrency": "AUD",
-            "usdAmount": 1480982372.4508705,
+            "reportedAmount": 243184346388,
+            "reportedCurrency": "EUR",
+            "usdAmount": 252644217462.4932,
             "normalizationMethod": "fx_converted",
             "fx": {
               "provider": "ECB EXR",
               "quoteCurrency": "USD",
-              "rate": 0.6194252325304078,
+              "rate": 1.0389,
               "asOf": "2024-12-31",
               "aggregation": "point_in_time",
               "sampleCount": 1,
@@ -40702,48 +41025,48 @@
             }
           },
           "revenue": {
-            "reportedAmount": 882572000,
-            "reportedCurrency": "AUD",
-            "usdAmount": 579774955.133391,
+            "reportedAmount": 15170000000,
+            "reportedCurrency": "EUR",
+            "usdAmount": 16395356750.000004,
             "normalizationMethod": "fx_converted",
             "fx": {
               "provider": "ECB EXR",
               "quoteCurrency": "USD",
-              "rate": 0.6569151923394251,
-              "asOf": "2024-06-30",
+              "rate": 1.0807750000000003,
+              "asOf": "2024-12-31",
               "aggregation": "month_end_average",
-              "rangeStart": "2023-07-01",
-              "rangeEnd": "2024-06-30",
-              "sampleCount": 6,
+              "rangeStart": "2024-01-01",
+              "rangeEnd": "2024-12-31",
+              "sampleCount": 12,
               "expectedSampleCount": 12,
-              "coverageStatus": "partial"
+              "coverageStatus": "complete"
             }
           },
-          "marketCapUsd": 1480982372.4508705,
-          "revenueUsd": 579774955.133391,
-          "employeeCount": 300,
-          "revenuePerEmployeeUsd": 1932583.18377797,
+          "marketCapUsd": 252644217462.4932,
+          "revenueUsd": 16395356750.000004,
+          "employeeCount": 25185,
+          "revenuePerEmployeeUsd": 650996.8929918604,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/quote/asx/RMS/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z",
-              "note": "normalized from AUD"
+              "url": "https://stockanalysis.com/quote/epa/RMS/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/quote/asx/RMS/employees/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/epa/RMS/employees/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z"
             },
             "revenue": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/quote/asx/RMS/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z",
-              "note": "normalized from AUD"
+              "url": "https://stockanalysis.com/quote/epa/RMS/revenue/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             }
           },
           "flags": [
-            "annual_revenue_cross_source_mismatch",
+            "annual_revenue_cross_source_aligned",
             "revenue_fx_converted",
             "market_cap_fx_converted"
           ]
@@ -40755,14 +41078,14 @@
           "periodEnd": "2025-12-31",
           "displayLabel": "2025 Q4",
           "marketCap": {
-            "reportedAmount": 8007076946,
-            "reportedCurrency": "AUD",
-            "usdAmount": 5351410847.818668,
+            "reportedAmount": 222464956434,
+            "reportedCurrency": "EUR",
+            "usdAmount": 261396323809.95,
             "normalizationMethod": "fx_converted",
             "fx": {
               "provider": "ECB EXR",
               "quoteCurrency": "USD",
-              "rate": 0.6683351345202208,
+              "rate": 1.175,
               "asOf": "2025-12-31",
               "aggregation": "point_in_time",
               "sampleCount": 1,
@@ -40771,14 +41094,14 @@
             }
           },
           "revenue": {
-            "reportedAmount": 485630000,
-            "reportedCurrency": "AUD",
-            "usdAmount": 318320134.0443165,
+            "reportedAmount": 7968000000,
+            "reportedCurrency": "EUR",
+            "usdAmount": 9258152000,
             "normalizationMethod": "fx_converted",
             "fx": {
               "provider": "ECB EXR",
               "quoteCurrency": "USD",
-              "rate": 0.6554787266938131,
+              "rate": 1.1619166666666667,
               "asOf": "2025-12-31",
               "aggregation": "month_end_average",
               "rangeStart": "2025-07-01",
@@ -40788,16 +41111,16 @@
               "coverageStatus": "complete"
             }
           },
-          "marketCapUsd": 5351410847.818668,
-          "revenueUsd": 318320134.0443165,
+          "marketCapUsd": 261396323809.95,
+          "revenueUsd": 9258152000,
           "employeeCount": 24203,
-          "revenuePerEmployeeUsd": 13152.0941223946,
+          "revenuePerEmployeeUsd": 382520.8445234062,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/quote/asx/RMS/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z",
-              "note": "normalized from AUD"
+              "url": "https://stockanalysis.com/quote/epa/RMS/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
@@ -40807,9 +41130,9 @@
             },
             "revenue": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/quote/asx/RMS/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z",
-              "note": "normalized from AUD"
+              "url": "https://stockanalysis.com/quote/epa/RMS/revenue/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             }
           },
           "flags": [
@@ -40825,14 +41148,14 @@
           "periodEnd": "2025-09-30",
           "displayLabel": "2025 Q3",
           "marketCap": {
-            "reportedAmount": 7427332226,
-            "reportedCurrency": "AUD",
-            "usdAmount": 4910152458.641103,
+            "reportedAmount": 218376297951,
+            "reportedCurrency": "EUR",
+            "usdAmount": 256395611424.26907,
             "normalizationMethod": "fx_converted",
             "fx": {
               "provider": "ECB EXR",
               "quoteCurrency": "USD",
-              "rate": 0.6610923423423423,
+              "rate": 1.1741,
               "asOf": "2025-09-30",
               "aggregation": "point_in_time",
               "sampleCount": 1,
@@ -40841,16 +41164,16 @@
             }
           },
           "revenue": null,
-          "marketCapUsd": 4910152458.641103,
+          "marketCapUsd": 256395611424.26907,
           "revenueUsd": null,
           "employeeCount": 24203,
           "revenuePerEmployeeUsd": null,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/quote/asx/RMS/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z",
-              "note": "normalized from AUD"
+              "url": "https://stockanalysis.com/quote/epa/RMS/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
@@ -40871,14 +41194,14 @@
           "periodEnd": "2025-06-30",
           "displayLabel": "2025 Q2",
           "marketCap": {
-            "reportedAmount": 2920659117,
-            "reportedCurrency": "AUD",
-            "usdAmount": 1907183243.32739,
+            "reportedAmount": 241020200927,
+            "reportedCurrency": "EUR",
+            "usdAmount": 282475675486.444,
             "normalizationMethod": "fx_converted",
             "fx": {
               "provider": "ECB EXR",
               "quoteCurrency": "USD",
-              "rate": 0.6529975484733674,
+              "rate": 1.172,
               "asOf": "2025-06-30",
               "aggregation": "point_in_time",
               "sampleCount": 1,
@@ -40887,14 +41210,14 @@
             }
           },
           "revenue": {
-            "reportedAmount": 695411000,
-            "reportedCurrency": "AUD",
-            "usdAmount": 440796617.6335735,
+            "reportedAmount": 8034000000,
+            "reportedCurrency": "EUR",
+            "usdAmount": 8844228900,
             "normalizationMethod": "fx_converted",
             "fx": {
               "provider": "ECB EXR",
               "quoteCurrency": "USD",
-              "rate": 0.6338648908826198,
+              "rate": 1.1008499999999999,
               "asOf": "2025-06-30",
               "aggregation": "month_end_average",
               "rangeStart": "2025-01-01",
@@ -40904,16 +41227,16 @@
               "coverageStatus": "complete"
             }
           },
-          "marketCapUsd": 1907183243.32739,
-          "revenueUsd": 440796617.6335735,
+          "marketCapUsd": 282475675486.444,
+          "revenueUsd": 8844228900,
           "employeeCount": 24203,
-          "revenuePerEmployeeUsd": 18212.478520578996,
+          "revenuePerEmployeeUsd": 365418.7042928563,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/quote/asx/RMS/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z",
-              "note": "normalized from AUD"
+              "url": "https://stockanalysis.com/quote/epa/RMS/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
@@ -40923,9 +41246,9 @@
             },
             "revenue": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/quote/asx/RMS/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z",
-              "note": "normalized from AUD"
+              "url": "https://stockanalysis.com/quote/epa/RMS/revenue/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             }
           },
           "flags": [
@@ -40941,14 +41264,14 @@
           "periodEnd": "2025-03-31",
           "displayLabel": "2025 Q1",
           "marketCap": {
-            "reportedAmount": 2738255959,
-            "reportedCurrency": "AUD",
-            "usdAmount": 1710026457.8233628,
+            "reportedAmount": 252761941903,
+            "reportedCurrency": "EUR",
+            "usdAmount": 273362040168.09448,
             "normalizationMethod": "fx_converted",
             "fx": {
               "provider": "ECB EXR",
               "quoteCurrency": "USD",
-              "rate": 0.6244947453516572,
+              "rate": 1.0815,
               "asOf": "2025-03-31",
               "aggregation": "point_in_time",
               "sampleCount": 1,
@@ -40957,16 +41280,16 @@
             }
           },
           "revenue": null,
-          "marketCapUsd": 1710026457.8233628,
+          "marketCapUsd": 273362040168.09448,
           "revenueUsd": null,
           "employeeCount": 24203,
           "revenuePerEmployeeUsd": null,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/quote/asx/RMS/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z",
-              "note": "normalized from AUD"
+              "url": "https://stockanalysis.com/quote/epa/RMS/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
@@ -40987,14 +41310,14 @@
           "periodEnd": "2024-12-31",
           "displayLabel": "2024 Q4",
           "marketCap": {
-            "reportedAmount": 2390897714,
-            "reportedCurrency": "AUD",
-            "usdAmount": 1480982372.4508705,
+            "reportedAmount": 243184346388,
+            "reportedCurrency": "EUR",
+            "usdAmount": 252644217462.4932,
             "normalizationMethod": "fx_converted",
             "fx": {
               "provider": "ECB EXR",
               "quoteCurrency": "USD",
-              "rate": 0.6194252325304078,
+              "rate": 1.0389,
               "asOf": "2024-12-31",
               "aggregation": "point_in_time",
               "sampleCount": 1,
@@ -41003,14 +41326,14 @@
             }
           },
           "revenue": {
-            "reportedAmount": 507958000,
-            "reportedCurrency": "AUD",
-            "usdAmount": 334438151.10730755,
+            "reportedAmount": 7666000000,
+            "reportedCurrency": "EUR",
+            "usdAmount": 8297678400,
             "normalizationMethod": "fx_converted",
             "fx": {
               "provider": "ECB EXR",
               "quoteCurrency": "USD",
-              "rate": 0.6583972515588051,
+              "rate": 1.0824,
               "asOf": "2024-12-31",
               "aggregation": "month_end_average",
               "rangeStart": "2024-07-01",
@@ -41020,16 +41343,16 @@
               "coverageStatus": "complete"
             }
           },
-          "marketCapUsd": 1480982372.4508705,
-          "revenueUsd": 334438151.10730755,
+          "marketCapUsd": 252644217462.4932,
+          "revenueUsd": 8297678400,
           "employeeCount": 24203,
-          "revenuePerEmployeeUsd": 13818.045329393362,
+          "revenuePerEmployeeUsd": 342836.77230095444,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/quote/asx/RMS/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z",
-              "note": "normalized from AUD"
+              "url": "https://stockanalysis.com/quote/epa/RMS/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
@@ -41039,9 +41362,9 @@
             },
             "revenue": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/quote/asx/RMS/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z",
-              "note": "normalized from AUD"
+              "url": "https://stockanalysis.com/quote/epa/RMS/revenue/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             }
           },
           "flags": [
@@ -41057,14 +41380,14 @@
           "periodEnd": "2024-09-30",
           "displayLabel": "2024 Q3",
           "marketCap": {
-            "reportedAmount": 2525881464,
-            "reportedCurrency": "AUD",
-            "usdAmount": 1749336191.4477296,
+            "reportedAmount": 231035602124,
+            "reportedCurrency": "EUR",
+            "usdAmount": 258667460138.0304,
             "normalizationMethod": "fx_converted",
             "fx": {
               "provider": "ECB EXR",
               "quoteCurrency": "USD",
-              "rate": 0.6925646418409006,
+              "rate": 1.1196,
               "asOf": "2024-09-30",
               "aggregation": "point_in_time",
               "sampleCount": 1,
@@ -41073,16 +41396,16 @@
             }
           },
           "revenue": null,
-          "marketCapUsd": 1749336191.4477296,
+          "marketCapUsd": 258667460138.0304,
           "revenueUsd": null,
           "employeeCount": 24203,
           "revenuePerEmployeeUsd": null,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/quote/asx/RMS/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z",
-              "note": "normalized from AUD"
+              "url": "https://stockanalysis.com/quote/epa/RMS/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
@@ -41103,14 +41426,14 @@
           "periodEnd": "2024-06-30",
           "displayLabel": "2024 Q2",
           "marketCap": {
-            "reportedAmount": 2194503116,
-            "reportedCurrency": "AUD",
-            "usdAmount": 1461045827.2765718,
+            "reportedAmount": 224126734660,
+            "reportedCurrency": "EUR",
+            "usdAmount": 239927669453.53,
             "normalizationMethod": "fx_converted",
             "fx": {
               "provider": "ECB EXR",
               "quoteCurrency": "USD",
-              "rate": 0.6657752347782822,
+              "rate": 1.0705,
               "asOf": "2024-06-28",
               "aggregation": "point_in_time",
               "sampleCount": 1,
@@ -41119,14 +41442,14 @@
             }
           },
           "revenue": {
-            "reportedAmount": 534058000,
-            "reportedCurrency": "AUD",
-            "usdAmount": 350830813.7904087,
+            "reportedAmount": 7504000000,
+            "reportedCurrency": "EUR",
+            "usdAmount": 8097941600,
             "normalizationMethod": "fx_converted",
             "fx": {
               "provider": "ECB EXR",
               "quoteCurrency": "USD",
-              "rate": 0.6569151923394251,
+              "rate": 1.07915,
               "asOf": "2024-06-30",
               "aggregation": "month_end_average",
               "rangeStart": "2024-01-01",
@@ -41136,16 +41459,16 @@
               "coverageStatus": "complete"
             }
           },
-          "marketCapUsd": 1461045827.2765718,
-          "revenueUsd": 350830813.7904087,
+          "marketCapUsd": 239927669453.53,
+          "revenueUsd": 8097941600,
           "employeeCount": 24203,
-          "revenuePerEmployeeUsd": 14495.344122233138,
+          "revenuePerEmployeeUsd": 334584.20856918563,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/quote/asx/RMS/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z",
-              "note": "normalized from AUD"
+              "url": "https://stockanalysis.com/quote/epa/RMS/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
@@ -41155,9 +41478,9 @@
             },
             "revenue": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/quote/asx/RMS/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z",
-              "note": "normalized from AUD"
+              "url": "https://stockanalysis.com/quote/epa/RMS/revenue/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             }
           },
           "flags": [
@@ -41173,14 +41496,14 @@
           "periodEnd": "2024-03-31",
           "displayLabel": "2024 Q1",
           "marketCap": {
-            "reportedAmount": 2124414206,
-            "reportedCurrency": "AUD",
-            "usdAmount": 1382973564.2238812,
+            "reportedAmount": 247796193554,
+            "reportedCurrency": "EUR",
+            "usdAmount": 267892464851.2294,
             "normalizationMethod": "fx_converted",
             "fx": {
               "provider": "ECB EXR",
               "quoteCurrency": "USD",
-              "rate": 0.6509905461552357,
+              "rate": 1.0811,
               "asOf": "2024-03-28",
               "aggregation": "point_in_time",
               "sampleCount": 1,
@@ -41189,16 +41512,16 @@
             }
           },
           "revenue": null,
-          "marketCapUsd": 1382973564.2238812,
+          "marketCapUsd": 267892464851.2294,
           "revenueUsd": null,
           "employeeCount": 24203,
           "revenuePerEmployeeUsd": null,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/quote/asx/RMS/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z",
-              "note": "normalized from AUD"
+              "url": "https://stockanalysis.com/quote/epa/RMS/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
@@ -45712,9 +46035,9 @@
             "normalizationMethod": "reported_usd"
           },
           "revenue": {
-            "reportedAmount": 5536942000000,
+            "reportedAmount": 2448745000000,
             "reportedCurrency": "JPY",
-            "usdAmount": 36382175249.86241,
+            "usdAmount": 16090229901.67214,
             "normalizationMethod": "fx_converted",
             "fx": {
               "provider": "ECB EXR",
@@ -45730,9 +46053,9 @@
             }
           },
           "marketCapUsd": 191393900000,
-          "revenueUsd": 36382175249.86241,
+          "revenueUsd": 16090229901.67214,
           "employeeCount": 150800,
-          "revenuePerEmployeeUsd": 241261.10908396824,
+          "revenuePerEmployeeUsd": 106699.13727899297,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
@@ -45747,7 +46070,7 @@
             "revenue": {
               "provider": "StockAnalysis",
               "url": "https://stockanalysis.com/stocks/mufg/revenue/",
-              "fetchedAt": "2026-03-17T03:17:11.182Z",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
               "note": "normalized from JPY"
             }
           },
@@ -45768,9 +46091,9 @@
             "normalizationMethod": "reported_usd"
           },
           "revenue": {
-            "reportedAmount": 5241512000000,
+            "reportedAmount": 2616589000000,
             "reportedCurrency": "JPY",
-            "usdAmount": 35013773145.08336,
+            "usdAmount": 17479050636.51872,
             "normalizationMethod": "fx_converted",
             "fx": {
               "provider": "ECB EXR",
@@ -45786,9 +46109,9 @@
             }
           },
           "marketCapUsd": 144598000000,
-          "revenueUsd": 35013773145.08336,
+          "revenueUsd": 17479050636.51872,
           "employeeCount": 140000,
-          "revenuePerEmployeeUsd": 250098.3796077383,
+          "revenuePerEmployeeUsd": 124850.36168941941,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
@@ -45803,7 +46126,7 @@
             "revenue": {
               "provider": "StockAnalysis",
               "url": "https://stockanalysis.com/stocks/mufg/revenue/",
-              "fetchedAt": "2026-03-17T03:17:11.182Z",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
               "note": "normalized from JPY"
             }
           },
@@ -45859,9 +46182,9 @@
             "normalizationMethod": "reported_usd"
           },
           "revenue": {
-            "reportedAmount": 1797890000000,
+            "reportedAmount": 946922000000,
             "reportedCurrency": "JPY",
-            "usdAmount": 12117331646.019903,
+            "usdAmount": 6382018875.967083,
             "normalizationMethod": "fx_converted",
             "fx": {
               "provider": "ECB EXR",
@@ -45877,9 +46200,9 @@
             }
           },
           "marketCapUsd": 192359300000,
-          "revenueUsd": 12117331646.019903,
+          "revenueUsd": 6382018875.967083,
           "employeeCount": 150800,
-          "revenuePerEmployeeUsd": 80353.65813010545,
+          "revenuePerEmployeeUsd": 42321.080079357314,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
@@ -45895,7 +46218,7 @@
             "revenue": {
               "provider": "StockAnalysis",
               "url": "https://stockanalysis.com/stocks/mufg/revenue/",
-              "fetchedAt": "2026-03-17T03:17:11.182Z",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
               "note": "normalized from JPY"
             }
           },
@@ -45917,9 +46240,9 @@
             "normalizationMethod": "reported_usd"
           },
           "revenue": {
-            "reportedAmount": 2029763000000,
+            "reportedAmount": 1922111000000,
             "reportedCurrency": "JPY",
-            "usdAmount": 14125199790.765133,
+            "usdAmount": 13376045328.950897,
             "normalizationMethod": "fx_converted",
             "fx": {
               "provider": "ECB EXR",
@@ -45935,9 +46258,9 @@
             }
           },
           "marketCapUsd": 169273400000,
-          "revenueUsd": 14125199790.765133,
+          "revenueUsd": 13376045328.950897,
           "employeeCount": 150800,
-          "revenuePerEmployeeUsd": 93668.43362576349,
+          "revenuePerEmployeeUsd": 88700.56584184946,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
@@ -45953,7 +46276,7 @@
             "revenue": {
               "provider": "StockAnalysis",
               "url": "https://stockanalysis.com/stocks/mufg/revenue/",
-              "fetchedAt": "2026-03-17T03:17:11.182Z",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
               "note": "normalized from JPY"
             }
           },
@@ -46043,9 +46366,9 @@
             "normalizationMethod": "reported_usd"
           },
           "revenue": {
-            "reportedAmount": 1432850000000,
+            "reportedAmount": 782660500000,
             "reportedCurrency": "JPY",
-            "usdAmount": 9808498034.93555,
+            "usdAmount": 5357660589.923352,
             "normalizationMethod": "fx_converted",
             "fx": {
               "provider": "ECB EXR",
@@ -46061,9 +46384,9 @@
             }
           },
           "marketCapUsd": 125597900000,
-          "revenueUsd": 9808498034.93555,
+          "revenueUsd": 5357660589.923352,
           "employeeCount": 150800,
-          "revenuePerEmployeeUsd": 65043.0904173445,
+          "revenuePerEmployeeUsd": 35528.253248828594,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
@@ -46079,7 +46402,7 @@
             "revenue": {
               "provider": "StockAnalysis",
               "url": "https://stockanalysis.com/stocks/mufg/revenue/",
-              "fetchedAt": "2026-03-17T03:17:11.182Z",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
               "note": "normalized from JPY"
             }
           },
@@ -46101,9 +46424,9 @@
             "normalizationMethod": "reported_usd"
           },
           "revenue": {
-            "reportedAmount": 2137775000000,
+            "reportedAmount": 1995121000000,
             "reportedCurrency": "JPY",
-            "usdAmount": 13510450902.050262,
+            "usdAmount": 12608896780.13328,
             "normalizationMethod": "fx_converted",
             "fx": {
               "provider": "ECB EXR",
@@ -46119,9 +46442,9 @@
             }
           },
           "marketCapUsd": 137027299999,
-          "revenueUsd": 13510450902.050262,
+          "revenueUsd": 12608896780.13328,
           "employeeCount": 150800,
-          "revenuePerEmployeeUsd": 89591.84948309192,
+          "revenuePerEmployeeUsd": 83613.37387356286,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
@@ -46137,7 +46460,7 @@
             "revenue": {
               "provider": "StockAnalysis",
               "url": "https://stockanalysis.com/stocks/mufg/revenue/",
-              "fetchedAt": "2026-03-17T03:17:11.182Z",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
               "note": "normalized from JPY"
             }
           },
@@ -46158,28 +46481,11 @@
             "usdAmount": 129795300000,
             "normalizationMethod": "reported_usd"
           },
-          "revenue": {
-            "reportedAmount": 927277000000,
-            "reportedCurrency": "JPY",
-            "usdAmount": 6194294035.891449,
-            "normalizationMethod": "fx_converted",
-            "fx": {
-              "provider": "ECB EXR",
-              "quoteCurrency": "USD",
-              "rate": 0.00668009023829066,
-              "asOf": "2024-03-31",
-              "aggregation": "month_end_average",
-              "rangeStart": "2024-01-01",
-              "rangeEnd": "2024-03-31",
-              "sampleCount": 3,
-              "expectedSampleCount": 3,
-              "coverageStatus": "complete"
-            }
-          },
+          "revenue": null,
           "marketCapUsd": 129795300000,
-          "revenueUsd": 6194294035.891449,
+          "revenueUsd": null,
           "employeeCount": 150800,
-          "revenuePerEmployeeUsd": 41076.22039715815,
+          "revenuePerEmployeeUsd": null,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
@@ -46191,17 +46497,10 @@
               "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
               "fetchedAt": "2026-03-07T20:15:17.105Z",
               "note": "current snapshot fallback"
-            },
-            "revenue": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/mufg/revenue/",
-              "fetchedAt": "2026-03-24T03:17:28.073Z",
-              "note": "normalized from JPY"
             }
           },
           "flags": [
-            "employee_snapshot_fallback",
-            "revenue_fx_converted"
+            "employee_snapshot_fallback"
           ]
         }
       ]
@@ -46292,8 +46591,8 @@
           },
           "marketCapUsd": 134775957170.16258,
           "revenueUsd": 55541752743.099144,
-          "employeeCount": 22181,
-          "revenuePerEmployeeUsd": 2504023.8376583178,
+          "employeeCount": 22045,
+          "revenuePerEmployeeUsd": 2519471.659927382,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
@@ -46302,10 +46601,9 @@
               "note": "normalized from HKD"
             },
             "employeeCount": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
-              "fetchedAt": "2026-03-11T03:12:49.377Z",
-              "note": "current snapshot fallback"
+              "provider": "StockAnalysis",
+              "url": "https://stockanalysis.com/quote/hkg/0883/employees/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z"
             },
             "revenue": {
               "provider": "StockAnalysis",
@@ -46315,7 +46613,6 @@
             }
           },
           "flags": [
-            "employee_snapshot_fallback",
             "revenue_fx_converted",
             "market_cap_fx_converted"
           ]
@@ -49118,39 +49415,66 @@
           "periodEnd": "2025-12-31",
           "displayLabel": "2025",
           "marketCap": {
-            "reportedAmount": 26787000000,
-            "reportedCurrency": "USD",
-            "usdAmount": 26787000000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 131476358906,
+            "reportedCurrency": "EUR",
+            "usdAmount": 154576755165.7842,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.1757,
+              "asOf": "2025-12-30",
+              "aggregation": "point_in_time",
+              "sampleCount": 1,
+              "expectedSampleCount": 1,
+              "coverageStatus": "complete"
+            }
           },
           "revenue": {
-            "reportedAmount": 15814000000,
-            "reportedCurrency": "USD",
-            "usdAmount": 15814000000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 119081000000,
+            "reportedCurrency": "EUR",
+            "usdAmount": 134726258716.66666,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.1313833333333332,
+              "asOf": "2025-12-31",
+              "aggregation": "month_end_average",
+              "rangeStart": "2025-01-01",
+              "rangeEnd": "2025-12-31",
+              "sampleCount": 12,
+              "expectedSampleCount": 12,
+              "coverageStatus": "complete"
+            }
           },
-          "marketCapUsd": 26787000000,
-          "revenueUsd": 15814000000,
-          "employeeCount": 9650,
-          "revenuePerEmployeeUsd": 1638756.4766839377,
+          "marketCapUsd": 154576755165.7842,
+          "revenueUsd": 134726258716.66666,
+          "employeeCount": 195282,
+          "revenuePerEmployeeUsd": 689906.1803784611,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/dte/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/etr/DTE/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/dte/employees/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/etr/DTE/employees/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z"
             },
             "revenue": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/dte/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/etr/DTE/revenue/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             }
           },
-          "flags": []
+          "flags": [
+            "revenue_fx_converted",
+            "market_cap_fx_converted"
+          ]
         },
         {
           "bucketId": "2024",
@@ -49159,40 +49483,66 @@
           "periodEnd": "2024-12-31",
           "displayLabel": "2024",
           "marketCap": {
-            "reportedAmount": 25007400000,
-            "reportedCurrency": "USD",
-            "usdAmount": 25007400000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 141517998015,
+            "reportedCurrency": "EUR",
+            "usdAmount": 147801397126.866,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.0444,
+              "asOf": "2024-12-30",
+              "aggregation": "point_in_time",
+              "sampleCount": 1,
+              "expectedSampleCount": 1,
+              "coverageStatus": "complete"
+            }
           },
           "revenue": {
-            "reportedAmount": 12457000000,
-            "reportedCurrency": "USD",
-            "usdAmount": 12457000000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 115769000000,
+            "reportedCurrency": "EUR",
+            "usdAmount": 125120240975.00003,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.0807750000000003,
+              "asOf": "2024-12-31",
+              "aggregation": "month_end_average",
+              "rangeStart": "2024-01-01",
+              "rangeEnd": "2024-12-31",
+              "sampleCount": 12,
+              "expectedSampleCount": 12,
+              "coverageStatus": "complete"
+            }
           },
-          "marketCapUsd": 25007400000,
-          "revenueUsd": 12457000000,
-          "employeeCount": 9500,
-          "revenuePerEmployeeUsd": 1311263.1578947369,
+          "marketCapUsd": 147801397126.866,
+          "revenueUsd": 125120240975.00003,
+          "employeeCount": 195352,
+          "revenuePerEmployeeUsd": 640486.1018827554,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/dte/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/etr/DTE/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/dte/employees/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/etr/DTE/employees/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z"
             },
             "revenue": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/dte/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/etr/DTE/revenue/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             }
           },
           "flags": [
-            "annual_revenue_cross_source_mismatch"
+            "annual_revenue_cross_source_aligned",
+            "revenue_fx_converted",
+            "market_cap_fx_converted"
           ]
         },
         {
@@ -49202,26 +49552,49 @@
           "periodEnd": "2025-12-31",
           "displayLabel": "2025 Q4",
           "marketCap": {
-            "reportedAmount": 26787000000,
-            "reportedCurrency": "USD",
-            "usdAmount": 26787000000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 131476358906,
+            "reportedCurrency": "EUR",
+            "usdAmount": 154576755165.7842,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.1757,
+              "asOf": "2025-12-30",
+              "aggregation": "point_in_time",
+              "sampleCount": 1,
+              "expectedSampleCount": 1,
+              "coverageStatus": "complete"
+            }
           },
           "revenue": {
-            "reportedAmount": 4428000000,
-            "reportedCurrency": "USD",
-            "usdAmount": 4428000000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 31720000000,
+            "reportedCurrency": "EUR",
+            "usdAmount": 36869213333.333336,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.1623333333333334,
+              "asOf": "2025-12-31",
+              "aggregation": "month_end_average",
+              "rangeStart": "2025-10-01",
+              "rangeEnd": "2025-12-31",
+              "sampleCount": 3,
+              "expectedSampleCount": 3,
+              "coverageStatus": "complete"
+            }
           },
-          "marketCapUsd": 26787000000,
-          "revenueUsd": 4428000000,
+          "marketCapUsd": 154576755165.7842,
+          "revenueUsd": 36869213333.333336,
           "employeeCount": 198678,
-          "revenuePerEmployeeUsd": 22287.319179778337,
+          "revenuePerEmployeeUsd": 185572.70222839637,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/dte/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/etr/DTE/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
@@ -49231,12 +49604,15 @@
             },
             "revenue": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/dte/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/etr/DTE/revenue/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             }
           },
           "flags": [
-            "employee_snapshot_fallback"
+            "employee_snapshot_fallback",
+            "revenue_fx_converted",
+            "market_cap_fx_converted"
           ]
         },
         {
@@ -49246,26 +49622,49 @@
           "periodEnd": "2025-09-30",
           "displayLabel": "2025 Q3",
           "marketCap": {
-            "reportedAmount": 29359100000,
-            "reportedCurrency": "USD",
-            "usdAmount": 29359100000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 138436274091,
+            "reportedCurrency": "EUR",
+            "usdAmount": 162538029410.2431,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.1741,
+              "asOf": "2025-09-30",
+              "aggregation": "point_in_time",
+              "sampleCount": 1,
+              "expectedSampleCount": 1,
+              "coverageStatus": "complete"
+            }
           },
           "revenue": {
-            "reportedAmount": 3527000000,
-            "reportedCurrency": "USD",
-            "usdAmount": 3527000000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 28935000000,
+            "reportedCurrency": "EUR",
+            "usdAmount": 33608002500,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.1615,
+              "asOf": "2025-09-30",
+              "aggregation": "month_end_average",
+              "rangeStart": "2025-07-01",
+              "rangeEnd": "2025-09-30",
+              "sampleCount": 3,
+              "expectedSampleCount": 3,
+              "coverageStatus": "complete"
+            }
           },
-          "marketCapUsd": 29359100000,
-          "revenueUsd": 3527000000,
+          "marketCapUsd": 162538029410.2431,
+          "revenueUsd": 33608002500,
           "employeeCount": 198678,
-          "revenuePerEmployeeUsd": 17752.342987145028,
+          "revenuePerEmployeeUsd": 169158.147857337,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/dte/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/etr/DTE/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
@@ -49275,12 +49674,15 @@
             },
             "revenue": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/dte/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/etr/DTE/revenue/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             }
           },
           "flags": [
-            "employee_snapshot_fallback"
+            "employee_snapshot_fallback",
+            "revenue_fx_converted",
+            "market_cap_fx_converted"
           ]
         },
         {
@@ -49290,26 +49692,49 @@
           "periodEnd": "2025-06-30",
           "displayLabel": "2025 Q2",
           "marketCap": {
-            "reportedAmount": 27487500000,
-            "reportedCurrency": "USD",
-            "usdAmount": 27487500000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 150890233528,
+            "reportedCurrency": "EUR",
+            "usdAmount": 176843353694.81598,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.172,
+              "asOf": "2025-06-30",
+              "aggregation": "point_in_time",
+              "sampleCount": 1,
+              "expectedSampleCount": 1,
+              "coverageStatus": "complete"
+            }
           },
           "revenue": {
-            "reportedAmount": 3419000000,
-            "reportedCurrency": "USD",
-            "usdAmount": 3419000000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 28671000000,
+            "reportedCurrency": "EUR",
+            "usdAmount": 32906662400,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.1477333333333333,
+              "asOf": "2025-06-30",
+              "aggregation": "month_end_average",
+              "rangeStart": "2025-04-01",
+              "rangeEnd": "2025-06-30",
+              "sampleCount": 3,
+              "expectedSampleCount": 3,
+              "coverageStatus": "complete"
+            }
           },
-          "marketCapUsd": 27487500000,
-          "revenueUsd": 3419000000,
+          "marketCapUsd": 176843353694.81598,
+          "revenueUsd": 32906662400,
           "employeeCount": 198678,
-          "revenuePerEmployeeUsd": 17208.749836418727,
+          "revenuePerEmployeeUsd": 165628.11383243237,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/dte/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/etr/DTE/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
@@ -49319,12 +49744,15 @@
             },
             "revenue": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/dte/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/etr/DTE/revenue/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             }
           },
           "flags": [
-            "employee_snapshot_fallback"
+            "employee_snapshot_fallback",
+            "revenue_fx_converted",
+            "market_cap_fx_converted"
           ]
         },
         {
@@ -49334,26 +49762,49 @@
           "periodEnd": "2025-03-31",
           "displayLabel": "2025 Q1",
           "marketCap": {
-            "reportedAmount": 28655400000,
-            "reportedCurrency": "USD",
-            "usdAmount": 28655400000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 167219358032,
+            "reportedCurrency": "EUR",
+            "usdAmount": 180847735711.60797,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.0815,
+              "asOf": "2025-03-31",
+              "aggregation": "point_in_time",
+              "sampleCount": 1,
+              "expectedSampleCount": 1,
+              "coverageStatus": "complete"
+            }
           },
           "revenue": {
-            "reportedAmount": 4440000000,
-            "reportedCurrency": "USD",
-            "usdAmount": 4440000000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 29755000000,
+            "reportedCurrency": "EUR",
+            "usdAmount": 31360778166.666668,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.0539666666666667,
+              "asOf": "2025-03-31",
+              "aggregation": "month_end_average",
+              "rangeStart": "2025-01-01",
+              "rangeEnd": "2025-03-31",
+              "sampleCount": 3,
+              "expectedSampleCount": 3,
+              "coverageStatus": "complete"
+            }
           },
-          "marketCapUsd": 28655400000,
-          "revenueUsd": 4440000000,
+          "marketCapUsd": 180847735711.60797,
+          "revenueUsd": 31360778166.666668,
           "employeeCount": 198678,
-          "revenuePerEmployeeUsd": 22347.718418747925,
+          "revenuePerEmployeeUsd": 157847.26123006406,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/dte/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/etr/DTE/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
@@ -49363,12 +49814,15 @@
             },
             "revenue": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/dte/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/etr/DTE/revenue/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             }
           },
           "flags": [
-            "employee_snapshot_fallback"
+            "employee_snapshot_fallback",
+            "revenue_fx_converted",
+            "market_cap_fx_converted"
           ]
         },
         {
@@ -49378,26 +49832,49 @@
           "periodEnd": "2024-12-31",
           "displayLabel": "2024 Q4",
           "marketCap": {
-            "reportedAmount": 25007400000,
-            "reportedCurrency": "USD",
-            "usdAmount": 25007400000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 141517998015,
+            "reportedCurrency": "EUR",
+            "usdAmount": 147801397126.866,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.0444,
+              "asOf": "2024-12-30",
+              "aggregation": "point_in_time",
+              "sampleCount": 1,
+              "expectedSampleCount": 1,
+              "coverageStatus": "complete"
+            }
           },
           "revenue": {
-            "reportedAmount": 3436000000,
-            "reportedCurrency": "USD",
-            "usdAmount": 3436000000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 30932000000,
+            "reportedCurrency": "EUR",
+            "usdAmount": 32821945199.999996,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.0611,
+              "asOf": "2024-12-31",
+              "aggregation": "month_end_average",
+              "rangeStart": "2024-10-01",
+              "rangeEnd": "2024-12-31",
+              "sampleCount": 3,
+              "expectedSampleCount": 3,
+              "coverageStatus": "complete"
+            }
           },
-          "marketCapUsd": 25007400000,
-          "revenueUsd": 3436000000,
+          "marketCapUsd": 147801397126.866,
+          "revenueUsd": 32821945199.999996,
           "employeeCount": 198678,
-          "revenuePerEmployeeUsd": 17294.31542495898,
+          "revenuePerEmployeeUsd": 165201.7092984628,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/dte/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/etr/DTE/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
@@ -49407,12 +49884,15 @@
             },
             "revenue": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/dte/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/etr/DTE/revenue/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             }
           },
           "flags": [
-            "employee_snapshot_fallback"
+            "employee_snapshot_fallback",
+            "revenue_fx_converted",
+            "market_cap_fx_converted"
           ]
         },
         {
@@ -49422,26 +49902,49 @@
           "periodEnd": "2024-09-30",
           "displayLabel": "2024 Q3",
           "marketCap": {
-            "reportedAmount": 26583400000,
-            "reportedCurrency": "USD",
-            "usdAmount": 26583400000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 129747582859,
+            "reportedCurrency": "EUR",
+            "usdAmount": 145265393768.9364,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.1196,
+              "asOf": "2024-09-30",
+              "aggregation": "point_in_time",
+              "sampleCount": 1,
+              "expectedSampleCount": 1,
+              "coverageStatus": "complete"
+            }
           },
           "revenue": {
-            "reportedAmount": 2906000000,
-            "reportedCurrency": "USD",
-            "usdAmount": 2906000000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 28501000000,
+            "reportedCurrency": "EUR",
+            "usdAmount": 31456553699.999996,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.1037,
+              "asOf": "2024-09-30",
+              "aggregation": "month_end_average",
+              "rangeStart": "2024-07-01",
+              "rangeEnd": "2024-09-30",
+              "sampleCount": 3,
+              "expectedSampleCount": 3,
+              "coverageStatus": "complete"
+            }
           },
-          "marketCapUsd": 26583400000,
-          "revenueUsd": 2906000000,
+          "marketCapUsd": 145265393768.9364,
+          "revenueUsd": 31456553699.999996,
           "employeeCount": 198678,
-          "revenuePerEmployeeUsd": 14626.6823704688,
+          "revenuePerEmployeeUsd": 158329.32534050068,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/dte/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/etr/DTE/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
@@ -49451,12 +49954,15 @@
             },
             "revenue": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/dte/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/etr/DTE/revenue/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             }
           },
           "flags": [
-            "employee_snapshot_fallback"
+            "employee_snapshot_fallback",
+            "revenue_fx_converted",
+            "market_cap_fx_converted"
           ]
         },
         {
@@ -49466,26 +49972,49 @@
           "periodEnd": "2024-06-30",
           "displayLabel": "2024 Q2",
           "marketCap": {
-            "reportedAmount": 22972100000,
-            "reportedCurrency": "USD",
-            "usdAmount": 22972100000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 115979941481,
+            "reportedCurrency": "EUR",
+            "usdAmount": 124156527355.4105,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.0705,
+              "asOf": "2024-06-28",
+              "aggregation": "point_in_time",
+              "sampleCount": 1,
+              "expectedSampleCount": 1,
+              "coverageStatus": "complete"
+            }
           },
           "revenue": {
-            "reportedAmount": 2875000000,
-            "reportedCurrency": "USD",
-            "usdAmount": 2875000000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 28394000000,
+            "reportedCurrency": "EUR",
+            "usdAmount": 30547211666.666668,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.0758333333333334,
+              "asOf": "2024-06-30",
+              "aggregation": "month_end_average",
+              "rangeStart": "2024-04-01",
+              "rangeEnd": "2024-06-30",
+              "sampleCount": 3,
+              "expectedSampleCount": 3,
+              "coverageStatus": "complete"
+            }
           },
-          "marketCapUsd": 22972100000,
-          "revenueUsd": 2875000000,
+          "marketCapUsd": 124156527355.4105,
+          "revenueUsd": 30547211666.666668,
           "employeeCount": 198678,
-          "revenuePerEmployeeUsd": 14470.651003130693,
+          "revenuePerEmployeeUsd": 153752.36144246804,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/dte/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/etr/DTE/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
@@ -49495,12 +50024,15 @@
             },
             "revenue": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/dte/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/etr/DTE/revenue/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             }
           },
           "flags": [
-            "employee_snapshot_fallback"
+            "employee_snapshot_fallback",
+            "revenue_fx_converted",
+            "market_cap_fx_converted"
           ]
         },
         {
@@ -49510,26 +50042,49 @@
           "periodEnd": "2024-03-31",
           "displayLabel": "2024 Q1",
           "marketCap": {
-            "reportedAmount": 23151600000,
-            "reportedCurrency": "USD",
-            "usdAmount": 23151600000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 111612533265,
+            "reportedCurrency": "EUR",
+            "usdAmount": 120664309712.79149,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.0811,
+              "asOf": "2024-03-28",
+              "aggregation": "point_in_time",
+              "sampleCount": 1,
+              "expectedSampleCount": 1,
+              "coverageStatus": "complete"
+            }
           },
           "revenue": {
-            "reportedAmount": 3240000000,
-            "reportedCurrency": "USD",
-            "usdAmount": 3240000000,
-            "normalizationMethod": "reported_usd"
+            "reportedAmount": 27942000000,
+            "reportedCurrency": "EUR",
+            "usdAmount": 30246283600,
+            "normalizationMethod": "fx_converted",
+            "fx": {
+              "provider": "ECB EXR",
+              "quoteCurrency": "USD",
+              "rate": 1.0824666666666667,
+              "asOf": "2024-03-31",
+              "aggregation": "month_end_average",
+              "rangeStart": "2024-01-01",
+              "rangeEnd": "2024-03-31",
+              "sampleCount": 3,
+              "expectedSampleCount": 3,
+              "coverageStatus": "complete"
+            }
           },
-          "marketCapUsd": 23151600000,
-          "revenueUsd": 3240000000,
+          "marketCapUsd": 120664309712.79149,
+          "revenueUsd": 30246283600,
           "employeeCount": 198678,
-          "revenuePerEmployeeUsd": 16307.794521789025,
+          "revenuePerEmployeeUsd": 152237.70925819667,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/dte/market-cap/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/etr/DTE/market-cap/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
@@ -49539,12 +50094,15 @@
             },
             "revenue": {
               "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/dte/revenue/",
-              "fetchedAt": "2026-03-28T03:19:08.496Z"
+              "url": "https://stockanalysis.com/quote/etr/DTE/revenue/",
+              "fetchedAt": "2026-03-29T03:28:59.068Z",
+              "note": "normalized from EUR"
             }
           },
           "flags": [
-            "employee_snapshot_fallback"
+            "employee_snapshot_fallback",
+            "revenue_fx_converted",
+            "market_cap_fx_converted"
           ]
         }
       ]
