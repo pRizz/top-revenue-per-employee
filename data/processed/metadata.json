@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-03-29T03:28:59.068Z",
+  "generatedAt": "2026-03-30T03:29:08.730Z",
   "topN": 100,
-  "sourceSnapshotDirectory": "data/raw/2026-03-29",
+  "sourceSnapshotDirectory": "data/raw/2026-03-30",
   "stockAnalysisCoverage": {
     "resolverStats": {
       "stockRoutesIndexed": 5573,
-      "quoteRoutesIndexed": 43797,
-      "uniqueSymbolRoutes": 37677
+      "quoteRoutesIndexed": 43862,
+      "uniqueSymbolRoutes": 37728
     },
     "resolvedRouteCount": 93,
     "annualEmployeeSeriesCount": 90
@@ -54,7 +54,7 @@
       "currencyCounts": {
         "CAD": 10,
         "CHF": 6,
-        "CNY": 76,
+        "CNY": 78,
         "EUR": 58,
         "INR": 10,
         "JPY": 16,
@@ -64,7 +64,7 @@
         "TWD": 10,
         "USD": 759
       },
-      "convertedMetricCount": 226,
+      "convertedMetricCount": 228,
       "unavailableMetricCount": 0,
       "partialFxCoverageMetricCount": 8,
       "convertedCompanies": [
@@ -107,13 +107,13 @@
     },
     "revenueSourceCountsByBucketType": {
       "annual": {
-        "StockAnalysis": 184,
-        "—": 11,
+        "StockAnalysis": 185,
+        "—": 10,
         "CompaniesMarketCap": 5
       },
       "quarterly": {
-        "StockAnalysis": 710,
-        "—": 90
+        "StockAnalysis": 711,
+        "—": 89
       },
       "ttm": {
         "—": 14,
