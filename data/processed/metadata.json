@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-04-01T03:29:15.439Z",
+  "generatedAt": "2026-04-02T03:24:37.757Z",
   "topN": 100,
-  "sourceSnapshotDirectory": "data/raw/2026-04-01",
+  "sourceSnapshotDirectory": "data/raw/2026-04-02",
   "stockAnalysisCoverage": {
     "resolverStats": {
-      "stockRoutesIndexed": 5576,
-      "quoteRoutesIndexed": 43918,
-      "uniqueSymbolRoutes": 37767
+      "stockRoutesIndexed": 5578,
+      "quoteRoutesIndexed": 43946,
+      "uniqueSymbolRoutes": 37787
     },
     "resolvedRouteCount": 93,
     "annualEmployeeSeriesCount": 90
@@ -55,16 +55,16 @@
         "CAD": 10,
         "CHF": 6,
         "CNY": 78,
-        "EUR": 58,
+        "EUR": 68,
         "INR": 10,
         "JPY": 16,
         "KRW": 20,
         "SAR": 10,
         "SEK": 10,
         "TWD": 10,
-        "USD": 759
+        "USD": 749
       },
-      "convertedMetricCount": 228,
+      "convertedMetricCount": 238,
       "unavailableMetricCount": 0,
       "partialFxCoverageMetricCount": 8,
       "convertedCompanies": [
@@ -88,6 +88,7 @@
         "RMS.PA",
         "RO.SW",
         "RY",
+        "SAN",
         "SAP",
         "SIE.DE",
         "TCEHY",
@@ -135,6 +136,20 @@
       "WMT"
     ],
     "annualQuarterSumMismatches": [
+      {
+        "symbol": "SAN",
+        "bucketId": "2025",
+        "annualRevenueUsd": 52183924866.66666,
+        "quarterRevenueUsdSum": 67284004466.666664,
+        "ratio": 1.2893626655829684
+      },
+      {
+        "symbol": "SAN",
+        "bucketId": "2024",
+        "annualRevenueUsd": 53208714800.000015,
+        "quarterRevenueUsdSum": 66853707433.333336,
+        "ratio": 1.2564428155166287
+      },
       {
         "symbol": "MU",
         "bucketId": "2024",
@@ -282,31 +297,7 @@
         "revenueConversionUnavailableCount": 0
       },
       {
-        "symbol": "HD",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 10,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
-        "symbol": "TJX",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 10,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
         "symbol": "TSM",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 10,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
-        "symbol": "TTE",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 10,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
-        "symbol": "WMT",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 10,
         "revenueConversionUnavailableCount": 0
@@ -499,6 +490,12 @@
       },
       {
         "symbol": "GS",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "HD",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
@@ -708,13 +705,13 @@
         "revenueConversionUnavailableCount": 0
       },
       {
-        "symbol": "SAP",
+        "symbol": "SAN",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
       },
       {
-        "symbol": "SCHW",
+        "symbol": "SAP",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
@@ -744,6 +741,12 @@
         "revenueConversionUnavailableCount": 0
       },
       {
+        "symbol": "TJX",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
         "symbol": "TM",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
@@ -763,6 +766,12 @@
       },
       {
         "symbol": "TSLA",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "TTE",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
@@ -793,6 +802,12 @@
       },
       {
         "symbol": "WFC",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "WMT",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
@@ -887,7 +902,6 @@
       "RTX",
       "RY",
       "SAP",
-      "SCHW",
       "SHEL",
       "SIE.DE",
       "T",
@@ -908,7 +922,8 @@
     ],
     "annualCrossSourceMismatchCompanies": [
       "MUFG",
-      "RO.SW"
+      "RO.SW",
+      "SAN"
     ]
   }
 }
