@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-04-02T03:24:37.757Z",
+  "generatedAt": "2026-04-03T03:25:30.869Z",
   "topN": 100,
-  "sourceSnapshotDirectory": "data/raw/2026-04-02",
+  "sourceSnapshotDirectory": "data/raw/2026-04-03",
   "stockAnalysisCoverage": {
     "resolverStats": {
       "stockRoutesIndexed": 5578,
-      "quoteRoutesIndexed": 43946,
-      "uniqueSymbolRoutes": 37787
+      "quoteRoutesIndexed": 43966,
+      "uniqueSymbolRoutes": 37803
     },
     "resolvedRouteCount": 93,
     "annualEmployeeSeriesCount": 90
@@ -55,16 +55,16 @@
         "CAD": 10,
         "CHF": 6,
         "CNY": 78,
-        "EUR": 68,
+        "EUR": 58,
         "INR": 10,
         "JPY": 16,
         "KRW": 20,
         "SAR": 10,
         "SEK": 10,
         "TWD": 10,
-        "USD": 749
+        "USD": 759
       },
-      "convertedMetricCount": 238,
+      "convertedMetricCount": 228,
       "unavailableMetricCount": 0,
       "partialFxCoverageMetricCount": 8,
       "convertedCompanies": [
@@ -88,7 +88,6 @@
         "RMS.PA",
         "RO.SW",
         "RY",
-        "SAN",
         "SAP",
         "SIE.DE",
         "TCEHY",
@@ -136,20 +135,6 @@
       "WMT"
     ],
     "annualQuarterSumMismatches": [
-      {
-        "symbol": "SAN",
-        "bucketId": "2025",
-        "annualRevenueUsd": 52183924866.66666,
-        "quarterRevenueUsdSum": 67284004466.666664,
-        "ratio": 1.2893626655829684
-      },
-      {
-        "symbol": "SAN",
-        "bucketId": "2024",
-        "annualRevenueUsd": 53208714800.000015,
-        "quarterRevenueUsdSum": 66853707433.333336,
-        "ratio": 1.2564428155166287
-      },
       {
         "symbol": "MU",
         "bucketId": "2024",
@@ -705,13 +690,13 @@
         "revenueConversionUnavailableCount": 0
       },
       {
-        "symbol": "SAN",
+        "symbol": "SAP",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
       },
       {
-        "symbol": "SAP",
+        "symbol": "SCHW",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
@@ -902,6 +887,7 @@
       "RTX",
       "RY",
       "SAP",
+      "SCHW",
       "SHEL",
       "SIE.DE",
       "T",
@@ -922,8 +908,7 @@
     ],
     "annualCrossSourceMismatchCompanies": [
       "MUFG",
-      "RO.SW",
-      "SAN"
+      "RO.SW"
     ]
   }
 }
