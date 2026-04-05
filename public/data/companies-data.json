@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-04T03:19:46.318Z",
+  "generatedAt": "2026-04-05T03:29:39.591Z",
   "topN": 100,
   "bucketIds": [
     "2025TTM",
@@ -26545,9 +26545,9 @@
             "normalizationMethod": "reported_usd"
           },
           "revenue": {
-            "reportedAmount": 13456851000000,
+            "reportedAmount": 13456852000000,
             "reportedCurrency": "JPY",
-            "usdAmount": 86455466814.18663,
+            "usdAmount": 86455473238.82986,
             "normalizationMethod": "fx_converted",
             "fx": {
               "provider": "ECB EXR",
@@ -26563,9 +26563,9 @@
             }
           },
           "marketCapUsd": 278992700000,
-          "revenueUsd": 86455466814.18663,
+          "revenueUsd": 86455473238.82986,
           "employeeCount": 389144,
-          "revenuePerEmployeeUsd": 222168.31510748368,
+          "revenuePerEmployeeUsd": 222168.3316171645,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
@@ -26581,7 +26581,7 @@
             "revenue": {
               "provider": "StockAnalysis",
               "url": "https://stockanalysis.com/stocks/tm/revenue/",
-              "fetchedAt": "2026-03-17T03:17:11.182Z",
+              "fetchedAt": "2026-04-05T03:29:06.822Z",
               "note": "normalized from JPY"
             }
           },
@@ -26835,9 +26835,9 @@
             "normalizationMethod": "reported_usd"
           },
           "revenue": {
-            "reportedAmount": 11444571000000,
+            "reportedAmount": 11444570000000,
             "reportedCurrency": "JPY",
-            "usdAmount": 78343198635.0144,
+            "usdAmount": 78343191789.56789,
             "normalizationMethod": "fx_converted",
             "fx": {
               "provider": "ECB EXR",
@@ -26853,9 +26853,9 @@
             }
           },
           "marketCapUsd": 240526100000,
-          "revenueUsd": 78343198635.0144,
+          "revenueUsd": 78343191789.56789,
           "employeeCount": 389144,
-          "revenuePerEmployeeUsd": 201321.87219901735,
+          "revenuePerEmployeeUsd": 201321.8546079803,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
@@ -26871,7 +26871,7 @@
             "revenue": {
               "provider": "StockAnalysis",
               "url": "https://stockanalysis.com/stocks/tm/revenue/",
-              "fetchedAt": "2026-03-17T03:17:11.182Z",
+              "fetchedAt": "2026-04-05T03:29:06.822Z",
               "note": "normalized from JPY"
             }
           },
@@ -26893,9 +26893,9 @@
             "normalizationMethod": "reported_usd"
           },
           "revenue": {
-            "reportedAmount": 11837879000000,
+            "reportedAmount": 11837880000000,
             "reportedCurrency": "JPY",
-            "usdAmount": 74813805481.8266,
+            "usdAmount": 74813811801.6923,
             "normalizationMethod": "fx_converted",
             "fx": {
               "provider": "ECB EXR",
@@ -26911,9 +26911,9 @@
             }
           },
           "marketCapUsd": 276180100000,
-          "revenueUsd": 74813805481.8266,
+          "revenueUsd": 74813811801.6923,
           "employeeCount": 389144,
-          "revenuePerEmployeeUsd": 192252.23948416678,
+          "revenuePerEmployeeUsd": 192252.2557245963,
           "sources": {
             "marketCap": {
               "provider": "StockAnalysis",
@@ -26929,7 +26929,7 @@
             "revenue": {
               "provider": "StockAnalysis",
               "url": "https://stockanalysis.com/stocks/tm/revenue/",
-              "fetchedAt": "2026-03-17T03:17:11.182Z",
+              "fetchedAt": "2026-04-05T03:29:06.822Z",
               "note": "normalized from JPY"
             }
           },

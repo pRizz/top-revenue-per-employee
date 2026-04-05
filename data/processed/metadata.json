@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-04-04T03:19:11.990Z",
+  "generatedAt": "2026-04-05T03:29:06.822Z",
   "topN": 100,
-  "sourceSnapshotDirectory": "data/raw/2026-04-04",
+  "sourceSnapshotDirectory": "data/raw/2026-04-05",
   "stockAnalysisCoverage": {
     "resolverStats": {
-      "stockRoutesIndexed": 5593,
-      "quoteRoutesIndexed": 43974,
-      "uniqueSymbolRoutes": 37820
+      "stockRoutesIndexed": 5595,
+      "quoteRoutesIndexed": 43995,
+      "uniqueSymbolRoutes": 37837
     },
     "resolvedRouteCount": 93,
     "annualEmployeeSeriesCount": 90
@@ -195,8 +195,8 @@
         "symbol": "TM",
         "bucketId": "2025",
         "annualRevenueUsd": 315639893528.5518,
-        "quarterRevenueUsdSum": 336666298215.284,
-        "ratio": 1.0666151684810088
+        "quarterRevenueUsdSum": 336666304639.92725,
+        "ratio": 1.0666151888353537
       },
       {
         "symbol": "ORCL",
