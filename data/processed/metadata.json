@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-04-07T03:26:59.536Z",
+  "generatedAt": "2026-04-08T03:27:44.680Z",
   "topN": 100,
-  "sourceSnapshotDirectory": "data/raw/2026-04-07",
+  "sourceSnapshotDirectory": "data/raw/2026-04-08",
   "stockAnalysisCoverage": {
     "resolverStats": {
-      "stockRoutesIndexed": 5601,
-      "quoteRoutesIndexed": 44032,
-      "uniqueSymbolRoutes": 37869
+      "stockRoutesIndexed": 5600,
+      "quoteRoutesIndexed": 44041,
+      "uniqueSymbolRoutes": 37877
     },
     "resolvedRouteCount": 93,
     "annualEmployeeSeriesCount": 90
@@ -17,21 +17,20 @@
         "CHF": 10,
         "CNY": 20,
         "EUR": 60,
-        "HKD": 40,
+        "HKD": 30,
         "INR": 10,
         "KRW": 20,
         "SAR": 10,
         "SEK": 10,
-        "USD": 920
+        "USD": 930
       },
-      "convertedMetricCount": 180,
+      "convertedMetricCount": 170,
       "unavailableMetricCount": 0,
       "partialFxCoverageMetricCount": 0,
       "convertedCompanies": [
         "000660.KS",
         "005930.KS",
         "0857.HK",
-        "0883.HK",
         "0941.HK",
         "1398.HK",
         "2222.SR",
@@ -54,7 +53,7 @@
       "currencyCounts": {
         "CAD": 10,
         "CHF": 6,
-        "CNY": 78,
+        "CNY": 68,
         "EUR": 66,
         "INR": 10,
         "JPY": 16,
@@ -62,16 +61,15 @@
         "SAR": 10,
         "SEK": 10,
         "TWD": 10,
-        "USD": 749
+        "USD": 760
       },
-      "convertedMetricCount": 236,
+      "convertedMetricCount": 226,
       "unavailableMetricCount": 0,
       "partialFxCoverageMetricCount": 8,
       "convertedCompanies": [
         "000660.KS",
         "005930.KS",
         "0857.HK",
-        "0883.HK",
         "0941.HK",
         "1398.HK",
         "2222.SR",
@@ -117,8 +115,8 @@
         "—": 91
       },
       "ttm": {
-        "—": 14,
-        "CompaniesMarketCap": 86
+        "—": 13,
+        "CompaniesMarketCap": 87
       }
     },
     "latestAnnualCompaniesMarketCapCount": 0,
@@ -309,12 +307,6 @@
         "revenueConversionUnavailableCount": 0
       },
       {
-        "symbol": "0883.HK",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 9,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
         "symbol": "0941.HK",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
@@ -370,6 +362,12 @@
       },
       {
         "symbol": "AMZN",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "ANET",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
@@ -846,6 +844,7 @@
       "AMD",
       "AMGN",
       "AMZN",
+      "ANET",
       "ASML",
       "AVGO",
       "AXP",
