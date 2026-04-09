@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-04-08T03:27:44.680Z",
+  "generatedAt": "2026-04-09T03:25:37.667Z",
   "topN": 100,
-  "sourceSnapshotDirectory": "data/raw/2026-04-08",
+  "sourceSnapshotDirectory": "data/raw/2026-04-09",
   "stockAnalysisCoverage": {
     "resolverStats": {
-      "stockRoutesIndexed": 5600,
-      "quoteRoutesIndexed": 44041,
-      "uniqueSymbolRoutes": 37877
+      "stockRoutesIndexed": 5601,
+      "quoteRoutesIndexed": 44043,
+      "uniqueSymbolRoutes": 37887
     },
     "resolvedRouteCount": 93,
     "annualEmployeeSeriesCount": 90
@@ -61,7 +61,7 @@
         "SAR": 10,
         "SEK": 10,
         "TWD": 10,
-        "USD": 760
+        "USD": 761
       },
       "convertedMetricCount": 226,
       "unavailableMetricCount": 0,
@@ -115,8 +115,8 @@
         "—": 91
       },
       "ttm": {
-        "—": 13,
-        "CompaniesMarketCap": 87
+        "—": 12,
+        "CompaniesMarketCap": 88
       }
     },
     "latestAnnualCompaniesMarketCapCount": 0,
@@ -125,7 +125,6 @@
       "AMAT",
       "AVGO",
       "COST",
-      "CRM",
       "CSCO",
       "HD",
       "NVDA",
@@ -165,9 +164,9 @@
       {
         "symbol": "LRCX",
         "bucketId": "2025",
-        "annualRevenueUsd": 18435591000,
-        "quarterRevenueUsdSum": 20560532000,
-        "ratio": 1.1152629714989881
+        "annualRevenueUsd": 18435600000,
+        "quarterRevenueUsdSum": 20560530000,
+        "ratio": 1.1152623185575734
       },
       {
         "symbol": "KLAC",
@@ -179,9 +178,9 @@
       {
         "symbol": "LRCX",
         "bucketId": "2024",
-        "annualRevenueUsd": 14905386000,
-        "quarterRevenueUsdSum": 16209088000,
-        "ratio": 1.087465161922006
+        "annualRevenueUsd": 14905400000,
+        "quarterRevenueUsdSum": 16209100000,
+        "ratio": 1.0874649455901888
       },
       {
         "symbol": "MSFT",
@@ -397,6 +396,12 @@
         "revenueConversionUnavailableCount": 0
       },
       {
+        "symbol": "BA",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
         "symbol": "BABA",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
@@ -428,12 +433,6 @@
       },
       {
         "symbol": "COST",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 9,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
-        "symbol": "CRM",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
@@ -849,13 +848,13 @@
       "AVGO",
       "AXP",
       "AZN",
+      "BA",
       "BABA",
       "BAC",
       "BHP",
       "C",
       "CAT",
       "COST",
-      "CRM",
       "CSCO",
       "CVX",
       "DIS",
