@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-04-10T03:29:26.572Z",
+  "generatedAt": "2026-04-11T03:21:20.423Z",
   "topN": 100,
-  "sourceSnapshotDirectory": "data/raw/2026-04-10",
+  "sourceSnapshotDirectory": "data/raw/2026-04-11",
   "stockAnalysisCoverage": {
     "resolverStats": {
-      "stockRoutesIndexed": 5602,
-      "quoteRoutesIndexed": 44048,
-      "uniqueSymbolRoutes": 37890
+      "stockRoutesIndexed": 5597,
+      "quoteRoutesIndexed": 44044,
+      "uniqueSymbolRoutes": 37884
     },
     "resolvedRouteCount": 93,
     "annualEmployeeSeriesCount": 90
@@ -171,9 +171,9 @@
       {
         "symbol": "KLAC",
         "bucketId": "2024",
-        "annualRevenueUsd": 9812247000,
-        "quarterRevenueUsdSum": 10846957000,
-        "ratio": 1.1054508717524132
+        "annualRevenueUsd": 9812250000,
+        "quarterRevenueUsdSum": 10846960000,
+        "ratio": 1.1054508395118348
       },
       {
         "symbol": "LRCX",
@@ -372,6 +372,12 @@
         "revenueConversionUnavailableCount": 0
       },
       {
+        "symbol": "APH",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
         "symbol": "ASML",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
@@ -391,12 +397,6 @@
       },
       {
         "symbol": "AZN",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 9,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
-        "symbol": "BA",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
@@ -844,11 +844,11 @@
       "AMGN",
       "AMZN",
       "ANET",
+      "APH",
       "ASML",
       "AVGO",
       "AXP",
       "AZN",
-      "BA",
       "BABA",
       "BAC",
       "BHP",
