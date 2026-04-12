@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-11T03:21:53.778Z",
+  "generatedAt": "2026-04-12T03:29:55.951Z",
   "topN": 100,
   "bucketIds": [
     "2025TTM",
@@ -9653,9 +9653,9 @@
           "periodEnd": "2025-12-31",
           "displayLabel": "2025",
           "marketCap": {
-            "reportedAmount": 693849269578,
+            "reportedAmount": 695150219417,
             "reportedCurrency": "USD",
-            "usdAmount": 693849269578,
+            "usdAmount": 695150219417,
             "normalizationMethod": "reported_usd"
           },
           "revenue": {
@@ -9676,7 +9676,7 @@
               "coverageStatus": "complete"
             }
           },
-          "marketCapUsd": 693849269578,
+          "marketCapUsd": 695150219417,
           "revenueUsd": 104852597289.61044,
           "employeeCount": 115849,
           "revenuePerEmployeeUsd": 905079.8650796333,
@@ -9684,7 +9684,7 @@
             "marketCap": {
               "provider": "StockAnalysis",
               "url": "https://stockanalysis.com/quote/otc/TCEHY/market-cap/",
-              "fetchedAt": "2026-04-08T03:27:44.680Z"
+              "fetchedAt": "2026-04-12T03:29:18.392Z"
             },
             "employeeCount": {
               "provider": "StockAnalysis",
@@ -9765,9 +9765,9 @@
           "periodEnd": "2025-12-31",
           "displayLabel": "2025 Q4",
           "marketCap": {
-            "reportedAmount": 693849269578,
+            "reportedAmount": 695150219417,
             "reportedCurrency": "USD",
-            "usdAmount": 693849269578,
+            "usdAmount": 695150219417,
             "normalizationMethod": "reported_usd"
           },
           "revenue": {
@@ -9788,7 +9788,7 @@
               "coverageStatus": "complete"
             }
           },
-          "marketCapUsd": 693849269578,
+          "marketCapUsd": 695150219417,
           "revenueUsd": 27516011821.827755,
           "employeeCount": 109414,
           "revenuePerEmployeeUsd": 251485.29275803603,
@@ -9796,7 +9796,7 @@
             "marketCap": {
               "provider": "StockAnalysis",
               "url": "https://stockanalysis.com/quote/otc/TCEHY/market-cap/",
-              "fetchedAt": "2026-04-08T03:27:44.680Z"
+              "fetchedAt": "2026-04-12T03:29:18.392Z"
             },
             "employeeCount": {
               "provider": "CompaniesMarketCap",
