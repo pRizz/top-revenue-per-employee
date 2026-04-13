@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-04-12T03:29:18.392Z",
+  "generatedAt": "2026-04-13T03:29:52.779Z",
   "topN": 100,
-  "sourceSnapshotDirectory": "data/raw/2026-04-12",
+  "sourceSnapshotDirectory": "data/raw/2026-04-13",
   "stockAnalysisCoverage": {
     "resolverStats": {
       "stockRoutesIndexed": 5598,
-      "quoteRoutesIndexed": 44050,
-      "uniqueSymbolRoutes": 37889
+      "quoteRoutesIndexed": 44053,
+      "uniqueSymbolRoutes": 37890
     },
     "resolvedRouteCount": 93,
     "annualEmployeeSeriesCount": 90
@@ -56,14 +56,14 @@
         "CNY": 68,
         "EUR": 66,
         "INR": 10,
-        "JPY": 16,
+        "JPY": 19,
         "KRW": 20,
         "SAR": 10,
         "SEK": 10,
         "TWD": 10,
         "USD": 763
       },
-      "convertedMetricCount": 226,
+      "convertedMetricCount": 229,
       "unavailableMetricCount": 0,
       "partialFxCoverageMetricCount": 8,
       "convertedCompanies": [
@@ -111,8 +111,8 @@
         "CompaniesMarketCap": 5
       },
       "quarterly": {
-        "StockAnalysis": 711,
-        "—": 89
+        "StockAnalysis": 714,
+        "—": 86
       },
       "ttm": {
         "—": 12,
@@ -133,6 +133,13 @@
       "WMT"
     ],
     "annualQuarterSumMismatches": [
+      {
+        "symbol": "MUFG",
+        "bucketId": "2024",
+        "annualRevenueUsd": 17479057316.60896,
+        "quarterRevenueUsdSum": 27609374516.519493,
+        "ratio": 1.5795688529658003
+      },
       {
         "symbol": "SAN",
         "bucketId": "2025",
