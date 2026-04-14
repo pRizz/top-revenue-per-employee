@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-04-13T03:29:52.779Z",
+  "generatedAt": "2026-04-14T03:29:21.066Z",
   "topN": 100,
-  "sourceSnapshotDirectory": "data/raw/2026-04-13",
+  "sourceSnapshotDirectory": "data/raw/2026-04-14",
   "stockAnalysisCoverage": {
     "resolverStats": {
-      "stockRoutesIndexed": 5598,
-      "quoteRoutesIndexed": 44053,
-      "uniqueSymbolRoutes": 37890
+      "stockRoutesIndexed": 5597,
+      "quoteRoutesIndexed": 44066,
+      "uniqueSymbolRoutes": 37900
     },
     "resolvedRouteCount": 93,
     "annualEmployeeSeriesCount": 90
@@ -16,15 +16,15 @@
       "currencyCounts": {
         "CHF": 10,
         "CNY": 20,
-        "EUR": 60,
+        "EUR": 50,
         "HKD": 30,
         "INR": 10,
         "KRW": 20,
         "SAR": 10,
         "SEK": 10,
-        "USD": 930
+        "USD": 940
       },
-      "convertedMetricCount": 170,
+      "convertedMetricCount": 160,
       "unavailableMetricCount": 0,
       "partialFxCoverageMetricCount": 0,
       "convertedCompanies": [
@@ -36,7 +36,6 @@
         "2222.SR",
         "300750.SZ",
         "600519.SS",
-        "DTE.DE",
         "MC.PA",
         "NESN.SW",
         "OR.PA",
@@ -54,16 +53,16 @@
         "CAD": 10,
         "CHF": 6,
         "CNY": 68,
-        "EUR": 66,
+        "EUR": 56,
         "INR": 10,
         "JPY": 19,
         "KRW": 20,
         "SAR": 10,
         "SEK": 10,
         "TWD": 10,
-        "USD": 763
+        "USD": 773
       },
-      "convertedMetricCount": 229,
+      "convertedMetricCount": 219,
       "unavailableMetricCount": 0,
       "partialFxCoverageMetricCount": 8,
       "convertedCompanies": [
@@ -77,7 +76,6 @@
         "600519.SS",
         "ASML",
         "BABA",
-        "DTE.DE",
         "MC.PA",
         "MUFG",
         "NESN.SW",
@@ -409,6 +407,12 @@
         "revenueConversionUnavailableCount": 0
       },
       {
+        "symbol": "BA",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
         "symbol": "BABA",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
@@ -458,12 +462,6 @@
       },
       {
         "symbol": "DIS",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 9,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
-        "symbol": "DTE.DE",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
@@ -856,6 +854,7 @@
       "AVGO",
       "AXP",
       "AZN",
+      "BA",
       "BABA",
       "BAC",
       "BHP",
@@ -865,7 +864,6 @@
       "CSCO",
       "CVX",
       "DIS",
-      "DTE.DE",
       "GE",
       "GEV",
       "GILD",
