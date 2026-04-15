@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-04-14T03:29:21.066Z",
+  "generatedAt": "2026-04-15T03:29:10.351Z",
   "topN": 100,
-  "sourceSnapshotDirectory": "data/raw/2026-04-14",
+  "sourceSnapshotDirectory": "data/raw/2026-04-15",
   "stockAnalysisCoverage": {
     "resolverStats": {
-      "stockRoutesIndexed": 5597,
-      "quoteRoutesIndexed": 44066,
-      "uniqueSymbolRoutes": 37900
+      "stockRoutesIndexed": 5599,
+      "quoteRoutesIndexed": 44067,
+      "uniqueSymbolRoutes": 37902
     },
     "resolvedRouteCount": 93,
     "annualEmployeeSeriesCount": 90
@@ -16,15 +16,15 @@
       "currencyCounts": {
         "CHF": 10,
         "CNY": 20,
-        "EUR": 50,
+        "EUR": 60,
         "HKD": 30,
         "INR": 10,
         "KRW": 20,
         "SAR": 10,
         "SEK": 10,
-        "USD": 940
+        "USD": 930
       },
-      "convertedMetricCount": 160,
+      "convertedMetricCount": 170,
       "unavailableMetricCount": 0,
       "partialFxCoverageMetricCount": 0,
       "convertedCompanies": [
@@ -43,7 +43,8 @@
         "RELIANCE.NS",
         "RMS.PA",
         "RO.SW",
-        "SIE.DE"
+        "SIE.DE",
+        "SU.PA"
       ],
       "unavailableCompanies": [],
       "partialFxCoverageCompanies": []
@@ -53,16 +54,16 @@
         "CAD": 10,
         "CHF": 6,
         "CNY": 68,
-        "EUR": 56,
+        "EUR": 62,
         "INR": 10,
         "JPY": 19,
         "KRW": 20,
         "SAR": 10,
         "SEK": 10,
         "TWD": 10,
-        "USD": 773
+        "USD": 763
       },
-      "convertedMetricCount": 219,
+      "convertedMetricCount": 225,
       "unavailableMetricCount": 0,
       "partialFxCoverageMetricCount": 8,
       "convertedCompanies": [
@@ -87,6 +88,7 @@
         "SAN",
         "SAP",
         "SIE.DE",
+        "SU.PA",
         "TCEHY",
         "TM",
         "TSM"
@@ -109,8 +111,8 @@
         "CompaniesMarketCap": 5
       },
       "quarterly": {
-        "StockAnalysis": 714,
-        "—": 86
+        "StockAnalysis": 710,
+        "—": 90
       },
       "ttm": {
         "—": 12,
@@ -479,12 +481,6 @@
         "revenueConversionUnavailableCount": 0
       },
       {
-        "symbol": "GILD",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 9,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
         "symbol": "GOOG",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
@@ -731,6 +727,12 @@
         "revenueConversionUnavailableCount": 0
       },
       {
+        "symbol": "SU.PA",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
         "symbol": "T",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
@@ -866,7 +868,6 @@
       "DIS",
       "GE",
       "GEV",
-      "GILD",
       "GOOG",
       "GS",
       "HD",
@@ -907,6 +908,7 @@
       "SAP",
       "SHEL",
       "SIE.DE",
+      "SU.PA",
       "T",
       "TJX",
       "TM",
