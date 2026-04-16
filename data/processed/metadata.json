@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-04-15T03:29:10.351Z",
+  "generatedAt": "2026-04-16T03:29:29.397Z",
   "topN": 100,
-  "sourceSnapshotDirectory": "data/raw/2026-04-15",
+  "sourceSnapshotDirectory": "data/raw/2026-04-16",
   "stockAnalysisCoverage": {
     "resolverStats": {
       "stockRoutesIndexed": 5599,
-      "quoteRoutesIndexed": 44067,
-      "uniqueSymbolRoutes": 37902
+      "quoteRoutesIndexed": 44083,
+      "uniqueSymbolRoutes": 37918
     },
     "resolvedRouteCount": 93,
     "annualEmployeeSeriesCount": 90
@@ -54,16 +54,17 @@
         "CAD": 10,
         "CHF": 6,
         "CNY": 68,
-        "EUR": 62,
+        "DKK": 10,
+        "EUR": 64,
         "INR": 10,
         "JPY": 19,
         "KRW": 20,
         "SAR": 10,
         "SEK": 10,
         "TWD": 10,
-        "USD": 763
+        "USD": 753
       },
-      "convertedMetricCount": 225,
+      "convertedMetricCount": 237,
       "unavailableMetricCount": 0,
       "partialFxCoverageMetricCount": 8,
       "convertedCompanies": [
@@ -80,6 +81,7 @@
         "MC.PA",
         "MUFG",
         "NESN.SW",
+        "NVO",
         "OR.PA",
         "RELIANCE.NS",
         "RMS.PA",
@@ -111,8 +113,8 @@
         "CompaniesMarketCap": 5
       },
       "quarterly": {
-        "StockAnalysis": 710,
-        "—": 90
+        "StockAnalysis": 712,
+        "—": 88
       },
       "ttm": {
         "—": 12,
@@ -409,12 +411,6 @@
         "revenueConversionUnavailableCount": 0
       },
       {
-        "symbol": "BA",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 9,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
         "symbol": "BABA",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
@@ -626,6 +622,12 @@
       },
       {
         "symbol": "NVDA",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "NVO",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
@@ -856,7 +858,6 @@
       "AVGO",
       "AXP",
       "AZN",
-      "BA",
       "BABA",
       "BAC",
       "BHP",
@@ -893,6 +894,7 @@
       "NESN.SW",
       "NFLX",
       "NVDA",
+      "NVO",
       "NVS",
       "OR.PA",
       "ORCL",
