@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-04-17T03:29:34.367Z",
+  "generatedAt": "2026-04-18T03:26:36.506Z",
   "topN": 100,
-  "sourceSnapshotDirectory": "data/raw/2026-04-17",
+  "sourceSnapshotDirectory": "data/raw/2026-04-18",
   "stockAnalysisCoverage": {
     "resolverStats": {
-      "stockRoutesIndexed": 5601,
-      "quoteRoutesIndexed": 44084,
-      "uniqueSymbolRoutes": 37919
+      "stockRoutesIndexed": 5603,
+      "quoteRoutesIndexed": 44085,
+      "uniqueSymbolRoutes": 37920
     },
     "resolvedRouteCount": 93,
     "annualEmployeeSeriesCount": 90
@@ -15,16 +15,16 @@
     "marketCap": {
       "currencyCounts": {
         "CHF": 10,
-        "CNY": 30,
+        "CNY": 20,
         "EUR": 60,
         "HKD": 30,
         "INR": 10,
         "KRW": 20,
         "SAR": 10,
         "SEK": 10,
-        "USD": 920
+        "USD": 930
       },
-      "convertedMetricCount": 180,
+      "convertedMetricCount": 170,
       "unavailableMetricCount": 0,
       "partialFxCoverageMetricCount": 0,
       "convertedCompanies": [
@@ -36,7 +36,6 @@
         "2222.SR",
         "300750.SZ",
         "600519.SS",
-        "601138.SS",
         "MC.PA",
         "NESN.SW",
         "OR.PA",
@@ -54,7 +53,7 @@
       "currencyCounts": {
         "CAD": 10,
         "CHF": 6,
-        "CNY": 79,
+        "CNY": 69,
         "DKK": 10,
         "EUR": 64,
         "INR": 10,
@@ -63,9 +62,9 @@
         "SAR": 10,
         "SEK": 10,
         "TWD": 10,
-        "USD": 743
+        "USD": 752
       },
-      "convertedMetricCount": 248,
+      "convertedMetricCount": 238,
       "unavailableMetricCount": 0,
       "partialFxCoverageMetricCount": 8,
       "convertedCompanies": [
@@ -77,7 +76,6 @@
         "2222.SR",
         "300750.SZ",
         "600519.SS",
-        "601138.SS",
         "ASML",
         "BABA",
         "MC.PA",
@@ -119,13 +117,14 @@
         "—": 88
       },
       "ttm": {
-        "—": 12,
-        "CompaniesMarketCap": 88
+        "—": 13,
+        "CompaniesMarketCap": 87
       }
     },
     "latestAnnualCompaniesMarketCapCount": 0,
     "latestAnnualCompaniesMarketCapCompanies": [],
     "fiscalSpilloverCompanies": [
+      "ADI",
       "AMAT",
       "AVGO",
       "COST",
@@ -143,20 +142,6 @@
         "annualRevenueUsd": 17479057316.60896,
         "quarterRevenueUsdSum": 27609374516.519493,
         "ratio": 1.5795688529658003
-      },
-      {
-        "symbol": "SAN",
-        "bucketId": "2025",
-        "annualRevenueUsd": 52183924866.66666,
-        "quarterRevenueUsdSum": 67284004466.666664,
-        "ratio": 1.2893626655829684
-      },
-      {
-        "symbol": "SAN",
-        "bucketId": "2024",
-        "annualRevenueUsd": 53208714800.000015,
-        "quarterRevenueUsdSum": 66853707433.333336,
-        "ratio": 1.2564428155166287
       },
       {
         "symbol": "MU",
@@ -215,11 +200,25 @@
         "ratio": 1.0680477476521895
       },
       {
+        "symbol": "ADI",
+        "bucketId": "2025",
+        "annualRevenueUsd": 11019700000,
+        "quarterRevenueUsdSum": 11756800000,
+        "ratio": 1.0668892982567584
+      },
+      {
         "symbol": "TM",
         "bucketId": "2025",
         "annualRevenueUsd": 315639867245.32526,
         "quarterRevenueUsdSum": 336666520455.2601,
         "ratio": 1.0666159613911896
+      },
+      {
+        "symbol": "SAN",
+        "bucketId": "2024",
+        "annualRevenueUsd": 62731423325.000015,
+        "quarterRevenueUsdSum": 66853707433.333336,
+        "ratio": 1.0657132245665226
       },
       {
         "symbol": "ORCL",
@@ -329,12 +328,6 @@
         "revenueConversionUnavailableCount": 0
       },
       {
-        "symbol": "601138.SS",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 9,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
         "symbol": "AAPL",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
@@ -342,6 +335,12 @@
       },
       {
         "symbol": "ABBV",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "ADI",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
@@ -847,9 +846,9 @@
       "2222.SR",
       "300750.SZ",
       "600519.SS",
-      "601138.SS",
       "AAPL",
       "ABBV",
+      "ADI",
       "AMAT",
       "AMD",
       "AMGN",
@@ -909,6 +908,7 @@
       "RMS.PA",
       "RTX",
       "RY",
+      "SAN",
       "SAP",
       "SHEL",
       "SIE.DE",
@@ -931,8 +931,7 @@
     ],
     "annualCrossSourceMismatchCompanies": [
       "MUFG",
-      "RO.SW",
-      "SAN"
+      "RO.SW"
     ]
   }
 }
