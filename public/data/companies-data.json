@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-18T03:27:16.986Z",
+  "generatedAt": "2026-04-20T03:29:58.958Z",
   "topN": 100,
   "bucketIds": [
     "2025TTM",
@@ -3018,7 +3018,7 @@
       "name": "TSMC",
       "symbol": "TSM",
       "country": "Taiwan",
-      "marketCapUsd": 1921599930368,
+      "marketCapUsd": 1921561264128,
       "metrics": [
         {
           "bucketId": "2025TTM",
@@ -3027,9 +3027,9 @@
           "periodEnd": "2025-12-31",
           "displayLabel": "2025 TTM",
           "marketCap": {
-            "reportedAmount": 1921599930368,
+            "reportedAmount": 1921561264128,
             "reportedCurrency": "USD",
-            "usdAmount": 1921599930368,
+            "usdAmount": 1921561264128,
             "normalizationMethod": "snapshot_fallback"
           },
           "revenue": {
@@ -3038,7 +3038,7 @@
             "usdAmount": 121914701536.98685,
             "normalizationMethod": "reported_usd"
           },
-          "marketCapUsd": 1921599930368,
+          "marketCapUsd": 1921561264128,
           "revenueUsd": 121914701536.98685,
           "employeeCount": 83825,
           "revenuePerEmployeeUsd": 1454395.4850818592,
@@ -3046,7 +3046,7 @@
             "marketCap": {
               "provider": "CompaniesMarketCap",
               "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
               "note": "current snapshot fallback"
             },
             "employeeCount": {
@@ -3652,7 +3652,7 @@
       "name": "Saudi Aramco",
       "symbol": "2222.SR",
       "country": "Saudi Arabia",
-      "marketCapUsd": 1774804508698,
+      "marketCapUsd": 1754167324981,
       "metrics": [
         {
           "bucketId": "2025TTM",
@@ -3661,9 +3661,9 @@
           "periodEnd": "2025-12-31",
           "displayLabel": "2025 TTM",
           "marketCap": {
-            "reportedAmount": 1774804508698,
+            "reportedAmount": 1754167324981,
             "reportedCurrency": "USD",
-            "usdAmount": 1774804508698,
+            "usdAmount": 1754167324981,
             "normalizationMethod": "snapshot_fallback"
           },
           "revenue": {
@@ -3672,7 +3672,7 @@
             "usdAmount": 448639900174.3789,
             "normalizationMethod": "reported_usd"
           },
-          "marketCapUsd": 1774804508698,
+          "marketCapUsd": 1754167324981,
           "revenueUsd": 448639900174.3789,
           "employeeCount": 70000,
           "revenuePerEmployeeUsd": 6409141.431062556,
@@ -3680,7 +3680,7 @@
             "marketCap": {
               "provider": "CompaniesMarketCap",
               "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-17T03:29:34.367Z",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
               "note": "current snapshot fallback"
             },
             "employeeCount": {
@@ -4410,7 +4410,7 @@
       "name": "Meta Platforms (Facebook)",
       "symbol": "META",
       "country": "United States",
-      "marketCapUsd": 1741725368320,
+      "marketCapUsd": 1747831357440,
       "metrics": [
         {
           "bucketId": "2025TTM",
@@ -4419,9 +4419,9 @@
           "periodEnd": "2025-12-31",
           "displayLabel": "2025 TTM",
           "marketCap": {
-            "reportedAmount": 1741725368320,
+            "reportedAmount": 1747831357440,
             "reportedCurrency": "USD",
-            "usdAmount": 1741725368320,
+            "usdAmount": 1747831357440,
             "normalizationMethod": "snapshot_fallback"
           },
           "revenue": {
@@ -4430,7 +4430,7 @@
             "usdAmount": 200965000000,
             "normalizationMethod": "reported_usd"
           },
-          "marketCapUsd": 1741725368320,
+          "marketCapUsd": 1747831357440,
           "revenueUsd": 200965000000,
           "employeeCount": 75945,
           "revenuePerEmployeeUsd": 2646191.3226677203,
@@ -4438,7 +4438,7 @@
             "marketCap": {
               "provider": "CompaniesMarketCap",
               "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
               "note": "current snapshot fallback"
             },
             "employeeCount": {
@@ -13820,7 +13820,7 @@
       "name": "ICBC",
       "symbol": "1398.HK",
       "country": "China",
-      "marketCapUsd": 420018052734,
+      "marketCapUsd": 425969824155,
       "metrics": [
         {
           "bucketId": "2025TTM",
@@ -13829,9 +13829,9 @@
           "periodEnd": "2025-06-30",
           "displayLabel": "2025 TTM",
           "marketCap": {
-            "reportedAmount": 420018052734,
+            "reportedAmount": 425969824155,
             "reportedCurrency": "USD",
-            "usdAmount": 420018052734,
+            "usdAmount": 425969824155,
             "normalizationMethod": "snapshot_fallback"
           },
           "revenue": {
@@ -13840,7 +13840,7 @@
             "usdAmount": 114646110310.89514,
             "normalizationMethod": "reported_usd"
           },
-          "marketCapUsd": 420018052734,
+          "marketCapUsd": 425969824155,
           "revenueUsd": 114646110310.89514,
           "employeeCount": 419252,
           "revenuePerEmployeeUsd": 273453.9377531774,
@@ -13848,7 +13848,7 @@
             "marketCap": {
               "provider": "CompaniesMarketCap",
               "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
               "note": "current snapshot fallback"
             },
             "employeeCount": {
@@ -14574,7 +14574,7 @@
       "name": "Netflix",
       "symbol": "NFLX",
       "country": "United States",
-      "marketCapUsd": 412778266624,
+      "marketCapUsd": 410858586112,
       "metrics": [
         {
           "bucketId": "2025TTM",
@@ -14583,9 +14583,9 @@
           "periodEnd": "2025-12-31",
           "displayLabel": "2025 TTM",
           "marketCap": {
-            "reportedAmount": 412778266624,
+            "reportedAmount": 410858586112,
             "reportedCurrency": "USD",
-            "usdAmount": 412778266624,
+            "usdAmount": 410858586112,
             "normalizationMethod": "snapshot_fallback"
           },
           "revenue": {
@@ -14594,7 +14594,7 @@
             "usdAmount": 45183036000,
             "normalizationMethod": "reported_usd"
           },
-          "marketCapUsd": 412778266624,
+          "marketCapUsd": 410858586112,
           "revenueUsd": 45183036000,
           "employeeCount": 14000,
           "revenuePerEmployeeUsd": 3227359.714285714,
@@ -14602,7 +14602,7 @@
             "marketCap": {
               "provider": "CompaniesMarketCap",
               "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
               "note": "current snapshot fallback"
             },
             "employeeCount": {
@@ -22232,12 +22232,505 @@
       ]
     },
     {
-      "id": "0857.HK-43",
+      "id": "KO-43",
       "rank": 43,
+      "name": "Coca-Cola",
+      "symbol": "KO",
+      "country": "United States",
+      "marketCapUsd": 325996544000,
+      "metrics": [
+        {
+          "bucketId": "2025TTM",
+          "bucketType": "ttm",
+          "periodStart": "2025-01-01",
+          "periodEnd": "2025-12-31",
+          "displayLabel": "2025 TTM",
+          "marketCap": {
+            "reportedAmount": 325996544000,
+            "reportedCurrency": "USD",
+            "usdAmount": 325996544000,
+            "normalizationMethod": "snapshot_fallback"
+          },
+          "revenue": {
+            "reportedAmount": 47941000000,
+            "reportedCurrency": "USD",
+            "usdAmount": 47941000000,
+            "normalizationMethod": "reported_usd"
+          },
+          "marketCapUsd": 325996544000,
+          "revenueUsd": 47941000000,
+          "employeeCount": 69700,
+          "revenuePerEmployeeUsd": 687819.225251076,
+          "sources": {
+            "marketCap": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/?download=csv",
+              "fetchedAt": "2026-04-18T03:26:36.506Z",
+              "note": "current snapshot fallback"
+            },
+            "employeeCount": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
+              "fetchedAt": "2026-03-08T10:00:44.278Z",
+              "note": "current snapshot fallback"
+            },
+            "revenue": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/coca-cola/revenue/",
+              "fetchedAt": "2026-03-26T03:25:37.099Z",
+              "note": "TTM value"
+            }
+          },
+          "flags": [
+            "market_cap_snapshot_fallback",
+            "employee_snapshot_fallback"
+          ]
+        },
+        {
+          "bucketId": "2025",
+          "bucketType": "annual",
+          "periodStart": "2025-01-01",
+          "periodEnd": "2025-12-31",
+          "displayLabel": "2025",
+          "marketCap": {
+            "reportedAmount": 300725500000,
+            "reportedCurrency": "USD",
+            "usdAmount": 300725500000,
+            "normalizationMethod": "reported_usd"
+          },
+          "revenue": {
+            "reportedAmount": 47941000000,
+            "reportedCurrency": "USD",
+            "usdAmount": 47941000000,
+            "normalizationMethod": "reported_usd"
+          },
+          "marketCapUsd": 300725500000,
+          "revenueUsd": 47941000000,
+          "employeeCount": 65900,
+          "revenuePerEmployeeUsd": 727481.0318664643,
+          "sources": {
+            "marketCap": {
+              "provider": "StockAnalysis",
+              "url": "https://stockanalysis.com/stocks/ko/market-cap/",
+              "fetchedAt": "2026-03-08T03:10:14.772Z"
+            },
+            "employeeCount": {
+              "provider": "StockAnalysis",
+              "url": "https://stockanalysis.com/stocks/ko/employees/",
+              "fetchedAt": "2026-03-07T20:15:17.105Z"
+            },
+            "revenue": {
+              "provider": "StockAnalysis",
+              "url": "https://stockanalysis.com/stocks/ko/revenue/",
+              "fetchedAt": "2026-03-08T10:00:44.278Z"
+            }
+          },
+          "flags": []
+        },
+        {
+          "bucketId": "2024",
+          "bucketType": "annual",
+          "periodStart": "2024-01-01",
+          "periodEnd": "2024-12-31",
+          "displayLabel": "2024",
+          "marketCap": {
+            "reportedAmount": 268203400000,
+            "reportedCurrency": "USD",
+            "usdAmount": 268203400000,
+            "normalizationMethod": "reported_usd"
+          },
+          "revenue": {
+            "reportedAmount": 47061000000,
+            "reportedCurrency": "USD",
+            "usdAmount": 47061000000,
+            "normalizationMethod": "reported_usd"
+          },
+          "marketCapUsd": 268203400000,
+          "revenueUsd": 47061000000,
+          "employeeCount": 69700,
+          "revenuePerEmployeeUsd": 675193.6872309899,
+          "sources": {
+            "marketCap": {
+              "provider": "StockAnalysis",
+              "url": "https://stockanalysis.com/stocks/ko/market-cap/",
+              "fetchedAt": "2026-03-08T03:10:14.772Z"
+            },
+            "employeeCount": {
+              "provider": "StockAnalysis",
+              "url": "https://stockanalysis.com/stocks/ko/employees/",
+              "fetchedAt": "2026-03-07T20:15:17.105Z"
+            },
+            "revenue": {
+              "provider": "StockAnalysis",
+              "url": "https://stockanalysis.com/stocks/ko/revenue/",
+              "fetchedAt": "2026-03-08T10:00:44.278Z"
+            }
+          },
+          "flags": [
+            "annual_revenue_cross_source_aligned"
+          ]
+        },
+        {
+          "bucketId": "2025Q4",
+          "bucketType": "quarterly",
+          "periodStart": "2025-09-27",
+          "periodEnd": "2025-12-31",
+          "displayLabel": "2025 Q4",
+          "marketCap": {
+            "reportedAmount": 300725500000,
+            "reportedCurrency": "USD",
+            "usdAmount": 300725500000,
+            "normalizationMethod": "reported_usd"
+          },
+          "revenue": {
+            "reportedAmount": 11822000000,
+            "reportedCurrency": "USD",
+            "usdAmount": 11822000000,
+            "normalizationMethod": "reported_usd"
+          },
+          "marketCapUsd": 300725500000,
+          "revenueUsd": 11822000000,
+          "employeeCount": 69700,
+          "revenuePerEmployeeUsd": 169612.62553802007,
+          "sources": {
+            "marketCap": {
+              "provider": "StockAnalysis",
+              "url": "https://stockanalysis.com/stocks/ko/market-cap/",
+              "fetchedAt": "2026-03-08T03:10:14.772Z"
+            },
+            "employeeCount": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
+              "fetchedAt": "2026-03-07T20:15:17.105Z",
+              "note": "current snapshot fallback"
+            },
+            "revenue": {
+              "provider": "StockAnalysis",
+              "url": "https://stockanalysis.com/stocks/ko/revenue/",
+              "fetchedAt": "2026-03-08T03:10:14.772Z"
+            }
+          },
+          "flags": [
+            "employee_snapshot_fallback"
+          ]
+        },
+        {
+          "bucketId": "2025Q3",
+          "bucketType": "quarterly",
+          "periodStart": "2025-06-28",
+          "periodEnd": "2025-09-26",
+          "displayLabel": "2025 Q3",
+          "marketCap": {
+            "reportedAmount": 285419200000,
+            "reportedCurrency": "USD",
+            "usdAmount": 285419200000,
+            "normalizationMethod": "reported_usd"
+          },
+          "revenue": {
+            "reportedAmount": 12455000000,
+            "reportedCurrency": "USD",
+            "usdAmount": 12455000000,
+            "normalizationMethod": "reported_usd"
+          },
+          "marketCapUsd": 285419200000,
+          "revenueUsd": 12455000000,
+          "employeeCount": 69700,
+          "revenuePerEmployeeUsd": 178694.40459110474,
+          "sources": {
+            "marketCap": {
+              "provider": "StockAnalysis",
+              "url": "https://stockanalysis.com/stocks/ko/market-cap/",
+              "fetchedAt": "2026-03-08T03:10:14.772Z"
+            },
+            "employeeCount": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
+              "fetchedAt": "2026-03-07T20:15:17.105Z",
+              "note": "current snapshot fallback"
+            },
+            "revenue": {
+              "provider": "StockAnalysis",
+              "url": "https://stockanalysis.com/stocks/ko/revenue/",
+              "fetchedAt": "2026-03-08T03:10:14.772Z"
+            }
+          },
+          "flags": [
+            "employee_snapshot_fallback"
+          ]
+        },
+        {
+          "bucketId": "2025Q2",
+          "bucketType": "quarterly",
+          "periodStart": "2025-03-29",
+          "periodEnd": "2025-06-27",
+          "displayLabel": "2025 Q2",
+          "marketCap": {
+            "reportedAmount": 304526900000,
+            "reportedCurrency": "USD",
+            "usdAmount": 304526900000,
+            "normalizationMethod": "reported_usd"
+          },
+          "revenue": {
+            "reportedAmount": 12535000000,
+            "reportedCurrency": "USD",
+            "usdAmount": 12535000000,
+            "normalizationMethod": "reported_usd"
+          },
+          "marketCapUsd": 304526900000,
+          "revenueUsd": 12535000000,
+          "employeeCount": 69700,
+          "revenuePerEmployeeUsd": 179842.18077474894,
+          "sources": {
+            "marketCap": {
+              "provider": "StockAnalysis",
+              "url": "https://stockanalysis.com/stocks/ko/market-cap/",
+              "fetchedAt": "2026-03-08T03:10:14.772Z"
+            },
+            "employeeCount": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
+              "fetchedAt": "2026-03-07T20:15:17.105Z",
+              "note": "current snapshot fallback"
+            },
+            "revenue": {
+              "provider": "StockAnalysis",
+              "url": "https://stockanalysis.com/stocks/ko/revenue/",
+              "fetchedAt": "2026-03-08T03:10:14.772Z"
+            }
+          },
+          "flags": [
+            "employee_snapshot_fallback"
+          ]
+        },
+        {
+          "bucketId": "2025Q1",
+          "bucketType": "quarterly",
+          "periodStart": "2025-01-01",
+          "periodEnd": "2025-03-28",
+          "displayLabel": "2025 Q1",
+          "marketCap": {
+            "reportedAmount": 308037600000,
+            "reportedCurrency": "USD",
+            "usdAmount": 308037600000,
+            "normalizationMethod": "reported_usd"
+          },
+          "revenue": {
+            "reportedAmount": 11129000000,
+            "reportedCurrency": "USD",
+            "usdAmount": 11129000000,
+            "normalizationMethod": "reported_usd"
+          },
+          "marketCapUsd": 308037600000,
+          "revenueUsd": 11129000000,
+          "employeeCount": 69700,
+          "revenuePerEmployeeUsd": 159670.0143472023,
+          "sources": {
+            "marketCap": {
+              "provider": "StockAnalysis",
+              "url": "https://stockanalysis.com/stocks/ko/market-cap/",
+              "fetchedAt": "2026-03-08T03:10:14.772Z"
+            },
+            "employeeCount": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
+              "fetchedAt": "2026-03-07T20:15:17.105Z",
+              "note": "current snapshot fallback"
+            },
+            "revenue": {
+              "provider": "StockAnalysis",
+              "url": "https://stockanalysis.com/stocks/ko/revenue/",
+              "fetchedAt": "2026-03-08T03:10:14.772Z"
+            }
+          },
+          "flags": [
+            "employee_snapshot_fallback"
+          ]
+        },
+        {
+          "bucketId": "2024Q4",
+          "bucketType": "quarterly",
+          "periodStart": "2024-09-28",
+          "periodEnd": "2024-12-31",
+          "displayLabel": "2024 Q4",
+          "marketCap": {
+            "reportedAmount": 268203400000,
+            "reportedCurrency": "USD",
+            "usdAmount": 268203400000,
+            "normalizationMethod": "reported_usd"
+          },
+          "revenue": {
+            "reportedAmount": 11544000000,
+            "reportedCurrency": "USD",
+            "usdAmount": 11544000000,
+            "normalizationMethod": "reported_usd"
+          },
+          "marketCapUsd": 268203400000,
+          "revenueUsd": 11544000000,
+          "employeeCount": 69700,
+          "revenuePerEmployeeUsd": 165624.10329985654,
+          "sources": {
+            "marketCap": {
+              "provider": "StockAnalysis",
+              "url": "https://stockanalysis.com/stocks/ko/market-cap/",
+              "fetchedAt": "2026-03-08T03:10:14.772Z"
+            },
+            "employeeCount": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
+              "fetchedAt": "2026-03-07T20:15:17.105Z",
+              "note": "current snapshot fallback"
+            },
+            "revenue": {
+              "provider": "StockAnalysis",
+              "url": "https://stockanalysis.com/stocks/ko/revenue/",
+              "fetchedAt": "2026-03-08T03:10:14.772Z"
+            }
+          },
+          "flags": [
+            "employee_snapshot_fallback"
+          ]
+        },
+        {
+          "bucketId": "2024Q3",
+          "bucketType": "quarterly",
+          "periodStart": "2024-06-29",
+          "periodEnd": "2024-09-27",
+          "displayLabel": "2024 Q3",
+          "marketCap": {
+            "reportedAmount": 309707100000,
+            "reportedCurrency": "USD",
+            "usdAmount": 309707100000,
+            "normalizationMethod": "reported_usd"
+          },
+          "revenue": {
+            "reportedAmount": 11854000000,
+            "reportedCurrency": "USD",
+            "usdAmount": 11854000000,
+            "normalizationMethod": "reported_usd"
+          },
+          "marketCapUsd": 309707100000,
+          "revenueUsd": 11854000000,
+          "employeeCount": 69700,
+          "revenuePerEmployeeUsd": 170071.73601147777,
+          "sources": {
+            "marketCap": {
+              "provider": "StockAnalysis",
+              "url": "https://stockanalysis.com/stocks/ko/market-cap/",
+              "fetchedAt": "2026-03-08T03:10:14.772Z"
+            },
+            "employeeCount": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
+              "fetchedAt": "2026-03-07T20:15:17.105Z",
+              "note": "current snapshot fallback"
+            },
+            "revenue": {
+              "provider": "StockAnalysis",
+              "url": "https://stockanalysis.com/stocks/ko/revenue/",
+              "fetchedAt": "2026-03-08T03:10:14.772Z"
+            }
+          },
+          "flags": [
+            "employee_snapshot_fallback"
+          ]
+        },
+        {
+          "bucketId": "2024Q2",
+          "bucketType": "quarterly",
+          "periodStart": "2024-03-30",
+          "periodEnd": "2024-06-28",
+          "displayLabel": "2024 Q2",
+          "marketCap": {
+            "reportedAmount": 274201400000,
+            "reportedCurrency": "USD",
+            "usdAmount": 274201400000,
+            "normalizationMethod": "reported_usd"
+          },
+          "revenue": {
+            "reportedAmount": 12363000000,
+            "reportedCurrency": "USD",
+            "usdAmount": 12363000000,
+            "normalizationMethod": "reported_usd"
+          },
+          "marketCapUsd": 274201400000,
+          "revenueUsd": 12363000000,
+          "employeeCount": 69700,
+          "revenuePerEmployeeUsd": 177374.4619799139,
+          "sources": {
+            "marketCap": {
+              "provider": "StockAnalysis",
+              "url": "https://stockanalysis.com/stocks/ko/market-cap/",
+              "fetchedAt": "2026-03-08T03:10:14.772Z"
+            },
+            "employeeCount": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
+              "fetchedAt": "2026-03-07T20:15:17.105Z",
+              "note": "current snapshot fallback"
+            },
+            "revenue": {
+              "provider": "StockAnalysis",
+              "url": "https://stockanalysis.com/stocks/ko/revenue/",
+              "fetchedAt": "2026-03-08T03:10:14.772Z"
+            }
+          },
+          "flags": [
+            "employee_snapshot_fallback"
+          ]
+        },
+        {
+          "bucketId": "2024Q1",
+          "bucketType": "quarterly",
+          "periodStart": "2024-01-01",
+          "periodEnd": "2024-03-29",
+          "displayLabel": "2024 Q1",
+          "marketCap": {
+            "reportedAmount": 263836099999,
+            "reportedCurrency": "USD",
+            "usdAmount": 263836099999,
+            "normalizationMethod": "reported_usd"
+          },
+          "revenue": {
+            "reportedAmount": 11300000000,
+            "reportedCurrency": "USD",
+            "usdAmount": 11300000000,
+            "normalizationMethod": "reported_usd"
+          },
+          "marketCapUsd": 263836099999,
+          "revenueUsd": 11300000000,
+          "employeeCount": 69700,
+          "revenuePerEmployeeUsd": 162123.38593974174,
+          "sources": {
+            "marketCap": {
+              "provider": "StockAnalysis",
+              "url": "https://stockanalysis.com/stocks/ko/market-cap/",
+              "fetchedAt": "2026-03-08T03:10:14.772Z"
+            },
+            "employeeCount": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
+              "fetchedAt": "2026-03-07T20:15:17.105Z",
+              "note": "current snapshot fallback"
+            },
+            "revenue": {
+              "provider": "StockAnalysis",
+              "url": "https://stockanalysis.com/stocks/ko/revenue/",
+              "fetchedAt": "2026-03-08T03:10:14.772Z"
+            }
+          },
+          "flags": [
+            "employee_snapshot_fallback"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0857.HK-44",
+      "rank": 44,
       "name": "PetroChina",
       "symbol": "0857.HK",
       "country": "China",
-      "marketCapUsd": 334195474777,
+      "marketCapUsd": 324486711633,
       "metrics": [
         {
           "bucketId": "2025TTM",
@@ -22246,9 +22739,9 @@
           "periodEnd": "2025-06-30",
           "displayLabel": "2025 TTM",
           "marketCap": {
-            "reportedAmount": 334195474777,
+            "reportedAmount": 324486711633,
             "reportedCurrency": "USD",
-            "usdAmount": 334195474777,
+            "usdAmount": 324486711633,
             "normalizationMethod": "snapshot_fallback"
           },
           "revenue": {
@@ -22257,7 +22750,7 @@
             "usdAmount": 394623766090.9403,
             "normalizationMethod": "reported_usd"
           },
-          "marketCapUsd": 334195474777,
+          "marketCapUsd": 324486711633,
           "revenueUsd": 394623766090.9403,
           "employeeCount": 398440,
           "revenuePerEmployeeUsd": 990422.0612662893,
@@ -22265,7 +22758,7 @@
             "marketCap": {
               "provider": "CompaniesMarketCap",
               "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
               "note": "current snapshot fallback"
             },
             "employeeCount": {
@@ -22981,499 +23474,6 @@
             "employee_snapshot_fallback",
             "revenue_fx_converted",
             "market_cap_fx_converted"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "KO-44",
-      "rank": 44,
-      "name": "Coca-Cola",
-      "symbol": "KO",
-      "country": "United States",
-      "marketCapUsd": 325996544000,
-      "metrics": [
-        {
-          "bucketId": "2025TTM",
-          "bucketType": "ttm",
-          "periodStart": "2025-01-01",
-          "periodEnd": "2025-12-31",
-          "displayLabel": "2025 TTM",
-          "marketCap": {
-            "reportedAmount": 325996544000,
-            "reportedCurrency": "USD",
-            "usdAmount": 325996544000,
-            "normalizationMethod": "snapshot_fallback"
-          },
-          "revenue": {
-            "reportedAmount": 47941000000,
-            "reportedCurrency": "USD",
-            "usdAmount": 47941000000,
-            "normalizationMethod": "reported_usd"
-          },
-          "marketCapUsd": 325996544000,
-          "revenueUsd": 47941000000,
-          "employeeCount": 69700,
-          "revenuePerEmployeeUsd": 687819.225251076,
-          "sources": {
-            "marketCap": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
-              "note": "current snapshot fallback"
-            },
-            "employeeCount": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
-              "fetchedAt": "2026-03-08T10:00:44.278Z",
-              "note": "current snapshot fallback"
-            },
-            "revenue": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/coca-cola/revenue/",
-              "fetchedAt": "2026-03-26T03:25:37.099Z",
-              "note": "TTM value"
-            }
-          },
-          "flags": [
-            "market_cap_snapshot_fallback",
-            "employee_snapshot_fallback"
-          ]
-        },
-        {
-          "bucketId": "2025",
-          "bucketType": "annual",
-          "periodStart": "2025-01-01",
-          "periodEnd": "2025-12-31",
-          "displayLabel": "2025",
-          "marketCap": {
-            "reportedAmount": 300725500000,
-            "reportedCurrency": "USD",
-            "usdAmount": 300725500000,
-            "normalizationMethod": "reported_usd"
-          },
-          "revenue": {
-            "reportedAmount": 47941000000,
-            "reportedCurrency": "USD",
-            "usdAmount": 47941000000,
-            "normalizationMethod": "reported_usd"
-          },
-          "marketCapUsd": 300725500000,
-          "revenueUsd": 47941000000,
-          "employeeCount": 65900,
-          "revenuePerEmployeeUsd": 727481.0318664643,
-          "sources": {
-            "marketCap": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/ko/market-cap/",
-              "fetchedAt": "2026-03-08T03:10:14.772Z"
-            },
-            "employeeCount": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/ko/employees/",
-              "fetchedAt": "2026-03-07T20:15:17.105Z"
-            },
-            "revenue": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/ko/revenue/",
-              "fetchedAt": "2026-03-08T10:00:44.278Z"
-            }
-          },
-          "flags": []
-        },
-        {
-          "bucketId": "2024",
-          "bucketType": "annual",
-          "periodStart": "2024-01-01",
-          "periodEnd": "2024-12-31",
-          "displayLabel": "2024",
-          "marketCap": {
-            "reportedAmount": 268203400000,
-            "reportedCurrency": "USD",
-            "usdAmount": 268203400000,
-            "normalizationMethod": "reported_usd"
-          },
-          "revenue": {
-            "reportedAmount": 47061000000,
-            "reportedCurrency": "USD",
-            "usdAmount": 47061000000,
-            "normalizationMethod": "reported_usd"
-          },
-          "marketCapUsd": 268203400000,
-          "revenueUsd": 47061000000,
-          "employeeCount": 69700,
-          "revenuePerEmployeeUsd": 675193.6872309899,
-          "sources": {
-            "marketCap": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/ko/market-cap/",
-              "fetchedAt": "2026-03-08T03:10:14.772Z"
-            },
-            "employeeCount": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/ko/employees/",
-              "fetchedAt": "2026-03-07T20:15:17.105Z"
-            },
-            "revenue": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/ko/revenue/",
-              "fetchedAt": "2026-03-08T10:00:44.278Z"
-            }
-          },
-          "flags": [
-            "annual_revenue_cross_source_aligned"
-          ]
-        },
-        {
-          "bucketId": "2025Q4",
-          "bucketType": "quarterly",
-          "periodStart": "2025-09-27",
-          "periodEnd": "2025-12-31",
-          "displayLabel": "2025 Q4",
-          "marketCap": {
-            "reportedAmount": 300725500000,
-            "reportedCurrency": "USD",
-            "usdAmount": 300725500000,
-            "normalizationMethod": "reported_usd"
-          },
-          "revenue": {
-            "reportedAmount": 11822000000,
-            "reportedCurrency": "USD",
-            "usdAmount": 11822000000,
-            "normalizationMethod": "reported_usd"
-          },
-          "marketCapUsd": 300725500000,
-          "revenueUsd": 11822000000,
-          "employeeCount": 69700,
-          "revenuePerEmployeeUsd": 169612.62553802007,
-          "sources": {
-            "marketCap": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/ko/market-cap/",
-              "fetchedAt": "2026-03-08T03:10:14.772Z"
-            },
-            "employeeCount": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
-              "fetchedAt": "2026-03-07T20:15:17.105Z",
-              "note": "current snapshot fallback"
-            },
-            "revenue": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/ko/revenue/",
-              "fetchedAt": "2026-03-08T03:10:14.772Z"
-            }
-          },
-          "flags": [
-            "employee_snapshot_fallback"
-          ]
-        },
-        {
-          "bucketId": "2025Q3",
-          "bucketType": "quarterly",
-          "periodStart": "2025-06-28",
-          "periodEnd": "2025-09-26",
-          "displayLabel": "2025 Q3",
-          "marketCap": {
-            "reportedAmount": 285419200000,
-            "reportedCurrency": "USD",
-            "usdAmount": 285419200000,
-            "normalizationMethod": "reported_usd"
-          },
-          "revenue": {
-            "reportedAmount": 12455000000,
-            "reportedCurrency": "USD",
-            "usdAmount": 12455000000,
-            "normalizationMethod": "reported_usd"
-          },
-          "marketCapUsd": 285419200000,
-          "revenueUsd": 12455000000,
-          "employeeCount": 69700,
-          "revenuePerEmployeeUsd": 178694.40459110474,
-          "sources": {
-            "marketCap": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/ko/market-cap/",
-              "fetchedAt": "2026-03-08T03:10:14.772Z"
-            },
-            "employeeCount": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
-              "fetchedAt": "2026-03-07T20:15:17.105Z",
-              "note": "current snapshot fallback"
-            },
-            "revenue": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/ko/revenue/",
-              "fetchedAt": "2026-03-08T03:10:14.772Z"
-            }
-          },
-          "flags": [
-            "employee_snapshot_fallback"
-          ]
-        },
-        {
-          "bucketId": "2025Q2",
-          "bucketType": "quarterly",
-          "periodStart": "2025-03-29",
-          "periodEnd": "2025-06-27",
-          "displayLabel": "2025 Q2",
-          "marketCap": {
-            "reportedAmount": 304526900000,
-            "reportedCurrency": "USD",
-            "usdAmount": 304526900000,
-            "normalizationMethod": "reported_usd"
-          },
-          "revenue": {
-            "reportedAmount": 12535000000,
-            "reportedCurrency": "USD",
-            "usdAmount": 12535000000,
-            "normalizationMethod": "reported_usd"
-          },
-          "marketCapUsd": 304526900000,
-          "revenueUsd": 12535000000,
-          "employeeCount": 69700,
-          "revenuePerEmployeeUsd": 179842.18077474894,
-          "sources": {
-            "marketCap": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/ko/market-cap/",
-              "fetchedAt": "2026-03-08T03:10:14.772Z"
-            },
-            "employeeCount": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
-              "fetchedAt": "2026-03-07T20:15:17.105Z",
-              "note": "current snapshot fallback"
-            },
-            "revenue": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/ko/revenue/",
-              "fetchedAt": "2026-03-08T03:10:14.772Z"
-            }
-          },
-          "flags": [
-            "employee_snapshot_fallback"
-          ]
-        },
-        {
-          "bucketId": "2025Q1",
-          "bucketType": "quarterly",
-          "periodStart": "2025-01-01",
-          "periodEnd": "2025-03-28",
-          "displayLabel": "2025 Q1",
-          "marketCap": {
-            "reportedAmount": 308037600000,
-            "reportedCurrency": "USD",
-            "usdAmount": 308037600000,
-            "normalizationMethod": "reported_usd"
-          },
-          "revenue": {
-            "reportedAmount": 11129000000,
-            "reportedCurrency": "USD",
-            "usdAmount": 11129000000,
-            "normalizationMethod": "reported_usd"
-          },
-          "marketCapUsd": 308037600000,
-          "revenueUsd": 11129000000,
-          "employeeCount": 69700,
-          "revenuePerEmployeeUsd": 159670.0143472023,
-          "sources": {
-            "marketCap": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/ko/market-cap/",
-              "fetchedAt": "2026-03-08T03:10:14.772Z"
-            },
-            "employeeCount": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
-              "fetchedAt": "2026-03-07T20:15:17.105Z",
-              "note": "current snapshot fallback"
-            },
-            "revenue": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/ko/revenue/",
-              "fetchedAt": "2026-03-08T03:10:14.772Z"
-            }
-          },
-          "flags": [
-            "employee_snapshot_fallback"
-          ]
-        },
-        {
-          "bucketId": "2024Q4",
-          "bucketType": "quarterly",
-          "periodStart": "2024-09-28",
-          "periodEnd": "2024-12-31",
-          "displayLabel": "2024 Q4",
-          "marketCap": {
-            "reportedAmount": 268203400000,
-            "reportedCurrency": "USD",
-            "usdAmount": 268203400000,
-            "normalizationMethod": "reported_usd"
-          },
-          "revenue": {
-            "reportedAmount": 11544000000,
-            "reportedCurrency": "USD",
-            "usdAmount": 11544000000,
-            "normalizationMethod": "reported_usd"
-          },
-          "marketCapUsd": 268203400000,
-          "revenueUsd": 11544000000,
-          "employeeCount": 69700,
-          "revenuePerEmployeeUsd": 165624.10329985654,
-          "sources": {
-            "marketCap": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/ko/market-cap/",
-              "fetchedAt": "2026-03-08T03:10:14.772Z"
-            },
-            "employeeCount": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
-              "fetchedAt": "2026-03-07T20:15:17.105Z",
-              "note": "current snapshot fallback"
-            },
-            "revenue": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/ko/revenue/",
-              "fetchedAt": "2026-03-08T03:10:14.772Z"
-            }
-          },
-          "flags": [
-            "employee_snapshot_fallback"
-          ]
-        },
-        {
-          "bucketId": "2024Q3",
-          "bucketType": "quarterly",
-          "periodStart": "2024-06-29",
-          "periodEnd": "2024-09-27",
-          "displayLabel": "2024 Q3",
-          "marketCap": {
-            "reportedAmount": 309707100000,
-            "reportedCurrency": "USD",
-            "usdAmount": 309707100000,
-            "normalizationMethod": "reported_usd"
-          },
-          "revenue": {
-            "reportedAmount": 11854000000,
-            "reportedCurrency": "USD",
-            "usdAmount": 11854000000,
-            "normalizationMethod": "reported_usd"
-          },
-          "marketCapUsd": 309707100000,
-          "revenueUsd": 11854000000,
-          "employeeCount": 69700,
-          "revenuePerEmployeeUsd": 170071.73601147777,
-          "sources": {
-            "marketCap": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/ko/market-cap/",
-              "fetchedAt": "2026-03-08T03:10:14.772Z"
-            },
-            "employeeCount": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
-              "fetchedAt": "2026-03-07T20:15:17.105Z",
-              "note": "current snapshot fallback"
-            },
-            "revenue": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/ko/revenue/",
-              "fetchedAt": "2026-03-08T03:10:14.772Z"
-            }
-          },
-          "flags": [
-            "employee_snapshot_fallback"
-          ]
-        },
-        {
-          "bucketId": "2024Q2",
-          "bucketType": "quarterly",
-          "periodStart": "2024-03-30",
-          "periodEnd": "2024-06-28",
-          "displayLabel": "2024 Q2",
-          "marketCap": {
-            "reportedAmount": 274201400000,
-            "reportedCurrency": "USD",
-            "usdAmount": 274201400000,
-            "normalizationMethod": "reported_usd"
-          },
-          "revenue": {
-            "reportedAmount": 12363000000,
-            "reportedCurrency": "USD",
-            "usdAmount": 12363000000,
-            "normalizationMethod": "reported_usd"
-          },
-          "marketCapUsd": 274201400000,
-          "revenueUsd": 12363000000,
-          "employeeCount": 69700,
-          "revenuePerEmployeeUsd": 177374.4619799139,
-          "sources": {
-            "marketCap": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/ko/market-cap/",
-              "fetchedAt": "2026-03-08T03:10:14.772Z"
-            },
-            "employeeCount": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
-              "fetchedAt": "2026-03-07T20:15:17.105Z",
-              "note": "current snapshot fallback"
-            },
-            "revenue": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/ko/revenue/",
-              "fetchedAt": "2026-03-08T03:10:14.772Z"
-            }
-          },
-          "flags": [
-            "employee_snapshot_fallback"
-          ]
-        },
-        {
-          "bucketId": "2024Q1",
-          "bucketType": "quarterly",
-          "periodStart": "2024-01-01",
-          "periodEnd": "2024-03-29",
-          "displayLabel": "2024 Q1",
-          "marketCap": {
-            "reportedAmount": 263836099999,
-            "reportedCurrency": "USD",
-            "usdAmount": 263836099999,
-            "normalizationMethod": "reported_usd"
-          },
-          "revenue": {
-            "reportedAmount": 11300000000,
-            "reportedCurrency": "USD",
-            "usdAmount": 11300000000,
-            "normalizationMethod": "reported_usd"
-          },
-          "marketCapUsd": 263836099999,
-          "revenueUsd": 11300000000,
-          "employeeCount": 69700,
-          "revenuePerEmployeeUsd": 162123.38593974174,
-          "sources": {
-            "marketCap": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/ko/market-cap/",
-              "fetchedAt": "2026-03-08T03:10:14.772Z"
-            },
-            "employeeCount": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
-              "fetchedAt": "2026-03-07T20:15:17.105Z",
-              "note": "current snapshot fallback"
-            },
-            "revenue": {
-              "provider": "StockAnalysis",
-              "url": "https://stockanalysis.com/stocks/ko/revenue/",
-              "fetchedAt": "2026-03-08T03:10:14.772Z"
-            }
-          },
-          "flags": [
-            "employee_snapshot_fallback"
           ]
         }
       ]
@@ -33255,7 +33255,7 @@
       "name": "Royal Bank Of Canada",
       "symbol": "RY",
       "country": "Canada",
-      "marketCapUsd": 249127796736,
+      "marketCapUsd": 248281415680,
       "metrics": [
         {
           "bucketId": "2025TTM",
@@ -33264,13 +33264,13 @@
           "periodEnd": "2025-12-31",
           "displayLabel": "2025 TTM",
           "marketCap": {
-            "reportedAmount": 249127796736,
+            "reportedAmount": 248281415680,
             "reportedCurrency": "USD",
-            "usdAmount": 249127796736,
+            "usdAmount": 248281415680,
             "normalizationMethod": "snapshot_fallback"
           },
           "revenue": null,
-          "marketCapUsd": 249127796736,
+          "marketCapUsd": 248281415680,
           "revenueUsd": null,
           "employeeCount": 97116,
           "revenuePerEmployeeUsd": null,
@@ -33278,7 +33278,7 @@
             "marketCap": {
               "provider": "CompaniesMarketCap",
               "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
               "note": "current snapshot fallback"
             },
             "employeeCount": {
@@ -33883,7 +33883,7 @@
       "name": "Shell",
       "symbol": "SHEL",
       "country": "United Kingdom",
-      "marketCapUsd": 248276615168,
+      "marketCapUsd": 246465658880,
       "metrics": [
         {
           "bucketId": "2025TTM",
@@ -33892,9 +33892,9 @@
           "periodEnd": "2025-12-31",
           "displayLabel": "2025 TTM",
           "marketCap": {
-            "reportedAmount": 248276615168,
+            "reportedAmount": 246465658880,
             "reportedCurrency": "USD",
-            "usdAmount": 248276615168,
+            "usdAmount": 246465658880,
             "normalizationMethod": "snapshot_fallback"
           },
           "revenue": {
@@ -33903,7 +33903,7 @@
             "usdAmount": 266886000000,
             "normalizationMethod": "reported_usd"
           },
-          "marketCapUsd": 248276615168,
+          "marketCapUsd": 246465658880,
           "revenueUsd": 266886000000,
           "employeeCount": 96000,
           "revenuePerEmployeeUsd": 2780062.5,
@@ -33911,7 +33911,7 @@
             "marketCap": {
               "provider": "CompaniesMarketCap",
               "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
               "note": "current snapshot fallback"
             },
             "employeeCount": {
@@ -35855,7 +35855,7 @@
       "name": "International Holding Company",
       "symbol": "IHC.AE",
       "country": "United Arab Emirates",
-      "marketCapUsd": 232935944005,
+      "marketCapUsd": 232910572419,
       "metrics": [
         {
           "bucketId": "2025TTM",
@@ -35864,13 +35864,13 @@
           "periodEnd": "2025-12-31",
           "displayLabel": "2025 TTM",
           "marketCap": {
-            "reportedAmount": 232935944005,
+            "reportedAmount": 232910572419,
             "reportedCurrency": "USD",
-            "usdAmount": 232935944005,
+            "usdAmount": 232910572419,
             "normalizationMethod": "snapshot_fallback"
           },
           "revenue": null,
-          "marketCapUsd": 232935944005,
+          "marketCapUsd": 232910572419,
           "revenueUsd": null,
           "employeeCount": null,
           "revenuePerEmployeeUsd": null,
@@ -35878,7 +35878,7 @@
             "marketCap": {
               "provider": "CompaniesMarketCap",
               "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
               "note": "current snapshot fallback"
             }
           },
@@ -35893,13 +35893,13 @@
           "periodEnd": "2025-12-31",
           "displayLabel": "2025",
           "marketCap": {
-            "reportedAmount": 232935944005,
+            "reportedAmount": 232910572419,
             "reportedCurrency": "USD",
-            "usdAmount": 232935944005,
+            "usdAmount": 232910572419,
             "normalizationMethod": "snapshot_fallback"
           },
           "revenue": null,
-          "marketCapUsd": 232935944005,
+          "marketCapUsd": 232910572419,
           "revenueUsd": null,
           "employeeCount": null,
           "revenuePerEmployeeUsd": null,
@@ -35907,7 +35907,7 @@
             "marketCap": {
               "provider": "CompaniesMarketCap",
               "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
               "note": "current snapshot fallback"
             }
           },
@@ -35922,13 +35922,13 @@
           "periodEnd": "2024-12-31",
           "displayLabel": "2024",
           "marketCap": {
-            "reportedAmount": 232935944005,
+            "reportedAmount": 232910572419,
             "reportedCurrency": "USD",
-            "usdAmount": 232935944005,
+            "usdAmount": 232910572419,
             "normalizationMethod": "snapshot_fallback"
           },
           "revenue": null,
-          "marketCapUsd": 232935944005,
+          "marketCapUsd": 232910572419,
           "revenueUsd": null,
           "employeeCount": null,
           "revenuePerEmployeeUsd": null,
@@ -35936,7 +35936,7 @@
             "marketCap": {
               "provider": "CompaniesMarketCap",
               "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
               "note": "current snapshot fallback"
             }
           },
@@ -35951,13 +35951,13 @@
           "periodEnd": "2025-12-31",
           "displayLabel": "2025 Q4",
           "marketCap": {
-            "reportedAmount": 232935944005,
+            "reportedAmount": 232910572419,
             "reportedCurrency": "USD",
-            "usdAmount": 232935944005,
+            "usdAmount": 232910572419,
             "normalizationMethod": "snapshot_fallback"
           },
           "revenue": null,
-          "marketCapUsd": 232935944005,
+          "marketCapUsd": 232910572419,
           "revenueUsd": null,
           "employeeCount": null,
           "revenuePerEmployeeUsd": null,
@@ -35965,7 +35965,7 @@
             "marketCap": {
               "provider": "CompaniesMarketCap",
               "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
               "note": "current snapshot fallback"
             }
           },
@@ -35980,13 +35980,13 @@
           "periodEnd": "2025-09-30",
           "displayLabel": "2025 Q3",
           "marketCap": {
-            "reportedAmount": 232935944005,
+            "reportedAmount": 232910572419,
             "reportedCurrency": "USD",
-            "usdAmount": 232935944005,
+            "usdAmount": 232910572419,
             "normalizationMethod": "snapshot_fallback"
           },
           "revenue": null,
-          "marketCapUsd": 232935944005,
+          "marketCapUsd": 232910572419,
           "revenueUsd": null,
           "employeeCount": null,
           "revenuePerEmployeeUsd": null,
@@ -35994,7 +35994,7 @@
             "marketCap": {
               "provider": "CompaniesMarketCap",
               "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
               "note": "current snapshot fallback"
             }
           },
@@ -36009,13 +36009,13 @@
           "periodEnd": "2025-06-30",
           "displayLabel": "2025 Q2",
           "marketCap": {
-            "reportedAmount": 232935944005,
+            "reportedAmount": 232910572419,
             "reportedCurrency": "USD",
-            "usdAmount": 232935944005,
+            "usdAmount": 232910572419,
             "normalizationMethod": "snapshot_fallback"
           },
           "revenue": null,
-          "marketCapUsd": 232935944005,
+          "marketCapUsd": 232910572419,
           "revenueUsd": null,
           "employeeCount": null,
           "revenuePerEmployeeUsd": null,
@@ -36023,7 +36023,7 @@
             "marketCap": {
               "provider": "CompaniesMarketCap",
               "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
               "note": "current snapshot fallback"
             }
           },
@@ -36038,13 +36038,13 @@
           "periodEnd": "2025-03-31",
           "displayLabel": "2025 Q1",
           "marketCap": {
-            "reportedAmount": 232935944005,
+            "reportedAmount": 232910572419,
             "reportedCurrency": "USD",
-            "usdAmount": 232935944005,
+            "usdAmount": 232910572419,
             "normalizationMethod": "snapshot_fallback"
           },
           "revenue": null,
-          "marketCapUsd": 232935944005,
+          "marketCapUsd": 232910572419,
           "revenueUsd": null,
           "employeeCount": null,
           "revenuePerEmployeeUsd": null,
@@ -36052,7 +36052,7 @@
             "marketCap": {
               "provider": "CompaniesMarketCap",
               "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
               "note": "current snapshot fallback"
             }
           },
@@ -36067,13 +36067,13 @@
           "periodEnd": "2024-12-31",
           "displayLabel": "2024 Q4",
           "marketCap": {
-            "reportedAmount": 232935944005,
+            "reportedAmount": 232910572419,
             "reportedCurrency": "USD",
-            "usdAmount": 232935944005,
+            "usdAmount": 232910572419,
             "normalizationMethod": "snapshot_fallback"
           },
           "revenue": null,
-          "marketCapUsd": 232935944005,
+          "marketCapUsd": 232910572419,
           "revenueUsd": null,
           "employeeCount": null,
           "revenuePerEmployeeUsd": null,
@@ -36081,7 +36081,7 @@
             "marketCap": {
               "provider": "CompaniesMarketCap",
               "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
               "note": "current snapshot fallback"
             }
           },
@@ -36096,13 +36096,13 @@
           "periodEnd": "2024-09-30",
           "displayLabel": "2024 Q3",
           "marketCap": {
-            "reportedAmount": 232935944005,
+            "reportedAmount": 232910572419,
             "reportedCurrency": "USD",
-            "usdAmount": 232935944005,
+            "usdAmount": 232910572419,
             "normalizationMethod": "snapshot_fallback"
           },
           "revenue": null,
-          "marketCapUsd": 232935944005,
+          "marketCapUsd": 232910572419,
           "revenueUsd": null,
           "employeeCount": null,
           "revenuePerEmployeeUsd": null,
@@ -36110,7 +36110,7 @@
             "marketCap": {
               "provider": "CompaniesMarketCap",
               "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
               "note": "current snapshot fallback"
             }
           },
@@ -36125,13 +36125,13 @@
           "periodEnd": "2024-06-30",
           "displayLabel": "2024 Q2",
           "marketCap": {
-            "reportedAmount": 232935944005,
+            "reportedAmount": 232910572419,
             "reportedCurrency": "USD",
-            "usdAmount": 232935944005,
+            "usdAmount": 232910572419,
             "normalizationMethod": "snapshot_fallback"
           },
           "revenue": null,
-          "marketCapUsd": 232935944005,
+          "marketCapUsd": 232910572419,
           "revenueUsd": null,
           "employeeCount": null,
           "revenuePerEmployeeUsd": null,
@@ -36139,7 +36139,7 @@
             "marketCap": {
               "provider": "CompaniesMarketCap",
               "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
               "note": "current snapshot fallback"
             }
           },
@@ -36154,13 +36154,13 @@
           "periodEnd": "2024-03-31",
           "displayLabel": "2024 Q1",
           "marketCap": {
-            "reportedAmount": 232935944005,
+            "reportedAmount": 232910572419,
             "reportedCurrency": "USD",
-            "usdAmount": 232935944005,
+            "usdAmount": 232910572419,
             "normalizationMethod": "snapshot_fallback"
           },
           "revenue": null,
-          "marketCapUsd": 232935944005,
+          "marketCapUsd": 232910572419,
           "revenueUsd": null,
           "employeeCount": null,
           "revenuePerEmployeeUsd": null,
@@ -36168,7 +36168,7 @@
             "marketCap": {
               "provider": "CompaniesMarketCap",
               "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
               "note": "current snapshot fallback"
             }
           },
@@ -38237,7 +38237,7 @@
       "name": "China Mobile",
       "symbol": "0941.HK",
       "country": "China",
-      "marketCapUsd": 227698544355,
+      "marketCapUsd": 227686329636,
       "metrics": [
         {
           "bucketId": "2025TTM",
@@ -38246,13 +38246,13 @@
           "periodEnd": "2025-12-31",
           "displayLabel": "2025 TTM",
           "marketCap": {
-            "reportedAmount": 227698544355,
+            "reportedAmount": 227686329636,
             "reportedCurrency": "USD",
-            "usdAmount": 227698544355,
+            "usdAmount": 227686329636,
             "normalizationMethod": "snapshot_fallback"
           },
           "revenue": null,
-          "marketCapUsd": 227698544355,
+          "marketCapUsd": 227686329636,
           "revenueUsd": null,
           "employeeCount": 455405,
           "revenuePerEmployeeUsd": null,
@@ -38260,7 +38260,7 @@
             "marketCap": {
               "provider": "CompaniesMarketCap",
               "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
               "note": "current snapshot fallback"
             },
             "employeeCount": {
@@ -41372,8 +41372,436 @@
       ]
     },
     {
-      "id": "RMS.PA-78",
+      "id": "CBA.AX-78",
       "rank": 78,
+      "name": "Commonwealth Bank",
+      "symbol": "CBA.AX",
+      "country": "Australia",
+      "marketCapUsd": 217285449827,
+      "metrics": [
+        {
+          "bucketId": "2025TTM",
+          "bucketType": "ttm",
+          "periodStart": "2025-01-01",
+          "periodEnd": "2025-12-31",
+          "displayLabel": "2025 TTM",
+          "marketCap": {
+            "reportedAmount": 217285449827,
+            "reportedCurrency": "USD",
+            "usdAmount": 217285449827,
+            "normalizationMethod": "snapshot_fallback"
+          },
+          "revenue": {
+            "reportedAmount": 18850808929.04389,
+            "reportedCurrency": "USD",
+            "usdAmount": 18850808929.04389,
+            "normalizationMethod": "reported_usd"
+          },
+          "marketCapUsd": 217285449827,
+          "revenueUsd": 18850808929.04389,
+          "employeeCount": 49682,
+          "revenuePerEmployeeUsd": 379429.3492420573,
+          "sources": {
+            "marketCap": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/?download=csv",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
+              "note": "current snapshot fallback"
+            },
+            "employeeCount": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
+              "fetchedAt": "2026-03-08T10:00:44.278Z",
+              "note": "current snapshot fallback"
+            },
+            "revenue": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/commonwealth-bank/revenue/",
+              "fetchedAt": "2026-03-08T10:02:38.291Z",
+              "note": "TTM value"
+            }
+          },
+          "flags": [
+            "market_cap_snapshot_fallback",
+            "employee_snapshot_fallback"
+          ]
+        },
+        {
+          "bucketId": "2025",
+          "bucketType": "annual",
+          "periodStart": "2025-01-01",
+          "periodEnd": "2025-12-31",
+          "displayLabel": "2025",
+          "marketCap": {
+            "reportedAmount": 217285449827,
+            "reportedCurrency": "USD",
+            "usdAmount": 217285449827,
+            "normalizationMethod": "snapshot_fallback"
+          },
+          "revenue": null,
+          "marketCapUsd": 217285449827,
+          "revenueUsd": null,
+          "employeeCount": 49682,
+          "revenuePerEmployeeUsd": null,
+          "sources": {
+            "marketCap": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/?download=csv",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
+              "note": "current snapshot fallback"
+            },
+            "employeeCount": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
+              "fetchedAt": "2026-03-07T20:15:17.105Z",
+              "note": "current snapshot fallback"
+            }
+          },
+          "flags": [
+            "market_cap_snapshot_fallback",
+            "employee_snapshot_fallback"
+          ]
+        },
+        {
+          "bucketId": "2024",
+          "bucketType": "annual",
+          "periodStart": "2024-01-01",
+          "periodEnd": "2024-12-31",
+          "displayLabel": "2024",
+          "marketCap": {
+            "reportedAmount": 217285449827,
+            "reportedCurrency": "USD",
+            "usdAmount": 217285449827,
+            "normalizationMethod": "snapshot_fallback"
+          },
+          "revenue": {
+            "reportedAmount": 18332832486.346844,
+            "reportedCurrency": "USD",
+            "usdAmount": 18332832486.346844,
+            "normalizationMethod": "reported_usd"
+          },
+          "marketCapUsd": 217285449827,
+          "revenueUsd": 18332832486.346844,
+          "employeeCount": 49682,
+          "revenuePerEmployeeUsd": 369003.51206366176,
+          "sources": {
+            "marketCap": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/?download=csv",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
+              "note": "current snapshot fallback"
+            },
+            "employeeCount": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
+              "fetchedAt": "2026-03-07T20:15:17.105Z",
+              "note": "current snapshot fallback"
+            },
+            "revenue": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/commonwealth-bank/revenue/",
+              "fetchedAt": "2026-03-08T10:00:44.278Z",
+              "note": "historical annual value"
+            }
+          },
+          "flags": [
+            "market_cap_snapshot_fallback",
+            "employee_snapshot_fallback"
+          ]
+        },
+        {
+          "bucketId": "2025Q4",
+          "bucketType": "quarterly",
+          "periodStart": "2025-10-01",
+          "periodEnd": "2025-12-31",
+          "displayLabel": "2025 Q4",
+          "marketCap": {
+            "reportedAmount": 217285449827,
+            "reportedCurrency": "USD",
+            "usdAmount": 217285449827,
+            "normalizationMethod": "snapshot_fallback"
+          },
+          "revenue": null,
+          "marketCapUsd": 217285449827,
+          "revenueUsd": null,
+          "employeeCount": 49682,
+          "revenuePerEmployeeUsd": null,
+          "sources": {
+            "marketCap": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/?download=csv",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
+              "note": "current snapshot fallback"
+            },
+            "employeeCount": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
+              "fetchedAt": "2026-03-07T20:15:17.105Z",
+              "note": "current snapshot fallback"
+            }
+          },
+          "flags": [
+            "market_cap_snapshot_fallback",
+            "employee_snapshot_fallback"
+          ]
+        },
+        {
+          "bucketId": "2025Q3",
+          "bucketType": "quarterly",
+          "periodStart": "2025-07-01",
+          "periodEnd": "2025-09-30",
+          "displayLabel": "2025 Q3",
+          "marketCap": {
+            "reportedAmount": 217285449827,
+            "reportedCurrency": "USD",
+            "usdAmount": 217285449827,
+            "normalizationMethod": "snapshot_fallback"
+          },
+          "revenue": null,
+          "marketCapUsd": 217285449827,
+          "revenueUsd": null,
+          "employeeCount": 49682,
+          "revenuePerEmployeeUsd": null,
+          "sources": {
+            "marketCap": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/?download=csv",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
+              "note": "current snapshot fallback"
+            },
+            "employeeCount": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
+              "fetchedAt": "2026-03-07T20:15:17.105Z",
+              "note": "current snapshot fallback"
+            }
+          },
+          "flags": [
+            "market_cap_snapshot_fallback",
+            "employee_snapshot_fallback"
+          ]
+        },
+        {
+          "bucketId": "2025Q2",
+          "bucketType": "quarterly",
+          "periodStart": "2025-04-01",
+          "periodEnd": "2025-06-30",
+          "displayLabel": "2025 Q2",
+          "marketCap": {
+            "reportedAmount": 217285449827,
+            "reportedCurrency": "USD",
+            "usdAmount": 217285449827,
+            "normalizationMethod": "snapshot_fallback"
+          },
+          "revenue": null,
+          "marketCapUsd": 217285449827,
+          "revenueUsd": null,
+          "employeeCount": 49682,
+          "revenuePerEmployeeUsd": null,
+          "sources": {
+            "marketCap": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/?download=csv",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
+              "note": "current snapshot fallback"
+            },
+            "employeeCount": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
+              "fetchedAt": "2026-03-07T20:15:17.105Z",
+              "note": "current snapshot fallback"
+            }
+          },
+          "flags": [
+            "market_cap_snapshot_fallback",
+            "employee_snapshot_fallback"
+          ]
+        },
+        {
+          "bucketId": "2025Q1",
+          "bucketType": "quarterly",
+          "periodStart": "2025-01-01",
+          "periodEnd": "2025-03-31",
+          "displayLabel": "2025 Q1",
+          "marketCap": {
+            "reportedAmount": 217285449827,
+            "reportedCurrency": "USD",
+            "usdAmount": 217285449827,
+            "normalizationMethod": "snapshot_fallback"
+          },
+          "revenue": null,
+          "marketCapUsd": 217285449827,
+          "revenueUsd": null,
+          "employeeCount": 49682,
+          "revenuePerEmployeeUsd": null,
+          "sources": {
+            "marketCap": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/?download=csv",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
+              "note": "current snapshot fallback"
+            },
+            "employeeCount": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
+              "fetchedAt": "2026-03-07T20:15:17.105Z",
+              "note": "current snapshot fallback"
+            }
+          },
+          "flags": [
+            "market_cap_snapshot_fallback",
+            "employee_snapshot_fallback"
+          ]
+        },
+        {
+          "bucketId": "2024Q4",
+          "bucketType": "quarterly",
+          "periodStart": "2024-10-01",
+          "periodEnd": "2024-12-31",
+          "displayLabel": "2024 Q4",
+          "marketCap": {
+            "reportedAmount": 217285449827,
+            "reportedCurrency": "USD",
+            "usdAmount": 217285449827,
+            "normalizationMethod": "snapshot_fallback"
+          },
+          "revenue": null,
+          "marketCapUsd": 217285449827,
+          "revenueUsd": null,
+          "employeeCount": 49682,
+          "revenuePerEmployeeUsd": null,
+          "sources": {
+            "marketCap": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/?download=csv",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
+              "note": "current snapshot fallback"
+            },
+            "employeeCount": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
+              "fetchedAt": "2026-03-07T20:15:17.105Z",
+              "note": "current snapshot fallback"
+            }
+          },
+          "flags": [
+            "market_cap_snapshot_fallback",
+            "employee_snapshot_fallback"
+          ]
+        },
+        {
+          "bucketId": "2024Q3",
+          "bucketType": "quarterly",
+          "periodStart": "2024-07-01",
+          "periodEnd": "2024-09-30",
+          "displayLabel": "2024 Q3",
+          "marketCap": {
+            "reportedAmount": 217285449827,
+            "reportedCurrency": "USD",
+            "usdAmount": 217285449827,
+            "normalizationMethod": "snapshot_fallback"
+          },
+          "revenue": null,
+          "marketCapUsd": 217285449827,
+          "revenueUsd": null,
+          "employeeCount": 49682,
+          "revenuePerEmployeeUsd": null,
+          "sources": {
+            "marketCap": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/?download=csv",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
+              "note": "current snapshot fallback"
+            },
+            "employeeCount": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
+              "fetchedAt": "2026-03-07T20:15:17.105Z",
+              "note": "current snapshot fallback"
+            }
+          },
+          "flags": [
+            "market_cap_snapshot_fallback",
+            "employee_snapshot_fallback"
+          ]
+        },
+        {
+          "bucketId": "2024Q2",
+          "bucketType": "quarterly",
+          "periodStart": "2024-04-01",
+          "periodEnd": "2024-06-30",
+          "displayLabel": "2024 Q2",
+          "marketCap": {
+            "reportedAmount": 217285449827,
+            "reportedCurrency": "USD",
+            "usdAmount": 217285449827,
+            "normalizationMethod": "snapshot_fallback"
+          },
+          "revenue": null,
+          "marketCapUsd": 217285449827,
+          "revenueUsd": null,
+          "employeeCount": 49682,
+          "revenuePerEmployeeUsd": null,
+          "sources": {
+            "marketCap": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/?download=csv",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
+              "note": "current snapshot fallback"
+            },
+            "employeeCount": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
+              "fetchedAt": "2026-03-07T20:15:17.105Z",
+              "note": "current snapshot fallback"
+            }
+          },
+          "flags": [
+            "market_cap_snapshot_fallback",
+            "employee_snapshot_fallback"
+          ]
+        },
+        {
+          "bucketId": "2024Q1",
+          "bucketType": "quarterly",
+          "periodStart": "2024-01-01",
+          "periodEnd": "2024-03-31",
+          "displayLabel": "2024 Q1",
+          "marketCap": {
+            "reportedAmount": 217285449827,
+            "reportedCurrency": "USD",
+            "usdAmount": 217285449827,
+            "normalizationMethod": "snapshot_fallback"
+          },
+          "revenue": null,
+          "marketCapUsd": 217285449827,
+          "revenueUsd": null,
+          "employeeCount": 49682,
+          "revenuePerEmployeeUsd": null,
+          "sources": {
+            "marketCap": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/?download=csv",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
+              "note": "current snapshot fallback"
+            },
+            "employeeCount": {
+              "provider": "CompaniesMarketCap",
+              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
+              "fetchedAt": "2026-03-07T20:15:17.105Z",
+              "note": "current snapshot fallback"
+            }
+          },
+          "flags": [
+            "market_cap_snapshot_fallback",
+            "employee_snapshot_fallback"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "RMS.PA-79",
+      "rank": 79,
       "name": "Hermès",
       "symbol": "RMS.PA",
       "country": "France",
@@ -42030,8 +42458,8 @@
       ]
     },
     {
-      "id": "PEP-79",
-      "rank": 79,
+      "id": "PEP-80",
+      "rank": 80,
       "name": "Pepsico",
       "symbol": "PEP",
       "country": "United States",
@@ -42517,434 +42945,6 @@
             }
           },
           "flags": [
-            "employee_snapshot_fallback"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "CBA.AX-80",
-      "rank": 80,
-      "name": "Commonwealth Bank",
-      "symbol": "CBA.AX",
-      "country": "Australia",
-      "marketCapUsd": 214862294248,
-      "metrics": [
-        {
-          "bucketId": "2025TTM",
-          "bucketType": "ttm",
-          "periodStart": "2025-01-01",
-          "periodEnd": "2025-12-31",
-          "displayLabel": "2025 TTM",
-          "marketCap": {
-            "reportedAmount": 214862294248,
-            "reportedCurrency": "USD",
-            "usdAmount": 214862294248,
-            "normalizationMethod": "snapshot_fallback"
-          },
-          "revenue": {
-            "reportedAmount": 18850808929.04389,
-            "reportedCurrency": "USD",
-            "usdAmount": 18850808929.04389,
-            "normalizationMethod": "reported_usd"
-          },
-          "marketCapUsd": 214862294248,
-          "revenueUsd": 18850808929.04389,
-          "employeeCount": 49682,
-          "revenuePerEmployeeUsd": 379429.3492420573,
-          "sources": {
-            "marketCap": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
-              "note": "current snapshot fallback"
-            },
-            "employeeCount": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
-              "fetchedAt": "2026-03-08T10:00:44.278Z",
-              "note": "current snapshot fallback"
-            },
-            "revenue": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/commonwealth-bank/revenue/",
-              "fetchedAt": "2026-03-08T10:02:38.291Z",
-              "note": "TTM value"
-            }
-          },
-          "flags": [
-            "market_cap_snapshot_fallback",
-            "employee_snapshot_fallback"
-          ]
-        },
-        {
-          "bucketId": "2025",
-          "bucketType": "annual",
-          "periodStart": "2025-01-01",
-          "periodEnd": "2025-12-31",
-          "displayLabel": "2025",
-          "marketCap": {
-            "reportedAmount": 214862294248,
-            "reportedCurrency": "USD",
-            "usdAmount": 214862294248,
-            "normalizationMethod": "snapshot_fallback"
-          },
-          "revenue": null,
-          "marketCapUsd": 214862294248,
-          "revenueUsd": null,
-          "employeeCount": 49682,
-          "revenuePerEmployeeUsd": null,
-          "sources": {
-            "marketCap": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
-              "note": "current snapshot fallback"
-            },
-            "employeeCount": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
-              "fetchedAt": "2026-03-07T20:15:17.105Z",
-              "note": "current snapshot fallback"
-            }
-          },
-          "flags": [
-            "market_cap_snapshot_fallback",
-            "employee_snapshot_fallback"
-          ]
-        },
-        {
-          "bucketId": "2024",
-          "bucketType": "annual",
-          "periodStart": "2024-01-01",
-          "periodEnd": "2024-12-31",
-          "displayLabel": "2024",
-          "marketCap": {
-            "reportedAmount": 214862294248,
-            "reportedCurrency": "USD",
-            "usdAmount": 214862294248,
-            "normalizationMethod": "snapshot_fallback"
-          },
-          "revenue": {
-            "reportedAmount": 18332832486.346844,
-            "reportedCurrency": "USD",
-            "usdAmount": 18332832486.346844,
-            "normalizationMethod": "reported_usd"
-          },
-          "marketCapUsd": 214862294248,
-          "revenueUsd": 18332832486.346844,
-          "employeeCount": 49682,
-          "revenuePerEmployeeUsd": 369003.51206366176,
-          "sources": {
-            "marketCap": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
-              "note": "current snapshot fallback"
-            },
-            "employeeCount": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
-              "fetchedAt": "2026-03-07T20:15:17.105Z",
-              "note": "current snapshot fallback"
-            },
-            "revenue": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/commonwealth-bank/revenue/",
-              "fetchedAt": "2026-03-08T10:00:44.278Z",
-              "note": "historical annual value"
-            }
-          },
-          "flags": [
-            "market_cap_snapshot_fallback",
-            "employee_snapshot_fallback"
-          ]
-        },
-        {
-          "bucketId": "2025Q4",
-          "bucketType": "quarterly",
-          "periodStart": "2025-10-01",
-          "periodEnd": "2025-12-31",
-          "displayLabel": "2025 Q4",
-          "marketCap": {
-            "reportedAmount": 214862294248,
-            "reportedCurrency": "USD",
-            "usdAmount": 214862294248,
-            "normalizationMethod": "snapshot_fallback"
-          },
-          "revenue": null,
-          "marketCapUsd": 214862294248,
-          "revenueUsd": null,
-          "employeeCount": 49682,
-          "revenuePerEmployeeUsd": null,
-          "sources": {
-            "marketCap": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
-              "note": "current snapshot fallback"
-            },
-            "employeeCount": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
-              "fetchedAt": "2026-03-07T20:15:17.105Z",
-              "note": "current snapshot fallback"
-            }
-          },
-          "flags": [
-            "market_cap_snapshot_fallback",
-            "employee_snapshot_fallback"
-          ]
-        },
-        {
-          "bucketId": "2025Q3",
-          "bucketType": "quarterly",
-          "periodStart": "2025-07-01",
-          "periodEnd": "2025-09-30",
-          "displayLabel": "2025 Q3",
-          "marketCap": {
-            "reportedAmount": 214862294248,
-            "reportedCurrency": "USD",
-            "usdAmount": 214862294248,
-            "normalizationMethod": "snapshot_fallback"
-          },
-          "revenue": null,
-          "marketCapUsd": 214862294248,
-          "revenueUsd": null,
-          "employeeCount": 49682,
-          "revenuePerEmployeeUsd": null,
-          "sources": {
-            "marketCap": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
-              "note": "current snapshot fallback"
-            },
-            "employeeCount": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
-              "fetchedAt": "2026-03-07T20:15:17.105Z",
-              "note": "current snapshot fallback"
-            }
-          },
-          "flags": [
-            "market_cap_snapshot_fallback",
-            "employee_snapshot_fallback"
-          ]
-        },
-        {
-          "bucketId": "2025Q2",
-          "bucketType": "quarterly",
-          "periodStart": "2025-04-01",
-          "periodEnd": "2025-06-30",
-          "displayLabel": "2025 Q2",
-          "marketCap": {
-            "reportedAmount": 214862294248,
-            "reportedCurrency": "USD",
-            "usdAmount": 214862294248,
-            "normalizationMethod": "snapshot_fallback"
-          },
-          "revenue": null,
-          "marketCapUsd": 214862294248,
-          "revenueUsd": null,
-          "employeeCount": 49682,
-          "revenuePerEmployeeUsd": null,
-          "sources": {
-            "marketCap": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
-              "note": "current snapshot fallback"
-            },
-            "employeeCount": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
-              "fetchedAt": "2026-03-07T20:15:17.105Z",
-              "note": "current snapshot fallback"
-            }
-          },
-          "flags": [
-            "market_cap_snapshot_fallback",
-            "employee_snapshot_fallback"
-          ]
-        },
-        {
-          "bucketId": "2025Q1",
-          "bucketType": "quarterly",
-          "periodStart": "2025-01-01",
-          "periodEnd": "2025-03-31",
-          "displayLabel": "2025 Q1",
-          "marketCap": {
-            "reportedAmount": 214862294248,
-            "reportedCurrency": "USD",
-            "usdAmount": 214862294248,
-            "normalizationMethod": "snapshot_fallback"
-          },
-          "revenue": null,
-          "marketCapUsd": 214862294248,
-          "revenueUsd": null,
-          "employeeCount": 49682,
-          "revenuePerEmployeeUsd": null,
-          "sources": {
-            "marketCap": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
-              "note": "current snapshot fallback"
-            },
-            "employeeCount": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
-              "fetchedAt": "2026-03-07T20:15:17.105Z",
-              "note": "current snapshot fallback"
-            }
-          },
-          "flags": [
-            "market_cap_snapshot_fallback",
-            "employee_snapshot_fallback"
-          ]
-        },
-        {
-          "bucketId": "2024Q4",
-          "bucketType": "quarterly",
-          "periodStart": "2024-10-01",
-          "periodEnd": "2024-12-31",
-          "displayLabel": "2024 Q4",
-          "marketCap": {
-            "reportedAmount": 214862294248,
-            "reportedCurrency": "USD",
-            "usdAmount": 214862294248,
-            "normalizationMethod": "snapshot_fallback"
-          },
-          "revenue": null,
-          "marketCapUsd": 214862294248,
-          "revenueUsd": null,
-          "employeeCount": 49682,
-          "revenuePerEmployeeUsd": null,
-          "sources": {
-            "marketCap": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
-              "note": "current snapshot fallback"
-            },
-            "employeeCount": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
-              "fetchedAt": "2026-03-07T20:15:17.105Z",
-              "note": "current snapshot fallback"
-            }
-          },
-          "flags": [
-            "market_cap_snapshot_fallback",
-            "employee_snapshot_fallback"
-          ]
-        },
-        {
-          "bucketId": "2024Q3",
-          "bucketType": "quarterly",
-          "periodStart": "2024-07-01",
-          "periodEnd": "2024-09-30",
-          "displayLabel": "2024 Q3",
-          "marketCap": {
-            "reportedAmount": 214862294248,
-            "reportedCurrency": "USD",
-            "usdAmount": 214862294248,
-            "normalizationMethod": "snapshot_fallback"
-          },
-          "revenue": null,
-          "marketCapUsd": 214862294248,
-          "revenueUsd": null,
-          "employeeCount": 49682,
-          "revenuePerEmployeeUsd": null,
-          "sources": {
-            "marketCap": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
-              "note": "current snapshot fallback"
-            },
-            "employeeCount": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
-              "fetchedAt": "2026-03-07T20:15:17.105Z",
-              "note": "current snapshot fallback"
-            }
-          },
-          "flags": [
-            "market_cap_snapshot_fallback",
-            "employee_snapshot_fallback"
-          ]
-        },
-        {
-          "bucketId": "2024Q2",
-          "bucketType": "quarterly",
-          "periodStart": "2024-04-01",
-          "periodEnd": "2024-06-30",
-          "displayLabel": "2024 Q2",
-          "marketCap": {
-            "reportedAmount": 214862294248,
-            "reportedCurrency": "USD",
-            "usdAmount": 214862294248,
-            "normalizationMethod": "snapshot_fallback"
-          },
-          "revenue": null,
-          "marketCapUsd": 214862294248,
-          "revenueUsd": null,
-          "employeeCount": 49682,
-          "revenuePerEmployeeUsd": null,
-          "sources": {
-            "marketCap": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
-              "note": "current snapshot fallback"
-            },
-            "employeeCount": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
-              "fetchedAt": "2026-03-07T20:15:17.105Z",
-              "note": "current snapshot fallback"
-            }
-          },
-          "flags": [
-            "market_cap_snapshot_fallback",
-            "employee_snapshot_fallback"
-          ]
-        },
-        {
-          "bucketId": "2024Q1",
-          "bucketType": "quarterly",
-          "periodStart": "2024-01-01",
-          "periodEnd": "2024-03-31",
-          "displayLabel": "2024 Q1",
-          "marketCap": {
-            "reportedAmount": 214862294248,
-            "reportedCurrency": "USD",
-            "usdAmount": 214862294248,
-            "normalizationMethod": "snapshot_fallback"
-          },
-          "revenue": null,
-          "marketCapUsd": 214862294248,
-          "revenueUsd": null,
-          "employeeCount": 49682,
-          "revenuePerEmployeeUsd": null,
-          "sources": {
-            "marketCap": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
-              "note": "current snapshot fallback"
-            },
-            "employeeCount": {
-              "provider": "CompaniesMarketCap",
-              "url": "https://companiesmarketcap.com/largest-companies-by-number-of-employees/",
-              "fetchedAt": "2026-03-07T20:15:17.105Z",
-              "note": "current snapshot fallback"
-            }
-          },
-          "flags": [
-            "market_cap_snapshot_fallback",
             "employee_snapshot_fallback"
           ]
         }
@@ -44693,7 +44693,7 @@
       "name": "Arista Networks",
       "symbol": "ANET",
       "country": "United States",
-      "marketCapUsd": 206812397568,
+      "marketCapUsd": 206793392128,
       "metrics": [
         {
           "bucketId": "2025TTM",
@@ -44702,9 +44702,9 @@
           "periodEnd": "2025-12-31",
           "displayLabel": "2025 TTM",
           "marketCap": {
-            "reportedAmount": 206812397568,
+            "reportedAmount": 206793392128,
             "reportedCurrency": "USD",
-            "usdAmount": 206812397568,
+            "usdAmount": 206793392128,
             "normalizationMethod": "snapshot_fallback"
           },
           "revenue": {
@@ -44713,7 +44713,7 @@
             "usdAmount": 9005700000,
             "normalizationMethod": "reported_usd"
           },
-          "marketCapUsd": 206812397568,
+          "marketCapUsd": 206793392128,
           "revenueUsd": 9005700000,
           "employeeCount": 4412,
           "revenuePerEmployeeUsd": 2041183.1368993653,
@@ -44721,7 +44721,7 @@
             "marketCap": {
               "provider": "CompaniesMarketCap",
               "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
               "note": "current snapshot fallback"
             },
             "employeeCount": {
@@ -46045,7 +46045,7 @@
       "name": "Reliance Industries",
       "symbol": "RELIANCE.NS",
       "country": "India",
-      "marketCapUsd": 199751541655,
+      "marketCapUsd": 199736914159,
       "metrics": [
         {
           "bucketId": "2025TTM",
@@ -46054,9 +46054,9 @@
           "periodEnd": "2025-12-31",
           "displayLabel": "2025 TTM",
           "marketCap": {
-            "reportedAmount": 199751541655,
+            "reportedAmount": 199736914159,
             "reportedCurrency": "USD",
-            "usdAmount": 199751541655,
+            "usdAmount": 199736914159,
             "normalizationMethod": "snapshot_fallback"
           },
           "revenue": {
@@ -46065,7 +46065,7 @@
             "usdAmount": 116491199167.61896,
             "normalizationMethod": "reported_usd"
           },
-          "marketCapUsd": 199751541655,
+          "marketCapUsd": 199736914159,
           "revenueUsd": 116491199167.61896,
           "employeeCount": 236334,
           "revenuePerEmployeeUsd": 492909.1843222683,
@@ -46073,7 +46073,7 @@
             "marketCap": {
               "provider": "CompaniesMarketCap",
               "url": "https://companiesmarketcap.com/?download=csv",
-              "fetchedAt": "2026-04-18T03:26:36.506Z",
+              "fetchedAt": "2026-04-20T03:29:22.910Z",
               "note": "current snapshot fallback"
             },
             "employeeCount": {
