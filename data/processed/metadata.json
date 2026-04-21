@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-04-20T03:29:22.910Z",
+  "generatedAt": "2026-04-21T03:29:16.079Z",
   "topN": 100,
-  "sourceSnapshotDirectory": "data/raw/2026-04-20",
+  "sourceSnapshotDirectory": "data/raw/2026-04-21",
   "stockAnalysisCoverage": {
     "resolverStats": {
       "stockRoutesIndexed": 5604,
-      "quoteRoutesIndexed": 44093,
-      "uniqueSymbolRoutes": 37924
+      "quoteRoutesIndexed": 44101,
+      "uniqueSymbolRoutes": 37925
     },
     "resolvedRouteCount": 93,
     "annualEmployeeSeriesCount": 90
@@ -19,9 +19,9 @@
         "EUR": 60,
         "HKD": 30,
         "INR": 10,
+        "JPY": 10,
         "KRW": 20,
         "SAR": 10,
-        "SEK": 10,
         "USD": 930
       },
       "convertedMetricCount": 170,
@@ -36,13 +36,13 @@
         "2222.SR",
         "300750.SZ",
         "600519.SS",
+        "9984.T",
         "MC.PA",
         "NESN.SW",
         "OR.PA",
         "PRX.AS",
         "RELIANCE.NS",
         "RMS.PA",
-        "RO.SW",
         "SIE.DE",
         "SU.PA"
       ],
@@ -54,19 +54,17 @@
         "CAD": 10,
         "CHF": 6,
         "CNY": 69,
-        "DKK": 10,
         "EUR": 64,
         "INR": 10,
-        "JPY": 19,
+        "JPY": 29,
         "KRW": 20,
         "SAR": 10,
-        "SEK": 10,
         "TWD": 10,
         "USD": 752
       },
-      "convertedMetricCount": 238,
+      "convertedMetricCount": 228,
       "unavailableMetricCount": 0,
-      "partialFxCoverageMetricCount": 8,
+      "partialFxCoverageMetricCount": 9,
       "convertedCompanies": [
         "000660.KS",
         "005930.KS",
@@ -76,16 +74,15 @@
         "2222.SR",
         "300750.SZ",
         "600519.SS",
+        "9984.T",
         "ASML",
         "BABA",
         "MC.PA",
         "MUFG",
         "NESN.SW",
-        "NVO",
         "OR.PA",
         "RELIANCE.NS",
         "RMS.PA",
-        "RO.SW",
         "RY",
         "SAN",
         "SAP",
@@ -97,6 +94,7 @@
       ],
       "unavailableCompanies": [],
       "partialFxCoverageCompanies": [
+        "9984.T",
         "BABA",
         "MUFG",
         "RELIANCE.NS",
@@ -108,17 +106,17 @@
     },
     "revenueSourceCountsByBucketType": {
       "annual": {
-        "StockAnalysis": 186,
-        "—": 9,
-        "CompaniesMarketCap": 5
+        "StockAnalysis": 184,
+        "—": 10,
+        "CompaniesMarketCap": 6
       },
       "quarterly": {
-        "StockAnalysis": 712,
-        "—": 88
+        "StockAnalysis": 704,
+        "—": 96
       },
       "ttm": {
-        "—": 13,
-        "CompaniesMarketCap": 87
+        "—": 14,
+        "CompaniesMarketCap": 86
       }
     },
     "latestAnnualCompaniesMarketCapCount": 0,
@@ -132,7 +130,6 @@
       "HD",
       "NVDA",
       "RY",
-      "TJX",
       "WMT"
     ],
     "annualQuarterSumMismatches": [
@@ -144,11 +141,25 @@
         "ratio": 1.5795688529658003
       },
       {
+        "symbol": "ARM",
+        "bucketId": "2025",
+        "annualRevenueUsd": 4007000000,
+        "quarterRevenueUsdSum": 4671000000,
+        "ratio": 1.165710007486898
+      },
+      {
         "symbol": "MU",
         "bucketId": "2024",
         "annualRevenueUsd": 25111000000,
         "quarterRevenueUsdSum": 29094000000,
         "ratio": 1.158615746087372
+      },
+      {
+        "symbol": "ARM",
+        "bucketId": "2024",
+        "annualRevenueUsd": 3233000000,
+        "quarterRevenueUsdSum": 3694000000,
+        "ratio": 1.1425920197958552
       },
       {
         "symbol": "MU",
@@ -184,6 +195,13 @@
         "annualRevenueUsd": 281724000000,
         "quarterRevenueUsdSum": 305453000000,
         "ratio": 1.084227825815337
+      },
+      {
+        "symbol": "9984.T",
+        "bucketId": "2025",
+        "annualRevenueUsd": 47597293728.29648,
+        "quarterRevenueUsdSum": 51120297023.85023,
+        "ratio": 1.0740168824653014
       },
       {
         "symbol": "AVGO",
@@ -274,6 +292,12 @@
         "revenueConversionUnavailableCount": 0
       },
       {
+        "symbol": "RO.SW",
+        "marketCapSnapshotFallbackCount": 11,
+        "employeeSnapshotFallbackCount": 11,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
         "symbol": "IHC.AE",
         "marketCapSnapshotFallbackCount": 11,
         "employeeSnapshotFallbackCount": 0,
@@ -304,6 +328,12 @@
         "revenueConversionUnavailableCount": 0
       },
       {
+        "symbol": "ARM",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 10,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
         "symbol": "0857.HK",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
@@ -323,6 +353,12 @@
       },
       {
         "symbol": "300750.SZ",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "9984.T",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
@@ -622,12 +658,6 @@
         "revenueConversionUnavailableCount": 0
       },
       {
-        "symbol": "NVO",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 9,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
         "symbol": "NVS",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
@@ -688,12 +718,6 @@
         "revenueConversionUnavailableCount": 0
       },
       {
-        "symbol": "RO.SW",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 9,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
         "symbol": "RTX",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
@@ -737,12 +761,6 @@
       },
       {
         "symbol": "TCEHY",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 9,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
-        "symbol": "TJX",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
@@ -855,6 +873,7 @@
       "AMZN",
       "ANET",
       "APH",
+      "ARM",
       "ASML",
       "AVGO",
       "AXP",
@@ -895,7 +914,6 @@
       "NESN.SW",
       "NFLX",
       "NVDA",
-      "NVO",
       "NVS",
       "OR.PA",
       "ORCL",
@@ -914,7 +932,6 @@
       "SIE.DE",
       "SU.PA",
       "T",
-      "TJX",
       "TM",
       "TMO",
       "TMUS",
@@ -930,8 +947,7 @@
       "XOM"
     ],
     "annualCrossSourceMismatchCompanies": [
-      "MUFG",
-      "RO.SW"
+      "MUFG"
     ]
   }
 }
