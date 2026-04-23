@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-04-22T03:29:14.071Z",
+  "generatedAt": "2026-04-23T03:29:20.332Z",
   "topN": 100,
-  "sourceSnapshotDirectory": "data/raw/2026-04-22",
+  "sourceSnapshotDirectory": "data/raw/2026-04-23",
   "stockAnalysisCoverage": {
     "resolverStats": {
-      "stockRoutesIndexed": 5604,
+      "stockRoutesIndexed": 5607,
       "quoteRoutesIndexed": 44108,
-      "uniqueSymbolRoutes": 37929
+      "uniqueSymbolRoutes": 37932
     },
     "resolvedRouteCount": 93,
     "annualEmployeeSeriesCount": 90
@@ -16,16 +16,16 @@
       "currencyCounts": {
         "CHF": 10,
         "CNY": 30,
-        "EUR": 60,
+        "EUR": 50,
         "HKD": 30,
         "INR": 10,
         "JPY": 10,
         "KRW": 20,
         "SAR": 10,
         "SEK": 10,
-        "USD": 910
+        "USD": 920
       },
-      "convertedMetricCount": 190,
+      "convertedMetricCount": 180,
       "unavailableMetricCount": 0,
       "partialFxCoverageMetricCount": 0,
       "convertedCompanies": [
@@ -46,8 +46,7 @@
         "RELIANCE.NS",
         "RMS.PA",
         "RO.SW",
-        "SIE.DE",
-        "SU.PA"
+        "SIE.DE"
       ],
       "unavailableCompanies": [],
       "partialFxCoverageCompanies": []
@@ -57,16 +56,16 @@
         "CAD": 10,
         "CHF": 6,
         "CNY": 79,
-        "EUR": 54,
+        "EUR": 48,
         "INR": 10,
         "JPY": 29,
         "KRW": 20,
         "SAR": 10,
         "SEK": 10,
         "TWD": 10,
-        "USD": 751
+        "USD": 761
       },
-      "convertedMetricCount": 238,
+      "convertedMetricCount": 232,
       "unavailableMetricCount": 0,
       "partialFxCoverageMetricCount": 9,
       "convertedCompanies": [
@@ -92,7 +91,6 @@
         "RY",
         "SAP",
         "SIE.DE",
-        "SU.PA",
         "TCEHY",
         "TM",
         "TSM"
@@ -116,8 +114,8 @@
         "CompaniesMarketCap": 5
       },
       "quarterly": {
-        "StockAnalysis": 712,
-        "—": 88
+        "StockAnalysis": 716,
+        "—": 84
       },
       "ttm": {
         "—": 14,
@@ -440,6 +438,12 @@
         "revenueConversionUnavailableCount": 0
       },
       {
+        "symbol": "BA",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
         "symbol": "BABA",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
@@ -746,12 +750,6 @@
         "revenueConversionUnavailableCount": 0
       },
       {
-        "symbol": "SU.PA",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 9,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
         "symbol": "T",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
@@ -877,6 +875,7 @@
       "AVGO",
       "AXP",
       "AZN",
+      "BA",
       "BABA",
       "BAC",
       "BHP",
@@ -928,7 +927,6 @@
       "SAP",
       "SHEL",
       "SIE.DE",
-      "SU.PA",
       "T",
       "TM",
       "TMO",
