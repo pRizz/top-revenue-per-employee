@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-04-24T03:29:29.215Z",
+  "generatedAt": "2026-04-25T03:27:20.000Z",
   "topN": 100,
-  "sourceSnapshotDirectory": "data/raw/2026-04-24",
+  "sourceSnapshotDirectory": "data/raw/2026-04-25",
   "stockAnalysisCoverage": {
     "resolverStats": {
-      "stockRoutesIndexed": 5609,
-      "quoteRoutesIndexed": 44111,
-      "uniqueSymbolRoutes": 37938
+      "stockRoutesIndexed": 5610,
+      "quoteRoutesIndexed": 44113,
+      "uniqueSymbolRoutes": 37940
     },
     "resolvedRouteCount": 93,
     "annualEmployeeSeriesCount": 90
@@ -56,6 +56,7 @@
         "CAD": 10,
         "CHF": 6,
         "CNY": 79,
+        "DKK": 10,
         "EUR": 48,
         "INR": 10,
         "JPY": 29,
@@ -63,9 +64,9 @@
         "SAR": 10,
         "SEK": 10,
         "TWD": 10,
-        "USD": 761
+        "USD": 751
       },
-      "convertedMetricCount": 232,
+      "convertedMetricCount": 242,
       "unavailableMetricCount": 0,
       "partialFxCoverageMetricCount": 9,
       "convertedCompanies": [
@@ -84,6 +85,7 @@
         "MC.PA",
         "MUFG",
         "NESN.SW",
+        "NVO",
         "OR.PA",
         "RELIANCE.NS",
         "RMS.PA",
@@ -492,12 +494,6 @@
         "revenueConversionUnavailableCount": 0
       },
       {
-        "symbol": "DIS",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 9,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
         "symbol": "ENR.F",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
@@ -661,6 +657,12 @@
       },
       {
         "symbol": "NVDA",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "NVO",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
@@ -883,7 +885,6 @@
       "COST",
       "CSCO",
       "CVX",
-      "DIS",
       "GE",
       "GEV",
       "GOOG",
@@ -911,6 +912,7 @@
       "NESN.SW",
       "NFLX",
       "NVDA",
+      "NVO",
       "NVS",
       "OR.PA",
       "ORCL",
