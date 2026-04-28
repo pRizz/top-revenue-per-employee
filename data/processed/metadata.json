@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-04-27T03:29:43.697Z",
+  "generatedAt": "2026-04-28T03:30:06.475Z",
   "topN": 100,
-  "sourceSnapshotDirectory": "data/raw/2026-04-27",
+  "sourceSnapshotDirectory": "data/raw/2026-04-28",
   "stockAnalysisCoverage": {
     "resolverStats": {
-      "stockRoutesIndexed": 5609,
-      "quoteRoutesIndexed": 44122,
-      "uniqueSymbolRoutes": 37949
+      "stockRoutesIndexed": 5611,
+      "quoteRoutesIndexed": 44132,
+      "uniqueSymbolRoutes": 37956
     },
     "resolvedRouteCount": 93,
     "annualEmployeeSeriesCount": 90
@@ -16,16 +16,16 @@
       "currencyCounts": {
         "CHF": 10,
         "CNY": 30,
-        "EUR": 50,
+        "EUR": 60,
         "HKD": 30,
         "INR": 10,
         "JPY": 10,
         "KRW": 20,
         "SAR": 10,
         "SEK": 10,
-        "USD": 920
+        "USD": 910
       },
-      "convertedMetricCount": 180,
+      "convertedMetricCount": 190,
       "unavailableMetricCount": 0,
       "partialFxCoverageMetricCount": 0,
       "convertedCompanies": [
@@ -46,7 +46,8 @@
         "RELIANCE.NS",
         "RMS.PA",
         "RO.SW",
-        "SIE.DE"
+        "SIE.DE",
+        "SU.PA"
       ],
       "unavailableCompanies": [],
       "partialFxCoverageCompanies": []
@@ -57,16 +58,16 @@
         "CHF": 6,
         "CNY": 79,
         "DKK": 10,
-        "EUR": 48,
+        "EUR": 54,
         "INR": 10,
         "JPY": 29,
         "KRW": 20,
         "SAR": 10,
         "SEK": 10,
         "TWD": 10,
-        "USD": 751
+        "USD": 741
       },
-      "convertedMetricCount": 242,
+      "convertedMetricCount": 248,
       "unavailableMetricCount": 0,
       "partialFxCoverageMetricCount": 9,
       "convertedCompanies": [
@@ -93,6 +94,7 @@
         "RY",
         "SAP",
         "SIE.DE",
+        "SU.PA",
         "TCEHY",
         "TM",
         "TSM"
@@ -116,8 +118,8 @@
         "CompaniesMarketCap": 5
       },
       "quarterly": {
-        "StockAnalysis": 716,
-        "—": 84
+        "StockAnalysis": 712,
+        "—": 88
       },
       "ttm": {
         "—": 14,
@@ -314,12 +316,6 @@
         "revenueConversionUnavailableCount": 0
       },
       {
-        "symbol": "600519.SS",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 10,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
         "symbol": "ARM",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 10,
@@ -345,6 +341,12 @@
       },
       {
         "symbol": "300750.SZ",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "600519.SS",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
@@ -494,7 +496,7 @@
         "revenueConversionUnavailableCount": 0
       },
       {
-        "symbol": "ENR.F",
+        "symbol": "DIS",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
@@ -758,7 +760,7 @@
         "revenueConversionUnavailableCount": 0
       },
       {
-        "symbol": "T",
+        "symbol": "SU.PA",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
@@ -885,6 +887,7 @@
       "COST",
       "CSCO",
       "CVX",
+      "DIS",
       "GE",
       "GEV",
       "GOOG",
@@ -928,7 +931,7 @@
       "SAP",
       "SHEL",
       "SIE.DE",
-      "T",
+      "SU.PA",
       "TM",
       "TMUS",
       "TSLA",
@@ -944,7 +947,6 @@
     ],
     "annualCrossSourceMismatchCompanies": [
       "AXP",
-      "ENR.F",
       "MUFG",
       "RO.SW"
     ]
