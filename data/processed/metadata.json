@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-04-29T03:30:07.235Z",
+  "generatedAt": "2026-04-30T03:30:10.229Z",
   "topN": 100,
-  "sourceSnapshotDirectory": "data/raw/2026-04-29",
+  "sourceSnapshotDirectory": "data/raw/2026-04-30",
   "stockAnalysisCoverage": {
     "resolverStats": {
-      "stockRoutesIndexed": 5612,
-      "quoteRoutesIndexed": 44132,
-      "uniqueSymbolRoutes": 37954
+      "stockRoutesIndexed": 5610,
+      "quoteRoutesIndexed": 44134,
+      "uniqueSymbolRoutes": 37956
     },
     "resolvedRouteCount": 93,
-    "annualEmployeeSeriesCount": 90
+    "annualEmployeeSeriesCount": 89
   },
   "currencyAudit": {
     "marketCap": {
@@ -17,12 +17,13 @@
         "CHF": 10,
         "CNY": 30,
         "EUR": 50,
-        "HKD": 40,
+        "HKD": 30,
         "INR": 10,
         "JPY": 10,
         "KRW": 20,
         "SAR": 10,
         "SEK": 10,
+        "TWD": 10,
         "USD": 910
       },
       "convertedMetricCount": 190,
@@ -32,10 +33,10 @@
         "000660.KS",
         "005930.KS",
         "0857.HK",
-        "0883.HK",
         "0941.HK",
         "1398.HK",
         "2222.SR",
+        "2308.TW",
         "300750.SZ",
         "600519.SS",
         "601138.SS",
@@ -56,7 +57,7 @@
       "currencyCounts": {
         "CAD": 10,
         "CHF": 6,
-        "CNY": 89,
+        "CNY": 79,
         "DKK": 10,
         "EUR": 48,
         "INR": 10,
@@ -64,20 +65,20 @@
         "KRW": 20,
         "SAR": 10,
         "SEK": 10,
-        "TWD": 10,
-        "USD": 740
+        "TWD": 20,
+        "USD": 741
       },
       "convertedMetricCount": 252,
       "unavailableMetricCount": 0,
-      "partialFxCoverageMetricCount": 9,
+      "partialFxCoverageMetricCount": 11,
       "convertedCompanies": [
         "000660.KS",
         "005930.KS",
         "0857.HK",
-        "0883.HK",
         "0941.HK",
         "1398.HK",
         "2222.SR",
+        "2308.TW",
         "300750.SZ",
         "600519.SS",
         "601138.SS",
@@ -101,6 +102,7 @@
       ],
       "unavailableCompanies": [],
       "partialFxCoverageCompanies": [
+        "2308.TW",
         "9984.T",
         "BABA",
         "MUFG",
@@ -122,8 +124,8 @@
         "—": 84
       },
       "ttm": {
-        "—": 15,
-        "CompaniesMarketCap": 85
+        "—": 14,
+        "CompaniesMarketCap": 86
       }
     },
     "latestAnnualCompaniesMarketCapCount": 0,
@@ -328,12 +330,6 @@
         "revenueConversionUnavailableCount": 0
       },
       {
-        "symbol": "0883.HK",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 9,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
         "symbol": "0941.HK",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
@@ -418,6 +414,12 @@
         "revenueConversionUnavailableCount": 0
       },
       {
+        "symbol": "APH",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
         "symbol": "ASML",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
@@ -437,12 +439,6 @@
       },
       {
         "symbol": "AZN",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 9,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
-        "symbol": "BA",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
@@ -854,6 +850,12 @@
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 0,
         "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "2308.TW",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 0,
+        "revenueConversionUnavailableCount": 0
       }
     ],
     "annualCrossSourceAlignedCompanies": [
@@ -862,6 +864,7 @@
       "0857.HK",
       "1398.HK",
       "2222.SR",
+      "2308.TW",
       "300750.SZ",
       "600519.SS",
       "601138.SS",
@@ -873,11 +876,11 @@
       "AMGN",
       "AMZN",
       "ANET",
+      "APH",
       "ARM",
       "ASML",
       "AVGO",
       "AZN",
-      "BA",
       "BABA",
       "BAC",
       "BHP",
