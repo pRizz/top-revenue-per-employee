@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-05-01T03:30:22.479Z",
+  "generatedAt": "2026-05-02T03:29:31.198Z",
   "topN": 100,
-  "sourceSnapshotDirectory": "data/raw/2026-05-01",
+  "sourceSnapshotDirectory": "data/raw/2026-05-02",
   "stockAnalysisCoverage": {
     "resolverStats": {
       "stockRoutesIndexed": 5611,
-      "quoteRoutesIndexed": 44135,
-      "uniqueSymbolRoutes": 37959
+      "quoteRoutesIndexed": 44139,
+      "uniqueSymbolRoutes": 37965
     },
     "resolvedRouteCount": 93,
     "annualEmployeeSeriesCount": 90
@@ -18,13 +18,14 @@
         "CNY": 30,
         "EUR": 50,
         "HKD": 30,
+        "INR": 10,
         "JPY": 10,
         "KRW": 20,
         "SAR": 10,
         "SEK": 10,
-        "USD": 920
+        "USD": 910
       },
-      "convertedMetricCount": 180,
+      "convertedMetricCount": 190,
       "unavailableMetricCount": 0,
       "partialFxCoverageMetricCount": 0,
       "convertedCompanies": [
@@ -43,6 +44,7 @@
         "NESN.SW",
         "OR.PA",
         "PRX.AS",
+        "RELIANCE.NS",
         "RMS.PA",
         "RO.SW",
         "SIE.DE"
@@ -57,16 +59,17 @@
         "CNY": 79,
         "DKK": 10,
         "EUR": 48,
+        "INR": 10,
         "JPY": 29,
         "KRW": 20,
         "SAR": 10,
         "SEK": 10,
         "TWD": 10,
-        "USD": 752
+        "USD": 751
       },
-      "convertedMetricCount": 232,
+      "convertedMetricCount": 242,
       "unavailableMetricCount": 0,
-      "partialFxCoverageMetricCount": 8,
+      "partialFxCoverageMetricCount": 9,
       "convertedCompanies": [
         "000660.KS",
         "005930.KS",
@@ -85,6 +88,7 @@
         "NESN.SW",
         "NVO",
         "OR.PA",
+        "RELIANCE.NS",
         "RMS.PA",
         "RO.SW",
         "RY",
@@ -99,6 +103,7 @@
         "9984.T",
         "BABA",
         "MUFG",
+        "RELIANCE.NS",
         "RY",
         "SIE.DE",
         "TM",
@@ -107,13 +112,13 @@
     },
     "revenueSourceCountsByBucketType": {
       "annual": {
-        "StockAnalysis": 184,
-        "—": 10,
-        "CompaniesMarketCap": 6
+        "StockAnalysis": 186,
+        "—": 9,
+        "CompaniesMarketCap": 5
       },
       "quarterly": {
-        "StockAnalysis": 708,
-        "—": 92
+        "StockAnalysis": 716,
+        "—": 84
       },
       "ttm": {
         "—": 14,
@@ -293,12 +298,6 @@
         "revenueConversionUnavailableCount": 0
       },
       {
-        "symbol": "RELIANCE.NS",
-        "marketCapSnapshotFallbackCount": 11,
-        "employeeSnapshotFallbackCount": 11,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
         "symbol": "IHC.AE",
         "marketCapSnapshotFallbackCount": 11,
         "employeeSnapshotFallbackCount": 0,
@@ -407,12 +406,6 @@
         "revenueConversionUnavailableCount": 0
       },
       {
-        "symbol": "AMGN",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 9,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
         "symbol": "AMZN",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
@@ -498,6 +491,12 @@
       },
       {
         "symbol": "DIS",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
+        "symbol": "ENR.F",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
@@ -725,6 +724,12 @@
         "revenueConversionUnavailableCount": 0
       },
       {
+        "symbol": "RELIANCE.NS",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
         "symbol": "RMS.PA",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
@@ -872,7 +877,6 @@
       "ADI",
       "AMAT",
       "AMD",
-      "AMGN",
       "AMZN",
       "ANET",
       "ARM",
@@ -925,6 +929,7 @@
       "PM",
       "PRX.AS",
       "QCOM",
+      "RELIANCE.NS",
       "RMS.PA",
       "RTX",
       "RY",
@@ -947,6 +952,7 @@
     ],
     "annualCrossSourceMismatchCompanies": [
       "AXP",
+      "ENR.F",
       "MUFG",
       "RO.SW"
     ]
