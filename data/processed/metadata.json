@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-05-05T03:29:27.926Z",
+  "generatedAt": "2026-05-06T03:29:49.968Z",
   "topN": 100,
-  "sourceSnapshotDirectory": "data/raw/2026-05-05",
+  "sourceSnapshotDirectory": "data/raw/2026-05-06",
   "stockAnalysisCoverage": {
     "resolverStats": {
       "stockRoutesIndexed": 5609,
-      "quoteRoutesIndexed": 44150,
+      "quoteRoutesIndexed": 44156,
       "uniqueSymbolRoutes": 37975
     },
     "resolvedRouteCount": 93,
@@ -54,7 +54,7 @@
     },
     "revenue": {
       "currencyCounts": {
-        "CAD": 20,
+        "CAD": 10,
         "CHF": 6,
         "CNY": 79,
         "DKK": 10,
@@ -65,11 +65,11 @@
         "SAR": 10,
         "SEK": 10,
         "TWD": 10,
-        "USD": 740
+        "USD": 751
       },
-      "convertedMetricCount": 252,
+      "convertedMetricCount": 242,
       "unavailableMetricCount": 0,
-      "partialFxCoverageMetricCount": 10,
+      "partialFxCoverageMetricCount": 9,
       "convertedCompanies": [
         "000660.KS",
         "005930.KS",
@@ -95,7 +95,6 @@
         "SAP",
         "SIE.DE",
         "TCEHY",
-        "TD",
         "TM",
         "TSM"
       ],
@@ -107,7 +106,6 @@
         "RELIANCE.NS",
         "RY",
         "SIE.DE",
-        "TD",
         "TM",
         "TSM"
       ]
@@ -123,8 +121,8 @@
         "—": 84
       },
       "ttm": {
-        "—": 15,
-        "CompaniesMarketCap": 85
+        "—": 14,
+        "CompaniesMarketCap": 86
       }
     },
     "latestAnnualCompaniesMarketCapCount": 0,
@@ -139,7 +137,6 @@
       "NVDA",
       "RY",
       "SNDK",
-      "TD",
       "WMT"
     ],
     "annualQuarterSumMismatches": [
@@ -275,13 +272,6 @@
         "annualRevenueUsd": 33220000000,
         "quarterRevenueUsdSum": 34970000000,
         "ratio": 1.0526791089704997
-      },
-      {
-        "symbol": "TD",
-        "bucketId": "2025",
-        "annualRevenueUsd": 45076754599.04319,
-        "quarterRevenueUsdSum": 47363825328.95325,
-        "ratio": 1.0507372536078408
       }
     ],
     "sequentialRevenueOutliers": [],
@@ -348,12 +338,6 @@
       },
       {
         "symbol": "RY",
-        "marketCapSnapshotFallbackCount": 1,
-        "employeeSnapshotFallbackCount": 11,
-        "revenueConversionUnavailableCount": 0
-      },
-      {
-        "symbol": "TD",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 11,
         "revenueConversionUnavailableCount": 0
@@ -527,7 +511,7 @@
         "revenueConversionUnavailableCount": 0
       },
       {
-        "symbol": "DIS",
+        "symbol": "ENR.F",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
         "revenueConversionUnavailableCount": 0
@@ -749,6 +733,12 @@
         "revenueConversionUnavailableCount": 0
       },
       {
+        "symbol": "QCOM",
+        "marketCapSnapshotFallbackCount": 1,
+        "employeeSnapshotFallbackCount": 9,
+        "revenueConversionUnavailableCount": 0
+      },
+      {
         "symbol": "RELIANCE.NS",
         "marketCapSnapshotFallbackCount": 1,
         "employeeSnapshotFallbackCount": 9,
@@ -916,7 +906,6 @@
       "COST",
       "CSCO",
       "CVX",
-      "DIS",
       "GE",
       "GEV",
       "GOOG",
@@ -953,6 +942,7 @@
       "PLTR",
       "PM",
       "PRX.AS",
+      "QCOM",
       "RELIANCE.NS",
       "RMS.PA",
       "RTX",
@@ -962,7 +952,6 @@
       "SIE.DE",
       "SNDK",
       "T",
-      "TD",
       "TM",
       "TMUS",
       "TSLA",
@@ -978,6 +967,7 @@
     ],
     "annualCrossSourceMismatchCompanies": [
       "AXP",
+      "ENR.F",
       "MUFG",
       "RO.SW"
     ]
