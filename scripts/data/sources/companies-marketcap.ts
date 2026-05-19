@@ -38,17 +38,34 @@ function sleep(ms: number): Promise<void> {
 }
 
 export async function fetchText(url: string): Promise<string> {
-  const response = await fetch(url, {
-    headers: {
-      "User-Agent": DATA_CONFIG.userAgent,
-    },
-  });
+  const maxAttempts = 4;
 
-  if (!response.ok) {
-    throw new Error(`Request failed for ${url}: ${response.status}`);
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    try {
+      const response = await fetch(url, {
+        headers: {
+          "User-Agent": DATA_CONFIG.userAgent,
+        },
+      });
+
+      if (response.ok) {
+        return await response.text();
+      }
+
+      const isRetryableStatus = response.status >= 500 || response.status === 429;
+      if (!isRetryableStatus || attempt === maxAttempts) {
+        throw new Error(`Request failed for ${url}: ${response.status}`);
+      }
+    } catch (error) {
+      if (attempt === maxAttempts) {
+        throw error;
+      }
+    }
+
+    await sleep(DATA_CONFIG.requestDelayMs * attempt);
   }
 
-  return await response.text();
+  throw new Error(`Unexpected retry state for ${url}`);
 }
 
 function toSlug(name: string): string {

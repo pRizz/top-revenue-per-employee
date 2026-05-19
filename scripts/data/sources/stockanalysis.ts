@@ -62,16 +62,33 @@ function sleep(ms: number): Promise<void> {
 }
 
 async function fetchText(url: string): Promise<string | null> {
-  const response = await fetch(url, {
-    headers: {
-      "User-Agent": DATA_CONFIG.userAgent,
-    },
-  });
-  if (!response.ok) {
-    return null;
+  const maxAttempts = 4;
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    try {
+      const response = await fetch(url, {
+        headers: {
+          "User-Agent": DATA_CONFIG.userAgent,
+        },
+      });
+      if (response.ok) {
+        return await response.text();
+      }
+
+      const isRetryableStatus = response.status >= 500 || response.status === 429;
+      if (!isRetryableStatus) {
+        return null;
+      }
+    } catch {
+      // Retry transient network/DNS failures.
+    }
+
+    if (attempt < maxAttempts) {
+      await sleep(DATA_CONFIG.requestDelayMs * attempt);
+    }
   }
 
-  return await response.text();
+  return null;
 }
 
 function extractArrayLiteralByKey(html: string, key: string): string | null {
